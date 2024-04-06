@@ -13,6 +13,9 @@ public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
     private final GenLayer biomePatternGeneratorChain;
     private final GenLayer riverPatternGeneratorChain;
 
+    public Biome EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
+    public int EUROPE_SWAMP_ID = Biome.getIdForBiome(EUROPE_SWAMP);
+
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe"));
     public int CRETACEOUS_EARLY_CREEK_EUROPE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE);
@@ -73,7 +76,7 @@ public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
                 }
                 else {
                     //Add the rivers we want:
-                    if (isEurope(aint[i])) {
+                    if (aint[i] == EUROPE_SWAMP_ID) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
                     }
                     else {
