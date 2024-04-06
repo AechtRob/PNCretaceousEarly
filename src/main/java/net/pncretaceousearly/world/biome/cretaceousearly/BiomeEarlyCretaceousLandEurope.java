@@ -47,7 +47,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 			setRegistryName("lepidodendron:cretaceous_early_europe");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
-			decorator.treesPerChunk = 8;
+			decorator.treesPerChunk = 4;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -63,11 +63,12 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 		}
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
-		protected static final WorldGenNypaTree NYPA_TREE = new WorldGenNypaTree(false);
+		protected static final WorldGenDicksonia DICKSONIA_TREE = new WorldGenDicksonia(false);
 		protected static final WorldGenCypressTreeWater CYPRESS_TREE = new WorldGenCypressTreeWater(false);
 		protected static final WorldGenDawnRedwoodTreeWater DAWN_REDWOOD_TREE = new WorldGenDawnRedwoodTreeWater(false);
 		protected static final WorldGenPodozamitesTreeWaterDeep PODOZAMITES_TREE = new WorldGenPodozamitesTreeWaterDeep(false);
 		protected static final WorldGenTaxodiumTreeWater TAXODIUM_TREE = new WorldGenTaxodiumTreeWater(false);
+		protected static final WorldGenSphenobaieraTree SPHENOBAIERA_TREE = new WorldGenSphenobaieraTree(false);
 
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenConiopteris CONIOPTERIS_GENERATOR = new WorldGenConiopteris();
@@ -75,6 +76,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 		protected static final WorldGenNathorstiana NATHORSTIANA_GENERATOR = new WorldGenNathorstiana();
 		protected static final WorldGenBolbitis BOLBITIS_GENERATOR = new WorldGenBolbitis();
 		protected static final WorldGenSwampHorsetail SWAMP_HORSETAIL_GENERATOR = new WorldGenSwampHorsetail();
+		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenPachypteris WEICHSELIA_GENERATOR = new WorldGenPachypteris();
 		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
 		protected static final WorldGenZamitesShoot ZAMITES_SHOOT_GENERATOR = new WorldGenZamitesShoot();
@@ -89,19 +91,19 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			if (rand.nextInt(8) != 0) {
-				return NYPA_TREE;
+			if (rand.nextInt(7) != 0) {
+				return SPHENOBAIERA_TREE;
 			}
 			int i = rand.nextInt(4);
 			switch (i) {
 				case 0: default:
 					return CYPRESS_TREE;
 				case 1:
-					return DAWN_REDWOOD_TREE;
+					return TAXODIUM_TREE;
 				case 2:
 					return PODOZAMITES_TREE;
 				case 3:
-					return TAXODIUM_TREE;
+					return DICKSONIA_TREE;
 			}
 
 		}
@@ -120,7 +122,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 16; ++i)
+				for (int i = 0; i < 26; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -293,6 +295,15 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					SWAMP_HORSETAIL_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 56; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					WATER_HORSETAIL_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
