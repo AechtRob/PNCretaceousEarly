@@ -21,7 +21,6 @@ import java.util.Random;
 
 public class BiomeProviderCretaceousEarly extends BiomeProvider {
     public static List<Biome> allowedBiomes = Lists.newArrayList(
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"))
     );
     public GenLayer genBiomes;

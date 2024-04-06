@@ -119,28 +119,6 @@ public class GenLayerSeperateContinents extends GenLayer
                         aint1[j + i * areaWidth] = k;
                     }
                 }
-                else if (isInd(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    isNotInd(l1)
-                                            || isNotInd(k2)
-                                            || isNotInd(j3)
-                                            || isNotInd(i4)
-                            )
-                    );
-                    if (flag)
-                    {
-                        aint1[j + i * areaWidth] =  CRETACEOUS_EARLY_OCEAN_ID;
-                    }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
-                }
                 else if (isNAmerica(k))
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
@@ -239,15 +217,6 @@ public class GenLayerSeperateContinents extends GenLayer
         return false;
     }
 
-    public static boolean isInd(int i) {
-        Biome biome = Biome.getBiome(i);
-        if (biome instanceof BiomeCretaceousEarly) {
-            BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_India_Madagascar;
-        }
-        return false;
-    }
-
     public static boolean isAsia(int i) {
         Biome biome = Biome.getBiome(i);
         if (biome instanceof BiomeCretaceousEarly) {
@@ -259,37 +228,32 @@ public class GenLayerSeperateContinents extends GenLayer
 
     public static boolean isNotEurope(int i) {
         return isAfrica(i) || isAsia(i) || isAus(i)
-                || isInd(i) || isNAmerica(i) || isSAmerica(i);
+                || isNAmerica(i) || isSAmerica(i);
     }
 
     public static boolean isNotAfrica(int i) {
         return isEurope(i) || isAsia(i) || isAus(i)
-                || isInd(i) || isNAmerica(i) || isSAmerica(i);
+                || isNAmerica(i) || isSAmerica(i);
     }
 
     public static boolean isNotAsia(int i) {
         return isEurope(i) || isAfrica(i) || isAus(i)
-                || isInd(i) || isNAmerica(i) || isSAmerica(i);
+                || isNAmerica(i) || isSAmerica(i);
     }
 
     public static boolean isNotAus(int i) {
         return isEurope(i) || isAfrica(i) || isAsia(i)
-                || isInd(i) || isNAmerica(i) || isSAmerica(i);
-    }
-
-    public static boolean isNotInd(int i) {
-        return isEurope(i) || isAfrica(i) || isAsia(i)
-                || isAus(i) || isNAmerica(i) || isSAmerica(i);
+                || isNAmerica(i) || isSAmerica(i);
     }
 
     public static boolean isNotNAmerica(int i) {
         return isEurope(i) || isAfrica(i) || isAsia(i)
-                || isAus(i) || isInd(i) || isSAmerica(i);
+                || isAus(i) || isSAmerica(i);
     }
 
     public static boolean isNotSAmerica(int i) {
         return isEurope(i) || isAfrica(i) || isAsia(i)
-                || isAus(i) || isInd(i) || isNAmerica(i);
+                || isAus(i) || isNAmerica(i);
     }
     
 }

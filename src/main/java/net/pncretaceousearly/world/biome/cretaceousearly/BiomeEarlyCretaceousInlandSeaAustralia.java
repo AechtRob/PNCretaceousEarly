@@ -2,7 +2,7 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.BlockPrehistoricGroundBasic;
+import net.lepidodendron.block.BlockBalticAmberBlock;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
@@ -13,17 +13,15 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandIndiaMadagascar extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_india_madagascar")
+public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_inland_sea_australia")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandIndiaMadagascar(ElementsLepidodendronMod instance) {
-		super(instance, 1589);
+	public BiomeEarlyCretaceousInlandSeaAustralia(ElementsLepidodendronMod instance) {
+		super(instance, 1591);
 	}
 
 	@Override
@@ -33,26 +31,27 @@ public class BiomeEarlyCretaceousLandIndiaMadagascar extends ElementsLepidodendr
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.OCEAN);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WATER);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous India-Madagascar").setBaseHeight(1.025F).setHeightVariation(0.0425F).setTemperature(0.9F).setRainfall(0.9F));
-			setRegistryName("lepidodendron:cretaceous_early_india_madagascar");
-			topBlock = Blocks.PLANKS.getStateFromMeta(0);
-			fillerBlock = Blocks.PLANKS.getStateFromMeta(0);
-			decorator.treesPerChunk = 1;
+			super(new BiomeProperties("Early Cretaceous Australian Inland Sea").setRainfall(0.5F).setBaseHeight(0.95F).setHeightVariation(0.11F));
+			setRegistryName("lepidodendron:cretaceous_early_inland_sea_australia");
+
+			topBlock = BlockBalticAmberBlock.block.getDefaultState();
+			fillerBlock = BlockBalticAmberBlock.block.getDefaultState();
+			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
-			decorator.mushroomsPerChunk = 0;
+			decorator.mushroomsPerChunk = 20;
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 0;
-			decorator.gravelPatchesPerChunk = 10;
+			decorator.gravelPatchesPerChunk = 0;
+			decorator.clayPerChunk = 0;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();
@@ -61,24 +60,25 @@ public class BiomeEarlyCretaceousLandIndiaMadagascar extends ElementsLepidodendr
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
-		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
-		{
-			return NULL_TREE;
 
-		}
+		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
+	    {
+	    	return NULL_TREE;
+	    }
+
 
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
 
 			super.decorate(worldIn, rand, pos);
 		}
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_India_Madagascar;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Australia_Antarctica;
 		}
 
 	}
-
 }

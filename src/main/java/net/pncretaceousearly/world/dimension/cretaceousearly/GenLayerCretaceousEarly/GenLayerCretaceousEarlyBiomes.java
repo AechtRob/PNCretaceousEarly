@@ -19,9 +19,6 @@ public class GenLayerCretaceousEarlyBiomes extends GenLayer {
     public int CRETACEOUS_EARLY_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AFRICA);
     public Biome CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica"));
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
-    public Biome CRETACEOUS_EARLY_INDIA_MADAGASCAR = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_india_madagascar"));
-    public int CRETACEOUS_EARLY_INDIA_MADAGASCAR_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_INDIA_MADAGASCAR);
-
 
     private final int CretaceousEarlyBiomes[] = new int[] {
            CRETACEOUS_EARLY_SOUTH_AMERICA_ID,
@@ -29,8 +26,7 @@ public class GenLayerCretaceousEarlyBiomes extends GenLayer {
             CRETACEOUS_EARLY_ASIA_ID,
             CRETACEOUS_EARLY_EUROPE_ID,
             CRETACEOUS_EARLY_AFRICA_ID,
-            CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_AFRICA_ID,
-            CRETACEOUS_EARLY_INDIA_MADAGASCAR_ID
+            CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_AFRICA_ID
     };
 
     public GenLayerCretaceousEarlyBiomes(long seed) {

@@ -2,22 +2,14 @@ package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceous
 
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerCretaceousEarlyRiverMix extends GenLayer
+public class GenLayerCretaceousEarlyBeach extends GenLayer
 {
-    private final GenLayer biomePatternGeneratorChain;
-    private final GenLayer riverPatternGeneratorChain;
 
-    //Creeks to use:
-    public Biome CRETACEOUS_EARLY_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe"));
-    public int CRETACEOUS_EARLY_CREEK_EUROPE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE);
-
-    //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
     public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
     public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
@@ -30,67 +22,106 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_SOUTHERN);
     public Biome CRETACEOUS_OCEAN_SHORE_PACIFIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_pacific"));
     public int CRETACEOUS_OCEAN_SHORE_PACIFIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_PACIFIC);
+
     public Biome CRETACEOUS_INLAND_SEA_NORTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_north_america"));
     public int CRETACEOUS_INLAND_SEA_NORTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_NORTH);
     public Biome CRETACEOUS_INLAND_SEA_SOUTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_australia"));
     public int CRETACEOUS_INLAND_SEA_SOUTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_SOUTH);
 
+    public Biome CRETACEOUS_BEACH_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe"));
+    public int CRETACEOUS_BEACH_EUROPE_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_EUROPE);
+    public Biome CRETACEOUS_BEACH_ASIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia"));
+    public int CRETACEOUS_BEACH_ASIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_ASIA);
+    public Biome CRETACEOUS_BEACH_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_africa"));
+    public int CRETACEOUS_BEACH_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA);
+    public Biome CRETACEOUS_BEACH_AUSTRALIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
+    public int CRETACEOUS_BEACH_AUSTRALIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AUSTRALIA);
+    public Biome CRETACEOUS_BEACH_NAMERCIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_north_america"));
+    public int CRETACEOUS_BEACH_NAMERCIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_NAMERCIA);
+    public Biome CRETACEOUS_BEACH_SAMERCIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_south_america"));
+    public int CRETACEOUS_BEACH_SAMERCIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_SAMERCIA);
 
-    public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
-    {
-        super(p_i2129_1_);
-        this.biomePatternGeneratorChain = p_i2129_3_;
-        this.riverPatternGeneratorChain = p_i2129_4_;
-    }
 
-    public void initWorldGenSeed(long seed)
+    public GenLayerCretaceousEarlyBeach(long seed, GenLayer genLayer)
     {
-        this.biomePatternGeneratorChain.initWorldGenSeed(seed);
-        this.riverPatternGeneratorChain.initWorldGenSeed(seed);
-        super.initWorldGenSeed(seed);
+        super(seed);
+        this.parent = genLayer;
     }
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
-        int[] aint = this.biomePatternGeneratorChain.getInts(areaX, areaY, areaWidth, areaHeight);
-        int[] aint1 = this.riverPatternGeneratorChain.getInts(areaX, areaY, areaWidth, areaHeight);
-        int[] aint2 = IntCache.getIntCache(areaWidth * areaHeight);
+        int[] aint = this.parent.getInts(areaX - 1, areaY - 1, areaWidth + 2, areaHeight + 2);
+        int[] aint1 = IntCache.getIntCache(areaWidth * areaHeight);
 
-        for (int i = 0; i < areaWidth * areaHeight; ++i)
+        for (int i = 0; i < areaHeight; ++i)
         {
-            if (aint1[i] == Biome.getIdForBiome(Biomes.RIVER))
+            for (int j = 0; j < areaWidth; ++j)
             {
-                //Exclude rivers here:
-                if (aint[i] == CRETACEOUS_OCEAN_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_SATLANTIC_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID
-                        || aint[i] == CRETACEOUS_INLAND_SEA_NORTH_ID
-                        || aint[i] == CRETACEOUS_INLAND_SEA_SOUTH_ID
-                )
+                this.initChunkSeed(j + areaX, i + areaY);
+                int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
+                //Biome biome = Biome.getBiome(k);
+
+                if (!hasNoBeach(k))
                 {
-                    aint2[i] = aint[i];
-                }
-                else {
-                    //Add the rivers we want:
-                    if (isEurope(aint[i])) {
-                        aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
-                    }
-                    else {
-                        aint2[i] = aint[i];
-                    }
-                }
-            }
-            else
-            {
-                aint2[i] = aint[i];
-            }
+                    if (!isOcean(k))
+                    {
+                        int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
+                        int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
+                        int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
+                        int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
 
+                        if (!isOcean(l1) && !isOcean(k2) && !isOcean(j3) && !isOcean(i4))
+                        {
+                            aint1[j + i * areaWidth] = k;
+                        }
+                        else
+                        {
+                            if (isEurope(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_EUROPE_ID;
+                            }
+                            else if (isAsia(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_ASIA_ID;
+                            }
+                            else if (isAfrica(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_AFRICA_ID;
+                            }
+                            else if (isAus(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_AUSTRALIA_ID;
+                            }
+                            else if (isNAmerica(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_NAMERCIA_ID;
+                            }
+                            else if (isSAmerica(k)) {
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_SAMERCIA_ID;
+                            }
+                            else {
+                                aint1[j + i * areaWidth] = k;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        aint1[j + i * areaWidth] = k;
+                    }
+                }
+                else
+                {
+                    aint1[j + i * areaWidth] = k;
+                }
+            }
         }
+        return aint1;
+    }
 
-        return aint2;
+    private boolean isOcean(int biomeID) {
+        return biomeID == CRETACEOUS_OCEAN_ID || biomeID == CRETACEOUS_INLAND_SEA_NORTH_ID
+                || biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID || biomeID == CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID
+                || biomeID == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SATLANTIC_ID
+                || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID;
+    }
+
+    private boolean hasNoBeach(int biomeID) {
+        return false;
     }
 
     public static boolean isEurope(int i) {
@@ -146,4 +177,5 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
         }
         return false;
     }
+
 }

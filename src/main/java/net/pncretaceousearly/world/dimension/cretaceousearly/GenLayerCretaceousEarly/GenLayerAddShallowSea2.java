@@ -7,7 +7,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerAddShallowSea extends GenLayer
+public class GenLayerAddShallowSea2 extends GenLayer
 {
 
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -24,7 +24,7 @@ public class GenLayerAddShallowSea extends GenLayer
     public Biome OCEAN_SHORE_PACIFIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_pacific"));
     public int OCEAN_SHORE_PACIFIC_ID =  Biome.getIdForBiome(OCEAN_SHORE_PACIFIC);
 
-    public GenLayerAddShallowSea(long seed, GenLayer genLayer)
+    public GenLayerAddShallowSea2(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
@@ -79,133 +79,35 @@ public class GenLayerAddShallowSea extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isEurope(k))
+                if (k == CRETACEOUS_OCEAN_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
                     int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                        (
-                        (l1 == CRETACEOUS_OCEAN_ID)
-                        || (k2 == CRETACEOUS_OCEAN_ID)
-                        || (j3 == CRETACEOUS_OCEAN_ID)
-                        || (i4 == CRETACEOUS_OCEAN_ID)
-                        )
-                    );
-                    if (flag)
+                    if (isEurope(l1) || isEurope(k2) || isEurope(j3) || isEurope(i4))
                     {
                         aint1[j + i * areaWidth] = EuropeSeas[nextInt(EuropeSeas.length)];
                     }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
-                }
-               else if (isAfrica(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (l1 == CRETACEOUS_OCEAN_ID)
-                                            || (k2 == CRETACEOUS_OCEAN_ID)
-                                            || (j3 == CRETACEOUS_OCEAN_ID)
-                                            || (i4 == CRETACEOUS_OCEAN_ID)
-                            )
-                    );
-                    if (flag)
-                    {
-                        aint1[j + i * areaWidth] = AfricaSeas[nextInt(AfricaSeas.length)];
-                    }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
-                }
-                else if (isAsia(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (l1 == CRETACEOUS_OCEAN_ID)
-                                            || (k2 == CRETACEOUS_OCEAN_ID)
-                                            || (j3 == CRETACEOUS_OCEAN_ID)
-                                            || (i4 == CRETACEOUS_OCEAN_ID)
-                            )
-                    );
-                    if (flag)
+                    else if (isAsia(l1) || isAsia(k2) || isAsia(j3) || isAsia(i4))
                     {
                         aint1[j + i * areaWidth] = AsiaSeas[nextInt(AsiaSeas.length)];
                     }
-                    else {
-                        aint1[j + i * areaWidth] = k;
+                    else if (isAfrica(l1) || isAfrica(k2) || isAfrica(j3) || isAfrica(i4))
+                    {
+                        aint1[j + i * areaWidth] = AfricaSeas[nextInt(AfricaSeas.length)];
                     }
-                }
-                else if (isNAmerica(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (l1 == CRETACEOUS_OCEAN_ID)
-                                            || (k2 == CRETACEOUS_OCEAN_ID)
-                                            || (j3 == CRETACEOUS_OCEAN_ID)
-                                            || (i4 == CRETACEOUS_OCEAN_ID)
-                            )
-                    );
-                    if (flag)
+                    else if (isAus(l1) || isAus(k2) || isAus(j3) || isAus(i4))
+                    {
+                        aint1[j + i * areaWidth] = AustraliaSeas[nextInt(AustraliaSeas.length)];
+                    }
+                    else if (isNAmerica(l1) || isNAmerica(k2) || isNAmerica(j3) || isNAmerica(i4))
                     {
                         aint1[j + i * areaWidth] = NorthAmericaSeas[nextInt(NorthAmericaSeas.length)];
                     }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
-                }
-                else if (isSAmerica(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (l1 == CRETACEOUS_OCEAN_ID)
-                                            || (k2 == CRETACEOUS_OCEAN_ID)
-                                            || (j3 == CRETACEOUS_OCEAN_ID)
-                                            || (i4 == CRETACEOUS_OCEAN_ID)
-                            )
-                    );
-                    if (flag)
+                    else if (isSAmerica(l1) || isSAmerica(k2) || isSAmerica(j3) || isSAmerica(i4))
                     {
                         aint1[j + i * areaWidth] = SouthAmericaSeas[nextInt(SouthAmericaSeas.length)];
-                    }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
-                }
-                else if (isAus(k))
-                {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (l1 == CRETACEOUS_OCEAN_ID)
-                                            || (k2 == CRETACEOUS_OCEAN_ID)
-                                            || (j3 == CRETACEOUS_OCEAN_ID)
-                                            || (i4 == CRETACEOUS_OCEAN_ID)
-                            )
-                    );
-                    if (flag)
-                    {
-                        aint1[j + i * areaWidth] = AustraliaSeas[nextInt(AustraliaSeas.length)];
                     }
                     else {
                         aint1[j + i * areaWidth] = k;

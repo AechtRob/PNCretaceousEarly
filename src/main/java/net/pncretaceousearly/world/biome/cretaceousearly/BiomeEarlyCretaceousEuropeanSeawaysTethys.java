@@ -4,8 +4,7 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.gen.WorldGenNullTree;
-import net.lepidodendron.world.gen.WorldGenNypaTree;
+import net.lepidodendron.world.gen.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -17,10 +16,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousOceanShoreTethys extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_tethys")
+public class BiomeEarlyCretaceousEuropeanSeawaysTethys extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousOceanShoreTethys(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousEuropeanSeawaysTethys(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -38,11 +37,11 @@ public class BiomeEarlyCretaceousOceanShoreTethys extends ElementsLepidodendronM
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			super(new BiomeProperties("Early Cretaceous Shallow Ocean TETHYS").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
-			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_tethys");
+			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_tethys_europe");
 
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();
-			decorator.treesPerChunk = -999;
+			decorator.treesPerChunk = 18;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 20;
@@ -59,11 +58,15 @@ public class BiomeEarlyCretaceousOceanShoreTethys extends ElementsLepidodendronM
 		}
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
+		protected static final WorldGenNypaTree NYPA_TREE = new WorldGenNypaTree(false);
 
+		protected static final WorldGenSwampHorsetail SWAMP_HORSETAIL_GENERATOR = new WorldGenSwampHorsetail();
+		protected static final WorldGenNathorstiana NATHORSTIANA_GENERATOR = new WorldGenNathorstiana();
+		protected static final WorldGenBolbitis BOLBITIS_GENERATOR = new WorldGenBolbitis();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
-	    	return NULL_TREE;
+	    	return NYPA_TREE;
 	    }
 
 
@@ -71,6 +74,32 @@ public class BiomeEarlyCretaceousOceanShoreTethys extends ElementsLepidodendronM
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
 
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 24; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					BOLBITIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 24; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					NATHORSTIANA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 92; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					SWAMP_HORSETAIL_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
 
 			super.decorate(worldIn, rand, pos);
 		}

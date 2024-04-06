@@ -8,7 +8,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerCretaceousEarlyRiverMix extends GenLayer
+public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
 {
     private final GenLayer biomePatternGeneratorChain;
     private final GenLayer riverPatternGeneratorChain;
@@ -20,8 +20,6 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
     public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
-    public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
-    public int CRETACEOUS_OCEAN_SHORE_TETHYS_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS);
     public Biome CRETACEOUS_OCEAN_SHORE_NATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_north_atlantic"));
     public int CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_NATLANTIC);
     public Biome CRETACEOUS_OCEAN_SHORE_SATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_south_atlantic"));
@@ -36,7 +34,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_INLAND_SEA_SOUTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_SOUTH);
 
 
-    public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
+    public GenLayerCretaceousEarlyRiverMixEuropeSpecial(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
         super(p_i2129_1_);
         this.biomePatternGeneratorChain = p_i2129_3_;
@@ -62,7 +60,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
             {
                 //Exclude rivers here:
                 if (aint[i] == CRETACEOUS_OCEAN_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_ID
+                        //|| aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_SATLANTIC_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID

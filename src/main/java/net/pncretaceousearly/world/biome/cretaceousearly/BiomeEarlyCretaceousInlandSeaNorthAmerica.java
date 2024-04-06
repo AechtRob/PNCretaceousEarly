@@ -2,10 +2,11 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockBalticAmberBlock;
+import net.lepidodendron.block.BlockDominicanAmberBlock;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
-import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -16,10 +17,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeach extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:jurassic_beach")
+public class BiomeEarlyCretaceousInlandSeaNorthAmerica extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_inland_sea_north_america")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeach(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousInlandSeaNorthAmerica(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -30,20 +31,21 @@ public class BiomeEarlyCretaceousBeach extends ElementsLepidodendronMod.ModEleme
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.OCEAN);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WATER);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Jurassic Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:jurassic_beach");
-			topBlock = Blocks.SAND.getDefaultState();
-			fillerBlock = Blocks.SAND.getDefaultState();
-			decorator.treesPerChunk = 1;
+			super(new BiomeProperties("Early Cretaceous North American Inland Sea").setRainfall(0.5F).setBaseHeight(0.95F).setHeightVariation(0.11F));
+			setRegistryName("lepidodendron:cretaceous_early_inland_sea_north_america");
+
+			topBlock = BlockDominicanAmberBlock.block.getDefaultState();
+			fillerBlock = BlockDominicanAmberBlock.block.getDefaultState();
+			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
-			decorator.mushroomsPerChunk = 0;
+			decorator.mushroomsPerChunk = 20;
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
@@ -58,14 +60,17 @@ public class BiomeEarlyCretaceousBeach extends ElementsLepidodendronMod.ModEleme
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
+
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
 	    	return NULL_TREE;
 	    }
 
+
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
 
 			super.decorate(worldIn, rand, pos);
 		}
@@ -76,5 +81,4 @@ public class BiomeEarlyCretaceousBeach extends ElementsLepidodendronMod.ModEleme
 		}
 
 	}
-
 }

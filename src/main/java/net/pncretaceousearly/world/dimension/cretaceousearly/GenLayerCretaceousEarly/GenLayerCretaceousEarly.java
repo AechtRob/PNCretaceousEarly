@@ -3,6 +3,8 @@ package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceous
 import net.minecraft.world.WorldType;
 import net.minecraft.world.gen.layer.*;
 
+import java.util.Random;
+
 public class GenLayerCretaceousEarly {
 
     private static boolean shouldDraw = false;
@@ -12,26 +14,23 @@ public class GenLayerCretaceousEarly {
 
         GenLayer biomes = new GenLayerCretaceousEarlyBiomes(1L);
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
-//        biomes = new GenLayerDesertNotBySea(2230L, biomes);
+        biomes = new GenLayerFuzzyZoom(2001L, biomes);
 
-//        biomes = new GenLayerJurassicIslandsLarge(55L, biomes);
-//        biomes = new GenLayerDiversifyJurassic(1000L, biomes);
-//        biomes = new GenLayerJurassicIslands(50L, biomes);
-        //biomes = new GenLayerSeperateContinents(332L, biomes);
+        biomes = new GenLayerZoom(1032L, biomes);
 
         biomes = new GenLayerZoom(1000L, biomes);
-        biomes = new GenLayerSeperateContinents(372L, biomes);
-        //biomes = new GenLayerSeperateContinents(372L, biomes);
-        //biomes = new GenLayerDiversifyBaseContinents(7684L, biomes);
-//        biomes = new GenLayerDiversifyJurassic2(1001L, biomes);
-//        biomes = new GenLayerDiversifyJurassicMudflats(1133L, biomes);
-//        biomes = new GenLayerJurassicIslands(50L, biomes);
-//
-//        biomes = new GenLayerJurassicEstuary1(1008L, biomes);
+        biomes = new GenLayerSeperateContinents(378L, biomes);
+        biomes = new GenLayerAddInlandSeas(3048L, biomes);
 
         biomes = new GenLayerZoom(1001L, biomes);
-        //biomes = new GenLayerSeperateContinents(372L, biomes);
         biomes = new GenLayerAddShallowSea(4132L, biomes);
+        biomes = new GenLayerAddInlandSeas2(3049L, biomes);
+
+        biomes = new GenLayerZoom(1001L, biomes);
+        biomes = new GenLayerAddShallowSea2(1201L, biomes);
+        biomes = new GenLayerAddInlandSeas2(3046L, biomes);
+
+        biomes = new GenLayerCretaceousDiversifyEurope(2641L, biomes);
 
 //        biomes = new GenLayerAddHillsToRedwood(1001L, biomes);
 //
@@ -47,7 +46,11 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerDiversifyJurassic2point5(1009L, biomes);
 //        biomes = new GenLayerJurassicRafts(1429L, biomes);
 
-        biomes = new GenLayerZoom(1003L, biomes);
+        if ((new Random()).nextInt(8) == 0) {
+             biomes = new GenLayerZoom(109L, biomes);
+        }
+//        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
+//        biomes = new GenLayerAddShallowSea2(1202L, biomes);
 
 //        biomes = new GenLayerJurassicEstuary2(1000L, biomes);
 //
@@ -61,6 +64,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
+        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 
 //        biomes = new GenLayerAddMountainsToRedwoodRare(1001L, biomes);
 //        biomes = new GenLayerJurassicIslands2(1333L, biomes);
@@ -75,12 +79,13 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicDesertIslands(1563L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
+        //biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 
 //        biomes = new GenLayerAddMountainsToRedwood(1001L, biomes);
 //        biomes = new GenLayerRandomiseRedwood(1001L, biomes);
 //
 //        biomes = new GenLayerJurassicBoulders(1067L, biomes);
-//        biomes = new GenLayerJurassicBeach(1050L, biomes);
+        biomes = new GenLayerCretaceousEarlyBeach(1050L, biomes);
 //        biomes = new GenLayerJurassicOutcropBlend2(333L, biomes);
 //        biomes = new GenLayerDiversifyJurassicMudflats(1136L, biomes);
         biomes = new GenLayerSmooth(705L, biomes);
@@ -178,14 +183,15 @@ public class GenLayerCretaceousEarly {
 
         //GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, genlayercreekfinal);
 
+        //Additional waterways in Europe:
         GenLayer genlayerdeepcreek = new GenLayerRiverInit(110L, biomes);
         GenLayer genlayerdeepcreek2 = GenLayerZoom.magnify(1100L, genlayerdeepcreek, 2);
-        GenLayer genlayerdeepcreek3 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 2);
-        GenLayer genlayerdeepcreek4 = GenLayerZoom.magnify(1100L, genlayerdeepcreek3, 2);
-        GenLayer genlayerdeepcreek5 = GenLayerZoom.magnify(1100L, genlayerdeepcreek4, 1);
+//        GenLayer genlayerdeepcreek3 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 2);
+//        GenLayer genlayerdeepcreek4 = GenLayerZoom.magnify(1100L, genlayerdeepcreek3, 2);
+        GenLayer genlayerdeepcreek5 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 1);
         GenLayer genlayerdeepcreek6 = new GenLayerRiver(11L, genlayerdeepcreek5);
         GenLayer genlayerdeepcreek7 = new GenLayerSmooth(1100L, genlayerdeepcreek6);
-        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixDeep(1100L, genlayercreekfinal, genlayerdeepcreek7);
+        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek7);
 
         GenLayer genlayerdeepvoronoizoom = new GenLayerVoronoiZoom(11L, genlayerdeepcreekfinal);
 
