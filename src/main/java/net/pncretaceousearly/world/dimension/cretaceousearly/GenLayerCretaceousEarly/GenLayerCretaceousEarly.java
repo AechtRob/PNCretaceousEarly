@@ -18,6 +18,8 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerZoom(1032L, biomes);
 
+        biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica(2541L, biomes);
+
         biomes = new GenLayerZoom(1000L, biomes);
         biomes = new GenLayerSeperateContinents(378L, biomes);
         biomes = new GenLayerAddInlandSeas(3048L, biomes);
@@ -65,6 +67,8 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
+        biomes = new GenLayerNorthAmericaMountains0(1551L, biomes);
+
 
 //        biomes = new GenLayerAddMountainsToRedwoodRare(1001L, biomes);
 //        biomes = new GenLayerJurassicIslands2(1333L, biomes);
@@ -73,12 +77,14 @@ public class GenLayerCretaceousEarly {
 //
 //        biomes = new GenLayerJurassicOutcropBlend(1088L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
+        biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
 //        biomes = new GenLayerJurassicBoulders(1066L, biomes);
 //        biomes = new GenLayerDiversifyJurassic3(1001L, biomes);
 //        biomes = new GenLayerSeperateIslands(1555L, biomes);
 //        biomes = new GenLayerJurassicDesertIslands(1563L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
+        biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);
         //biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 
 //        biomes = new GenLayerAddMountainsToRedwood(1001L, biomes);
@@ -99,7 +105,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerDiversifyJurassicMudflats(1137L, biomes);
 
         biomes = new GenLayerSmooth(706L, biomes);
-//        biomes = new GenLayerJurassicRiverBorder(325L, biomes);
+        //biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
 //        biomes = new GenLayerJurassicRiverBanks(225L, biomes);
 //        biomes = new GenLayerJurassicLakeShore(625L, biomes);
 //        biomes = new GenLayerJoinRiversJurassic(150L, biomes);
@@ -121,6 +127,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 //        biomes = new GenLayerJurassicDesertRimFromHills(1203L, biomes);
         biomes = new GenLayerFuzzyZoom(1002L, biomes);
+        biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
 
         //biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 

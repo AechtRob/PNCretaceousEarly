@@ -16,11 +16,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeachAfrica extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_africa")
+public class BiomeEarlyCretaceousLandNAmericaTransition extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_namerica_transition")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeachAfrica(ElementsLepidodendronMod instance) {
-		super(instance, 1591);
+	public BiomeEarlyCretaceousLandNAmericaTransition(ElementsLepidodendronMod instance) {
+		super(instance, 1589);
 	}
 
 	@Override
@@ -30,16 +30,17 @@ public class BiomeEarlyCretaceousBeachAfrica extends ElementsLepidodendronMod.Mo
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous African Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:cretaceous_early_beach_africa");
-			topBlock = Blocks.SAND.getDefaultState();
-			fillerBlock = Blocks.SAND.getDefaultState();
+			//was height 0.001
+			super(new BiomeProperties("Early Cretaceous North American Braided Floodplains").setBaseHeight(0.425F).setHeightVariation(0.0425F).setTemperature(1.2F).setRainfall(0.9F));
+			setRegistryName("lepidodendron:cretaceous_early_namerica_transition");
+			topBlock = Blocks.GRASS.getDefaultState();
+			fillerBlock = Blocks.GRASS.getDefaultState();
 			decorator.treesPerChunk = 1;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
@@ -48,8 +49,7 @@ public class BiomeEarlyCretaceousBeachAfrica extends ElementsLepidodendronMod.Mo
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 0;
-			decorator.gravelPatchesPerChunk = 0;
-			decorator.clayPerChunk = 0;
+			decorator.gravelPatchesPerChunk = 10;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();
@@ -59,9 +59,10 @@ public class BiomeEarlyCretaceousBeachAfrica extends ElementsLepidodendronMod.Mo
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
-	    {
-	    	return NULL_TREE;
-	    }
+		{
+			return NULL_TREE;
+
+		}
 
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
@@ -72,7 +73,7 @@ public class BiomeEarlyCretaceousBeachAfrica extends ElementsLepidodendronMod.Mo
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Africa;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
 		}
 
 	}

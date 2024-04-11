@@ -7,7 +7,6 @@ import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockDoublePlant;
-import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -15,8 +14,6 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -365,7 +362,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Europe;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
 		}
 
 	}

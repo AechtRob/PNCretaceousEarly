@@ -16,10 +16,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousOceanShoreNorthAtlantic extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_north_atlantic")
+public class BiomeEarlyCretaceousBeachAustroAntarctica extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_australia_antarctica")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousOceanShoreNorthAtlantic(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousBeachAustroAntarctica(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -30,21 +30,20 @@ public class BiomeEarlyCretaceousOceanShoreNorthAtlantic extends ElementsLepidod
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.OCEAN);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WATER);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Shallow Ocean NORTH ATLANTIC").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
-			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_north_atlantic");
-
+			super(new BiomeProperties("Early Cretaceous Austro-Antarctic Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
+			setRegistryName("lepidodendron:cretaceous_early_beach_australia_antarctica");
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();
-			decorator.treesPerChunk = -999;
+			decorator.treesPerChunk = 1;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
-			decorator.mushroomsPerChunk = 20;
+			decorator.mushroomsPerChunk = 0;
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
@@ -59,25 +58,23 @@ public class BiomeEarlyCretaceousOceanShoreNorthAtlantic extends ElementsLepidod
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
-
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
 	    	return NULL_TREE;
 	    }
 
-
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
-
 
 			super.decorate(worldIn, rand, pos);
 		}
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Ocean_Shore_North_Atlantic;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica;
 		}
 
 	}
+
 }

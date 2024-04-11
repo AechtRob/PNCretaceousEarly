@@ -77,7 +77,7 @@ public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendro
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Australia_Antarctica;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica;
 		}
 
 	}

@@ -16,10 +16,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeachAustraliaAntarctica extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_australia_antarctica")
+public class BiomeEarlyCretaceousBeachAfroAmerica extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_africa")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeachAustraliaAntarctica(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousBeachAfroAmerica(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -36,8 +36,8 @@ public class BiomeEarlyCretaceousBeachAustraliaAntarctica extends ElementsLepido
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Austro-Antarctic Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:cretaceous_early_beach_australia_antarctica");
+			super(new BiomeProperties("Early Cretaceous Afro-American Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
+			setRegistryName("lepidodendron:cretaceous_early_beach_africa");
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();
 			decorator.treesPerChunk = 1;
@@ -72,7 +72,7 @@ public class BiomeEarlyCretaceousBeachAustraliaAntarctica extends ElementsLepido
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Australia_Antarctica;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America;
 		}
 
 	}

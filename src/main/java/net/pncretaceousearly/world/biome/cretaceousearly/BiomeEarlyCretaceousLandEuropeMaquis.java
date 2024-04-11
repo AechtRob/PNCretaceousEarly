@@ -3,9 +3,6 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.procedure.ProcedureWorldGenCedar;
-import net.lepidodendron.procedure.ProcedureWorldGenCunninghamia;
-import net.lepidodendron.procedure.ProcedureWorldGenScrubbyPine;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
@@ -14,17 +11,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
-import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_europe_oxbow_lowlands")
+public class BiomeEarlyCretaceousLandEuropeMaquis extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_europe_maquis")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandEuropeOxbow(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousLandEuropeMaquis(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -43,8 +39,8 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous European Oxbow Lowlands").setBaseHeight(0.005F).setHeightVariation(0.001F).setTemperature(1.3F).setRainfall(0.9F));
-			setRegistryName("lepidodendron:cretaceous_early_europe_oxbow_lowlands");
+			super(new BiomeProperties("Early Cretaceous European Sandy Maquis").setBaseHeight(0.005F).setHeightVariation(0.001F).setTemperature(1.3F).setRainfall(0.9F));
+			setRegistryName("lepidodendron:cretaceous_early_europe_maquis");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 1;
@@ -132,7 +128,7 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 256; ++i)
+				for (int i = 0; i < 520; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -150,7 +146,7 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
+				for (int i = 0; i < 18; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -159,21 +155,12 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 256; ++i)
+				for (int i = 0; i < 520; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PLANT_GENERATOR.generate(BlockGrassyHorsetail.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255, true);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
-				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockGrassyHorsetail.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -213,7 +200,7 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 256; ++i)
+				for (int i = 0; i < 64; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -244,7 +231,7 @@ public class BiomeEarlyCretaceousLandEuropeOxbow extends ElementsLepidodendronMo
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Europe;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
 		}
 
 	}

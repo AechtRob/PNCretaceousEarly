@@ -2,9 +2,10 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockClubmoss;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.gen.WorldGenNullTree;
+import net.lepidodendron.world.gen.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -16,10 +17,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeachEurope extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_europe")
+public class BiomeEarlyCretaceousCreekNAmericaBraided extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_north_america_braided")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeachEurope(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekNAmericaBraided(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -30,20 +31,20 @@ public class BiomeEarlyCretaceousBeachEurope extends ElementsLepidodendronMod.Mo
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.RIVER);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous European Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:cretaceous_early_beach_europe");
+			super(new BiomeProperties("Early Cretaceous North American Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
+			setRegistryName("lepidodendron:cretaceous_early_creek_north_america_braided");
+
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();
-			decorator.treesPerChunk = 1;
+			decorator.treesPerChunk = 18;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
-			decorator.mushroomsPerChunk = 0;
+			decorator.mushroomsPerChunk = 20;
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
@@ -63,18 +64,19 @@ public class BiomeEarlyCretaceousBeachEurope extends ElementsLepidodendronMod.Mo
 	    	return NULL_TREE;
 	    }
 
+
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
 
 			super.decorate(worldIn, rand, pos);
 		}
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Europe;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
 		}
 
 	}
-
 }

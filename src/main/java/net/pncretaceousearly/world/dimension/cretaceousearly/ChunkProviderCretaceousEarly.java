@@ -17,8 +17,9 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEuropeOxbow;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAustraliaAntarctica;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmerica;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEuropeMaquis;
 
 import java.util.List;
 import java.util.Random;
@@ -549,7 +550,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         //Special terrain treatments here:
                         //-------------------------------
                         //In the European Swamp:
-                        if (biome == BiomeEarlyCretaceousLandEurope.biome
+                        if (biome == BiomeEarlyCretaceousLandNAmerica.biome
                         ) {
                             if (rand.nextInt(4) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
@@ -559,7 +560,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandEuropeOxbow.biome
+                        if (biome == BiomeEarlyCretaceousLandEuropeMaquis.biome
                         ) {
                             if (rand.nextInt(8) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
@@ -575,6 +576,25 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(8) == 0) {
                                 iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAustraliaAntarctica.biome
+                        ) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = BlockLeafLitter.block.getDefaultState();
+                            }
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
                             }
                         }
 

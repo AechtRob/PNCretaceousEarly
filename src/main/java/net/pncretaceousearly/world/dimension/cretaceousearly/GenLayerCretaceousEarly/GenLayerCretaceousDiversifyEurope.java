@@ -6,19 +6,18 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmerica;
 
 public class GenLayerCretaceousDiversifyEurope extends GenLayer {
 
     public Biome EARLY_CRETACEOUS_EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
     public int EARLY_CRETACEOUS_EUROPE_SWAMP_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP);
-    public Biome EARLY_CRETACEOUS_EUROPE_OXBOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_oxbow_lowlands"));
-    public int EARLY_CRETACEOUS_EUROPE_OXBOW_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_OXBOW);
-
-
+    public Biome EARLY_CRETACEOUS_EUROPE_DRY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_maquis"));
+    public int EARLY_CRETACEOUS_EUROPE_DRY_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_DRY);
 
     private final int[] EuropeBiomes = new int[] {
             EARLY_CRETACEOUS_EUROPE_SWAMP_ID,
-            EARLY_CRETACEOUS_EUROPE_OXBOW_ID
+            EARLY_CRETACEOUS_EUROPE_DRY_ID
     };
 
     public GenLayerCretaceousDiversifyEurope(long seed, GenLayer genlayer) {

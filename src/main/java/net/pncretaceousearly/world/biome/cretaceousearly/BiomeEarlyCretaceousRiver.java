@@ -76,7 +76,7 @@ public class BiomeEarlyCretaceousRiver extends ElementsLepidodendronMod.ModEleme
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_North_America;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia;
 		}
 
 	}

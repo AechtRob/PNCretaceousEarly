@@ -12,19 +12,16 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
 
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
     public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
+
     public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
     public int CRETACEOUS_OCEAN_SHORE_TETHYS_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS);
-    public Biome CRETACEOUS_OCEAN_SHORE_NATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_north_atlantic"));
-    public int CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_NATLANTIC);
-    public Biome CRETACEOUS_OCEAN_SHORE_SATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_south_atlantic"));
-    public int CRETACEOUS_OCEAN_SHORE_SATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_SATLANTIC);
+    public Biome CRETACEOUS_OCEAN_SHORE_ATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_atlantic"));
+    public int CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_ATLANTIC);
     public Biome CRETACEOUS_OCEAN_SHORE_SOUTHERN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
     public int CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_SOUTHERN);
     public Biome CRETACEOUS_OCEAN_SHORE_PACIFIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_pacific"));
     public int CRETACEOUS_OCEAN_SHORE_PACIFIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_PACIFIC);
 
-    public Biome CRETACEOUS_INLAND_SEA_NORTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_north_america"));
-    public int CRETACEOUS_INLAND_SEA_NORTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_NORTH);
     public Biome CRETACEOUS_INLAND_SEA_SOUTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_australia"));
     public int CRETACEOUS_INLAND_SEA_SOUTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_SOUTH);
 
@@ -36,10 +33,6 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     public int CRETACEOUS_BEACH_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA);
     public Biome CRETACEOUS_BEACH_AUSTRALIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
     public int CRETACEOUS_BEACH_AUSTRALIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AUSTRALIA);
-    public Biome CRETACEOUS_BEACH_NAMERCIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_north_america"));
-    public int CRETACEOUS_BEACH_NAMERCIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_NAMERCIA);
-    public Biome CRETACEOUS_BEACH_SAMERCIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_south_america"));
-    public int CRETACEOUS_BEACH_SAMERCIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_SAMERCIA);
 
 
     public GenLayerCretaceousEarlyBeach(long seed, GenLayer genLayer)
@@ -88,12 +81,6 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
                             else if (isAus(k)) {
                                 aint1[j + i * areaWidth] = CRETACEOUS_BEACH_AUSTRALIA_ID;
                             }
-                            else if (isNAmerica(k)) {
-                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_NAMERCIA_ID;
-                            }
-                            else if (isSAmerica(k)) {
-                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_SAMERCIA_ID;
-                            }
                             else {
                                 aint1[j + i * areaWidth] = k;
                             }
@@ -114,9 +101,8 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     }
 
     private boolean isOcean(int biomeID) {
-        return biomeID == CRETACEOUS_OCEAN_ID || biomeID == CRETACEOUS_INLAND_SEA_NORTH_ID
-                || biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID || biomeID == CRETACEOUS_OCEAN_SHORE_NATLANTIC_ID
-                || biomeID == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SATLANTIC_ID
+        return biomeID == CRETACEOUS_OCEAN_ID || biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID
+                || biomeID == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID || biomeID == CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID
                 || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID;
     }
 
@@ -128,7 +114,7 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         Biome biome = Biome.getBiome(i);
         if (biome instanceof BiomeCretaceousEarly) {
             BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Europe;
+            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
         }
         return false;
     }
@@ -137,25 +123,7 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         Biome biome = Biome.getBiome(i);
         if (biome instanceof BiomeCretaceousEarly) {
             BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Africa;
-        }
-        return false;
-    }
-
-    public static boolean isNAmerica(int i) {
-        Biome biome = Biome.getBiome(i);
-        if (biome instanceof BiomeCretaceousEarly) {
-            BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_North_America;
-        }
-        return false;
-    }
-
-    public static boolean isSAmerica(int i) {
-        Biome biome = Biome.getBiome(i);
-        if (biome instanceof BiomeCretaceousEarly) {
-            BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_South_America;
+            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America;
         }
         return false;
     }
@@ -164,7 +132,7 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         Biome biome = Biome.getBiome(i);
         if (biome instanceof BiomeCretaceousEarly) {
             BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Australia_Antarctica;
+            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica;
         }
         return false;
     }

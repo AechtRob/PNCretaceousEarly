@@ -1,26 +1,31 @@
 package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly;
 
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerAddInlandSeas extends GenLayer
+public class GenLayerNorthAmericaMountains0 extends GenLayer
 {
 
-    public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
-    public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
+    public static Biome N_AMERICA_LAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica"));
+    public static int N_AMERICA_LAND_ID =  Biome.getIdForBiome(N_AMERICA_LAND);
 
-    public Biome AUS_INLAND_SEA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_australia"));
-    public int AUS_INLAND_SEA_ID =  Biome.getIdForBiome(AUS_INLAND_SEA);
+    public static Biome N_AMERICA_UPLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
+    public static int N_AMERICA_UPLAND_ID =  Biome.getIdForBiome(N_AMERICA_UPLAND);
 
-    public GenLayerAddInlandSeas(long seed, GenLayer genLayer)
+
+    public GenLayerNorthAmericaMountains0(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
+
+    private final int NAmericaBiomes[] = new int[] {
+            N_AMERICA_UPLAND_ID,
+            N_AMERICA_UPLAND_ID,
+            N_AMERICA_LAND_ID
+    };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
@@ -34,7 +39,7 @@ public class GenLayerAddInlandSeas extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isAus(k) && nextInt(8) == 0)
+                if (k == N_AMERICA_LAND_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -42,15 +47,15 @@ public class GenLayerAddInlandSeas extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (l1 == CRETACEOUS_OCEAN_ID)
-                        || (k2 == CRETACEOUS_OCEAN_ID)
-                        || (j3 == CRETACEOUS_OCEAN_ID)
-                        || (i4 == CRETACEOUS_OCEAN_ID)
+                        (l1 == N_AMERICA_LAND_ID)
+                        && (k2 == N_AMERICA_LAND_ID)
+                        && (j3 == N_AMERICA_LAND_ID)
+                        && (i4 == N_AMERICA_LAND_ID)
                         )
                     );
                     if (flag)
                     {
-                        aint1[j + i * areaWidth] = AUS_INLAND_SEA_ID;
+                        aint1[j + i * areaWidth] = NAmericaBiomes[nextInt(NAmericaBiomes.length)];
                     }
                     else {
                         aint1[j + i * areaWidth] = k;
@@ -63,15 +68,6 @@ public class GenLayerAddInlandSeas extends GenLayer
         }
 
         return aint1;
-    }
-
-    public static boolean isAus(int i) {
-        Biome biome = Biome.getBiome(i);
-        if (biome instanceof BiomeCretaceousEarly) {
-            BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica;
-        }
-        return false;
     }
     
 }

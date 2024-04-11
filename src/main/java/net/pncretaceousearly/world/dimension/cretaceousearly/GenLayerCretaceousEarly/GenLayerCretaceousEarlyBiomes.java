@@ -7,10 +7,6 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerCretaceousEarlyBiomes extends GenLayer {
 
-    public Biome CRETACEOUS_EARLY_SOUTH_AMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america"));
-    public int CRETACEOUS_EARLY_SOUTH_AMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SOUTH_AMERICA);
-    public Biome CRETACEOUS_EARLY_NORTH_AMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_north_america"));
-    public int CRETACEOUS_EARLY_NORTH_AMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_NORTH_AMERICA);
     public Biome CRETACEOUS_EARLY_ASIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
     public int CRETACEOUS_EARLY_ASIA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_ASIA);
     public Biome CRETACEOUS_EARLY_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
@@ -21,8 +17,6 @@ public class GenLayerCretaceousEarlyBiomes extends GenLayer {
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
 
     private final int CretaceousEarlyBiomes[] = new int[] {
-           CRETACEOUS_EARLY_SOUTH_AMERICA_ID,
-            CRETACEOUS_EARLY_NORTH_AMERICA_ID,
             CRETACEOUS_EARLY_ASIA_ID,
             CRETACEOUS_EARLY_EUROPE_ID,
             CRETACEOUS_EARLY_AFRICA_ID,
