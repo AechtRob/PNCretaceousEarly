@@ -11,14 +11,14 @@ public class GenLayerCretaceousDiversifyEurope extends GenLayer {
 
     public Biome EARLY_CRETACEOUS_EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
     public int EARLY_CRETACEOUS_EUROPE_SWAMP_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP);
-    public Biome EARLY_CRETACEOUS_EUROPE_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_floodplain"));
-    public int EARLY_CRETACEOUS_EUROPE_FLOODPLAIN_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_FLOODPLAIN);
+    public Biome EARLY_CRETACEOUS_EUROPE_OXBOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_oxbow_lowlands"));
+    public int EARLY_CRETACEOUS_EUROPE_OXBOW_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_OXBOW);
 
 
 
     private final int[] EuropeBiomes = new int[] {
             EARLY_CRETACEOUS_EUROPE_SWAMP_ID,
-            EARLY_CRETACEOUS_EUROPE_FLOODPLAIN_ID
+            EARLY_CRETACEOUS_EUROPE_OXBOW_ID
     };
 
     public GenLayerCretaceousDiversifyEurope(long seed, GenLayer genlayer) {

@@ -13,6 +13,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     private final GenLayer biomePatternGeneratorChain;
     private final GenLayer riverPatternGeneratorChain;
 
+    public Biome EUROPE_OXBOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_oxbow_lowlands"));
+    public int EUROPE_OXBOW_ID = Biome.getIdForBiome(EUROPE_OXBOW);
+
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe"));
     public int CRETACEOUS_EARLY_CREEK_EUROPE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE);

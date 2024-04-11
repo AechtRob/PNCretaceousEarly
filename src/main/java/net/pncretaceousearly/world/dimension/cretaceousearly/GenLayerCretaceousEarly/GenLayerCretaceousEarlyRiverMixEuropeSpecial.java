@@ -15,6 +15,8 @@ public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
 
     public Biome EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
     public int EUROPE_SWAMP_ID = Biome.getIdForBiome(EUROPE_SWAMP);
+    public Biome EUROPE_OXBOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_oxbow_lowlands"));
+    public int EUROPE_OXBOW_ID = Biome.getIdForBiome(EUROPE_OXBOW);
 
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe"));

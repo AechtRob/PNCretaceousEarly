@@ -17,10 +17,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousEuropeanSeawaysTethys extends ElementsLepidodendronMod.ModElement {
+public class BiomeEarlyCretaceousCreekEuropeanTethys extends ElementsLepidodendronMod.ModElement {
 	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousEuropeanSeawaysTethys(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekEuropeanTethys(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -37,7 +37,7 @@ public class BiomeEarlyCretaceousEuropeanSeawaysTethys extends ElementsLepidoden
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Shallow Ocean TETHYS").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
+			super(new BiomeProperties("Early Cretaceous Creek TETHYS").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_tethys_europe");
 
 			topBlock = Blocks.SAND.getDefaultState();

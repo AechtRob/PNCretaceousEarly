@@ -46,7 +46,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerDiversifyJurassic2point5(1009L, biomes);
 //        biomes = new GenLayerJurassicRafts(1429L, biomes);
 
-        if ((new Random()).nextInt(8) == 0) {
+        if ((new Random(seed)).nextInt(8) == 0) {
              biomes = new GenLayerZoom(109L, biomes);
         }
 //        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);

@@ -17,6 +17,8 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEuropeOxbow;
 
 import java.util.List;
 import java.util.Random;
@@ -546,6 +548,35 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         //Special terrain treatments here:
                         //-------------------------------
+                        //In the European Swamp:
+                        if (biome == BiomeEarlyCretaceousLandEurope.biome
+                        ) {
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(8) == 0 && j1 > i + 4) {
+                                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandEuropeOxbow.biome
+                        ) {
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
+                            }
+                        }
 
 
                         j = k;
