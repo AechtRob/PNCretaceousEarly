@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 
 public class PNCretaceousEarlyModVariables {
     public static class MapVariables extends WorldSavedData {
-        public static final String DATA_NAME = "pnjurassic_mapvars";
+        public static final String DATA_NAME = "pncretaceous_early_mapvars";
         public MapVariables() {
             super(DATA_NAME);
         }
@@ -50,7 +50,7 @@ public class PNCretaceousEarlyModVariables {
     }
 
     public static class WorldVariables extends WorldSavedData {
-        public static final String DATA_NAME = "pnjurassic_worldvars";
+        public static final String DATA_NAME = "pncretaceous_early_worldvars";
         public WorldVariables() {
             super(DATA_NAME);
         }
