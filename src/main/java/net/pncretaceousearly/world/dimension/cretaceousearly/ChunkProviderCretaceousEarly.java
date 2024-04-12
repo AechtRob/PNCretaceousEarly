@@ -17,9 +17,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAustraliaAntarctica;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmerica;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEuropeMaquis;
+import net.pncretaceousearly.world.biome.cretaceousearly.*;
 
 import java.util.List;
 import java.util.Random;
@@ -550,7 +548,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         //Special terrain treatments here:
                         //-------------------------------
                         //In the European Swamp:
-                        if (biome == BiomeEarlyCretaceousLandNAmerica.biome
+                        if (biome == BiomeEarlyCretaceousLandEurope.biome
                         ) {
                             if (rand.nextInt(4) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
@@ -579,6 +577,49 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandNAmerica.biome //Braided floodplain lower
+                        ) {
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(6) == 0 && j1 > i + 3) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(5) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0 && j1 < i + 1) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(3) == 0 && j1 < i) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(24) == 0 && j1 < i + 2) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(14) == 0 && j1 < i + 1) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(5) == 0 && j1 < i) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousLandNAmericaTransition.biome //Braided floodplain upper
+                        ) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandAustraliaAntarctica.biome
                         ) {
                             if (rand.nextInt(3) == 0) {
@@ -595,6 +636,30 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(6) == 0) {
                                 iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                        }
+
+                        //Craggy
+                        if (biome == BiomeEarlyCretaceousLandNAmericaMountainsFoothills.biome
+                        ) {
+                            //If it's over 90 blocks then start to fill in more as stone
+                            //up to 120 where it almost fully stone - sometimes cobble
+                            int minHeight = 90;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 120 - j1);
+                                double stoneFactor = (double) j2 / (120D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
                             }
                         }
 

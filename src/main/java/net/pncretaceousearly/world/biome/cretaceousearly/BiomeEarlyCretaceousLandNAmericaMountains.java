@@ -4,6 +4,7 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.gen.WorldGenBristleconeTree;
 import net.lepidodendron.world.gen.WorldGenNullTree;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -12,6 +13,8 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -37,10 +40,10 @@ public class BiomeEarlyCretaceousLandNAmericaMountains extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous Euro-American Mountains").setBaseHeight(3.0F).setHeightVariation(0.210F).setTemperature(-0.25F).setSnowEnabled());
+			super(new BiomeProperties("Early Cretaceous Euro-American Mountains").setBaseHeight(3.5F).setHeightVariation(0.610F).setTemperature(-0.25F).setSnowEnabled());
 			setRegistryName("lepidodendron:cretaceous_early_namerica_mountains");
 			topBlock = Blocks.SNOW.getDefaultState();
-			fillerBlock = Blocks.STONE.getStateFromMeta(1);
+			fillerBlock = Blocks.STONE.getStateFromMeta(0);
 			decorator.treesPerChunk = 1;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
@@ -57,10 +60,37 @@ public class BiomeEarlyCretaceousLandNAmericaMountains extends ElementsLepidoden
 		}
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
+		protected static final WorldGenBristleconeTree BRISTLECONE_TREE = new WorldGenBristleconeTree(false);
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getFoliageColorAtPos(BlockPos pos)
+		{
+			return -10643385;
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getGrassColorAtPos(BlockPos pos)
+		{
+			return -10643385;
+		}
+
+		@Override
+		public int getModdedBiomeGrassColor(int original)
+		{
+			return -10643385;
+		}
+
+		@Override
+		public int getModdedBiomeFoliageColor(int original)
+		{
+			return -10643385;
+		}
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			return NULL_TREE;
+			return BRISTLECONE_TREE;
 
 		}
 

@@ -72,6 +72,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 		protected static final WorldGenEquisetites EQUISETITES_GENERATOR = new WorldGenEquisetites();
 		protected static final WorldGenNathorstiana NATHORSTIANA_GENERATOR = new WorldGenNathorstiana();
 		protected static final WorldGenBolbitis BOLBITIS_GENERATOR = new WorldGenBolbitis();
+		protected static final WorldGenNelumbo NELUMBO_GENERATOR = new WorldGenNelumbo();
 		protected static final WorldGenSwampHorsetail SWAMP_HORSETAIL_GENERATOR = new WorldGenSwampHorsetail();
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenPachypteris WEICHSELIA_GENERATOR = new WorldGenPachypteris();
@@ -259,12 +260,19 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
+				for (int i = 0; i < 2; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					BOLBITIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					BOLBITIS_GENERATOR.generate(worldIn, rand, pos.add(j, 0, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				if (rand.nextInt(6) == 0)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					NELUMBO_GENERATOR.generate(worldIn, rand, pos.add(j, 0, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

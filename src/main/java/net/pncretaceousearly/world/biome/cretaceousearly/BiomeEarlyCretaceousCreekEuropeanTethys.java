@@ -74,6 +74,7 @@ public class BiomeEarlyCretaceousCreekEuropeanTethys extends ElementsLepidodendr
 		protected static final WorldGenPeat PEAT_GENERATOR = new WorldGenPeat();
 		protected static final WorldGenTreeRottenLog ROTTEN_LOG_GENERATOR = new WorldGenTreeRottenLog();
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
+		protected static final WorldGenNelumbo NELUMBO_GENERATOR = new WorldGenNelumbo();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -125,12 +126,19 @@ public class BiomeEarlyCretaceousCreekEuropeanTethys extends ElementsLepidodendr
 			}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
+				for (int i = 0; i < 2; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					BOLBITIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					BOLBITIS_GENERATOR.generate(worldIn, rand, pos.add(j, 0, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				if (rand.nextInt(6) == 0)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					NELUMBO_GENERATOR.generate(worldIn, rand, pos.add(j, 0, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
