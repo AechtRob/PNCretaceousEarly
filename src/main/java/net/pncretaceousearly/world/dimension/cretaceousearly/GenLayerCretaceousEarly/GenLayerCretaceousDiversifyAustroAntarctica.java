@@ -5,22 +5,21 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmerica;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAustraliaAntarctica;
 
-public class GenLayerCretaceousDiversifyEurope extends GenLayer {
+public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer {
 
-    public Biome EARLY_CRETACEOUS_EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
-    public int EARLY_CRETACEOUS_EUROPE_SWAMP_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP);
-    public Biome EARLY_CRETACEOUS_EUROPE_DRY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_maquis"));
-    public int EARLY_CRETACEOUS_EUROPE_DRY_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_DRY);
+    public Biome EARLY_CRETACEOUS_AUSTRO_FOREST= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica"));
+    public int EARLY_CRETACEOUS_AUSTRO_FOREST_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_FOREST);
+    public Biome EARLY_CRETACEOUS_AUSTRO_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner"));
+    public int EARLY_CRETACEOUS_AUSTRO_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_LAKES);
 
-    private final int[] EuropeBiomes = new int[] {
-            EARLY_CRETACEOUS_EUROPE_SWAMP_ID,
-            EARLY_CRETACEOUS_EUROPE_DRY_ID
+    private final int[] AustroBiomes = new int[] {
+            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_LAKES_ID
     };
 
-    public GenLayerCretaceousDiversifyEurope(long seed, GenLayer genlayer) {
+    public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genlayer) {
         super(seed);
         this.parent = genlayer;
     }
@@ -40,8 +39,8 @@ public class GenLayerCretaceousDiversifyEurope extends GenLayer {
                 int center = input[i];
                 initChunkSeed(xOut + x, zOut + z);
                 //if (nextInt(2) == 0) {
-                    if (Biome.getBiome(center) == BiomeEarlyCretaceousLandEurope.biome) {
-                        output[i] = EuropeBiomes[nextInt(EuropeBiomes.length)];
+                    if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAustraliaAntarctica.biome) {
+                        output[i] = AustroBiomes[nextInt(AustroBiomes.length)];
                     }
                     else output[i] = center;
                 //} else output[i] = center;

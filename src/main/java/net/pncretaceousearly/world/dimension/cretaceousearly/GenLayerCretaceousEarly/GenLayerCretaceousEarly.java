@@ -19,6 +19,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerZoom(1032L, biomes);
 
         biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica(2541L, biomes);
+        biomes = new GenLayerCretaceousDiversifyAustroAntarctica(2542L, biomes);
 
         biomes = new GenLayerZoom(1000L, biomes);
         biomes = new GenLayerSeperateContinents(378L, biomes);
@@ -32,7 +33,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAddShallowSea2(1201L, biomes);
         biomes = new GenLayerAddInlandSeas2(3046L, biomes);
 
-        biomes = new GenLayerCretaceousDiversifyEurope(2641L, biomes);
+        biomes = new GenLayerCretaceousDiversifyEuroAmerica(2641L, biomes);
 
 //        biomes = new GenLayerAddHillsToRedwood(1001L, biomes);
 //
@@ -92,9 +93,12 @@ public class GenLayerCretaceousEarly {
 //
 //        biomes = new GenLayerJurassicBoulders(1067L, biomes);
         biomes = new GenLayerCretaceousEarlyBeach(1050L, biomes);
+        biomes = new GenLayerAustroAntarcticHighLakes0(742L, biomes);
 //        biomes = new GenLayerJurassicOutcropBlend2(333L, biomes);
 //        biomes = new GenLayerDiversifyJurassicMudflats(1136L, biomes);
         biomes = new GenLayerSmooth(705L, biomes);
+        biomes = new GenLayerAustroAntarcticHighLakes1(242L, biomes);
+        biomes = new GenLayerAustroAntarcticHighLakes2(249L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
 
@@ -128,6 +132,8 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicDesertRimFromHills(1203L, biomes);
         biomes = new GenLayerFuzzyZoom(1002L, biomes);
         biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
+        biomes = new GenLayerAustroAntarcticHighLakes1(642L, biomes);
+
 
         //biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 
