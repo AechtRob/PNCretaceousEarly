@@ -13,10 +13,13 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer {
     public int EARLY_CRETACEOUS_AUSTRO_FOREST_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_FOREST);
     public Biome EARLY_CRETACEOUS_AUSTRO_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes_rim_inner"));
     public int EARLY_CRETACEOUS_AUSTRO_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_LAKES);
+    public Biome EARLY_CRETACEOUS_AUSTRO_RAINFOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_rainforest"));
+    public int EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_RAINFOREST);
 
     private final int[] AustroBiomes = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_LAKES_ID
+            EARLY_CRETACEOUS_AUSTRO_LAKES_ID,
+            EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID
     };
 
     public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genlayer) {
