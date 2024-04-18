@@ -33,6 +33,8 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     public int CRETACEOUS_BEACH_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA);
     public Biome CRETACEOUS_BEACH_AUSTRALIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
     public int CRETACEOUS_BEACH_AUSTRALIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AUSTRALIA);
+    public Biome CRETACEOUS_BEACH_AUSTRALIA_LUSH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"));
+    public int CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AUSTRALIA_LUSH);
 
 
     public GenLayerCretaceousEarlyBeach(long seed, GenLayer genLayer)
@@ -40,6 +42,12 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         super(seed);
         this.parent = genLayer;
     }
+
+    private final int InlandSeaBeachBiomes[] = new int[] {
+            CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID,
+            CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID,
+            CRETACEOUS_BEACH_AUSTRALIA_ID
+    };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
@@ -69,7 +77,13 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
                         }
                         else
                         {
-                            if (isEurope(k)) {
+                            if (isInlandOcean(l1)
+                                || isInlandOcean(k2)
+                                || isInlandOcean(j3)
+                                || isInlandOcean(i4)  ) {
+                                aint1[j + i * areaWidth] = InlandSeaBeachBiomes[nextInt(InlandSeaBeachBiomes.length)];
+                            }
+                            else if (isEurope(k)) {
                                 aint1[j + i * areaWidth] = CRETACEOUS_BEACH_EUROPE_ID;
                             }
                             else if (isAsia(k)) {
@@ -104,6 +118,10 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         return biomeID == CRETACEOUS_OCEAN_ID || biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID
                 || biomeID == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID || biomeID == CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID
                 || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID;
+    }
+
+    private boolean isInlandOcean(int biomeID) {
+        return biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID;
     }
 
     private boolean hasNoBeach(int biomeID) {

@@ -37,11 +37,11 @@ public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendro
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Australian Inland Sea").setRainfall(0.5F).setBaseHeight(0.95F).setHeightVariation(0.11F));
+			super(new BiomeProperties("Early Cretaceous Australian Inland Sea").setRainfall(0.5F).setBaseHeight(-0.475F).setHeightVariation(0.00F).setTemperature(0.8F).setWaterColor(-14257600));
 			setRegistryName("lepidodendron:cretaceous_early_inland_sea_australia");
 
-			topBlock = BlockBalticAmberBlock.block.getDefaultState();
-			fillerBlock = BlockBalticAmberBlock.block.getDefaultState();
+			topBlock = Blocks.SAND.getDefaultState();
+			fillerBlock = Blocks.SAND.getDefaultState();
 			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;

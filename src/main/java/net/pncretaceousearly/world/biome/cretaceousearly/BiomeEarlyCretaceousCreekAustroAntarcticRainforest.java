@@ -19,10 +19,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousAustroAntarcticRainforest extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_austro_antarctic_rainforest")
+public class BiomeEarlyCretaceousCreekAustroAntarcticRainforest extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousAustroAntarcticRainforest(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekAustroAntarcticRainforest(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -40,8 +40,8 @@ public class BiomeEarlyCretaceousAustroAntarcticRainforest extends ElementsLepid
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous Austro-Antarctic Rainforest").setBaseHeight(-0.14F).setHeightVariation(0.0225F).setTemperature(1.7F));
-			setRegistryName("lepidodendron:cretaceous_early_austro_antarctic_rainforest");
+			super(new BiomeProperties("Early Cretaceous Austro-Antarctic Rainforest Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(1.7F));
+			setRegistryName("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 16;
