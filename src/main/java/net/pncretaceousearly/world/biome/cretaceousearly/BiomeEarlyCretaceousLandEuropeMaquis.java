@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousLandEuropeMaquis extends ElementsLepidodendronM
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous European Sandy Maquis").setBaseHeight(0.005F).setHeightVariation(0.001F).setTemperature(1.3F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous European Sandy Maquis").setBaseHeight(0.005F).setHeightVariation(0.001F).setTemperature(1.3F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_europe_maquis");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

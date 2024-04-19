@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousLandNAmerica extends ElementsLepidodendronMod.M
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous North American Braided Floodplains").setBaseHeight(0.025F).setHeightVariation(0.0025F).setTemperature(1.9F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous North American Braided Floodplains").setBaseHeight(0.025F).setHeightVariation(0.0025F).setTemperature(1.9F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

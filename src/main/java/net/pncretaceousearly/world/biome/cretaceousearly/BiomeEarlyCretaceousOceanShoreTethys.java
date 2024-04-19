@@ -37,7 +37,7 @@ public class BiomeEarlyCretaceousOceanShoreTethys extends ElementsLepidodendronM
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Shallow Ocean TETHYS").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
+			super(new BiomeProperties("E. Cretaceous Shallow Ocean TETHYS").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_tethys");
 
 			topBlock = Blocks.SAND.getDefaultState();

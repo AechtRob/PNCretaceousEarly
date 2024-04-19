@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandNAmericaMountains extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous Euro-American Mountains").setBaseHeight(3.5F).setHeightVariation(0.610F).setTemperature(-0.25F).setSnowEnabled());
+			super(new BiomeProperties("E. Cretaceous Euro-American Mountains").setBaseHeight(3.5F).setHeightVariation(0.610F).setTemperature(-0.25F).setSnowEnabled());
 			setRegistryName("lepidodendron:cretaceous_early_namerica_mountains");
 			topBlock = Blocks.SNOW.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);

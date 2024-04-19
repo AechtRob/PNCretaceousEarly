@@ -15,14 +15,16 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_australia_antarctica_paddock")
+public class BiomeEarlyCretaceousLandAustroAntarcticPaddockWinter extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_australia_antarctica_paddock_winter")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandAustroAntarcticPaddock(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousLandAustroAntarcticPaddockWinter(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -40,8 +42,8 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Austro-Antarctic Paddock").setBaseHeight(0.025F).setHeightVariation(0.0F).setTemperature(1.0F));
-			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_paddock");
+			super(new BiomeProperties("E. Cretaceous Austro-Antarctic Winter Paddock").setBaseHeight(0.025F).setHeightVariation(0.0F).setTemperature(-1.0F).setSnowEnabled());
+			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_paddock_winter");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 0;
@@ -61,7 +63,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenPodocarpTree PODOCARP_TREE = new WorldGenPodocarpTree(false);
-		protected static final WorldGenGinkgoitesTree GINKNGOITES_TREE = new WorldGenGinkgoitesTree(false);
+		protected static final WorldGenGinkgoitesTreeWinter GINKNGOITES_TREE = new WorldGenGinkgoitesTreeWinter(false);
 		protected static final WorldGenElatocladusTree ELATOCLADUS_TREE = new WorldGenElatocladusTree(false);
 		protected static final WorldGenBunyaTree BUNYA_TREE = new WorldGenBunyaTree(false);
 		protected static final WorldGenHoopTree HOOP_TREE = new WorldGenHoopTree(false);
@@ -73,7 +75,38 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 
+		protected static final net.minecraft.world.gen.feature.WorldGenDeadBush DEAD_BUSH_GENERATOR = new net.minecraft.world.gen.feature.WorldGenDeadBush();
+
 		protected static final WorldGenSandNearWater SAND_GENERATOR = new WorldGenSandNearWater();
+
+		protected static final WorldGenSnow SNOW_GENERATOR = new WorldGenSnow();
+		protected static final WorldGenIceOnSea ICE_GENERATOR = new WorldGenIceOnSea();
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getFoliageColorAtPos(BlockPos pos)
+		{
+			return -5921430;
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getGrassColorAtPos(BlockPos pos)
+		{
+			return -5921430;
+		}
+
+		@Override
+		public int getModdedBiomeGrassColor(int original)
+		{
+			return -5921430;
+		}
+
+		@Override
+		public int getModdedBiomeFoliageColor(int original)
+		{
+			return -5921430;
+		}
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -103,6 +136,29 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					int i = rand.nextInt(12);
+
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						ICE_GENERATOR.generate(worldIn, rand, blockpos,0);}
+
+
+					i = rand.nextInt(36) + 36;
+
+					for (int j = 0; j < i; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						SNOW_GENERATOR.generate(worldIn, rand, blockpos, 0);
+					}
+				}
+			}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 32; ++i)
 				{
@@ -111,6 +167,17 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 					SAND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 				}
 
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
+			{
+				for (int i = 0; i < 36; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DEAD_BUSH_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+			}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 64; ++i)
 				{
@@ -118,33 +185,6 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PSEUDDOCTENIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
-				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockOtozamites.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 255, true);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 2; ++i)
-				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoSapling.block, BlockGinkgoLeaves.block.getDefaultState(), BlockGinkgoLog.block.getDefaultState().withProperty(BlockGinkgoLog.BlockCustom.FACING, EnumFacing.NORTH), worldIn, rand, pos.add(j, l, k), 0, 90);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 24; ++i)
-				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoitesSapling.block, BlockGinkgoitesLeaves.block.getDefaultState(), BlockGinkgoitesLog.block.getDefaultState().withProperty(BlockGinkgoitesLog.BlockCustom.FACING, EnumFacing.NORTH), worldIn, rand, pos.add(j, l, k), 0, 90);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -157,7 +197,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 156; ++i)
+				for (int i = 0; i < 18; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;

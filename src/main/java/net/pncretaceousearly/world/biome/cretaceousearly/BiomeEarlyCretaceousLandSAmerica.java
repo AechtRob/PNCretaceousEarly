@@ -37,7 +37,7 @@ public class BiomeEarlyCretaceousLandSAmerica extends ElementsLepidodendronMod.M
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous SAMERICA").setBaseHeight(1.025F).setHeightVariation(0.0425F).setTemperature(0.9F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous SAMERICA").setBaseHeight(1.025F).setHeightVariation(0.0425F).setTemperature(0.9F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_samerica");
 			topBlock = Blocks.REDSTONE_BLOCK.getDefaultState();
 			fillerBlock = Blocks.REDSTONE_BLOCK.getDefaultState();

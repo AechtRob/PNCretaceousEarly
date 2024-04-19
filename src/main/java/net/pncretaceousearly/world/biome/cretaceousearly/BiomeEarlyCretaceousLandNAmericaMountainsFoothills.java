@@ -46,7 +46,7 @@ public class BiomeEarlyCretaceousLandNAmericaMountainsFoothills extends Elements
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous Euro-American Foothills").setBaseHeight(2.025F).setHeightVariation(0.3425F).setTemperature(0.2F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous Euro-American Foothills").setBaseHeight(2.025F).setHeightVariation(0.3425F).setTemperature(0.2F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica_foothills");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

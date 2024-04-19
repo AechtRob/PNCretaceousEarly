@@ -36,7 +36,7 @@ public class BiomeEarlyCretaceousBeachEuroAmerica extends ElementsLepidodendronM
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("Early Cretaceous Euro-American Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous Euro-American Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_beach_europe");
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();

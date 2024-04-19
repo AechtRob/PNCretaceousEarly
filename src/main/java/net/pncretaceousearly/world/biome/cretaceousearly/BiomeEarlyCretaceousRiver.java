@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousRiver extends ElementsLepidodendronMod.ModEleme
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("Early Cretaceous River").setBaseHeight(-0.76F).setHeightVariation(0.0F).setTemperature(1.0F).setRainfall(0.5F));
+			super(new BiomeProperties("E. Cretaceous River").setBaseHeight(-0.76F).setHeightVariation(0.0F).setTemperature(1.0F).setRainfall(0.5F));
 			setRegistryName("lepidodendron:cretaceous_early_river");
 			topBlock = BlockCoarseSiltyDirt.block.getDefaultState();
 			fillerBlock = BlockBrownstone.block.getDefaultState();

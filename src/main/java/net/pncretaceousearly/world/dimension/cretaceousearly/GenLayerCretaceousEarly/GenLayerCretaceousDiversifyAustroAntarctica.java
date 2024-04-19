@@ -17,12 +17,18 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer {
     public int EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_RAINFOREST);
     public Biome EARLY_CRETACEOUS_AUSTRO_PADDOCK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_paddock"));
     public int EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_PADDOCK);
+    public Biome EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_paddock_winter"));
+    public int EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN);
+    public Biome EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_winter"));
+    public int EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN);
 
     private final int[] AustroBiomes = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
             EARLY_CRETACEOUS_AUSTRO_LAKES_ID,
             EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID
+            EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID,
+            EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
     };
 
     public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genlayer) {
