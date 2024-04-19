@@ -88,26 +88,26 @@ public class BiomeEarlyCretaceousLandAustraliaAntarcticaWinter extends ElementsL
 		@SideOnly(Side.CLIENT)
 		public int getFoliageColorAtPos(BlockPos pos)
 		{
-			return -5921430;
+			return -10000575;
 		}
 
 		@Override
 		@SideOnly(Side.CLIENT)
 		public int getGrassColorAtPos(BlockPos pos)
 		{
-			return -5921430;
+			return -10000575;
 		}
 
 		@Override
 		public int getModdedBiomeGrassColor(int original)
 		{
-			return -5921430;
+			return -10000575;
 		}
 
 		@Override
 		public int getModdedBiomeFoliageColor(int original)
 		{
-			return -5921430;
+			return -10000575;
 		}
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)

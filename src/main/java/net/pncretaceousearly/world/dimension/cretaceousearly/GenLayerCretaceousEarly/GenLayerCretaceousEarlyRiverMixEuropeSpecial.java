@@ -26,18 +26,6 @@ public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
     public Biome CRETACEOUS_EARLY_CREEK_NAMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_north_america_braided"));
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA);
 
-    //Biomes to exclude for rivers:
-    public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
-    public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
-    public Biome CRETACEOUS_OCEAN_SHORE_ATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_atlantic"));
-    public int CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_ATLANTIC);
-    public Biome CRETACEOUS_OCEAN_SHORE_SOUTHERN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
-    public int CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_SOUTHERN);
-    public Biome CRETACEOUS_OCEAN_SHORE_PACIFIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_pacific"));
-    public int CRETACEOUS_OCEAN_SHORE_PACIFIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_PACIFIC);
-    public Biome CRETACEOUS_INLAND_SEA_SOUTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_australia"));
-    public int CRETACEOUS_INLAND_SEA_SOUTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_SOUTH);
-
 
     public GenLayerCretaceousEarlyRiverMixEuropeSpecial(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -63,31 +51,19 @@ public class GenLayerCretaceousEarlyRiverMixEuropeSpecial extends GenLayer
         {
             if (aint1[i] == Biome.getIdForBiome(Biomes.RIVER))
             {
-                //Exclude rivers here:
-                if (aint[i] == CRETACEOUS_OCEAN_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID
-                        || aint[i] == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID
-                        || aint[i] == CRETACEOUS_INLAND_SEA_SOUTH_ID
-                )
-                {
-                    aint2[i] = aint[i];
+
+                //Add the rivers we want:
+                if (aint[i] == EUROPE_SWAMP_ID) {
+                    aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
+                }
+                else if (aint[i] == NAMERICA_SWAMP_ID) {
+                    aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
                 }
                 else {
-                    //Add the rivers we want:
-                    if (aint[i] == EUROPE_SWAMP_ID) {
-                        aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
-                    }
-                    else if (aint[i] == NAMERICA_SWAMP_ID) {
-                        aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
-                    }
-                    else {
-                        aint2[i] = aint[i];
-                    }
+                    aint2[i] = aint[i];
                 }
             }
-            else
-            {
+            else {
                 aint2[i] = aint[i];
             }
 

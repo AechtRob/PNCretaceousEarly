@@ -69,6 +69,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
 
+    public static Biome EURO_LAKE_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
+    public static int EURO_LAKE_EDGE_ID =  Biome.getIdForBiome(EURO_LAKE_EDGE);
+    public static Biome EURO_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes"));
+    public static int EURO_LAKES_ID =  Biome.getIdForBiome(EURO_LAKES);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -102,6 +106,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID
                         || aint[i] == N_AMERICA_4_ID
                         || aint[i] == CRETACEOUS_INLAND_SEA_SOUTH_ID
+                        || aint[i] == EURO_LAKE_EDGE_ID
+                        || aint[i] == EURO_LAKES_ID
                 )
                 {
                     aint2[i] = aint[i];

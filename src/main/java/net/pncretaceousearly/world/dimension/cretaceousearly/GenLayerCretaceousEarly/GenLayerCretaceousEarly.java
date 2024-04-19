@@ -94,6 +94,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicBoulders(1067L, biomes);
         biomes = new GenLayerCretaceousEarlyBeach(1050L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes0(742L, biomes);
+        biomes = new GenLayerEuropeanSwampLakes(242L, biomes);
 //        biomes = new GenLayerJurassicOutcropBlend2(333L, biomes);
 //        biomes = new GenLayerDiversifyJurassicMudflats(1136L, biomes);
         biomes = new GenLayerSmooth(705L, biomes);
@@ -199,21 +200,40 @@ public class GenLayerCretaceousEarly {
         //Additional waterways in Europe:
         GenLayer genlayerdeepcreek = new GenLayerRiverInit(110L, biomes);
         GenLayer genlayerdeepcreek2 = GenLayerZoom.magnify(1100L, genlayerdeepcreek, 2);
-//        GenLayer genlayerdeepcreek3 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 2);
-//        GenLayer genlayerdeepcreek4 = GenLayerZoom.magnify(1100L, genlayerdeepcreek3, 2);
-        GenLayer genlayerdeepcreek5 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 1);
-        GenLayer genlayerdeepcreek6 = new GenLayerRiver(11L, genlayerdeepcreek5);
-        GenLayer genlayerdeepcreek7 = new GenLayerSmooth(1100L, genlayerdeepcreek6);
-        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek7);
+        GenLayer genlayerdeepcreek3 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 1);
+        GenLayer genlayerdeepcreek4 = new GenLayerRiver(11L, genlayerdeepcreek3);
+        GenLayer genlayerdeepcreek5 = new GenLayerSmooth(1100L, genlayerdeepcreek4);
+        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek5);
 
-        GenLayer genlayerdeepvoronoizoom = new GenLayerVoronoiZoom(11L, genlayerdeepcreekfinal);
+        //Additional waterways in SAmerica:
+        GenLayer genlayerwidecreek = new GenLayerRiverInit(120L, biomes);
+        GenLayer genlayerwidecreek2 = GenLayerZoom.magnify(1200L, genlayerwidecreek, 2);
+        GenLayer genlayerwidecreek3 = GenLayerZoom.magnify(1200L, genlayerwidecreek2, 1);
+        GenLayer genlayerwidecreek4 = GenLayerZoom.magnify(1000L, genlayerwidecreek3, 2);
+        GenLayer genlayerwidecreek5 = new GenLayerRiver(12L, genlayerwidecreek4);
+        GenLayer genlayerwidecreek6 = new GenLayerSmooth(1200L, genlayerwidecreek5);
+        genlayerwidecreek6 = new GenLayerZoom(1676L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(120L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerZoom(1677L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(121L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerZoom(1678L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(122L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(123L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(124L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(125L, genlayerwidecreek6);
+        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaSpecial(1200L, genlayerdeepcreekfinal, genlayerwidecreek6);
 
-        genlayerdeepcreekfinal.initWorldGenSeed(seed);
-        genlayerdeepvoronoizoom.initWorldGenSeed(seed);
+        GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayerwidecreekfinal);
+
+        genlayerwidecreekfinal.initWorldGenSeed(seed);
+        genlayerwidevoronoizoom.initWorldGenSeed(seed);
         biomes.initWorldGenSeed(seed);
 
-        genlayerdeepvoronoizoom.initWorldGenSeed(seed);
-        return (new GenLayer[] { genlayerdeepcreekfinal, genlayerdeepvoronoizoom, genlayerdeepcreekfinal });
+        genlayerwidevoronoizoom.initWorldGenSeed(seed);
+        return (new GenLayer[] { genlayerwidecreekfinal, genlayerwidevoronoizoom, genlayerwidecreekfinal });
     }
 
 }

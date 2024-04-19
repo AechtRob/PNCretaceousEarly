@@ -13,9 +13,12 @@ public class GenLayerCretaceousDiversifyEuroAmerica extends GenLayer {
     public int EARLY_CRETACEOUS_EUROPE_SWAMP_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP);
     public Biome EARLY_CRETACEOUS_EUROPE_DRY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_maquis"));
     public int EARLY_CRETACEOUS_EUROPE_DRY_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_DRY);
+    public Biome EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
+    public int EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES);
 
     private final int[] EuropeBiomes = new int[] {
             EARLY_CRETACEOUS_EUROPE_SWAMP_ID,
+            EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID,
             EARLY_CRETACEOUS_EUROPE_DRY_ID
     };
 
