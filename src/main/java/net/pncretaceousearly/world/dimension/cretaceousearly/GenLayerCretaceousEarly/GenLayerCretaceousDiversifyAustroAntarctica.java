@@ -15,11 +15,14 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer {
     public int EARLY_CRETACEOUS_AUSTRO_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_LAKES);
     public Biome EARLY_CRETACEOUS_AUSTRO_RAINFOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_rainforest"));
     public int EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_RAINFOREST);
+    public Biome EARLY_CRETACEOUS_AUSTRO_PADDOCK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_paddock"));
+    public int EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_PADDOCK);
 
     private final int[] AustroBiomes = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
             EARLY_CRETACEOUS_AUSTRO_LAKES_ID,
-            EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID
+            EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID
     };
 
     public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genlayer) {
@@ -41,12 +44,10 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer {
                 int i = xOut + zOut * width;
                 int center = input[i];
                 initChunkSeed(xOut + x, zOut + z);
-                //if (nextInt(2) == 0) {
-                    if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAustraliaAntarctica.biome) {
-                        output[i] = AustroBiomes[nextInt(AustroBiomes.length)];
-                    }
-                    else output[i] = center;
-                //} else output[i] = center;
+                if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAustraliaAntarctica.biome) {
+                    output[i] = AustroBiomes[nextInt(AustroBiomes.length)];
+                }
+                else output[i] = center;
             }
         }
         return output;

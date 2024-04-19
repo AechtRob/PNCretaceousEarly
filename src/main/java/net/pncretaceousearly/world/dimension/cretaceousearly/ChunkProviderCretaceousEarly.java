@@ -676,6 +676,22 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAustroAntarcticPaddock.biome
+                        ) {
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                        }
+
                         //Craggy
                         if (biome == BiomeEarlyCretaceousLandNAmericaMountainsFoothills.biome
                         ) {
