@@ -226,7 +226,7 @@ public class BiomeEarlyCretaceousCreekAustraliaAntarctica extends ElementsLepido
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockAmborellaSapling.block, BlockAmborellaLeaves.block.getDefaultState(), BlockAmborellaLeaves.block.getDefaultState().withProperty(BlockAmborellaLeaves.BlockCustom.DECAYABLE, false), worldIn, rand, pos.add(j, l, k), 0, 90);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockAmborellaSapling.block, BlockAmborellaLeaves.block.getDefaultState().withProperty(BlockAmborellaLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockAmborellaLeaves.BlockCustom.CHECK_DECAY, false), BlockAmborellaLeaves.block.getDefaultState().withProperty(BlockAmborellaLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockAmborellaLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 90);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

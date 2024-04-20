@@ -102,6 +102,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAustroAntarcticHighLakes2(249L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
+        biomes = new GenLayerAfricanDesertSpikes(240L, biomes);
 
 //        biomes = new GenLayerJurassicDesertRim(1032L, biomes);
 //
@@ -215,15 +216,15 @@ public class GenLayerCretaceousEarly {
         genlayerwidecreek6 = new GenLayerZoom(1676L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(120L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1677L, genlayerwidecreek6);
-        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(121L, genlayerwidecreek6);
+        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(121L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1678L, genlayerwidecreek6);
-        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(122L, genlayerwidecreek6);
+        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(122L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
-        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(123L, genlayerwidecreek6);
+        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(123L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
-        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(124L, genlayerwidecreek6);
+        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(124L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
-        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(125L, genlayerwidecreek6);
+        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(125L, genlayerwidecreek6);
         GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaSpecial(1200L, genlayerdeepcreekfinal, genlayerwidecreek6);
 
         GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayerwidecreekfinal);

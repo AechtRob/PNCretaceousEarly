@@ -175,10 +175,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 //            }
 
         int chanceLake = 4;
-//        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeJurassicSouthernTaigaHills.biome
-//                || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeJurassicSouthernTaiga.biome) {
-//            chanceLake = 8;
-//        }
+
+        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfricanDesertSpikes.biome
+            || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfrica.biome) {
+            chanceLake = 9;
+        }
 
         if (this.random.nextInt(chanceLake) == 0
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakes.biome
@@ -692,6 +693,19 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAfrica.biome
+                        ) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = Blocks.STONE.getDefaultState();
+                            }
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                        }
+
                         //Craggy
                         if (biome == BiomeEarlyCretaceousLandNAmericaMountainsFoothills.biome
                         ) {
@@ -896,6 +910,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         else if (j == 0 && (iblockstate1.getBlock() == BlockSandWhite.block || iblockstate1.getBlock() == BlockSandWhiteWavy.block) && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
                             iblockstate1 = BlockSandstoneWhite.block.getDefaultState();
+                        }
+                        else if (j == 0 && (iblockstate1.getBlock() == BlockSandGrey.block || iblockstate1.getBlock() == BlockSandGreyWavy.block) && k > 1) {
+                            j = rand.nextInt(4) + Math.max(0, j1 - 63);
+                            iblockstate1 = BlockSandstoneGrey.block.getDefaultState();
                         }
                     }
                 }
