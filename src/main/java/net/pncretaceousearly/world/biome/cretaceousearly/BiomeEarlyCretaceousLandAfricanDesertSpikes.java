@@ -10,6 +10,7 @@ import net.lepidodendron.world.gen.WorldGenLeafblock;
 import net.lepidodendron.world.gen.WorldGenNullTree;
 import net.lepidodendron.world.gen.WorldGenSinglePlantOptionalWater;
 import net.minecraft.block.BlockBush;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -45,7 +46,7 @@ public class BiomeEarlyCretaceousLandAfricanDesertSpikes extends ElementsLepidod
 			super(new BiomeProperties("E. Cretaceous African Desert").setRainfall(0.0F).setBaseHeight(2.58F).setHeightVariation(0.37F).setTemperature(1.8F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa_desert_spikes");
 			topBlock = BlockSandGrey.block.getDefaultState();
-			fillerBlock = BlockSandGrey.block.getDefaultState();
+			fillerBlock = Blocks.STONE.getStateFromMeta(0);
 			decorator.treesPerChunk = 48;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;

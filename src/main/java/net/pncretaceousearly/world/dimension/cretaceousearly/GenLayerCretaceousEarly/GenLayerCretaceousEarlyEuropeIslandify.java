@@ -45,6 +45,8 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
     public int EARLY_CRETACEOUS_DRY_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_DRY_EUROPE);
     public Biome EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
     public int EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES);
+    public Biome EARLY_CRETACEOUS_FIELD_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field"));
+    public int EARLY_CRETACEOUS_FIELD_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_FIELD_EUROPE);
 
     public static Biome N_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica"));
     public static int N_AMERICA_1_ID =  Biome.getIdForBiome(N_AMERICA_1);
@@ -106,6 +108,19 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
                             aint1[j + i * areaWidth] = k;
                         }
                     }
+                    else if (isEuropeField(k)) {
+
+                        if ((!isEuropeField(l1) && !isOceanOrBeach(l1))
+                                || (!isEuropeField(k2) && !isOceanOrBeach(k2))
+                                || (!isEuropeField(j3) && !isOceanOrBeach(j3))
+                                || (!isEuropeField(i4) && !isOceanOrBeach(i4))
+                        ) {
+                            aint1[j + i * areaWidth] = EARLY_CRETACEOUS_RIVER_TETHYS_ID;
+                        }
+                        else {
+                            aint1[j + i * areaWidth] = k;
+                        }
+                    }
                     else
                     {
                         aint1[j + i * areaWidth] = k;
@@ -144,6 +159,9 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
         return biomeID == EARLY_CRETACEOUS_DRY_EUROPE_ID;
     }
 
+    private boolean isEuropeField(int biomeID) {
+        return biomeID == EARLY_CRETACEOUS_FIELD_EUROPE_ID;
+    }
 
     public static boolean isEurope(int i) {
         Biome biome = Biome.getBiome(i);

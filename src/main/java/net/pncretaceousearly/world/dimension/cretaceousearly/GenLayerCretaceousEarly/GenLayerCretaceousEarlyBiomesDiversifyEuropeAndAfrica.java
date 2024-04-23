@@ -19,10 +19,13 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLa
     public int CRETACEOUS_EARLY_NAMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_NAMERICA);
     public Biome CRETACEOUS_EARLY_SAMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public int CRETACEOUS_EARLY_SAMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA);
+    public Biome EARLY_CRETACEOUS_EUROPE_FIELD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field"));
+    public int EARLY_CRETACEOUS_EUROPE_FIELD_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_FIELD);
 
     private final int EuropeBiomes[] = new int[] {
             CRETACEOUS_EARLY_NAMERICA_ID,
-            CRETACEOUS_EARLY_EUROPE_ID
+            CRETACEOUS_EARLY_EUROPE_ID,
+            EARLY_CRETACEOUS_EUROPE_FIELD_ID
     };
 
     private final int AfricaBiomes[] = new int[] {

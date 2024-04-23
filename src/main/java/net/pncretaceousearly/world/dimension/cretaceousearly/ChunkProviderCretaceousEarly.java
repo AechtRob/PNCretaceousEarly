@@ -2,6 +2,7 @@ package net.pncretaceousearly.world.dimension.cretaceousearly;
 
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
@@ -693,6 +694,19 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandEuropeField.biome
+                        ) {
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandAfrica.biome
                         ) {
                             if (rand.nextInt(3) == 0) {
@@ -703,6 +717,40 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(6) == 0) {
                                 iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAfrica.biome
+                        ) {
+                            if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 16 + rand.nextInt(3) - rand.nextInt(3)
+                                    && rand.nextInt(6) == 0
+                            ) {
+                                iblockstate = BlockSandGrey.block.getDefaultState();
+                            }
+                            if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 4 + rand.nextInt(3) - rand.nextInt(3)
+                                    && rand.nextInt(3) != 0
+                            ) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                                if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 1 + rand.nextInt(3) - rand.nextInt(3)
+                                        && rand.nextInt(4) == 0
+                                ) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                }
+                            }
+                            if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 1 + rand.nextInt(3) - rand.nextInt(3)
+                                    && rand.nextInt(3) != 0
+                            ) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 1 + rand.nextInt(3) - rand.nextInt(3)
+                                    && rand.nextInt(6) == 0
+                                ) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
+                                if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + rand.nextInt(3) - rand.nextInt(3)
+                                        && rand.nextInt(3) == 0
+                                ) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
                             }
                         }
 

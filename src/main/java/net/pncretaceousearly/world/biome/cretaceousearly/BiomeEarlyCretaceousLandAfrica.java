@@ -42,8 +42,8 @@ public class BiomeEarlyCretaceousLandAfrica extends ElementsLepidodendronMod.Mod
 			//was height 0.001
 			super(new BiomeProperties("E. Cretaceous African Desert").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa");
-			topBlock = BlockSandGrey.block.getDefaultState();
-			fillerBlock = BlockSandGrey.block.getDefaultState();
+			topBlock = BlockBrownstone.block.getDefaultState();
+			fillerBlock = Blocks.STONE.getStateFromMeta(1);
 			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
@@ -84,7 +84,7 @@ public class BiomeEarlyCretaceousLandAfrica extends ElementsLepidodendronMod.Mod
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				if (worldIn.rand.nextInt(6) == 0)
+				if (worldIn.rand.nextInt(10) == 0)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
