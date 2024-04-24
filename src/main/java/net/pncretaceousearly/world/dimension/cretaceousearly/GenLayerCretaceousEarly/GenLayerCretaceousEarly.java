@@ -16,7 +16,11 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
         biomes = new GenLayerFuzzyZoom(2001L, biomes);
 
+        biomes = new GenLayerReduceAustro(2001L, biomes);
+
         biomes = new GenLayerZoom(1032L, biomes);
+
+        biomes = new GenLayerReduceAustro(2002L, biomes);
 
         biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica(2541L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica(2542L, biomes);
