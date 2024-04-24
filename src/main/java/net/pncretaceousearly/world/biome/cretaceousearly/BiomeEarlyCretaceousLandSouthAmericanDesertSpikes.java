@@ -4,10 +4,10 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenBrachyphyllumTree;
 import net.lepidodendron.world.gen.WorldGenLeafblock;
-import net.lepidodendron.world.gen.WorldGenNullTree;
 import net.lepidodendron.world.gen.WorldGenSinglePlantOptionalWater;
 import net.minecraft.block.BlockBush;
 import net.minecraft.init.Blocks;
@@ -21,10 +21,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandAfricanDesertSpikes extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_africa_desert_spikes")
+public class BiomeEarlyCretaceousLandSouthAmericanDesertSpikes extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_samerica_desert_spikes")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandAfricanDesertSpikes(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousLandSouthAmericanDesertSpikes(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -35,16 +35,18 @@ public class BiomeEarlyCretaceousLandAfricanDesertSpikes extends ElementsLepidod
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.DRY);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HOT);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WASTELAND);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous African Desert").setRainfall(0.0F).setBaseHeight(2.58F).setHeightVariation(0.37F).setTemperature(1.8F).setRainDisabled());
-			setRegistryName("lepidodendron:cretaceous_early_africa_desert_spikes");
+			super(new BiomeProperties("E. Cretaceous S American Desert").setRainfall(0.0F).setBaseHeight(2.58F).setHeightVariation(0.37F).setTemperature(1.8F).setRainDisabled().setWaterColor(-10724281));
+			setRegistryName("lepidodendron:cretaceous_early_samerica_desert_spikes");
 			topBlock = BlockSandGrey.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);
 			decorator.treesPerChunk = 48;
@@ -93,6 +95,33 @@ public class BiomeEarlyCretaceousLandAfricanDesertSpikes extends ElementsLepidod
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PLANT_GENERATOR.generate(BlockBaiera.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 70, false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 24; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockEphedra.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 5, Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 20,false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 12; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockErdtmanithecales.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 5, Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 20,false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 12; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockArlenea.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 4, Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 15,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

@@ -35,7 +35,7 @@ public class BiomeEarlyCretaceousLandEuropeField extends ElementsLepidodendronMo
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.RIVER);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.PLAINS);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WET);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

@@ -177,7 +177,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         int chanceLake = 4;
 
-        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfricanDesertSpikes.biome
+        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandSouthAmericanDesertSpikes.biome
             || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfrica.biome) {
             chanceLake = 9;
         }
@@ -694,8 +694,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandEuropeField.biome
-                        ) {
+                        if (biome == BiomeEarlyCretaceousLandEuropeField.biome) {
                             if (rand.nextInt(16) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
                             }
@@ -707,7 +706,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandAfrica.biome
+                        if (biome == BiomeEarlyCretaceousLandSAmerica.biome
+                                || biome == BiomeEarlyCretaceousLandSouthAmericanDesertLow.biome
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanDesert.biome
                         ) {
                             if (rand.nextInt(3) == 0) {
                                 iblockstate = Blocks.GRAVEL.getDefaultState();
@@ -720,7 +721,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandAfrica.biome
+                        if (biome == BiomeEarlyCretaceousLandSAmerica.biome
+                                || biome == BiomeEarlyCretaceousLandSouthAmericanDesertLow.biome
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanDesert.biome
                         ) {
                             if (j1 <= Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 16 + rand.nextInt(3) - rand.nextInt(3)
                                     && rand.nextInt(6) == 0

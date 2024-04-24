@@ -3,8 +3,6 @@ package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceous
 import net.minecraft.world.WorldType;
 import net.minecraft.world.gen.layer.*;
 
-import java.util.Random;
-
 public class GenLayerCretaceousEarly {
 
     private static boolean shouldDraw = false;
@@ -104,9 +102,10 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerSmooth(705L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes1(242L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes2(249L, biomes);
+        biomes = new GenLayerSAmericanDesertLows(244L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
-        biomes = new GenLayerAfricanDesertSpikes(240L, biomes);
+        biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
 
 //        biomes = new GenLayerJurassicDesertRim(1032L, biomes);
 //
@@ -200,8 +199,6 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayercreek7 = new GenLayerSmooth(1000L, genlayercreek6);
         GenLayer genlayercreekfinal = new GenLayerCretaceousEarlyRiverMix(100L, biomes, genlayercreek7);
 
-        //GenLayer genlayervoronoizoom = new GenLayerVoronoiZoom(10L, genlayercreekfinal);
-
         //Additional waterways in Europe:
         GenLayer genlayerdeepcreek = new GenLayerRiverInit(110L, biomes);
         GenLayer genlayerdeepcreek2 = GenLayerZoom.magnify(1100L, genlayerdeepcreek, 2);
@@ -209,8 +206,17 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayerdeepcreek4 = new GenLayerRiver(11L, genlayerdeepcreek3);
         GenLayer genlayerdeepcreek5 = new GenLayerSmooth(1100L, genlayerdeepcreek4);
         GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek5);
+        
+        //Additional waterways in Europe:
+        GenLayer genlayercratocreek = new GenLayerRiverInit(115L, biomes);
+        GenLayer genlayercratocreek2 = GenLayerZoom.magnify(1105L, genlayercratocreek, 2);
+        GenLayer genlayercratocreek3 = GenLayerZoom.magnify(1109L, genlayercratocreek2, 1);
+        GenLayer genlayercratocreek4 = GenLayerZoom.magnify(1002L, genlayercratocreek3, 2);
+        GenLayer genlayercratocreek5 = new GenLayerRiver(158L, genlayercratocreek4);
+        GenLayer genlayercratocreek6 = new GenLayerSmooth(1105L, genlayercratocreek5);
+        GenLayer genlayercratocreekfinal = new GenLayerCretaceousEarlyRiverMixCratoSpecial(1178L, genlayerdeepcreekfinal, genlayercratocreek6);
 
-        //Additional waterways in SAmerica:
+        //Additional special, very wide waterways in SAmerica:
         GenLayer genlayerwidecreek = new GenLayerRiverInit(120L, biomes);
         GenLayer genlayerwidecreek2 = GenLayerZoom.magnify(1200L, genlayerwidecreek, 2);
         GenLayer genlayerwidecreek3 = GenLayerZoom.magnify(1200L, genlayerwidecreek2, 1);
@@ -220,16 +226,11 @@ public class GenLayerCretaceousEarly {
         genlayerwidecreek6 = new GenLayerZoom(1676L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(120L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1677L, genlayerwidecreek6);
-        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(121L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1678L, genlayerwidecreek6);
-        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(122L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
-        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(123L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
-        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(124L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
-        //genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(125L, genlayerwidecreek6);
-        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaSpecial(1200L, genlayerdeepcreekfinal, genlayerwidecreek6);
+        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaSpecial(1200L, genlayercratocreekfinal, genlayerwidecreek6);
 
         GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayerwidecreekfinal);
 

@@ -5,29 +5,26 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerAfricanDesertSpikes extends GenLayer
+public class GenLayerSAmericanDesertLows extends GenLayer
 {
 
-    public static Biome AFRICAN_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa"));
-    public static int AFRICAN_DESERT_ID =  Biome.getIdForBiome(AFRICAN_DESERT);
+    public static Biome SAMERICAN_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
+    public static int SAMERICAN_DESERT_ID =  Biome.getIdForBiome(SAMERICAN_DESERT);
 
-    public static Biome AFRICAN_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_desert_spikes"));
-    public static int AFRICAN_SPIKES_ID =  Biome.getIdForBiome(AFRICAN_SPIKES);
+    public static Biome SAMERICAN_DESERT_LOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_low"));
+    public static int SAMERICAN_DESERT_LOW_ID =  Biome.getIdForBiome(SAMERICAN_DESERT_LOW);
 
 
-    public GenLayerAfricanDesertSpikes(long seed, GenLayer genLayer)
+    public GenLayerSAmericanDesertLows(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
 
     private final int AfricaBiomes[] = new int[] {
-            AFRICAN_DESERT_ID,
-            AFRICAN_DESERT_ID,
-            AFRICAN_DESERT_ID,
-            AFRICAN_DESERT_ID,
-            AFRICAN_DESERT_ID,
-            AFRICAN_SPIKES_ID
+            SAMERICAN_DESERT_ID,
+            SAMERICAN_DESERT_ID,
+            SAMERICAN_DESERT_LOW_ID
     };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
@@ -42,7 +39,7 @@ public class GenLayerAfricanDesertSpikes extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == AFRICAN_DESERT_ID)
+                if (k == SAMERICAN_DESERT_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -50,10 +47,10 @@ public class GenLayerAfricanDesertSpikes extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (l1 == AFRICAN_DESERT_ID)
-                        && (k2 == AFRICAN_DESERT_ID)
-                        && (j3 == AFRICAN_DESERT_ID)
-                        && (i4 == AFRICAN_DESERT_ID)
+                        (l1 == SAMERICAN_DESERT_ID)
+                        && (k2 == SAMERICAN_DESERT_ID)
+                        && (j3 == SAMERICAN_DESERT_ID)
+                        && (i4 == SAMERICAN_DESERT_ID)
                         )
                     );
                     if (flag)
