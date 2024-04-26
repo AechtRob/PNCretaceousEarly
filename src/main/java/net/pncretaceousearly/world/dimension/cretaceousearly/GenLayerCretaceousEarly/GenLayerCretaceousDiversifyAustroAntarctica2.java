@@ -5,7 +5,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
+public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
 {
 
     public Biome EARLY_CRETACEOUS_AUSTRO_FOREST= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica"));
@@ -24,16 +24,25 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
 
 
-    public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genLayer)
+    public GenLayerCretaceousDiversifyAustroAntarctica2(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
 
-    private final int AusBiomes[] = new int[] {
+    private final int AusBiomesNormal[] = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID
+    };
+
+    private final int AusBiomesFrozen[] = new int[] {
+            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID,
+            EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID
+    };
+
+    private final int AusBiomesRainforest[] = new int[] {
             EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
+            EARLY_CRETACEOUS_AUSTRO_LAKES_ID
     };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
@@ -48,7 +57,7 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID)
+                if (isReplaceableNormal(k))
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -56,15 +65,59 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (l1 == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID)
-                        && (k2 == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID)
-                        && (j3 == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID)
-                        && (i4 == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID)
+                        isReplaceableNormal(l1)
+                        && isReplaceableNormal(k2)
+                        && isReplaceableNormal(j3)
+                        && isReplaceableNormal(i4)
                         )
                     );
                     if (flag)
                     {
-                        aint1[j + i * areaWidth] = AusBiomes[nextInt(AusBiomes.length)];
+                        aint1[j + i * areaWidth] = AusBiomesNormal[nextInt(AusBiomesNormal.length)];
+                    }
+                    else {
+                        aint1[j + i * areaWidth] = k;
+                    }
+                }
+                else if (isReplaceableFrozen(k))
+                {
+                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
+                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
+                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
+                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
+                    boolean flag = (
+                            (
+                                    isReplaceableFrozen(l1)
+                                            && isReplaceableFrozen(k2)
+                                            && isReplaceableFrozen(j3)
+                                            && isReplaceableFrozen(i4)
+                            )
+                    );
+                    if (flag)
+                    {
+                        aint1[j + i * areaWidth] = AusBiomesFrozen[nextInt(AusBiomesFrozen.length)];
+                    }
+                    else {
+                        aint1[j + i * areaWidth] = k;
+                    }
+                }
+                else if (isReplaceableRainforest(k))
+                {
+                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
+                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
+                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
+                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
+                    boolean flag = (
+                            (
+                                    isReplaceableRainforest(l1)
+                                            && isReplaceableRainforest(k2)
+                                            && isReplaceableRainforest(j3)
+                                            && isReplaceableRainforest(i4)
+                            )
+                    );
+                    if (flag)
+                    {
+                        aint1[j + i * areaWidth] = AusBiomesRainforest[nextInt(AusBiomesRainforest.length)];
                     }
                     else {
                         aint1[j + i * areaWidth] = k;
@@ -77,6 +130,21 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
         }
 
         return aint1;
+    }
+
+    boolean isReplaceableNormal(int i) {
+        return i == EARLY_CRETACEOUS_AUSTRO_FOREST_ID
+                || i == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID;
+    }
+
+    boolean isReplaceableFrozen(int i) {
+        return i == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
+                || i == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID;
+    }
+
+    boolean isReplaceableRainforest(int i) {
+        return i == EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID
+                || i == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID;
     }
     
 }

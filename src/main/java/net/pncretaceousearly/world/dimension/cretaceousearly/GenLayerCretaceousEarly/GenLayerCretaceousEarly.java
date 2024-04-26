@@ -26,10 +26,12 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerZoom(1000L, biomes);
         biomes = new GenLayerSeperateContinents(378L, biomes);
         biomes = new GenLayerAddInlandSeas(3048L, biomes);
+        biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
 
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerAddShallowSea(4132L, biomes);
         biomes = new GenLayerAddInlandSeas2(3049L, biomes);
+        biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
 
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerAddShallowSea2(1201L, biomes);
@@ -214,7 +216,7 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayercratocreek4 = GenLayerZoom.magnify(1002L, genlayercratocreek3, 2);
         GenLayer genlayercratocreek5 = new GenLayerRiver(158L, genlayercratocreek4);
         GenLayer genlayercratocreek6 = new GenLayerSmooth(1105L, genlayercratocreek5);
-        GenLayer genlayercratocreekfinal = new GenLayerCretaceousEarlyRiverMixCratoSpecial(1178L, genlayerdeepcreekfinal, genlayercratocreek6);
+        GenLayer genlayercratocreekfinal = new GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial(1178L, genlayerdeepcreekfinal, genlayercratocreek6);
 
         //Additional special, very wide waterways in SAmerica:
         GenLayer genlayerwidecreek = new GenLayerRiverInit(120L, biomes);

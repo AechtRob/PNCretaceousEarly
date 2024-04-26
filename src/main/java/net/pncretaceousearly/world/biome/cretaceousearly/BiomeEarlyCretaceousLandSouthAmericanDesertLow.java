@@ -70,6 +70,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanDesertLow extends ElementsLepi
 		protected static final WorldGenSandNearWater SAND_GENERATOR = new WorldGenSandNearWater();
 		protected static final WorldGenRockPiles ROCK_GENERATOR = new WorldGenRockPiles();
 		protected static final WorldGenSahnioxylon SAHNIOXYLON_GENERATOR = new WorldGenSahnioxylon();
+		protected static final WorldGenCycadeoidea CYCADEOIDEA_GENERATOR = new WorldGenCycadeoidea();
 
 		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
 
@@ -177,6 +178,15 @@ public class BiomeEarlyCretaceousLandSouthAmericanDesertLow extends ElementsLepi
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					SAHNIOXYLON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), true);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					CYCADEOIDEA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false, Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 2, Functions.getAdjustedSeaLevel(worldIn, pos.add(j, l, k)) + 10);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
