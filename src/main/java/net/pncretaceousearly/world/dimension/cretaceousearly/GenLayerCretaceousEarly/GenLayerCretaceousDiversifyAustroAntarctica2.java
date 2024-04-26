@@ -32,15 +32,22 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
 
     private final int AusBiomesNormal[] = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
             EARLY_CRETACEOUS_AUSTRO_PADDOCK_ID
     };
 
     private final int AusBiomesFrozen[] = new int[] {
             EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID,
+            EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID,
             EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID
     };
 
     private final int AusBiomesRainforest[] = new int[] {
+            EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID,
             EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID,
             EARLY_CRETACEOUS_AUSTRO_LAKES_ID
     };
