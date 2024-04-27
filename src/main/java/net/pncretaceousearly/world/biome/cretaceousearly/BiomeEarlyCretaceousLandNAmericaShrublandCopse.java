@@ -46,7 +46,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 			setRegistryName("lepidodendron:cretaceous_early_namerica_shrubland_copse");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
-			decorator.treesPerChunk = 3;
+			decorator.treesPerChunk = 7;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -65,6 +65,8 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 		protected static final WorldGenScrubbyPineTree PINE_TREE = new WorldGenScrubbyPineTree(false);
 		protected static final WorldGenRedwoodTree REDWOOD_TREE = new WorldGenRedwoodTree(false);
 		protected static final WorldGenThujaTree THUJA_TREE = new WorldGenThujaTree(false);
+		protected static final WorldGenBurnishedTreefernTree FERN_TREE = new WorldGenBurnishedTreefernTree(false);
+		protected static final WorldGenTempskyaTree TEMPSKYA_TREE = new WorldGenTempskyaTree(false);
 
 		protected static final WorldGenRockPiles ROCK_PILES_GENERATOR = new WorldGenRockPiles();
 		protected static final WorldGenGravelPatch GRAVEL_GENERATOR = new WorldGenGravelPatch(Blocks.GRAVEL, 4);
@@ -112,7 +114,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			int i = rand.nextInt(4);
+			int i = rand.nextInt(7);
 			switch (i) {
 				case 0: default:
 					return PINE_TREE;
@@ -122,7 +124,10 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 					return ARAUCARITES_TREE;
 				case 3:
 					return THUJA_TREE;
-
+				case 4: case 5:
+					return FERN_TREE;
+				case 6:
+					return TEMPSKYA_TREE;
 			}
 		}
 
@@ -333,7 +338,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 //
 			DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.FERN);
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i1 = 0; i1 < 36; ++i1)
+				for (int i1 = 0; i1 < 32; ++i1)
 				{
 					int j1 = rand.nextInt(16) + 8;
 					int k1 = rand.nextInt(16) + 8;
@@ -342,7 +347,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 120; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -351,7 +356,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 92; ++i)
+				for (int i = 0; i < 192; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
