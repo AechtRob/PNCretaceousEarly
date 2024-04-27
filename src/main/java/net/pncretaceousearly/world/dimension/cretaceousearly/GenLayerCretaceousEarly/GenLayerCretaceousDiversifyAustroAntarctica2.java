@@ -64,7 +64,7 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isReplaceableNormal(k))
+                if (k == EARLY_CRETACEOUS_AUSTRO_FOREST_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -86,7 +86,7 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
                         aint1[j + i * areaWidth] = k;
                     }
                 }
-                else if (isReplaceableFrozen(k))
+                else if (k == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -108,7 +108,7 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
                         aint1[j + i * areaWidth] = k;
                     }
                 }
-                else if (isReplaceableRainforest(k))
+                else if (k == EARLY_CRETACEOUS_AUSTRO_RAINFOREST_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];

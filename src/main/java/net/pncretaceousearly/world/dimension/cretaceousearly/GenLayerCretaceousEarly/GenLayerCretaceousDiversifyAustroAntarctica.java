@@ -23,6 +23,9 @@ public class GenLayerCretaceousDiversifyAustroAntarctica extends GenLayer
     public Biome CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
 
+    public Biome CRETACEOUS_EARLY_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
+    public int CRETACEOUS_EARLY_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_OCEAN);
+
 
     public GenLayerCretaceousDiversifyAustroAntarctica(long seed, GenLayer genLayer)
     {
