@@ -19,12 +19,18 @@ public class GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial extends GenLaye
     public Biome AUS_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int AUS_BEACH_ID = Biome.getIdForBiome(AUS_BEACH);
 
+    public Biome TICOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
+    public int TICOA_ID = Biome.getIdForBiome(TICOA);
+
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_CRATO = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_desert"));
     public int CRETACEOUS_EARLY_CREEK_CRATO_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_CRATO);
 
     public Biome AUS_BEACH_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_austro_antarctic_coastal"));
     public int AUS_BEACH_CREEK_ID = Biome.getIdForBiome(AUS_BEACH_CREEK);
+
+    public Biome TICOA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_patagonia"));
+    public int TICOA_CREEK_ID = Biome.getIdForBiome(TICOA_CREEK);
 
     public GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -55,8 +61,11 @@ public class GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial extends GenLaye
                 if (aint[i] == CRATO_SWAMP_ID || aint[i] == CRATO_SWAMP_LOW_ID) {
                     aint2[i] = CRETACEOUS_EARLY_CREEK_CRATO_ID;
                 }
-                if (aint[i] == AUS_BEACH_ID) {
+                else if (aint[i] == AUS_BEACH_ID) {
                     aint2[i] = AUS_BEACH_CREEK_ID;
+                }
+                else if (aint[i] == TICOA_ID) {
+                    aint2[i] = TICOA_CREEK_ID;
                 }
                 else {
                     aint2[i] = aint[i];
