@@ -706,6 +706,18 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandEuropeFieldCopse.biome) {
+                            if (rand.nextInt(2) != 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousAustroAntarcticCoastal.biome) {
                             if (rand.nextInt(8) == 0) {
                                 iblockstate = Blocks.GRAVEL.getDefaultState();
@@ -757,6 +769,19 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(4) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandSouthAmericanPatagonia.biome
+                            || biome == BiomeEarlyCretaceousCreekSouthAmericanPatagonia.biome) {
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockLeafLitter.block.getDefaultState();
                             }
                         }
 

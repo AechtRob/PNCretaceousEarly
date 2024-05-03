@@ -55,6 +55,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicRafts(1429L, biomes);
 
         //if ((new Random(seed)).nextInt(8) == 0) {
+        biomes = new GenLayerEuropeCopse(223L, biomes);
              biomes = new GenLayerZoom(109L, biomes);
         //}
 //        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
