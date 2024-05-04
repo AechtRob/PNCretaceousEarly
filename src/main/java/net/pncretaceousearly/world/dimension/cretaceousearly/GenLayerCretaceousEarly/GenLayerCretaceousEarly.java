@@ -10,15 +10,16 @@ public class GenLayerCretaceousEarly {
 
     public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType worldType, String options) {
 
-        GenLayer biomes = new GenLayerCretaceousEarlyBiomes(1L);
+        GenLayer biomes = new GenLayerCretaceousEarlyBiomesSea(1L);
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
+
+        biomes = new GenLayerCretaceousEarlyBiomes(1542L, biomes);
+
         biomes = new GenLayerFuzzyZoom(2001L, biomes);
 
-        biomes = new GenLayerReduceAustro(2001L, biomes);
+        biomes = new GenLayerCretaceousEarlyBiomes(1543L, biomes);
 
         biomes = new GenLayerZoom(1032L, biomes);
-
-        biomes = new GenLayerReduceAustro(2002L, biomes);
 
         biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica(2541L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica(2542L, biomes);
@@ -37,6 +38,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerAddShallowSea2(1201L, biomes);
         biomes = new GenLayerAddInlandSeas2(3046L, biomes);
+
 
         biomes = new GenLayerCretaceousDiversifyEuroAmerica(2641L, biomes);
 
