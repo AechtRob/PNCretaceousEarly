@@ -82,6 +82,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
 		protected static final WorldGenPuddles PUDDLES_GENERATOR = new WorldGenPuddles();
 		protected static final WorldGenWatersideMud MUD_GENERATOR = new WorldGenWatersideMud();
+		protected static final WorldGenTreeLog LOG_GENERATOR = new WorldGenTreeLog(BlockBushyAraucariaLog.block);
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -107,7 +108,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 18; ++i)
+				for (int i = 0; i < 14; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -123,6 +124,19 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					MUD_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
+
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS)) {
+			int i = rand.nextInt(2);
+
+			for (int j = 0; j < i; ++j) {
+				int k = rand.nextInt(16) + 8;
+				int l = rand.nextInt(16) + 8;
+				BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+				if (Math.random() > 0.8) {
+					LOG_GENERATOR.generate(worldIn, rand, blockpos);
+				}
+			}
+		}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 56; ++i)
