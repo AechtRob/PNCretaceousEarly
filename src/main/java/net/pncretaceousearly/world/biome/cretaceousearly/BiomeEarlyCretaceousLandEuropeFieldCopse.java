@@ -45,7 +45,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 			setRegistryName("lepidodendron:cretaceous_early_europe_field_copse");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
-			decorator.treesPerChunk = 5;
+			decorator.treesPerChunk = 6;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -62,7 +62,8 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenBrachyphyllumTree BRACHYPHYLLUM_TREE = new WorldGenBrachyphyllumTree(false);
-		protected static final WorldGenBushyAraucariaTree BUSHY_TREE = new WorldGenBushyAraucariaTree(false);
+		protected static final WorldGenBushyAraucariaTree BUSHY_ARAUCARIA_TREE = new WorldGenBushyAraucariaTree(false);
+		protected static final WorldGenCephalotaxusTree CEPHALOTAXUS_TREE = new WorldGenCephalotaxusTree(false);
 
 		protected static final WorldGenPachypteris WEICHSELIA_GENERATOR = new WorldGenPachypteris();
 		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
@@ -84,10 +85,13 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
+			if (rand.nextInt(3) != 0) {
+				return CEPHALOTAXUS_TREE;
+			}
 			if (rand.nextInt(3) == 0) {
 				return BRACHYPHYLLUM_TREE;
 			}
-			return BUSHY_TREE;
+			return BUSHY_ARAUCARIA_TREE;
 		}
 
 		@Override
@@ -157,6 +161,15 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockCephalotaxusSapling.block, BlockCephalotaxusLeaves.block.getDefaultState(), BlockCephalotaxusLog.block.getDefaultState().withProperty(BlockCephalotaxusLog.BlockCustom.FACING, EnumFacing.NORTH), worldIn, rand, pos.add(j, l, k), 0, 90);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 32; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -172,6 +185,15 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PLANT_GENERATOR.generate(BlockCladophlebis.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 255, true);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 8; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockDoratophyllum.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 255, true);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
