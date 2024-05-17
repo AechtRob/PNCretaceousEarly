@@ -66,6 +66,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 		protected static final WorldGenCephalotaxusTree CEPHALOTAXUS_TREE = new WorldGenCephalotaxusTree(false);
 
 		protected static final WorldGenPachypteris WEICHSELIA_GENERATOR = new WorldGenPachypteris();
+		protected static final WorldGenParadoxopteris PARADOXOPTERIS_GENERATOR = new WorldGenParadoxopteris();
 		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
 		protected static final WorldGenZamitesShoot ZAMITES_SHOOT_GENERATOR = new WorldGenZamitesShoot();
 
@@ -128,7 +129,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS)) {
 			int i = rand.nextInt(2);
 
-			for (int j = 0; j < i; ++j) {
+			for (int j = 0; j < 7; ++j) {
 				int k = rand.nextInt(16) + 8;
 				int l = rand.nextInt(16) + 8;
 				BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
@@ -145,6 +146,15 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					WEICHSELIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				if (worldIn.rand.nextInt(12) == 0)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PARADOXOPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

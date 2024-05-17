@@ -67,6 +67,7 @@ public class BiomeEarlyCretaceousCreekNAmericaBraided extends ElementsLepidodend
 		protected static final WorldGenSwampHorsetail SWAMP_HORSETAIL_GENERATOR = new WorldGenSwampHorsetail();
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenPachypteris WEICHSELIA_GENERATOR = new WorldGenPachypteris();
+		protected static final WorldGenParadoxopteris PARADOXOPTERIS_GENERATOR = new WorldGenParadoxopteris();
 		protected static final WorldGenMud MUD_GENERATOR = new WorldGenMud();
 		protected static final WorldGenFungiSimple SIMPLE_FUNGI_GENERATOR = new WorldGenFungiSimple();
 		protected static final WorldGenSlimyAlgae SLIMY_GENERATOR = new WorldGenSlimyAlgae();
@@ -200,6 +201,15 @@ public class BiomeEarlyCretaceousCreekNAmericaBraided extends ElementsLepidodend
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					WEICHSELIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				if (worldIn.rand.nextInt(12) == 0)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PARADOXOPTERIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
