@@ -238,7 +238,7 @@ public class GenLayerCretaceousEarly {
         genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
-        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaSpecial(1200L, genlayercratocreekfinal, genlayerwidecreek6);
+        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial(1200L, genlayercratocreekfinal, genlayerwidecreek6);
 
         GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayerwidecreekfinal);
 

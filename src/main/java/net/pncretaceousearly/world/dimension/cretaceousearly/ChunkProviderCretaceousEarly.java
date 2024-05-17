@@ -904,6 +904,24 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                             iblockstate1 = Blocks.MOSSY_COBBLESTONE.getDefaultState();
                                         }
                                     }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 103 + rand.nextInt(3) - rand.nextInt(3) && j1 <= 117 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(3) != 0) {
+                                        iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                    }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 103 + rand.nextInt(3) - rand.nextInt(3) && j1 <= 117 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(5) == 0) {
+                                        iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                    }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 103 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(16) == 0) {
+                                        iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                                    }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 103 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(16) == 0) {
+                                        iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                    }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 107 + rand.nextInt(3) - rand.nextInt(3) && j1 <= 117 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(5) == 0) {
+                                        iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                    }
+                                    if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome && j1 >= 107 + rand.nextInt(3) - rand.nextInt(3) && j1 <= 117 + rand.nextInt(3) - rand.nextInt(3) && rand.nextInt(12) == 0) {
+                                        iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                    }
                                 }
                             }
                         }
