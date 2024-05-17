@@ -28,7 +28,6 @@ public class GenLayerCretaceousEarlyBiomes extends GenLayer {
             CRETACEOUS_EARLY_EUROPE_ID,
             CRETACEOUS_EARLY_SAMERICA_ID,
             CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_SAMERICA_ID,
-            CRETACEOUS_EARLY_ID,
             CRETACEOUS_EARLY_ID
     };
 
