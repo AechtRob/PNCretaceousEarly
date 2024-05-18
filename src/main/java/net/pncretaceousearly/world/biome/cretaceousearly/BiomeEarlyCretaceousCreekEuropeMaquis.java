@@ -18,7 +18,7 @@ import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
 public class BiomeEarlyCretaceousCreekEuropeMaquis extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_europe_maquis")
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_europe_maquis")
 	public static final BiomeGenCustom biome = null;
 	public BiomeEarlyCretaceousCreekEuropeMaquis(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
