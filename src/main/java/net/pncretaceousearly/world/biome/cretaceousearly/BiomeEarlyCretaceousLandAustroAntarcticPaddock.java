@@ -33,7 +33,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.PLAINS);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
 	}
 

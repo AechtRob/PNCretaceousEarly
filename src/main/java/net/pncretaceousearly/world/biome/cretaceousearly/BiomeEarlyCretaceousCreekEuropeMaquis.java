@@ -31,9 +31,7 @@ public class BiomeEarlyCretaceousCreekEuropeMaquis extends ElementsLepidodendron
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.RIVER);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

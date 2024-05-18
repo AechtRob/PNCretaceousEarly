@@ -35,8 +35,9 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 
 	@Override
 	public void init(FMLInitializationEvent event) {
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.PLAINS);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

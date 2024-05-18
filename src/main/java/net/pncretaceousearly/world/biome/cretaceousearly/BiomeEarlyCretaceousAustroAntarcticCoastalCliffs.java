@@ -33,8 +33,8 @@ public class BiomeEarlyCretaceousAustroAntarcticCoastalCliffs extends ElementsLe
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.JUNGLE);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.LUSH);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HILLS);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

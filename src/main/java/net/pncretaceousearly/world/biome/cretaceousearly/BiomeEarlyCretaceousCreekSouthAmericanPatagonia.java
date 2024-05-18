@@ -36,11 +36,9 @@ public class BiomeEarlyCretaceousCreekSouthAmericanPatagonia extends ElementsLep
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.DRY);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HOT);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WASTELAND);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.LUSH);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.JUNGLE);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

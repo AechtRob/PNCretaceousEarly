@@ -31,8 +31,7 @@ public class BiomeEarlyCretaceousAustroAntarcticLakesPeaks extends ElementsLepid
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.MOUNTAIN);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

@@ -34,6 +34,7 @@ public class BiomeEarlyCretaceousBeachAustroAntarcticaInlandSea extends Elements
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.LUSH);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

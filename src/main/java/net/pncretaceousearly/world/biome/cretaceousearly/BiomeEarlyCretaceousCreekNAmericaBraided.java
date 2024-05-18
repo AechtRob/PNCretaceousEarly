@@ -35,7 +35,7 @@ public class BiomeEarlyCretaceousCreekNAmericaBraided extends ElementsLepidodend
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.RIVER);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

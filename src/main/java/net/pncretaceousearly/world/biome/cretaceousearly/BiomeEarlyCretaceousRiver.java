@@ -32,8 +32,6 @@ public class BiomeEarlyCretaceousRiver extends ElementsLepidodendronMod.ModEleme
 	@Override
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.RIVER);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WET);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.LUSH);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {

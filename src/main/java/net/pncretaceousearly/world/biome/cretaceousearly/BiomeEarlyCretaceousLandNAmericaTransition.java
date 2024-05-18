@@ -35,8 +35,8 @@ public class BiomeEarlyCretaceousLandNAmericaTransition extends ElementsLepidode
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.CONIFEROUS);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SWAMP);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HILLS);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
