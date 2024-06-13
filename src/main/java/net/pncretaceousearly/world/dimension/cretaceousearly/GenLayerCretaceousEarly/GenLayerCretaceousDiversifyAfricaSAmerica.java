@@ -17,9 +17,17 @@ public class GenLayerCretaceousDiversifyAfricaSAmerica extends GenLayer {
     public Biome CRETACEOUS_EARLY_SAMERICA_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
     public int CRETACEOUS_EARLY_SAMERICA_FOREST_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_FOREST);
 
+    public Biome CRETACEOUS_EARLY_SAMERICA_ARID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
+    public int CRETACEOUS_EARLY_SAMERICA_ARID_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_ARID);
+
+    public Biome CRETACEOUS_EARLY_SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
+    public int CRETACEOUS_EARLY_SAMERICA_DESERT_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_DESERT);
+
     private final int[] SAmericaBiomes = new int[] {
             CRETACEOUS_EARLY_SAMERICA_ID,
-            CRETACEOUS_EARLY_SAMERICA_FOREST_ID
+            CRETACEOUS_EARLY_SAMERICA_FOREST_ID,
+            CRETACEOUS_EARLY_SAMERICA_ARID_ID,
+            CRETACEOUS_EARLY_SAMERICA_DESERT_ID
     };
 
     public GenLayerCretaceousDiversifyAfricaSAmerica(long seed, GenLayer genlayer) {

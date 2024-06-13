@@ -187,7 +187,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakesRimInner.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakesRimOuter.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome
-//                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicCreekDesert.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertIsland.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRim.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
@@ -457,20 +458,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             //} else if (j1 >= i - 4 && j1 <= i + 1) {
                         }
                         else if (j1 <= i + 2 && j1 >= i - 1 && Math.random() > 0.25
-                                && (biome != biome)
+                                && (biome == BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome)
                         ) {
-                            if (j1 >= i) {
-                                iblockstate = BlockDriedMud.block.getDefaultState();
-                                if (Math.random() > 0.80 && biome != biome) {
-                                    iblockstate = Blocks.DIRT.getStateFromMeta(1);
-                                }
-                                if (j1 <= i + 1 && Math.random() > 0.80 && biome != biome) {
-                                    iblockstate = Blocks.DIRT.getStateFromMeta(2);
-                                }
-                            }
-                            else {
-                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
-                            }
+                            iblockstate = BlockDriedMud.block.getDefaultState();
                         }
                         else if (j1 <= i - 1) {
                             iblockstate = biome.topBlock;
@@ -775,6 +765,99 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(4) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome) {
+                            if (j1 > Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 5 + rand.nextInt(5)) {
+                                iblockstate = Blocks.SAND.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = Blocks.SAND.getDefaultState();
+                            }
+                            if (rand.nextInt(18) == 0) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            //If it's over 75 blocks then start to fill in more as stone
+                            //up to 90 where it almost fully stone - sometimes cobble
+                            int minHeight = 75;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 90 - j1);
+                                double stoneFactor = (double) j2 / (90D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = BlockBrownstone.block.getDefaultState();
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = BlockDriedMud.block.getDefaultState();
+                                    }
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = BlockBrownstone.block.getDefaultState();
+                                }
+                                if (rand.nextInt(12) == 0) {
+                                    iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                }
+                            }
+                        }
+
+
+                        if (biome == BiomeEarlyCretaceousLandSouthAmericanArid.biome
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanArid.biome) {
+                            if (rand.nextInt(10) == 0) {
+                                iblockstate = Blocks.SAND.getDefaultState();
+                            }
+                            if (rand.nextInt(10) == 0) {
+                                iblockstate = BlockSandWavy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            //If it's over 65 blocks then start to fill in more as stone
+                            //up to 85 where it almost fully stone - sometimes cobble
+                            int minHeight = 65;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 85 - j1);
+                                double stoneFactor = (double) j2 / (85D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome) {
+                            if (rand.nextInt(4) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            //If it's over 65 blocks then start to fill in more as stone
+                            //up to 105 where it almost fully stone - sometimes cobble
+                            int minHeight = 65;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 105 - j1);
+                                double stoneFactor = (double) j2 / (105D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
                             }
                         }
 

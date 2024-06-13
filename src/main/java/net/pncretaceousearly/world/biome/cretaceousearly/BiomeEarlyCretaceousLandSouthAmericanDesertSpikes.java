@@ -46,7 +46,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanDesertSpikes extends ElementsL
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous S American Desert").setRainfall(0.0F).setBaseHeight(2.58F).setHeightVariation(0.37F).setTemperature(1.8F).setRainDisabled().setWaterColor(-10724281));
+			super(new BiomeProperties("E. Cretaceous Xeric Floodplain").setRainfall(0.0F).setBaseHeight(2.58F).setHeightVariation(0.37F).setTemperature(1.8F).setRainDisabled().setWaterColor(-10724281));
 			setRegistryName("lepidodendron:cretaceous_early_samerica_desert_spikes");
 			topBlock = BlockSandGrey.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(0);
