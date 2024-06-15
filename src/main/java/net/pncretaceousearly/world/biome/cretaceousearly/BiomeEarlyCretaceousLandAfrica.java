@@ -32,18 +32,16 @@ public class BiomeEarlyCretaceousLandAfrica extends ElementsLepidodendronMod.Mod
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HOT);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WASTELAND);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.MOUNTAIN);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous African Desert").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous African Brownstone Mountains").setRainfall(0.0F).setBaseHeight(2.78F).setHeightVariation(0.39F).setTemperature(1.2F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa");
 			topBlock = BlockBrownstone.block.getDefaultState();
-			fillerBlock = Blocks.STONE.getStateFromMeta(1);
+			fillerBlock = BlockBrownstone.block.getDefaultState();
 			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;

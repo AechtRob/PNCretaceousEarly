@@ -35,8 +35,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanSandyDesert extends ElementsL
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.DRY);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HOT);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.WASTELAND);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SAVANNA);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
@@ -66,13 +65,13 @@ public class BiomeEarlyCretaceousCreekSouthAmericanSandyDesert extends ElementsL
 
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
-		protected static final WorldGenSandNearWater SAND_GENERATOR = new WorldGenSandNearWater();
+		protected static final WorldGenSandyDirtNearWater SAND_GENERATOR = new WorldGenSandyDirtNearWater();
 		protected static final WorldGenRockPiles ROCK_GENERATOR = new WorldGenRockPiles();
 		protected static final WorldGenSahnioxylon SAHNIOXYLON_GENERATOR = new WorldGenSahnioxylon();
 		protected static final WorldGenCycadeoidea CYCADEOIDEA_GENERATOR = new WorldGenCycadeoidea();
 		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
+		protected static final WorldGenAnomozamites ANOMOZAMITES_GENERATOR = new WorldGenAnomozamites();
 		protected static final WorldGenPterophyllum PTEROPHYLLUM_GENERATOR = new WorldGenPterophyllum();
-		protected static final WorldGenPtilophyllum PTILOPHYLLUM_GENERATOR = new WorldGenPtilophyllum();
 
 
 		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverSandy();
@@ -89,6 +88,14 @@ public class BiomeEarlyCretaceousCreekSouthAmericanSandyDesert extends ElementsL
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 48; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					SAND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 64; ++i)
 				{
@@ -185,7 +192,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanSandyDesert extends ElementsL
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PTEROPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					ANOMOZAMITES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -194,7 +201,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanSandyDesert extends ElementsL
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PTILOPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					PTEROPHYLLUM_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 //
 ////			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

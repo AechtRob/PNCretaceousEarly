@@ -35,12 +35,13 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public Biome TICOA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_patagonia"));
     public int TICOA_CREEK_ID = Biome.getIdForBiome(TICOA_CREEK);
-
     public Biome S_AMERICA_ARID_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_samerica_arid"));
     public int S_AMERICA_ARID_CREEK_ID = Biome.getIdForBiome(S_AMERICA_ARID_CREEK);
-
     public Biome S_AMERICA_DESERT_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_CREEK_ID = Biome.getIdForBiome(S_AMERICA_DESERT_CREEK);
+
+    public Biome AFRO_SAVANNA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_savanna"));
+    public int AFRO_SAVANNA_CREEK_ID = Biome.getIdForBiome(AFRO_SAVANNA_CREEK);
 
 
     //Biomes to exclude for rivers:
@@ -97,6 +98,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int S_AMERICA_ARID_ID = Biome.getIdForBiome(S_AMERICA_ARID);
     public Biome S_AMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_ID = Biome.getIdForBiome(S_AMERICA_DESERT);
+
+
+    public Biome AFRO_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_land_africa_savanna"));
+    public int AFRO_SAVANNA_ID = Biome.getIdForBiome(AFRO_SAVANNA);
 
     public static Biome EURO_LAKE_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
     public static int EURO_LAKE_EDGE_ID =  Biome.getIdForBiome(EURO_LAKE_EDGE);
@@ -163,6 +168,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (aint[i] == S_AMERICA_DESERT_ID) {
                         aint2[i] = S_AMERICA_DESERT_CREEK_ID;
+                    }
+                    else if (aint[i] == AFRO_SAVANNA_ID) {
+                        aint2[i] = AFRO_SAVANNA_CREEK_ID;
                     }
                     else if (isNAmerica(aint[i])) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;

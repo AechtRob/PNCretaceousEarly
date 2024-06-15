@@ -43,7 +43,9 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
     public int EARLY_CRETACEOUS_SWAMP_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_SWAMP_EUROPE);
     public Biome EARLY_CRETACEOUS_DRY_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_maquis"));
     public int EARLY_CRETACEOUS_DRY_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_DRY_EUROPE);
-    public Biome EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
+    public Biome EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
+    public int EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_EDGE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_EDGE);
+    public Biome EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes"));
     public int EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES);
     public Biome EARLY_CRETACEOUS_FIELD_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field"));
     public int EARLY_CRETACEOUS_FIELD_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_FIELD_EUROPE);
@@ -154,7 +156,8 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
 
     private boolean isEuropeSwamp(int biomeID) {
         return biomeID == EARLY_CRETACEOUS_SWAMP_EUROPE_ID
-                || biomeID == EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID;
+                || biomeID == EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_ID
+                || biomeID == EARLY_CRETACEOUS_EUROPE_SWAMP_LAKES_EDGE_ID;
     }
 
     private boolean isEuropeDry(int biomeID) {

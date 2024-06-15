@@ -178,8 +178,13 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         int chanceLake = 4;
 
         if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandSouthAmericanDesertSpikes.biome
-            || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfrica.biome) {
+                || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfrica.biome) {
             chanceLake = 9;
+        }
+
+        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandSouthAmericanArid.biome
+            || world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAfricaSavanna.biome) {
+            chanceLake = 24;
         }
 
         if (this.random.nextInt(chanceLake) == 0
@@ -189,8 +194,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
-//                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertIsland.biome
-//                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRim.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAfrica.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhite.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhiteEdge.biome
@@ -574,6 +579,32 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousCreekSAmericaWide.biome
+                                || biome == BiomeEarlyCretaceousCreekSAmericaWideCentre.biome
+                        ) {
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            else if (rand.nextInt(16) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            else if (rand.nextInt(16) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPeat.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandNAmerica.biome //Braided floodplain lower
                         ) {
                             if (rand.nextInt(6) == 0) {
@@ -803,6 +834,69 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAfricaSavanna.biome
+                                || biome == BiomeEarlyCretaceousCreekAfricaSavanna.biome
+                                || biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome
+                                || biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHoleCentre.biome) {
+                            if (rand.nextInt(10) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = Blocks.SAND.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(48) == 0) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(24) == 0 && j1 <= 70) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome
+                                || biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHoleCentre.biome) {
+                            IBlockState blockstateNormal = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            if (rand.nextInt(10) == 0) {
+                                blockstateNormal = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                blockstateNormal = Blocks.SAND.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                blockstateNormal = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                blockstateNormal = BlockCoarseSandyDirtRed.block.getDefaultState();
+                            }
+                            if (rand.nextInt(16) == 0) {
+                                blockstateNormal = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(48) == 0) {
+                                blockstateNormal = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(24) == 0 && j1 <= 70) {
+                                blockstateNormal = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+
+                            //If it's over 63 blocks then start to fill in more as stone
+                            //up to 71 where it almost back to normal
+                            int minHeight = 63;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 71 - j1);
+                                double stoneFactor = (double) j2 / (71D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = blockstateNormal;
+                                }
+                            }
+                        }
 
                         if (biome == BiomeEarlyCretaceousLandSouthAmericanArid.biome
                                 || biome == BiomeEarlyCretaceousCreekSouthAmericanArid.biome) {

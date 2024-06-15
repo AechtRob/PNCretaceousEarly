@@ -7,6 +7,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAfrica;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandSAmerica;
 
 public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLayer {
 
@@ -55,7 +56,7 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLa
                 if (Biome.getBiome(center) == BiomeEarlyCretaceousLandEurope.biome) {
                     output[i] = EuropeBiomes[nextInt(EuropeBiomes.length)];
                 }
-                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAfrica.biome) {
+                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandSAmerica.biome) {
                     output[i] = AfricaBiomes[nextInt(AfricaBiomes.length)];
                 }
                 else output[i] = center;

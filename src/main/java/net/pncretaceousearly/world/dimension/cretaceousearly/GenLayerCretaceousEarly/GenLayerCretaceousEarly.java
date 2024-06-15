@@ -31,6 +31,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerCretaceousDiversifyAfricaSAmerica(7572L, biomes);
 
         biomes = new GenLayerZoom(1001L, biomes);
+        biomes = new GenLayerAfricaSavanna(6756L, biomes);
         biomes = new GenLayerAddShallowSea(4132L, biomes);
         biomes = new GenLayerAddInlandSeas2(3049L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
@@ -58,7 +59,8 @@ public class GenLayerCretaceousEarly {
 
         //if ((new Random(seed)).nextInt(8) == 0) {
         biomes = new GenLayerEuropeCopse(223L, biomes);
-             biomes = new GenLayerZoom(109L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorder(98L, biomes);
+        biomes = new GenLayerZoom(109L, biomes);
         //}
 //        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 //        biomes = new GenLayerAddShallowSea2(1202L, biomes);
@@ -71,12 +73,14 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerSmooth(700L, biomes);
         biomes = new GenLayerSmooth(701L, biomes);
         biomes = new GenLayerNAmericanCopse(433L, biomes);
+        biomes = new GenLayerAfricaPeaks(9875L, biomes);
 
 //        biomes = new GenLayerJurassicOutcrop(1088L, biomes);
 //        biomes = new GenLayerJurassicCoral(439L, biomes);
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
         biomes = new GenLayerNorthAmericaMountains0(1551L, biomes);
 
@@ -88,11 +92,13 @@ public class GenLayerCretaceousEarly {
 //
 //        biomes = new GenLayerJurassicOutcropBlend(1088L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
+        biomes = new GenLayerEuropeanSwampLakes(241L, biomes);
         biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
 //        biomes = new GenLayerJurassicBoulders(1066L, biomes);
 //        biomes = new GenLayerDiversifyJurassic3(1001L, biomes);
 //        biomes = new GenLayerSeperateIslands(1555L, biomes);
 //        biomes = new GenLayerJurassicDesertIslands(1563L, biomes);
+        biomes = new GenLayerAfricaSavannaHoles1(8772L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
         biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);
@@ -111,6 +117,8 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAustroAntarcticHighLakes1(242L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes2(249L, biomes);
         biomes = new GenLayerSAmericanDesertLows(244L, biomes);
+        biomes = new GenLayerAfricaPinnacles(1875L, biomes);
+        biomes = new GenLayerAfricaSavannaHoles2(8772L, biomes);
 
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
