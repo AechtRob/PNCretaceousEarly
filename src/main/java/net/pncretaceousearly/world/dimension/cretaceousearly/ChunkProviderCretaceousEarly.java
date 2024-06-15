@@ -926,7 +926,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             if (rand.nextInt(14) == 0 && j1 < 86 + rand.nextInt(3) - rand.nextInt(3)) {
                                 iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
                             }
-                            if (rand.nextInt(12) == 0 && j1 < 82 + rand.nextInt(3) - rand.nextInt(3)) {
+                            if (rand.nextInt(12) == 0 && j1 < 83 + rand.nextInt(3) - rand.nextInt(3)) {
                                 iblockstate = Blocks.GRAVEL.getDefaultState();
                             }
                             IBlockState blockstateNormal = BlockBrownstone.block.getDefaultState();
