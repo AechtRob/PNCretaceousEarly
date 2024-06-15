@@ -90,30 +90,21 @@ public class BiomeEarlyCretaceousLandAfrica extends ElementsLepidodendronMod.Mod
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 1; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockAridHorsetail.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 70, true);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockBristleconeSapling.block, BlockBristleconeLeaves.block.getDefaultState().withProperty(BlockBristleconeLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBristleconeLeaves.BlockCustom.CHECK_DECAY, false), BlockBristleconeLeaves.block.getDefaultState().withProperty(BlockBristleconeLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBristleconeLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 100, 150, true);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 12; ++i)
+				for (int i = 0; i < 8; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockBaiera.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 70, true);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 4; ++i)
-				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockBrachyphyllumSapling.block, BlockBrachyphyllumLeaves.block.getDefaultState().withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false), BlockBrachyphyllumLeaves.block.getDefaultState().withProperty(BlockBrachyphyllumLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBrachyphyllumLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 75);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockBristleconeSapling.block, BlockBristleconeLeaves.block.getDefaultState().withProperty(BlockBristleconeLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBristleconeLeaves.BlockCustom.CHECK_DECAY, false), BlockBristleconeLeaves.block.getDefaultState().withProperty(BlockBristleconeLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockBristleconeLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 100, 110, true);
 				}
 
 			super.decorate(worldIn, rand, pos);

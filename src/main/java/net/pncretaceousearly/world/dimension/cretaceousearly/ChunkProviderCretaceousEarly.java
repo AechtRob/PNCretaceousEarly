@@ -834,6 +834,18 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAfrica.biome) {
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockSandyDirtGrey.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = Blocks.STAINED_HARDENED_CLAY.getStateFromMeta(8);
+                            }
+                            if (rand.nextInt(24) == 0) {
+                                iblockstate = Blocks.HARDENED_CLAY.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandAfricaSavanna.biome
                                 || biome == BiomeEarlyCretaceousCreekAfricaSavanna.biome
                                 || biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome
