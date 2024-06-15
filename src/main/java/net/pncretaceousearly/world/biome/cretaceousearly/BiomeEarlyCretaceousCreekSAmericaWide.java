@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous WIDE Creek").setBaseHeight(0.001F).setHeightVariation(0.00F).setTemperature(0.9F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous Riparian Wetlands").setBaseHeight(0.001F).setHeightVariation(0.00F).setTemperature(0.9F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_south_america_creek_wide");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
