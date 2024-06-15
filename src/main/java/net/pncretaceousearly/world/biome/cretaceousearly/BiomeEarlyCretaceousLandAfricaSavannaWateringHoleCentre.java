@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandAfricaSavannaWateringHoleCentre extends Ele
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("CENTRE E. Cretaceous African Ruddy Savanna Watering Hole").setRainfall(0.0F).setBaseHeight(-0.30F).setHeightVariation(0.00F).setTemperature(1.8F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous African Watering Hole").setRainfall(0.0F).setBaseHeight(-0.30F).setHeightVariation(0.00F).setTemperature(1.8F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa_savanna_hole_centre");
 			topBlock = BlockCarboniferousMud.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
