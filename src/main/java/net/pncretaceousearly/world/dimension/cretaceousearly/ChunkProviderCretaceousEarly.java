@@ -910,6 +910,44 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAfricaBrownstoneValley.biome) {
+                            if (rand.nextInt(8) == 0 && j1 < 80 + rand.nextInt(3) - rand.nextInt(3)) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0 && j1 > 78 + rand.nextInt(3) - rand.nextInt(3)) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            if (rand.nextInt(8) == 0 && j1 > 84 + rand.nextInt(3) - rand.nextInt(3)) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0 && j1 > 80 + rand.nextInt(3) - rand.nextInt(3)) {
+                                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(14) == 0 && j1 < 86 + rand.nextInt(3) - rand.nextInt(3)) {
+                                iblockstate = BlockCoarseSandyDirtRed.block.getDefaultState();
+                            }
+                            IBlockState blockstateNormal = BlockBrownstone.block.getDefaultState();
+                            if (rand.nextInt(12) == 0) {
+                                blockstateNormal = BlockSandyDirtGrey.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                blockstateNormal = Blocks.STAINED_HARDENED_CLAY.getStateFromMeta(8);
+                            }
+                            if (rand.nextInt(24) == 0) {
+                                blockstateNormal = Blocks.HARDENED_CLAY.getDefaultState();
+                            }
+                            //If it's over 80 blocks then start to fill in more as stone
+                            //up to 97 where it almost back to normal
+                            int minHeight = 80;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 97 - j1);
+                                double stoneFactor = (double) j2 / (97D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = blockstateNormal;
+                                }
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandSouthAmericanArid.biome
                                 || biome == BiomeEarlyCretaceousCreekSouthAmericanArid.biome) {
                             if (rand.nextInt(10) == 0) {

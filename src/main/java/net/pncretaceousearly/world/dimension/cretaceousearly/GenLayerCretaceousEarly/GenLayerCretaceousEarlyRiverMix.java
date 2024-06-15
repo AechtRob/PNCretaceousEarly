@@ -42,6 +42,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public Biome AFRO_SAVANNA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_savanna"));
     public int AFRO_SAVANNA_CREEK_ID = Biome.getIdForBiome(AFRO_SAVANNA_CREEK);
+//    public Biome AFRO_VALLEYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_valley"));
+//    public int AFRO_VALLEYS_ID = Biome.getIdForBiome(AFRO_VALLEYS);
 
 
     //Biomes to exclude for rivers:
@@ -99,9 +101,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public Biome S_AMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_ID = Biome.getIdForBiome(S_AMERICA_DESERT);
 
-
     public Biome AFRO_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_land_africa_savanna"));
     public int AFRO_SAVANNA_ID = Biome.getIdForBiome(AFRO_SAVANNA);
+//    public Biome AFRO_BROWNSTONE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa"));
+//    public int AFRO_BROWNSTONE_ID = Biome.getIdForBiome(AFRO_BROWNSTONE);
 
     public static Biome EURO_LAKE_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
     public static int EURO_LAKE_EDGE_ID =  Biome.getIdForBiome(EURO_LAKE_EDGE);
@@ -172,6 +175,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (aint[i] == AFRO_SAVANNA_ID) {
                         aint2[i] = AFRO_SAVANNA_CREEK_ID;
                     }
+//                    else if (aint[i] == AFRO_BROWNSTONE_ID) {
+//                        aint2[i] = AFRO_VALLEYS_ID;
+//                    }
                     else if (isNAmerica(aint[i])) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
                     }

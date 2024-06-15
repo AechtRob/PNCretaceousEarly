@@ -232,8 +232,52 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayercratocreek6 = new GenLayerSmooth(1105L, genlayercratocreek5);
         GenLayer genlayercratocreekfinal = new GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial(1178L, genlayerdeepcreekfinal, genlayercratocreek6);
 
+        //Additional valleys in African mountains:
+        GenLayer genlayerwidevalley = new GenLayerRiverInit(120L, biomes);
+        genlayerwidevalley = new GenLayerRiverInit(140L, genlayerwidevalley);
+        GenLayer genlayerwidevalley2 = GenLayerZoom.magnify(1201L, genlayerwidevalley, 2);
+        GenLayer genlayerwidevalley3 = GenLayerZoom.magnify(1201L, genlayerwidevalley2, 1);
+        GenLayer genlayerwidevalley4 = GenLayerZoom.magnify(1001L, genlayerwidevalley3, 2);
+        GenLayer genlayerwidevalley5 = new GenLayerRiver(12L, genlayerwidevalley4);
+        GenLayer genlayerwidevalley6 = new GenLayerSmooth(1200L, genlayerwidevalley5);
+        genlayerwidevalley6 = new GenLayerZoom(1676L, genlayerwidevalley6);
+        genlayerwidevalley6 = new GenLayerZoom(1677L, genlayerwidevalley6);
+        genlayerwidevalley6 = new GenLayerZoom(1678L, genlayerwidevalley6);
+        genlayerwidevalley6 = new GenLayerZoom(1680L, genlayerwidevalley6);
+        genlayerwidevalley6 = new GenLayerSmooth(1681L, genlayerwidevalley6);
+        GenLayer genlayerwidevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayercratocreekfinal, genlayerwidevalley6);
+
+        GenLayer genlayer2widevalley = new GenLayerRiverInit(130L, biomes);
+        genlayer2widevalley = new GenLayerRiverInit(150L, genlayer2widevalley);
+        GenLayer genlayer2widevalley2 = GenLayerZoom.magnify(1202L, genlayer2widevalley, 2);
+        GenLayer genlayer2widevalley3 = GenLayerZoom.magnify(1202L, genlayer2widevalley2, 1);
+        GenLayer genlayer2widevalley4 = GenLayerZoom.magnify(1002L, genlayer2widevalley3, 2);
+        GenLayer genlayer2widevalley5 = new GenLayerRiver(12L, genlayer2widevalley4);
+        GenLayer genlayer2widevalley6 = new GenLayerSmooth(1200L, genlayer2widevalley5);
+        genlayer2widevalley6 = new GenLayerZoom(1676L, genlayer2widevalley6);
+        genlayer2widevalley6 = new GenLayerZoom(1677L, genlayer2widevalley6);
+        genlayer2widevalley6 = new GenLayerZoom(1678L, genlayer2widevalley6);
+        genlayer2widevalley6 = new GenLayerZoom(1680L, genlayer2widevalley6);
+        genlayer2widevalley6 = new GenLayerSmooth(1681L, genlayer2widevalley6);
+        GenLayer genlayer2widevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayerwidevalleyfinal, genlayer2widevalley6);
+
+        GenLayer genlayer3widevalley = new GenLayerRiverInit(5430L, biomes);
+        genlayer3widevalley = new GenLayerRiverInit(5431, genlayer3widevalley);
+        GenLayer genlayer3widevalley2 = GenLayerZoom.magnify(1203L, genlayer3widevalley, 2);
+        GenLayer genlayer3widevalley3 = GenLayerZoom.magnify(1203L, genlayer3widevalley2, 1);
+        GenLayer genlayer3widevalley4 = GenLayerZoom.magnify(1003L, genlayer3widevalley3, 2);
+        GenLayer genlayer3widevalley5 = new GenLayerRiver(12L, genlayer3widevalley4);
+        GenLayer genlayer3widevalley6 = new GenLayerSmooth(1200L, genlayer3widevalley5);
+        genlayer3widevalley6 = new GenLayerZoom(1676L, genlayer3widevalley6);
+        genlayer3widevalley6 = new GenLayerZoom(1677L, genlayer3widevalley6);
+        genlayer3widevalley6 = new GenLayerZoom(1678L, genlayer3widevalley6);
+        genlayer3widevalley6 = new GenLayerZoom(1680L, genlayer3widevalley6);
+        genlayer3widevalley6 = new GenLayerSmooth(1681L, genlayer3widevalley6);
+        GenLayer genlayer3widevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayer2widevalleyfinal, genlayer3widevalley6);
+
         //Additional special, very wide waterways in SAmerica:
         GenLayer genlayerwidecreek = new GenLayerRiverInit(120L, biomes);
+        genlayerwidecreek = new GenLayerRiverInit(130L, genlayerwidecreek);
         GenLayer genlayerwidecreek2 = GenLayerZoom.magnify(1200L, genlayerwidecreek, 2);
         GenLayer genlayerwidecreek3 = GenLayerZoom.magnify(1200L, genlayerwidecreek2, 1);
         GenLayer genlayerwidecreek4 = GenLayerZoom.magnify(1000L, genlayerwidecreek3, 2);
@@ -246,7 +290,7 @@ public class GenLayerCretaceousEarly {
         genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
-        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial(1200L, genlayercratocreekfinal, genlayerwidecreek6);
+        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial(1200L, genlayer3widevalleyfinal, genlayerwidecreek6);
 
         GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayerwidecreekfinal);
 
