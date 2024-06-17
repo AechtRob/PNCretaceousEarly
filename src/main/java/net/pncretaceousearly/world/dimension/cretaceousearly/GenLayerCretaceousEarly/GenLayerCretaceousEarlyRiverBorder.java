@@ -27,6 +27,8 @@ public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
     public int SAMERICA_PATAGONIA_ID =  Biome.getIdForBiome(SAMERICA_PATAGONIA);
     public Biome SAMERICA_DESERT_SAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int SAMERICA_DESERT_SAND_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SAND);
+    public Biome SAMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public int SAMERICA_FLATS_ID =  Biome.getIdForBiome(SAMERICA_FLATS);
 
     public GenLayerCretaceousEarlyRiverBorder(long seed, GenLayer genLayer)
     {
@@ -92,6 +94,7 @@ public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
                 || biomeID == SAMERICA_DESERT_LOW_ID
                 || biomeID == SAMERICA_DESERT_SAND_ID
                 || biomeID == SAMERICA_DESERT_SPIKES_ID
+                || biomeID == SAMERICA_FLATS_ID
                 || biomeID == SAMERICA_DESERT_ID) {
             return true;
         }
