@@ -39,6 +39,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int S_AMERICA_ARID_CREEK_ID = Biome.getIdForBiome(S_AMERICA_ARID_CREEK);
     public Biome S_AMERICA_DESERT_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_CREEK_ID = Biome.getIdForBiome(S_AMERICA_DESERT_CREEK);
+    public Biome S_AMERICA_FLATS_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_samerica_flats"));
+    public int S_AMERICA_FLATS_CREEK_ID = Biome.getIdForBiome(S_AMERICA_FLATS_CREEK);
 
     public Biome AFRO_SAVANNA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_savanna"));
     public int AFRO_SAVANNA_CREEK_ID = Biome.getIdForBiome(AFRO_SAVANNA_CREEK);
@@ -100,6 +102,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int S_AMERICA_ARID_ID = Biome.getIdForBiome(S_AMERICA_ARID);
     public Biome S_AMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_ID = Biome.getIdForBiome(S_AMERICA_DESERT);
+    public Biome S_AMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public int S_AMERICA_FLATS_ID = Biome.getIdForBiome(S_AMERICA_FLATS);
 
     public Biome AFRO_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_land_africa_savanna"));
     public int AFRO_SAVANNA_ID = Biome.getIdForBiome(AFRO_SAVANNA);
@@ -173,6 +177,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (aint[i] == S_AMERICA_DESERT_ID) {
                         aint2[i] = S_AMERICA_DESERT_CREEK_ID;
+                    }
+                    else if (aint[i] == S_AMERICA_FLATS_ID) {
+                        aint2[i] = S_AMERICA_FLATS_CREEK_ID;
                     }
                     else if (aint[i] == AFRO_SAVANNA_ID) {
                         aint2[i] = AFRO_SAVANNA_CREEK_ID;

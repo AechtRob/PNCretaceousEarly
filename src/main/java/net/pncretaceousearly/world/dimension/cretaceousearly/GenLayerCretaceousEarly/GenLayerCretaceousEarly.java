@@ -224,7 +224,7 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayerdeepcreek5 = new GenLayerSmooth(1100L, genlayerdeepcreek4);
         GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek5);
         
-        //Additional waterways in Europe:
+        //Additional waterways in America:
         GenLayer genlayercratocreek = new GenLayerRiverInit(115L, biomes);
         GenLayer genlayercratocreek2 = GenLayerZoom.magnify(1105L, genlayercratocreek, 2);
         GenLayer genlayercratocreek3 = GenLayerZoom.magnify(1109L, genlayercratocreek2, 1);
@@ -232,6 +232,13 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayercratocreek5 = new GenLayerRiver(158L, genlayercratocreek4);
         GenLayer genlayercratocreek6 = new GenLayerSmooth(1105L, genlayercratocreek5);
         GenLayer genlayercratocreekfinal = new GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial(1178L, genlayerdeepcreekfinal, genlayercratocreek6);
+
+        //Additional streams in SAmerica Flats:
+        GenLayer genlayerstream = new GenLayerRiverInit(110L, biomes);
+        GenLayer genlayerstream2 = GenLayerZoom.magnify(1100L, genlayerstream, 2);
+        GenLayer genlayerstream4 = new GenLayerRiver(11L, genlayerstream2);
+        GenLayer genlayerstream5 = new GenLayerSmooth(1100L, genlayerstream4);
+        GenLayer genlayerstreamfinal = new GenLayerCretaceousEarlyRiverMixAfricaFlatsSpecial(1100L, genlayercratocreekfinal, genlayerstream5);
 
         //Additional valleys in African mountains:
         GenLayer genlayerwidevalley = new GenLayerRiverInit(120L, biomes);
@@ -246,7 +253,7 @@ public class GenLayerCretaceousEarly {
         genlayerwidevalley6 = new GenLayerZoom(1678L, genlayerwidevalley6);
         genlayerwidevalley6 = new GenLayerZoom(1680L, genlayerwidevalley6);
         genlayerwidevalley6 = new GenLayerSmooth(1681L, genlayerwidevalley6);
-        GenLayer genlayerwidevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayercratocreekfinal, genlayerwidevalley6);
+        GenLayer genlayerwidevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayerstreamfinal, genlayerwidevalley6);
 
         GenLayer genlayer2widevalley = new GenLayerRiverInit(130L, biomes);
         genlayer2widevalley = new GenLayerRiverInit(150L, genlayer2widevalley);

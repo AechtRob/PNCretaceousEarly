@@ -394,6 +394,14 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         d3 = d4;
                     }
 
+                    if (biome == BiomeEarlyCretaceousLandSouthAmericanFlats.biome
+                        || biome == BiomeEarlyCretaceousCreekSouthAmericanFlatsStream.biome) {
+                        //Flatten these out:
+                        d4 = 1D;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
                     double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
                     if (l1 > 29) {
                         double d6 = (double) ((float) (l1 - 29) / 3.0F);
@@ -1033,6 +1041,22 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(6) == 0) {
                                 iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousCreekSouthAmericanFlatsStream.biome
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanFlats.biome
+                                || biome == BiomeEarlyCretaceousLandSouthAmericanFlats.biome
+                        ) {
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousCreekSouthAmericanFlatsStream.biome
+                        ) {
+                            if (rand.nextInt(16) == 0) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
                             }
                         }
 
