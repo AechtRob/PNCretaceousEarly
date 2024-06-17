@@ -35,6 +35,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAddShallowSea(4132L, biomes);
         biomes = new GenLayerAddInlandSeas2(3049L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
+        biomes = new GenLayerCretaceousDiversifyAfricaSAmerica2(562L, biomes);
 
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerAddShallowSea2(1201L, biomes);

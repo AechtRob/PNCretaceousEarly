@@ -387,12 +387,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     double d3 = this.limitRegMax[i] / (double) 512;
                     double d4 = (this.noiseRegMain[i] / 10.0D + 1.0D) / 2.0D;
 
-//                    if (biome == BiomeJurassicMudflatsEstuary.biome) {
-//                        //Flatten these out somewhat:
-//                        d4 = 1.0F;
-//                        d2 = d4;
-//                        d3 = d4;
-//                    }
+                    if (biome == BiomeEarlyCretaceousLandAfricaSwampFlat.biome) {
+                        //Flatten these out somewhat:
+                        d4 = (d4 + 5D) / 6D;
+                        d2 = d4;
+                        d3 = d4;
+                    }
 
                     double d5 = MathHelper.clampedLerp(d2, d3, d4) - d1;
                     if (l1 > 29) {
