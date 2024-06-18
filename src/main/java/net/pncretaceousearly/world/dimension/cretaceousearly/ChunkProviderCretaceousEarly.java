@@ -194,6 +194,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAfrica.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
@@ -808,7 +809,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         }
 
                         if (biome == BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
-                                || biome == BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome) {
+                                || biome == BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome
+                                || biome == BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes.biome) {
                             if (j1 > Functions.getAdjustedSeaLevel(world, new BlockPos(i1,j1, l)) + 5 + rand.nextInt(5)) {
                                 iblockstate = Blocks.SAND.getDefaultState();
                             }

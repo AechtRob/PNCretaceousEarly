@@ -152,9 +152,11 @@ public class GenLayerCretaceousEarly {
 //
 //        biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 //        biomes = new GenLayerJurassicDesertRimFromHills(1203L, biomes);
+        biomes = new GenLayerSandyDesertPeaks(23L, biomes);
         biomes = new GenLayerFuzzyZoom(1002L, biomes);
         biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes1(642L, biomes);
+        //biomes = new GenLayerSandyDesertPeaks(23L, biomes);
 
 
         //biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);

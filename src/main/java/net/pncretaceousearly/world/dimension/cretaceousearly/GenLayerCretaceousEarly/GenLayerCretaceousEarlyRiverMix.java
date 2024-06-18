@@ -102,6 +102,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int S_AMERICA_ARID_ID = Biome.getIdForBiome(S_AMERICA_ARID);
     public Biome S_AMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int S_AMERICA_DESERT_ID = Biome.getIdForBiome(S_AMERICA_DESERT);
+    public Biome S_AMERICA_DESERT_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
+    public int S_AMERICA_DESERT_SPIKES_ID = Biome.getIdForBiome(S_AMERICA_DESERT_SPIKES);
     public Biome S_AMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
     public int S_AMERICA_FLATS_ID = Biome.getIdForBiome(S_AMERICA_FLATS);
 
@@ -175,7 +177,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (aint[i] == S_AMERICA_ARID_ID) {
                         aint2[i] = S_AMERICA_ARID_CREEK_ID;
                     }
-                    else if (aint[i] == S_AMERICA_DESERT_ID) {
+                    else if (aint[i] == S_AMERICA_DESERT_ID
+                    || aint[i] == S_AMERICA_DESERT_SPIKES_ID) {
                         aint2[i] = S_AMERICA_DESERT_CREEK_ID;
                     }
                     else if (aint[i] == S_AMERICA_FLATS_ID) {
