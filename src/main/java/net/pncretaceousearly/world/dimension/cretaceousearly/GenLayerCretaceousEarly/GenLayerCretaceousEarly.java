@@ -132,22 +132,7 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerSmooth(706L, biomes);
         //biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
-//        biomes = new GenLayerJurassicRiverBanks(225L, biomes);
-//        biomes = new GenLayerJurassicLakeShore(625L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(150L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(151L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(152L, biomes);
 
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1000L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1001L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1002L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1003L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1004L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1005L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1006L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1007L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1008L, biomes);
-//
 //        biomes = new GenLayerJurassicTaigaBasalt(1975L, biomes);
 //
 //        biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
@@ -161,52 +146,18 @@ public class GenLayerCretaceousEarly {
 
         //biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1000L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1001L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1002L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1003L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1004L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1005L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1006L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1007L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1008L, biomes);
-//
+
 //        biomes = new GenLayerDiversifyJurassicMudflats(1138L, biomes);
 //        biomes = new GenLayerJurassicRiverBorder(326L, biomes);
 //        biomes = new GenLayerJurassicRiverBorderMudflats(326L, biomes);
 //        biomes = new GenLayerJurassicRiverBorderMire(328L, biomes);
 
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1000L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1001L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1002L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1003L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1004L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1005L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1006L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1007L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1008L, biomes);
-//
+
+
 //        biomes = new GenLayerJurassicRiverBanks(226L, biomes);
         biomes = new GenLayerSmooth(719L, biomes); //ADDED THIS
-//        biomes = new GenLayerJoinRiversJurassic(153L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(154L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(155L, biomes);
-//        biomes = new GenLayerJoinRiversJurassic(156L, biomes);
-//        biomes = new GenLayerJurassicRiverBanks(227L, biomes);
-//        biomes = new GenLayerJurassicTaigaBasalt(1976L, biomes);
-//        biomes = new GenLayerJurassicRoosts(1000L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1000L, biomes);
-        biomes = new GenLayerZoom(1006L, biomes);
 
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1000L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1001L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1002L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1003L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1004L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1005L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1006L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1007L, biomes);
-//        biomes = new GenLayerJurassicTryToJoinRiverToSea(1008L, biomes);
+        biomes = new GenLayerZoom(1006L, biomes);
 
         //Build and superimpose creeks:
         GenLayer genlayercreek = new GenLayerRiverInit(100L, biomes);
