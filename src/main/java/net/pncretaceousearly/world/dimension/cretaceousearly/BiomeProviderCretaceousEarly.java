@@ -1,6 +1,8 @@
 package net.pncretaceousearly.world.dimension.cretaceousearly;
 
 import com.google.common.collect.Lists;
+import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ReportedException;
@@ -13,6 +15,7 @@ import net.minecraft.world.biome.BiomeProvider;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousOcean;
 import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerCretaceousEarly;
 
 import javax.annotation.Nullable;
@@ -124,7 +127,7 @@ public class BiomeProviderCretaceousEarly extends BiomeProvider {
 
     @Override
     public Biome getBiome(BlockPos pos, Biome defaultBiome) {
-        return this.biomeCache.getBiome(pos.getX(), pos.getZ(), defaultBiome);
+        return this.biomeCache.getBiome(pos.getX(), pos.getZ(), BiomeEarlyCretaceousOcean.biome);
     }
 
     @Override
@@ -205,6 +208,9 @@ public class BiomeProviderCretaceousEarly extends BiomeProvider {
                 Biome biome = Biome.getBiome(aint[k1]);
 
                 if (!allowed.contains(biome)) {
+                    return false;
+                }
+                if (!(biome instanceof BiomeCretaceousEarly)) {
                     return false;
                 }
             }
