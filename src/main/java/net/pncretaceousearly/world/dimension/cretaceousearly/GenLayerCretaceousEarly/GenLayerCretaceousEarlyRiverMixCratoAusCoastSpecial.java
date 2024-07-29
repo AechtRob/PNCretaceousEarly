@@ -22,6 +22,11 @@ public class GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial extends GenLaye
     public Biome TICOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
     public int TICOA_ID = Biome.getIdForBiome(TICOA);
 
+    public static Biome RIFT1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
+    public static int RIFT1_ID =  Biome.getIdForBiome(RIFT1);
+    public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
+    public static int RIFT2_ID =  Biome.getIdForBiome(RIFT2);
+
 
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_CRATO = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_desert"));
@@ -55,21 +60,27 @@ public class GenLayerCretaceousEarlyRiverMixCratoAusCoastSpecial extends GenLaye
 
         for (int i = 0; i < areaWidth * areaHeight; ++i)
         {
+
             if (aint1[i] == Biome.getIdForBiome(Biomes.RIVER))
             {
-
-                //Add the rivers we want:
-                if (aint[i] == CRATO_SWAMP_ID || aint[i] == CRATO_SWAMP_LOW_ID) {
-                    aint2[i] = CRETACEOUS_EARLY_CREEK_CRATO_ID;
-                }
-                else if (aint[i] == AUS_BEACH_ID) {
-                    aint2[i] = AUS_BEACH_CREEK_ID;
-                }
-                else if (aint[i] == TICOA_ID) {
-                    aint2[i] = TICOA_CREEK_ID;
+                //Exclude rivers here:
+                if (aint[i] == RIFT1_ID
+                        || aint[i] == RIFT2_ID
+                )
+                {
+                    aint2[i] = aint[i];
                 }
                 else {
-                    aint2[i] = aint[i];
+                    //Add the rivers we want:
+                    if (aint[i] == CRATO_SWAMP_ID || aint[i] == CRATO_SWAMP_LOW_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_CRATO_ID;
+                    } else if (aint[i] == AUS_BEACH_ID) {
+                        aint2[i] = AUS_BEACH_CREEK_ID;
+                    } else if (aint[i] == TICOA_ID) {
+                        aint2[i] = TICOA_CREEK_ID;
+                    } else {
+                        aint2[i] = aint[i];
+                    }
                 }
             }
             else {

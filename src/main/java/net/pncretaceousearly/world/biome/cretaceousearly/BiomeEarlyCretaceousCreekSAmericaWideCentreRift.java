@@ -4,13 +4,11 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -22,10 +20,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_south_america_creek_wide_centre")
+public class BiomeEarlyCretaceousCreekSAmericaWideCentreRift extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_south_america_creek_wide_rift")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousCreekSAmericaWideCentre(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekSAmericaWideCentreRift(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -42,8 +40,8 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Flooded Rift").setBaseHeight(-0.80F).setHeightVariation(0.00F).setTemperature(0.9F).setRainfall(0.9F));
-			setRegistryName("lepidodendron:cretaceous_early_south_america_creek_wide_centre");
+			super(new BiomeProperties("E. Cretaceous Flooded Rift").setBaseHeight(-1.80F).setHeightVariation(1.00F).setTemperature(0.9F).setRainfall(0.9F));
+			setRegistryName("lepidodendron:cretaceous_early_south_america_creek_wide_rift");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 3;
@@ -112,24 +110,24 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS)) {
 
-				if (rand.nextInt(8) == 0) {
+				//if (rand.nextInt(3) == 0) {
 					for (int i = 0; i < 8; ++i) {
 						if (rand.nextInt(4) == 0) {
 							LITTER.generate(worldIn, rand, pos.add(16, 0, 16), 0, 50, Blocks.MAGMA.getDefaultState(), 0);
 						}
 					}
-				}
+				//}
 
-				if (rand.nextInt(6) == 0) {
+				//if (rand.nextInt(3) == 0) {
 					for (int i = 0; i < 8; ++i) {
 						if (rand.nextInt(4) == 0) {
 							LITTER.generate(worldIn, rand, pos.add(16, 0, 16), 0, 50, BlockSulphurVent.block.getDefaultState(), 0);
 						}
 					}
-				}
+				//}
 			}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 96; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -137,7 +135,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					SAND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 				}
 
-			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 			{
 				int i = rand.nextInt(3);
 
@@ -150,7 +148,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 				}
 			}
 
-			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS)) {
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS)) {
 				int i = rand.nextInt(8);
 
 				for (int j = 0; j < i; ++j) {
@@ -164,7 +162,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 			}
 
 			DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.FERN);
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i1 = 0; i1 < 20; ++i1)
 				{
 					int j1 = rand.nextInt(16) + 8;
@@ -173,7 +171,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					DOUBLE_PLANT_GENERATOR.generate(worldIn, rand, pos.add(j1, l1, k1));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 80; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -181,7 +179,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					FERN_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 50; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -190,7 +188,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					ANCIENT_MOSS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 25; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -199,7 +197,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					SELAGINELLA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 50; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -208,7 +206,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					ISOETES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -217,7 +215,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoSapling.block, BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 85);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -226,7 +224,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoitesSapling.block, BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 85);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 12; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -235,7 +233,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					ZAMITES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -244,7 +242,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					CTENIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -253,7 +251,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					CYCAS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 12; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -262,7 +260,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					CAYTONIALES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 24; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -271,7 +269,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					CYCADEOIDEA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 24; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -280,7 +278,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockLophosoria.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 8; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -289,7 +287,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockMarattia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 255, false, true, false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 24; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -298,7 +296,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockClathropteris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 24; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -307,7 +305,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockPseudoctenis.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 10; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -316,7 +314,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockDicksoniaLeavesPlaceable.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 192; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -325,7 +323,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					PLANT_GENERATOR.generate(BlockClubmoss.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 80; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -334,7 +332,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					WATER_HORSETAIL_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 40; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -344,7 +342,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 				}
 
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 40; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -353,7 +351,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					SLIMY_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 2; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -362,7 +360,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWideCentre extends ElementsLepidod
 					EQUISETITES_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 192; ++i)
 				{
 					int j = rand.nextInt(16) + 8;

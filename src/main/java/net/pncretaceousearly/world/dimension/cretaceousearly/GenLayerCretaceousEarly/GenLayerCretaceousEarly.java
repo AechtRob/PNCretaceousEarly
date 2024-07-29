@@ -245,10 +245,14 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayerwidecreek5 = new GenLayerRiver(12L, genlayerwidecreek4);
         GenLayer genlayerwidecreek6 = new GenLayerSmooth(1200L, genlayerwidecreek5);
         genlayerwidecreek6 = new GenLayerZoom(1676L, genlayerwidecreek6);
+        //Adds riverbanks to the edges of the river:
         genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(120L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1677L, genlayerwidecreek6);
+        //Digs out a deeper rift in parts of the river:
+        genlayerwidecreek6 = new GenLayerRiverriftSAmericaRiver(121L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1678L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
+        genlayerwidecreek6 = new GenLayerRiverriftSAmericaRiver(122L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
         genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
         GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial(1200L, genlayer3widevalleyfinal, genlayerwidecreek6);

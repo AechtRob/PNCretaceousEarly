@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousAustroAntarcticCoastal extends ElementsLepidode
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Austro-Antarctic Coastal Sandbars").setBaseHeight(-0.05F).setHeightVariation(0.00F).setTemperature(1.4F));
+			super(new BiomeProperties("E. Cretaceous Coastal Sandbars").setBaseHeight(-0.05F).setHeightVariation(0.00F).setTemperature(1.4F));
 			setRegistryName("lepidodendron:cretaceous_early_austro_antarctic_coastal");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirt.block.getDefaultState();

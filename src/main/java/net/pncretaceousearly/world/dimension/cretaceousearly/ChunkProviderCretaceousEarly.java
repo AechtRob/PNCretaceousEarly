@@ -11,7 +11,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -476,77 +475,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         ) {
                             iblockstate = BlockDriedMud.block.getDefaultState();
                         }
-                        else if (j1 <= i - 1) {
+                        else if (j1 <= i - 7 - k) {
                             iblockstate = biome.topBlock;
                             //iblockstate1 = biome.fillerBlock;
-                            if (Math.random() > 0.85) {
-                                if (Math.random() > 0.3) {
-////                                    if (biome == BiomeJurassicSouthernTaiga.biome
-////                                        || biome == BiomeJurassicSouthernTaigaHills.biome
-////                                        || biome == BiomeJurassicSouthernTaigaBasalt.biome
-////                                        || biome == BiomeJurassicCreekSouthernTaiga.biome) {
-////                                        iblockstate1 = BlockCoarseSandyDirtBlack.block.getDefaultState();
-////                                    }
-////                                    else if (biome == BiomeJurassicSandyIslandWhite.biome
-////                                            || biome == BiomeJurassicSandyIslandWhiteEdge.biome) {
-////                                        iblockstate1 = BlockCoarseSandyDirtWhite.block.getDefaultState();
-////                                    }
-////                                    else {
-////                                       if (biome == BiomeJurassicBeachBlack.biome) {
-////                                           iblockstate1 = BlockSandBlack.block.getDefaultState();
-////                                       }
-////                                       else {
-//                                           iblockstate1 = BlockCoarseSandyDirt.block.getDefaultState();
-////                                       }
-////                                    }
-                                } else {
-                                    if (biome != biome) {
-                                        iblockstate1 = BlockSandBlack.block.getDefaultState();
-                                    }
-                                    else if (biome != biome) {
-                                        iblockstate1 = BlockSandWhite.block.getDefaultState();
-                                    }
-                                    else {
-                                        iblockstate1 = Blocks.SAND.getStateFromMeta(0);
-                                        if (biome != biome
-                                                && Math.random() < 0.2) {
-                                            if (Math.random() < 0.2) {
-                                                iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
-                                            }
-                                            else {
-                                                iblockstate1 = BlockPeat.block.getDefaultState();
-                                            }
-                                        }
-                                    }
-                                }
-                            } else {
-                                if (biome != biome) {
-                                    iblockstate1 = BlockSandBlackWavy.block.getDefaultState();
-                                }
-                                else if (biome != biome) {
-                                    iblockstate1 = BlockSandWhiteWavy.block.getDefaultState();
-                                    if (Math.random() < 0.2) {
-                                        iblockstate1 = Blocks.GRAVEL.getDefaultState();
-                                    }
-                                }
-                                else {
-                                    iblockstate1 = BlockSandWavy.block.getDefaultState();
-                                    if (biome != biome) {
-                                        iblockstate1 = BlockSandBlackWavy.block.getDefaultState();
-                                    }
-                                    if (biome != biome && Math.random() < 0.2) {
-                                        iblockstate1 = Blocks.GRAVEL.getDefaultState();
-                                    }
-                                    if (biome != biome) {
-                                        if (Math.random() < 0.2) {
-                                            iblockstate1 = BlockCarboniferousMud.block.getDefaultState();
-                                        }
-                                        else {
-                                            iblockstate1 = BlockPeat.block.getDefaultState();
-                                        }
-                                    }
-                                }
-                            }
+                            iblockstate1 = getIBlockstateForWater(biome, j1, iblockstate1, rand);
                         }
                         if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR)) {
                             if (biome.getTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F) {
@@ -590,6 +522,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         if (biome == BiomeEarlyCretaceousCreekSAmericaWide.biome
                                 || biome == BiomeEarlyCretaceousCreekSAmericaWideCentre.biome
+                                || biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome
                         ) {
                             if (rand.nextInt(16) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(2);
@@ -880,6 +813,97 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(24) == 0 && j1 <= 70) {
                                 iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsia.biome) {
+                            int p = rand.nextInt(100);
+                            if (j1 == 62) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                if (p >= 99) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 97) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 94) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
+                                else if (p >= 56) {
+                                    iblockstate = BlockPeat.block.getDefaultState();
+                                }
+                            }
+                            else if (j1 == 63) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                if (p >= 98) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 92) {
+                                    iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                }
+                                else if (p >= 88) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 81) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 67) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 49) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
+                                else if (p >= 27) {
+                                    iblockstate = BlockPeat.block.getDefaultState();
+                                }
+                            }
+                            else if (j1 == 64) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                if (p >= 89) {
+                                    iblockstate = BlockDriedMud.block.getDefaultState();
+                                }
+                                else if (p >= 74) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 88) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 56) {
+                                    iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                }
+                                else if (p >= 41) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 24) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 19) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 19) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
+                            }
+                            else {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                if (p >= 90) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                }
+                                else if (p >= 79) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
+                                else if (p >= 44) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 29) {
+                                    iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                }
+                                else if (p >= 20) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 5) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
                             }
                         }
 
@@ -1182,125 +1206,16 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-
                         j = k;
                         if (j1 >= i - 1) {
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate);
                         }
-                        else if (j1 < i - 7 - k) {
+                        else if (j1 <= i - 1) {
                             iblockstate = AIR;
                             iblockstate1 = STONE;
-                            if (biome != biome
-                                    && rand.nextInt(32) == 0) {
-                                int s = rand.nextInt(4);
-                                switch (s) {
-                                    case 0: default:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.NORTH));
-                                        break;
 
-                                    case 1:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.EAST));
-                                        break;
-
-                                    case 2:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.SOUTH));
-                                        break;
-
-                                    case 3:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.WEST));
-                                        break;
-                                }
-                            }
-                            else
-                                if (biome != biome
-                                    && rand.nextInt(4) == 0) {
-                                chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
-                            }
-                            else
-                            if (Math.random() > 0.6 && j1 >= i - 2) {
-                                if (biome != biome) {
-                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockSandyDirtBlack.block.getDefaultState());
-                                }
-                                else {
-                                    chunkPrimerIn.setBlockState(i1, j1, l, Blocks.DIRT.getStateFromMeta(1));
-                                }
-                            }
-                            else {
-                                if (Math.random() > 0.95 || (j1 < i - 10 && Math.random() > 0.3)) {
-                                    if (biome != biome) {
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockSandBlack.block.getDefaultState());
-                                    }
-                                    else {
-                                        chunkPrimerIn.setBlockState(i1, j1, l, Blocks.SAND.getStateFromMeta(0));
-                                    }
-                                } else {
-                                    if (Math.random() > 0.25) {
-                                        if (Math.random() > 0.85) {
-                                            if (biome != biome) {
-                                                chunkPrimerIn.setBlockState(i1, j1, l, BlockSandBlack.block.getDefaultState());
-                                            }
-                                            else {
-                                                if (biome != biome && Math.random() > 0.2) {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockCarboniferousMud.block.getDefaultState());
-                                                }
-                                                else {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, Blocks.SAND.getStateFromMeta(0));
-                                                }
-                                            }
-                                        }
-                                        else {
-                                            if (biome != biome) {
-                                                chunkPrimerIn.setBlockState(i1, j1, l, BlockSandBlackWavy.block.getDefaultState());
-                                            }
-                                            else if (biome != biome) {
-                                                chunkPrimerIn.setBlockState(i1, j1, l, BlockSandWhiteWavy.block.getDefaultState());
-                                            }
-                                            else {
-                                                chunkPrimerIn.setBlockState(i1, j1, l, BlockSandWavy.block.getDefaultState());
-                                                if (biome != biome) {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockSandBlackWavy.block.getDefaultState());
-                                                }
-                                                if (biome != biome && Math.random() < 0.2) {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
-                                                }
-                                                if (biome != biome) {
-                                                    chunkPrimerIn.setBlockState(i1, j1, l, BlockPeat.block.getDefaultState());
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        } else {
-                            if (biome != biome
-                                    && rand.nextInt(16) == 0) {
-                                int s = rand.nextInt(4);
-                                switch (s) {
-                                    case 0: default:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.NORTH));
-                                        break;
-
-                                    case 1:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.EAST));
-                                        break;
-
-                                    case 2:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.SOUTH));
-                                        break;
-
-                                    case 3:
-                                        chunkPrimerIn.setBlockState(i1, j1, l, BlockGlassSpongeReef.block.getDefaultState().withProperty(BlockGlassSpongeReef.FACING, EnumFacing.WEST));
-                                        break;
-                                }
-                            }
-                            else
-                                if (biome != biome
-                                    && rand.nextInt(4) == 0) {
-                                chunkPrimerIn.setBlockState(i1, j1, l, Blocks.GRAVEL.getDefaultState());
-                            }
-                            else {
-                                chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
-                            }
+                            iblockstate1 = getIBlockstateForWater(biome, j1, iblockstate1, rand);
+                            chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                     } else if (j > 0) {
                         --j;
@@ -1329,6 +1244,56 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 }
             }
         }
+    }
+
+    public static IBlockState getIBlockstateForWater(Biome biome, int posY, IBlockState iblockstate, Random rand) {
+
+        if (biome == BiomeEarlyCretaceousLandAsia.biome) {
+            iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            if (rand.nextInt(10) < 3) {
+                iblockstate = BlockPeat.block.getDefaultState();
+            }
+        }
+        
+        if (biome == BiomeEarlyCretaceousCreekSAmericaWideCentre.biome
+                || biome == BiomeEarlyCretaceousCreekSAmericaWide.biome
+                || biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome) {
+            if (rand.nextInt(2) == 0) {
+                iblockstate = BlockSandBlackWavy.block.getDefaultState();
+            }
+            else {
+                iblockstate = BlockLavaCobble.block.getDefaultState();
+                if (rand.nextInt(4) == 0) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                }
+                if (rand.nextInt(10) == 0 && posY <= 50) {
+                    iblockstate = BlockLavaCobbleMolten.block.getDefaultState();
+                }
+            }
+            if (rand.nextInt(17) == 0 && posY <= 50) {
+                iblockstate = Blocks.MAGMA.getDefaultState();
+            }
+            if (rand.nextInt(5) == 0 && posY <= 40 && biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome) {
+                iblockstate = Blocks.MAGMA.getDefaultState();
+            }
+            if (rand.nextInt(12) == 0) {
+                iblockstate = Blocks.OBSIDIAN.getDefaultState();
+            }
+            if (rand.nextInt(18) == 0) {
+                iblockstate = BlockToxicMud.block.getDefaultState();
+            }
+            if (rand.nextInt(14) == 0) {
+                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            }
+            if (rand.nextInt(16) == 0) {
+                iblockstate = BlockLavaRock.block.getDefaultState();
+                if (rand.nextInt(10) == 0) {
+                    iblockstate = BlockSulphurOreLavaRock.block.getDefaultState();
+                }
+            }
+        }
+
+        return iblockstate;
     }
 
 }

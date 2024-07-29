@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandEurope extends ElementsLepidodendronMod.Mod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous European Swampy Lowlands").setBaseHeight(0.015F).setHeightVariation(0.005F).setTemperature(1.1F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous Swampy Eyotts").setBaseHeight(0.015F).setHeightVariation(0.005F).setTemperature(1.1F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_europe");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

@@ -48,7 +48,7 @@ public class BiomeEarlyCretaceousLandAfricaSwampFlat extends ElementsLepidodendr
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous African Swamp Woodland").setRainfall(0.5F).setBaseHeight(-0.2F).setHeightVariation(0.02F).setTemperature(1.45F).setRainfall(0.9F).setWaterColor(3906905));
+			super(new BiomeProperties("E. Cretaceous Swampy Woodland").setRainfall(0.5F).setBaseHeight(-0.2F).setHeightVariation(0.02F).setTemperature(1.45F).setRainfall(0.9F).setWaterColor(3906905));
 			setRegistryName("lepidodendron:cretaceous_early_africa_swamp");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

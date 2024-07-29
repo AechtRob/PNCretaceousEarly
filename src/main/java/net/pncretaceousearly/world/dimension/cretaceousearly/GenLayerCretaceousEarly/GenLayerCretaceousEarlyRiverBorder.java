@@ -30,6 +30,9 @@ public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
     public Biome SAMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
     public int SAMERICA_FLATS_ID =  Biome.getIdForBiome(SAMERICA_FLATS);
 
+    public Biome ARID_CREEK_FROM_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_desert"));
+    public int ARID_CREEK_FROM_AFRICA_ID = Biome.getIdForBiome(ARID_CREEK_FROM_AFRICA);
+
     public GenLayerCretaceousEarlyRiverBorder(long seed, GenLayer genLayer)
     {
         super(seed);
@@ -48,7 +51,7 @@ public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
                 this.initChunkSeed((long)(j + areaX), (long)(i + areaY));
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isAfrican(k))
+                if (isAfrican(k) || k == ARID_CREEK_FROM_AFRICA_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];

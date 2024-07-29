@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousCreekNAmericaBraided extends ElementsLepidodend
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous North American Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
+			super(new BiomeProperties("E. Cretaceous Braided Floodplain Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_north_america_braided");
 
 			topBlock = Blocks.SAND.getDefaultState();

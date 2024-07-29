@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandEuropeField extends ElementsLepidodendronMo
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous European Ferny Floodplain").setBaseHeight(-0.115F).setHeightVariation(0.0001F).setTemperature(1.7F));
+			super(new BiomeProperties("E. Cretaceous Ferny Floodplain").setBaseHeight(-0.115F).setHeightVariation(0.0001F).setTemperature(1.7F));
 			setRegistryName("lepidodendron:cretaceous_early_europe_field");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

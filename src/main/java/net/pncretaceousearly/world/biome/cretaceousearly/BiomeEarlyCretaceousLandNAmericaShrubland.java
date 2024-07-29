@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrubland extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous North American SHRUBLAND").setBaseHeight(0.3F).setHeightVariation(0.015F).setTemperature(1.5F));
+			super(new BiomeProperties("E. Cretaceous Sapindopsis Shrubland").setBaseHeight(0.3F).setHeightVariation(0.015F).setTemperature(1.5F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica_shrubland");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
