@@ -816,7 +816,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandAsia.biome) {
+                        if (biome == BiomeEarlyCretaceousLandAsia.biome
+                            || biome == BiomeEarlyCretaceousCreekBoggy.biome) {
                             int p = rand.nextInt(100);
                             if (j1 == 62) {
                                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
@@ -1248,7 +1249,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
     public static IBlockState getIBlockstateForWater(Biome biome, int posY, IBlockState iblockstate, Random rand) {
 
-        if (biome == BiomeEarlyCretaceousLandAsia.biome) {
+        if (biome == BiomeEarlyCretaceousLandAsia.biome
+            || biome == BiomeEarlyCretaceousCreekBoggy.biome) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(10) < 3) {
                 iblockstate = BlockPeat.block.getDefaultState();
@@ -1266,12 +1268,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 if (rand.nextInt(4) == 0) {
                     iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
                 }
-                if (rand.nextInt(10) == 0 && posY <= 50) {
+                if (rand.nextInt(10) == 0 && posY <= 50 && biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome) {
                     iblockstate = BlockLavaCobbleMolten.block.getDefaultState();
                 }
-            }
-            if (rand.nextInt(17) == 0 && posY <= 50) {
-                iblockstate = Blocks.MAGMA.getDefaultState();
             }
             if (rand.nextInt(5) == 0 && posY <= 40 && biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome) {
                 iblockstate = Blocks.MAGMA.getDefaultState();

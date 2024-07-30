@@ -6,8 +6,10 @@ import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -41,11 +43,11 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Boggy Glades").setBaseHeight(1.025F).setBaseHeight(-0.15F).setHeightVariation(0.02F).setRainfall(1.5F).setWaterColor(-11957460));
+			super(new BiomeProperties("E. Cretaceous Boggy Glades").setBaseHeight(-0.15F).setHeightVariation(0.02F).setRainfall(1.5F));
 			setRegistryName("lepidodendron:cretaceous_early_asia");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(2);
-			decorator.treesPerChunk = 6;
+			decorator.treesPerChunk = 2;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -62,13 +64,14 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenPodozamitesTreeWaterDeep PODOZAMITES_TREE = new WorldGenPodozamitesTreeWaterDeep(false);
-		protected static final WorldGenTetoriTree TETORI_TREE = new WorldGenTetoriTree(false);
+		protected static final WorldGenTetoriTrees TETORI_TREE = new WorldGenTetoriTrees(false);
 		//NB the rest of the trees are encoded hard into the Podozamites above for this biome explicitly
 
-		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
+		protected static final WorldGenPrehistoricGroundCoverLush GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverLush();
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenTodites TODITES_GENERATOR = new WorldGenTodites();
 		protected static final WorldGenNilssonia NILSSONIA_GENERATOR = new WorldGenNilssonia();
+		protected static final WorldGenCtenis CTENIS_GENERATOR = new WorldGenCtenis();
 		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
 		protected static final WorldGenZamitesShoot ZAMITES_SHOOT_GENERATOR = new WorldGenZamitesShoot();
 		protected static final WorldGenPtilophyllum PTILOPHYLLUM_GENERATOR = new WorldGenPtilophyllum();
@@ -80,10 +83,11 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 		protected static final WorldGenSwampHorsetail SWAMP_HORSETAIL_GENERATOR = new WorldGenSwampHorsetail();
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenPrimaevalGrass SEDGE_GENERATOR = new WorldGenPrimaevalGrass();
+		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			if (rand.nextInt(24) == 0) {
+			if (rand.nextInt(18) == 0) {
 				return PODOZAMITES_TREE;
 			}
 			return TETORI_TREE;
@@ -91,12 +95,46 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 		}
 
 		@Override
+		@SideOnly(Side.CLIENT)
+		public int getFoliageColorAtPos(BlockPos pos)
+		{
+			return -11957460;
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getGrassColorAtPos(BlockPos pos)
+		{
+			return -11957460;
+		}
+
+		@Override
+		public int getModdedBiomeGrassColor(int original)
+		{
+			return -11957460;
+		}
+
+		@Override
+		public int getModdedBiomeFoliageColor(int original)
+		{
+			return -11957460;
+		}
+
+		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
 
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 14; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockElatocladusSapling.block, BlockElatocladusLeaves.block.getDefaultState(), BlockElatocladusLog.block.getDefaultState().withProperty(BlockElatocladusLog.BlockCustom.FACING, EnumFacing.NORTH), worldIn, rand, pos.add(j, l, k), 65, 68);
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 10; ++i)
+				for (int i = 0; i < 2; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -119,11 +157,20 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					DIOON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					CTENIS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 2; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					DIOON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 1; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -132,7 +179,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 10; ++i)
+				for (int i = 0; i < 5; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -141,7 +188,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 2; ++i)
+				for (int i = 0; i < 1; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -150,7 +197,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 10; ++i)
+				for (int i = 0; i < 5; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -158,10 +205,8 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 					PTILOPHYLLUM_SHOOT_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-
-
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 32; ++i)
+				for (int i = 0; i < 18; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -170,7 +215,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 32; ++i)
+				for (int i = 0; i < 12; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -179,7 +224,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 32; ++i)
+				for (int i = 0; i < 18; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -188,7 +233,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 32; ++i)
+				for (int i = 0; i < 72; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -197,7 +242,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 32; ++i)
+				for (int i = 0; i < 64; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -206,7 +251,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 128; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -242,13 +287,31 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 56; ++i)
+				for (int i = 0; i < 12; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					MATONIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+					PLANT_GENERATOR.generate(BlockOtozamites.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
 				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 64; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockDicksoniaLeavesPlaceable.block.getDefaultState(), worldIn, rand, pos.add(j, l, k));
+				}
+//
+//			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+//				for (int i = 0; i < 56; ++i)
+//				{
+//					int j = rand.nextInt(16) + 8;
+//					int k = rand.nextInt(16) + 8;
+//					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+//					MATONIA_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), false);
+//				}
 
 			DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.FERN);
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -270,7 +333,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 92; ++i)
+				for (int i = 0; i < 256; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -279,7 +342,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 32; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -288,7 +351,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 48; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -297,7 +360,7 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 32; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;

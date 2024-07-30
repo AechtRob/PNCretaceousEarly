@@ -47,6 +47,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public Biome AFRO_SWAMP_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_swamp"));
     public int AFRO_SWAMP_CREEK_ID = Biome.getIdForBiome(AFRO_SWAMP_CREEK);
 
+    public Biome TETORI_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_boggy_glades"));
+    public int TETORI_CREEK_ID = Biome.getIdForBiome(TETORI_CREEK);
+
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -127,6 +130,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
     public static int RIFT2_ID =  Biome.getIdForBiome(RIFT2);
 
+    public static Biome TETORI = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
+    public static int TETORI_ID =  Biome.getIdForBiome(TETORI);
+
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
         super(p_i2129_1_);
@@ -199,6 +205,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (isNAmerica(aint[i])) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
+                    }
+                    else if (aint[i] ==TETORI_ID) {
+                        aint2[i] = TETORI_CREEK_ID;
                     }
                     else if (isAus(aint[i])) {
                         if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
