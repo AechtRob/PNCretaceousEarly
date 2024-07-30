@@ -5,11 +5,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAfrica;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsia;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandSAmerica;
 
-public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLayer {
+public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia extends GenLayer {
 
     public Biome CRETACEOUS_EARLY_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
     public int CRETACEOUS_EARLY_EUROPE_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_EUROPE);
@@ -23,6 +23,12 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLa
     public Biome EARLY_CRETACEOUS_EUROPE_FIELD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field"));
     public int EARLY_CRETACEOUS_EUROPE_FIELD_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_EUROPE_FIELD);
 
+
+    public Biome CRETACEOUS_EARLY_ASIA_BOG = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
+    public int CRETACEOUS_EARLY_ASIA_BOG_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_ASIA_BOG);
+    public Biome CRETACEOUS_EARLY_ASIA_PHRYGANA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana"));
+    public int CRETACEOUS_EARLY_ASIA_PHRYGANA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_ASIA_PHRYGANA);
+
     private final int EuropeBiomes[] = new int[] {
             CRETACEOUS_EARLY_NAMERICA_ID,
             CRETACEOUS_EARLY_EUROPE_ID,
@@ -34,7 +40,12 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLa
             CRETACEOUS_EARLY_AFRICA_ID
     };
 
-    public GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica(long seed, GenLayer genlayer) {
+    private final int AsiaBiomes[] = new int[] {
+            CRETACEOUS_EARLY_ASIA_BOG_ID,
+            CRETACEOUS_EARLY_ASIA_PHRYGANA_ID
+    };
+
+    public GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia(long seed, GenLayer genlayer) {
         super(seed);
         this.parent = genlayer;
     }
@@ -58,6 +69,9 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAndAfrica extends GenLa
                 }
                 else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandSAmerica.biome) {
                     output[i] = AfricaBiomes[nextInt(AfricaBiomes.length)];
+                }
+                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAsia.biome) {
+                    output[i] = AsiaBiomes[nextInt(AsiaBiomes.length)];
                 }
                 else output[i] = center;
             }
