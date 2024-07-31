@@ -64,6 +64,8 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerEuropeCopse(223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorder(98L, biomes);
         biomes = new GenLayerZoom(109L, biomes);
+
+        biomes = new GenLayerOceanCrags(29L, biomes);
         //}
 //        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 //        biomes = new GenLayerAddShallowSea2(1202L, biomes);
