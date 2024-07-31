@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousLandAsiaPhryganaLake extends ElementsLepidodend
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coniferous Phrygana Lake").setBaseHeight(-0.95F).setHeightVariation(0.02F).setTemperature(2.0F).setRainfall(0.5F).setWaterColor(-1312465));
+			super(new BiomeProperties("E. Cretaceous Maritime Scrub Lake").setBaseHeight(-0.95F).setHeightVariation(0.02F).setTemperature(2.0F).setRainfall(0.5F).setWaterColor(-1312465));
 			setRegistryName("lepidodendron:cretaceous_early_asia_phyrgana_lake");
 			topBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
