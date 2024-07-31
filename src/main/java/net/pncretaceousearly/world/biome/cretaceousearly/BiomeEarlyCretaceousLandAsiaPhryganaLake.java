@@ -3,13 +3,11 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
-import net.lepidodendron.procedure.ProcedureWorldGenAridPine;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockBush;
-import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
@@ -24,10 +22,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandAsiaPhrygana extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_asia_phyrgana")
+public class BiomeEarlyCretaceousLandAsiaPhryganaLake extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_asia_phyrgana_lake")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandAsiaPhrygana(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousLandAsiaPhryganaLake(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -46,8 +44,8 @@ public class BiomeEarlyCretaceousLandAsiaPhrygana extends ElementsLepidodendronM
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coniferous Phrygana").setBaseHeight(0.25F).setHeightVariation(0.12F).setTemperature(2.0F).setRainfall(0.5F).setWaterColor(-1312465));
-			setRegistryName("lepidodendron:cretaceous_early_asia_phyrgana");
+			super(new BiomeProperties("E. Cretaceous Coniferous Phrygana Lake").setBaseHeight(-0.95F).setHeightVariation(0.02F).setTemperature(2.0F).setRainfall(0.5F).setWaterColor(-1312465));
+			setRegistryName("lepidodendron:cretaceous_early_asia_phyrgana_lake");
 			topBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
 			decorator.treesPerChunk = 1;
@@ -80,7 +78,7 @@ public class BiomeEarlyCretaceousLandAsiaPhrygana extends ElementsLepidodendronM
 		protected static final WorldGenIsoetes ISOETES_GENERATOR = new WorldGenIsoetes();
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
 		protected static final net.minecraft.world.gen.feature.WorldGenDeadBush DEAD_BUSH_GENERATOR = new net.minecraft.world.gen.feature.WorldGenDeadBush();
-		protected static final net.lepidodendron.world.gen.WorldGenDeadBush DEAD_BUSH_PF_GENERATOR = new net.lepidodendron.world.gen.WorldGenDeadBush();
+		protected static final WorldGenDeadBush DEAD_BUSH_PF_GENERATOR = new WorldGenDeadBush();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -188,6 +186,14 @@ public class BiomeEarlyCretaceousLandAsiaPhrygana extends ElementsLepidodendronM
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 5; ++i)
+				{
+					int j = pos.getX() + rand.nextInt(16) + 8;
+					int k = pos.getZ() + rand.nextInt(16) + 8;
+					PLANT_GENERATOR.generate(BlockBaiera.block.getDefaultState(), worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k).up(), worldIn));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 64; ++i)
 				{
 					int j = pos.getX() + rand.nextInt(16) + 8;
@@ -217,14 +223,6 @@ public class BiomeEarlyCretaceousLandAsiaPhrygana extends ElementsLepidodendronM
 					int j = pos.getX() + rand.nextInt(16) + 8;
 					int k = pos.getZ() + rand.nextInt(16) + 8;
 					PLANT_GENERATOR.generate(BlockUmaltolepis.block.getDefaultState(), worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k).up(), worldIn), 0, 255, true);
-				}
-
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				if (rand.nextInt(20) == 0)
-				{
-					int j = pos.getX() + rand.nextInt(16) + 8;
-					int k = pos.getZ() + rand.nextInt(16) + 8;
-					PLANT_GENERATOR.generate(BlockFrenelopsis.block.getDefaultState(), worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k).up(), worldIn).up());
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

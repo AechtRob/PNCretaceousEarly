@@ -790,7 +790,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandAsiaPhrygana.biome) {
+                        if (biome == BiomeEarlyCretaceousLandAsiaPhrygana.biome
+                                || biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome
+                                || biome == BiomeEarlyCretaceousLandAsiaPhryganaLake.biome) {
                             if (rand.nextInt(12) == 0) {
                                 iblockstate = Blocks.COBBLESTONE.getDefaultState();
                             }
@@ -814,6 +816,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (j1 == 65 && rand.nextInt(32) == 0) {
                                 iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (j1 <= 67 && rand.nextInt(6) == 0 && biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (j1 <= 63 && rand.nextInt(4) == 0 && biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
                             }
                         }
 

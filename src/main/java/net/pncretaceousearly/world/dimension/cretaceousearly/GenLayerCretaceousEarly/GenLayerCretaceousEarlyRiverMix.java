@@ -50,6 +50,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public Biome TETORI_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_boggy_glades"));
     public int TETORI_CREEK_ID = Biome.getIdForBiome(TETORI_CREEK);
 
+    public Biome PHRYGANA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_asia_phyrgana"));
+    public int PHRYGANA_CREEK_ID = Biome.getIdForBiome(PHRYGANA_CREEK);
+
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -132,6 +135,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public static Biome TETORI = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
     public static int TETORI_ID =  Biome.getIdForBiome(TETORI);
+    public static Biome PHRYGANA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana"));
+    public static int PHRYGANA_ID =  Biome.getIdForBiome(PHRYGANA);
+    public static Biome PHRYGANA_LAKE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana_lake"));
+    public static int PHRYGANA_LAKE_ID =  Biome.getIdForBiome(PHRYGANA_LAKE);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -206,8 +213,11 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (isNAmerica(aint[i])) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
                     }
-                    else if (aint[i] ==TETORI_ID) {
+                    else if (aint[i] == TETORI_ID) {
                         aint2[i] = TETORI_CREEK_ID;
+                    }
+                    else if (aint[i] == PHRYGANA_ID|| aint[i] == PHRYGANA_LAKE_ID) {
+                        aint2[i] = PHRYGANA_CREEK_ID;
                     }
                     else if (isAus(aint[i])) {
                         if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID

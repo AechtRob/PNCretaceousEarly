@@ -81,6 +81,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
+        biomes = new GenLayerCretaceousPhryganaLakes(7223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
         biomes = new GenLayerNorthAmericaMountains0(1551L, biomes);
