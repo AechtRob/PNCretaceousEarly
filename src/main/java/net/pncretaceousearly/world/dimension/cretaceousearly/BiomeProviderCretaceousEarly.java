@@ -94,7 +94,14 @@ public class BiomeProviderCretaceousEarly extends BiomeProvider {
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea")),
             Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe")),
-            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"))
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia_craggy")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_banded_desert")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_boggy_glades")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_asia_phyrgana")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_banded_desert")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana")),
+            Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana_lake"))
         );
     public GenLayer genBiomes;
     /** A GenLayer containing the indices into BiomeGenBase.biomeList[] */

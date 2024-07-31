@@ -6,6 +6,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousCreekAsiaPhrygana;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaPhrygana;
+import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaPhryganaLake;
 
 public class GenLayerCretaceousEarlyBeach extends GenLayer
 {
@@ -29,6 +32,8 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     public int CRETACEOUS_BEACH_EUROPE_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_EUROPE);
     public Biome CRETACEOUS_BEACH_ASIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia"));
     public int CRETACEOUS_BEACH_ASIA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_ASIA);
+    public Biome CRETACEOUS_BEACH_ASIA_CRAGGY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia_craggy"));
+    public int CRETACEOUS_BEACH_ASIA_CRAGGY_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_ASIA_CRAGGY);
     public Biome CRETACEOUS_BEACH_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_africa"));
     public int CRETACEOUS_BEACH_AFRICA_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA);
     public Biome CRETACEOUS_BEACH_AUSTRALIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
@@ -87,7 +92,12 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
                                 aint1[j + i * areaWidth] = CRETACEOUS_BEACH_EUROPE_ID;
                             }
                             else if (isAsia(k)) {
-                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_ASIA_ID;
+                                if (isCraggy(k)) {
+                                    aint1[j + i * areaWidth] = CRETACEOUS_BEACH_ASIA_CRAGGY_ID;
+                                }
+                                else {
+                                    aint1[j + i * areaWidth] = CRETACEOUS_BEACH_ASIA_ID;
+                                }
                             }
                             else if (isAfrica(k)) {
                                 aint1[j + i * areaWidth] = CRETACEOUS_BEACH_AFRICA_ID;
@@ -162,6 +172,13 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
             return biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Asia;
         }
         return false;
+    }
+
+    public static boolean isCraggy(int i) {
+        Biome biome = Biome.getBiome(i);
+        return biome == BiomeEarlyCretaceousLandAsiaPhrygana.biome
+                || biome == BiomeEarlyCretaceousLandAsiaPhryganaLake.biome
+                || biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome;
     }
 
 }

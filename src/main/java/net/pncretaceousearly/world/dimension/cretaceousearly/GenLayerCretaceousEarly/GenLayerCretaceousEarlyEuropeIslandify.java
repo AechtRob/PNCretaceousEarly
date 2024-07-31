@@ -38,6 +38,8 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
     public int EARLY_CRETACEOUS_BEACH_ASIA_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_ASIA);
     public Biome EARLY_CRETACEOUS_BEACH_AUS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
     public int EARLY_CRETACEOUS_BEACH_AUS_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_AUS);
+    public Biome CRETACEOUS_BEACH_ASIA_CRAGGY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia_craggy"));
+    public int CRETACEOUS_BEACH_ASIA_CRAGGY_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_ASIA_CRAGGY);
 
     public Biome EARLY_CRETACEOUS_SWAMP_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe"));
     public int EARLY_CRETACEOUS_SWAMP_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_SWAMP_EUROPE);
@@ -151,6 +153,7 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
                 || biomeID == EARLY_CRETACEOUS_BEACH_AFRICA_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_EUROPE_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_ASIA_ID
+                || biomeID == CRETACEOUS_BEACH_ASIA_CRAGGY_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_AUS_ID;
     }
 

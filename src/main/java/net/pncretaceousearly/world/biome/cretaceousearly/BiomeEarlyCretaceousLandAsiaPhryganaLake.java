@@ -48,7 +48,7 @@ public class BiomeEarlyCretaceousLandAsiaPhryganaLake extends ElementsLepidodend
 			setRegistryName("lepidodendron:cretaceous_early_asia_phyrgana_lake");
 			topBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirtGrey.block.getDefaultState();
-			decorator.treesPerChunk = 1;
+			decorator.treesPerChunk = 56;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -66,6 +66,7 @@ public class BiomeEarlyCretaceousLandAsiaPhryganaLake extends ElementsLepidodend
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenAridPineTree PINE_TREE = new WorldGenAridPineTree(false);
 		protected static final WorldGenSciadopitysTree SCIADOPITYS_TREE = new WorldGenSciadopitysTree(false);
+		protected static final WorldGenGlossophyllum GLOSSOPHYLLUM_TREE = new WorldGenGlossophyllum(false);
 
 		protected static final WorldGenSlab SLAB_GENERATOR = new WorldGenSlab();
 		protected static final WorldGenCobble COBBLE_GENERATOR = new WorldGenCobble();
@@ -82,13 +83,13 @@ public class BiomeEarlyCretaceousLandAsiaPhryganaLake extends ElementsLepidodend
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			if (rand.nextInt(5) != 0)
-			{
-				return NULL_TREE;
-			}
 			if (rand.nextInt(20) == 0)
 			{
 				return SCIADOPITYS_TREE;
+			}
+			if (rand.nextInt(10) == 0)
+			{
+				return GLOSSOPHYLLUM_TREE;
 			}
 			return PINE_TREE;
 		}

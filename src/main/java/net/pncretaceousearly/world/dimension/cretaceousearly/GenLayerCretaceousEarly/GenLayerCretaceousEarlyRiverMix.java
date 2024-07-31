@@ -52,7 +52,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public Biome PHRYGANA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_asia_phyrgana"));
     public int PHRYGANA_CREEK_ID = Biome.getIdForBiome(PHRYGANA_CREEK);
-
+    public Biome BANDED_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_banded_desert"));
+    public int BANDED_CREEK_ID = Biome.getIdForBiome(BANDED_CREEK);
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -139,6 +140,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int PHRYGANA_ID =  Biome.getIdForBiome(PHRYGANA);
     public static Biome PHRYGANA_LAKE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana_lake"));
     public static int PHRYGANA_LAKE_ID =  Biome.getIdForBiome(PHRYGANA_LAKE);
+    public static Biome BANDED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_banded_desert"));
+    public static int BANDED_ID =  Biome.getIdForBiome(BANDED);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -215,6 +218,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (aint[i] == TETORI_ID) {
                         aint2[i] = TETORI_CREEK_ID;
+                    }
+                    else if (aint[i] == BANDED_ID) {
+                        aint2[i] = BANDED_CREEK_ID;
                     }
                     else if (aint[i] == PHRYGANA_ID|| aint[i] == PHRYGANA_LAKE_ID) {
                         aint2[i] = PHRYGANA_CREEK_ID;
