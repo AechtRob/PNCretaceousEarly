@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousCreekBoggy extends ElementsLepidodendronMod.Mod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Boggy Glades Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setRainfall(1.5F));
+			super(new BiomeProperties("E. Cretaceous Boggy Glades Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setRainfall(1.5F).setWaterColor(-7562693));
 			setRegistryName("lepidodendron:cretaceous_early_creek_boggy_glades");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(2);
