@@ -43,10 +43,10 @@ public class BiomeEarlyCretaceousLandAsia extends ElementsLepidodendronMod.ModEl
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Boggy Glades").setBaseHeight(-0.15F).setHeightVariation(0.02F).setRainfall(1.5F).setWaterColor(-7562693));
+			super(new BiomeProperties("E. Cretaceous Boggy Glades").setBaseHeight(-0.15F).setHeightVariation(0.02F).setRainfall(1.5F).setTemperature(1.8F).setWaterColor(-7562693));
 			setRegistryName("lepidodendron:cretaceous_early_asia");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
-			fillerBlock = Blocks.DIRT.getStateFromMeta(2);
+			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 2;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;

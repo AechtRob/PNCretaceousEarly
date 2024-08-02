@@ -63,9 +63,11 @@ public class GenLayerCretaceousEarly {
         //if ((new Random(seed)).nextInt(8) == 0) {
         biomes = new GenLayerEuropeCopse(223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorder(98L, biomes);
+
         biomes = new GenLayerZoom(109L, biomes);
 
         biomes = new GenLayerOceanCrags(29L, biomes);
+
         //}
 //        biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
 //        biomes = new GenLayerAddShallowSea2(1202L, biomes);
@@ -85,6 +87,10 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
+
+        biomes = new GenLayerAsiaDroopingIslands(498, biomes);
+
+
         biomes = new GenLayerCretaceousPhryganaLakes(7223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
@@ -109,6 +115,10 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
         biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);
         //biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
+        biomes = new GenLayerCretaceousEarlySeperateAsiaHillsBiomes(21L, biomes);
+
+        biomes = new GenLayerAsiaShrublands1(6971L, biomes);
+
 
 //        biomes = new GenLayerAddMountainsToRedwood(1001L, biomes);
 //        biomes = new GenLayerRandomiseRedwood(1001L, biomes);
@@ -143,6 +153,9 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicDesertRimFromDesert(1302L, biomes);
 //        biomes = new GenLayerJurassicDesertRimFromHills(1203L, biomes);
         biomes = new GenLayerSandyDesertPeaks(23L, biomes);
+
+        biomes = new GenLayerAsiaShrublands2(979L, biomes);
+
         biomes = new GenLayerFuzzyZoom(1002L, biomes);
         biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes1(642L, biomes);

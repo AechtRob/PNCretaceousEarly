@@ -5,6 +5,7 @@ import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.gen.WorldGenPangaeanDryLakes;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
@@ -29,6 +30,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
     //public static final IBlockState STONE2 = Blocks.STONE.getStateFromMeta(0);
     public static final IBlockState LAVA = BlockLavaRock.block.getDefaultState();
     //public static final IBlockState FLUID = Blocks.FLOWING_WATER.getDefaultState();
+
+    public final String BANDING_CODE;
 
     public static final IBlockState FLUID = Blocks.WATER.getDefaultState();
     public static final IBlockState FLUID_FLOWING = Blocks.FLOWING_WATER.getDefaultState();
@@ -57,6 +60,36 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
     public float[] biomeWeights;
 
     public ChunkProviderCretaceousEarly(World worldIn, long seed) {
+
+        //Get the banding code for this seed:
+        long seedVal = worldIn.getSeed();
+        String seedStr = String.valueOf(Math.abs(seedVal));
+        boolean allFound = false;
+        String b5 = "";
+        while (!allFound) {
+            //Convert to Base 5 as we have five possible layers:
+            b5 = Functions.convertNumberToNewBaseCustom(seedStr, 10, 5);
+            allFound = b5.contains("0") && b5.contains("1") && b5.contains("2") && b5.contains("3") && b5.contains("4");
+            if (!allFound) {
+                seedVal = seedVal + 1;
+                seedStr = String.valueOf(Math.abs(seedVal));
+            }
+        }
+        //And next remove any adjacent same numbers:
+        String strFinal = "";
+        String ss = "";
+        for (int n = 0; n < b5.length(); n++) {
+            if (!(ss.equalsIgnoreCase(b5.substring(n, n + 1)))) {
+                strFinal = strFinal + b5.substring(n, n + 1);
+                ss = b5.substring(n, n + 1);
+            }
+        }
+        if (strFinal.substring(0, 1).equalsIgnoreCase(ss)) {
+            strFinal = strFinal.substring(0, strFinal.length() - 1);
+        }
+        this.BANDING_CODE = strFinal;
+
+
         worldIn.setSeaLevel(SEALEVEL);
         caveGenerator = new MapGenCaves() {
             @Override
@@ -198,6 +231,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaPhrygana.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaBandedDesert.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaBarrenHills.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaRefugium.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousCreekAsiaRefugium.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrubland.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandDunes.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhite.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhiteEdge.biome
@@ -207,7 +246,18 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 int i1 = this.random.nextInt(16) + 8;
                 int j1 = this.random.nextInt(256);
                 int k1 = this.random.nextInt(16) + 8;
+                if (!world.getBiome(blockpos.add(i1, j1, k1)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills"))
                 (new WorldGenPrehistoricLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+            }
+
+        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAsiaRefugium.biome
+        )
+            if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
+                    net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
+                int i1 = this.random.nextInt(16) + 8;
+                int j1 = this.random.nextInt(256);
+                int k1 = this.random.nextInt(16) + 8;
+                (new WorldGenPangaeanDryLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
             }
 
 //        if (this.random.nextInt(350) == 0 &&
@@ -791,6 +841,74 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAsiaShrubland.biome) {
+                            iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            if (rand.nextInt(2) == 0) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                            if (rand.nextInt(11) == 0) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(18) == 0) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(32) == 0) {
+                                iblockstate = BlockSandPangaean.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsiaShrublandDunes.biome) {
+                            iblockstate = BlockSandPangaeanWavy.block.getDefaultState();
+                            if (rand.nextInt(48) == 0) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(48) == 0) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome) {
+                            iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            if (rand.nextInt(2) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                            if (rand.nextInt(17) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsiaShrublandSprings.biome) {
+                            iblockstate = BlockToxicMud.block.getDefaultState();
+                            if (rand.nextInt(5) == 0) {
+                                iblockstate = BlockDriedMud.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsiaRefugium.biome
+                            || biome == BiomeEarlyCretaceousCreekAsiaRefugium.biome) {
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockSandPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandAsiaPhrygana.biome
                                 || biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome
                                 || biome == BiomeEarlyCretaceousLandAsiaPhryganaLake.biome) {
@@ -962,6 +1080,126 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                 }
                                 else if (p >= 5) {
                                     iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                            }
+                        }
+
+                        if (biome == BiomeEarlyCretaceousLandAsiaDrooping.biome
+                                || biome == BiomeEarlyCretaceousLandAsiaDroopingMound.biome
+                                || biome == BiomeEarlyCretaceousCreekAsiaDrooping.biome) {
+                            int p = rand.nextInt(100);
+                            if (j1 == 62) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                if (p >= 80) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 60) {
+                                    iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                                }
+                                else if (p >= 48) {
+                                    iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                                }
+                                else if (p >= 33) {
+                                    iblockstate = BlockPeat.block.getDefaultState();
+                                }
+                                else if (p >= 26) {
+                                    iblockstate = BlockPrehistoricGroundSandBlack.block.getDefaultState();
+                                }
+                                else if (p >= 20) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                            }
+                            else if (j1 == 63) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                if (p >= 80) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 52) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 42) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 28) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                            }
+                            else if (j1 == 64 && biome == BiomeEarlyCretaceousLandAsiaDroopingMound.biome) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                if (p >= 86) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 75) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 62) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                }
+                                else if (p >= 58) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 40) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 24) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
+                                else if (p >= 16) {
+                                    iblockstate = BlockVolcanicAshDark.block.getDefaultState();
+                                }
+                            }
+                            else if (j1 >= 65 && biome == BiomeEarlyCretaceousLandAsiaDroopingMound.biome) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                                if (p >= 86) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 78) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 66) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                }
+                                else if (p >= 58) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 40) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 29) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
+                                else if (p >= 20) {
+                                    iblockstate = BlockVolcanicAshDark.block.getDefaultState();
+                                }
+                                else if (p >= 15) {
+                                    iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                }
+                                else if (p >= 10) {
+                                    iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                                }
+                            }
+                            else if (j1 >= 64) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                                if (p >= 86) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                }
+                                else if (p >= 75) {
+                                    iblockstate = BlockLeafLitter.block.getDefaultState();
+                                }
+                                else if (p >= 62) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                }
+                                else if (p >= 58) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                }
+                                else if (p >= 40) {
+                                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                                }
+                                else if (p >= 24) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                }
+                                else if (p >= 16) {
+                                    iblockstate = BlockVolcanicAshDark.block.getDefaultState();
                                 }
                             }
                         }
@@ -1280,6 +1518,44 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandAsiaBarrenHills.biome
+                        ) {
+                            //If it's over 80 blocks then start to fill in more as stone
+                            //up to 110 where it almost fully stone - sometimes cobble
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            if (rand.nextInt(2) == 0 && j1 <= 70 + rand.nextInt(3)) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            int minHeight = 80;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 100 - j1);
+                                double stoneFactor = (double) j2 / (100D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(16) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate = Blocks.GRAVEL.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(12) == 0) {
+                                        iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                            }
+                        }
+
                         if (biome instanceof BiomeCretaceousEarly) {
                             BiomeCretaceousEarly biomeCretaceousEarly = (BiomeCretaceousEarly) biome;
                             if (biomeCretaceousEarly.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Austro_Antarctica)
@@ -1395,6 +1671,63 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
+        if (biome == BiomeEarlyCretaceousLandAsiaRefugium.biome
+                || biome == BiomeEarlyCretaceousCreekAsiaRefugium.biome) {
+            iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+            if (rand.nextInt(6) == 0) {
+                iblockstate = Blocks.SAND.getDefaultState();
+            }
+            if (rand.nextInt(6) == 0) {
+                iblockstate = Blocks.GRAVEL.getDefaultState();
+            }
+        }
+
+        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome) {
+            iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            if (rand.nextInt(4) == 0) {
+                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+            }
+            if (rand.nextInt(11) == 0) {
+                iblockstate = BlockPeat.block.getDefaultState();
+            }
+            if (rand.nextInt(18) == 0) {
+                iblockstate = BlockVolcanicAshDark.block.getDefaultState();
+            }
+            if (rand.nextInt(32) == 0) {
+                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            }
+        }
+
+        if (biome == BiomeEarlyCretaceousLandAsiaShrublandSprings.biome) {
+            iblockstate = BlockVolcanicAshDark.block.getDefaultState();
+            if (rand.nextInt(3) == 0) {
+                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            }
+            if (rand.nextInt(3) == 0) {
+                iblockstate = BlockToxicMud.block.getDefaultState();
+            }
+        }
+
+        if (biome == BiomeEarlyCretaceousLandAsiaDrooping.biome
+                || biome == BiomeEarlyCretaceousLandAsiaDroopingMound.biome
+                || biome == BiomeEarlyCretaceousCreekAsiaDrooping.biome) {
+            iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            if (rand.nextInt(8) == 0) {
+                iblockstate = BlockPeat.block.getDefaultState();
+            }
+            if (rand.nextInt(10) == 0) {
+                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+            }
+            if (posY == 61) {
+                if (rand.nextInt(7) == 0) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                }
+                if (rand.nextInt(8) == 0) {
+                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                }
+            }
+        }
+
         if (biome == BiomeEarlyCretaceousLandAsiaBandedDesert.biome
                 || biome == BiomeEarlyCretaceousCreekAsiaBandedDesert.biome) {
             iblockstate = Blocks.SAND.getStateFromMeta(1);
@@ -1451,46 +1784,21 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         return iblockstate;
     }
 
-    public static IBlockState getBandedSandType(World world, int height, Random random) {
+    public IBlockState getBandedSandType(World world, int height, Random random) {
 
         if (height < 1 || height > 255) {
             return getBand1(random);
         }
         IBlockState state;
         //Use the world seed to generate a unique banding pattern for this world:
-        long seedVal = world.getSeed();
-        String seedStr = String.valueOf(Math.abs(seedVal));
-        boolean allFound = false;
-        String b5 = "";
-        while (!allFound) {
-            //Convert to Base 5 as we have five possible layers:
-            b5 = Functions.convertNumberToNewBaseCustom(seedStr, 10, 5);
-            allFound = b5.contains("0") && b5.contains("1") && b5.contains("2") && b5.contains("3") && b5.contains("4");
-            if (!allFound) {
-                seedVal = seedVal + 1;
-                seedStr = String.valueOf(Math.abs(seedVal));
-            }
-        }
-        //And next remove any adjacent same numbers:
-        String strFinal = "";
-        String i = "";
-        for (int n = 0; n < b5.length(); n++) {
-            if (!(i.equalsIgnoreCase(b5.substring(n, n + 1)))) {
-                strFinal = strFinal + b5.substring(n, n + 1);
-                i = b5.substring(n, n + 1);
-            }
-        }
-        if (strFinal.substring(0, 1).equalsIgnoreCase(i)) {
-            strFinal = strFinal.substring(0, strFinal.length() - 1);
-        }
 
-        int lenStr = strFinal.length();
+        int lenStr = this.BANDING_CODE.length();
         int band = 1;
         if (height <= lenStr) {
             band = height;
         }
         else {
-            band = Integer.parseInt(strFinal.substring((height % lenStr), (height % lenStr) + 1));
+            band = Integer.parseInt(this.BANDING_CODE.substring((height % lenStr), (height % lenStr) + 1));
         }
 
         //layer 1:

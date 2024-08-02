@@ -54,6 +54,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int PHRYGANA_CREEK_ID = Biome.getIdForBiome(PHRYGANA_CREEK);
     public Biome BANDED_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_banded_desert"));
     public int BANDED_CREEK_ID = Biome.getIdForBiome(BANDED_CREEK);
+    public Biome DROOPING_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_asia_drooping_swamp"));
+    public int DROOPING_CREEK_ID = Biome.getIdForBiome(DROOPING_CREEK);
+    public Biome REFUGIUM_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_refugium"));
+    public int REFUGIUM_CREEK_ID = Biome.getIdForBiome(REFUGIUM_CREEK);
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -142,6 +146,14 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int PHRYGANA_LAKE_ID =  Biome.getIdForBiome(PHRYGANA_LAKE);
     public static Biome BANDED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_banded_desert"));
     public static int BANDED_ID =  Biome.getIdForBiome(BANDED);
+    public static Biome DROOPING = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_drooping_swamp"));
+    public static int DROOPING_ID =  Biome.getIdForBiome(DROOPING);
+    public static Biome DROOPING_KNOLL = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_drooping_swamp_mound"));
+    public static int DROOPING_KNOLL_ID =  Biome.getIdForBiome(DROOPING_KNOLL);
+    public static Biome REFUGIUM = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_refugium"));
+    public static int REFUGIUM_ID =  Biome.getIdForBiome(REFUGIUM);
+    public static Biome STEPPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_barren_hills"));
+    public static int STEPPE_ID =  Biome.getIdForBiome(STEPPE);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -221,6 +233,12 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (aint[i] == BANDED_ID) {
                         aint2[i] = BANDED_CREEK_ID;
+                    }
+                    else if (aint[i] == REFUGIUM_ID || aint[i] == STEPPE_ID) {
+                        aint2[i] = REFUGIUM_CREEK_ID;
+                    }
+                    else if (aint[i] == DROOPING_ID || aint[i] == DROOPING_KNOLL_ID) {
+                        aint2[i] = DROOPING_CREEK_ID;
                     }
                     else if (aint[i] == PHRYGANA_ID|| aint[i] == PHRYGANA_LAKE_ID) {
                         aint2[i] = PHRYGANA_CREEK_ID;
