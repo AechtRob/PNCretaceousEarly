@@ -58,6 +58,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int DROOPING_CREEK_ID = Biome.getIdForBiome(DROOPING_CREEK);
     public Biome REFUGIUM_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_refugium"));
     public int REFUGIUM_CREEK_ID = Biome.getIdForBiome(REFUGIUM_CREEK);
+    public Biome SHRUBLAND_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_shrubland"));
+    public int SHRUBLAND_CREEK_ID = Biome.getIdForBiome(SHRUBLAND_CREEK);
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -138,6 +140,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
     public static int RIFT2_ID =  Biome.getIdForBiome(RIFT2);
 
+    public static Biome SPRINGS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_springs"));
+    public static int DARK_SPRINGS_ID =  Biome.getIdForBiome(SPRINGS);
+
     public static Biome TETORI = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
     public static int TETORI_ID =  Biome.getIdForBiome(TETORI);
     public static Biome PHRYGANA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana"));
@@ -154,6 +159,13 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int REFUGIUM_ID =  Biome.getIdForBiome(REFUGIUM);
     public static Biome STEPPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_barren_hills"));
     public static int STEPPE_ID =  Biome.getIdForBiome(STEPPE);
+
+    public static Biome SHRUBLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland"));
+    public static int SHRUBLAND_ID =  Biome.getIdForBiome(SHRUBLAND);
+    public static Biome DUNES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_dunes"));
+    public static int DUNES_ID =  Biome.getIdForBiome(DUNES);
+    public static Biome OASIS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_oasis"));
+    public static int OASIS_ID =  Biome.getIdForBiome(OASIS);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -191,6 +203,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         || aint[i] == EURO_LAKES_ID
                         || aint[i] == RIFT1_ID
                         || aint[i] == RIFT2_ID
+                        || aint[i] == DARK_SPRINGS_ID
                 )
                 {
                     aint2[i] = aint[i];
@@ -236,6 +249,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (aint[i] == REFUGIUM_ID || aint[i] == STEPPE_ID) {
                         aint2[i] = REFUGIUM_CREEK_ID;
+                    }
+                    else if (aint[i] == SHRUBLAND_ID || aint[i] == DUNES_ID || aint[i] == OASIS_ID) {
+                        aint2[i] = SHRUBLAND_CREEK_ID;
                     }
                     else if (aint[i] == DROOPING_ID || aint[i] == DROOPING_KNOLL_ID) {
                         aint2[i] = DROOPING_CREEK_ID;

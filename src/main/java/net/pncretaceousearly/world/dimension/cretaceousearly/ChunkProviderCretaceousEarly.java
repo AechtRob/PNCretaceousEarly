@@ -237,6 +237,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrubland.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandDunes.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousCreekAsiaShrubland.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhite.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhiteEdge.biome
@@ -867,7 +868,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
-                        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome) {
+                        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
+                            || biome == BiomeEarlyCretaceousCreekAsiaShrubland.biome) {
                             iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
                             if (rand.nextInt(2) == 0) {
                                 iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
@@ -877,6 +879,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                             if (rand.nextInt(17) == 0) {
                                 iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                            }
+                            if (rand.nextInt(29) == 0) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
                             }
                         }
 
@@ -1682,7 +1687,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome) {
+        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
+                || biome == BiomeEarlyCretaceousCreekAsiaShrubland.biome) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(4) == 0) {
                 iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
