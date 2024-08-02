@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanPatagonia extends ElementsLep
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Wet Forest Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(1.7F));
+			super(new BiomeProperties("E. Cretaceous Wet Forest Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.7F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_south_america_patagonia");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

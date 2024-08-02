@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousCreekAsiaRefugium extends ElementsLepidodendron
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Relict Hinterlands Creek").setBaseHeight(-0.1F).setHeightVariation(0.02F).setTemperature(1.65F).setWaterColor(16767282));
+			super(new BiomeProperties("E. Cretaceous Relict Hinterlands Creek").setBaseHeight(-0.375F).setHeightVariation(0.03F).setTemperature(1.65F).setWaterColor(16767282));
 			setRegistryName("lepidodendron:cretaceous_early_creek_refugium");
 			topBlock = BlockDriedMud.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
