@@ -22,6 +22,13 @@ public class GenLayerCretaceousEarlySeperateAsiaHillsBiomes extends GenLayer
         this.parent = genLayer;
     }
 
+    private final int[] VariantBiomes = new int[] {
+            REFUGE_ID,
+            REFUGE_ID,
+            REFUGE_ID,
+            STEPPE_ID
+    };
+
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
         int[] aint = this.parent.getInts(areaX - 1, areaY - 1, areaWidth + 2, areaHeight + 2);
@@ -51,7 +58,7 @@ public class GenLayerCretaceousEarlySeperateAsiaHillsBiomes extends GenLayer
                     }
                     else
                     {
-                        aint1[j + i * areaWidth] = k;
+                        aint1[j + i * areaWidth] = VariantBiomes[nextInt(VariantBiomes.length)];;
                     }
                 }
                 else
