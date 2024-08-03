@@ -64,7 +64,11 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerEuropeCopse(223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorder(98L, biomes);
 
+        biomes = new GenLayerCretaceousEarlyYixianRim(151L, biomes);
+
         biomes = new GenLayerZoom(109L, biomes);
+
+        biomes = new GenLayerCretaceousEarlyYixianRim(9151L, biomes);
 
         biomes = new GenLayerOceanCrags(29L, biomes);
 
@@ -86,6 +90,7 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicCoral(439L, biomes);
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
+
         biomes = new GenLayerZoom(1004L, biomes);
 
         biomes = new GenLayerAsiaDroopingIslands(498, biomes);
@@ -138,6 +143,8 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerFuzzyZoom(1001L, biomes);
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
+
+        biomes = new GenLayerCretaceousEarlyYixianRim2(2331L, biomes);
 
 //        biomes = new GenLayerJurassicDesertRim(1032L, biomes);
 //

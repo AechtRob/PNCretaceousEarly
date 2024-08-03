@@ -36,6 +36,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
     public static final IBlockState FLUID = Blocks.WATER.getDefaultState();
     public static final IBlockState FLUID_FLOWING = Blocks.FLOWING_WATER.getDefaultState();
     public static final int ANTARCIC_LAKES_SEA_LEVEL = 87;
+    public static final int YIXIAN_LAKES_SEA_LEVEL = 140;
 
     public static final IBlockState AIR = Blocks.AIR.getDefaultState();
     public static final IBlockState BEDROCK = Blocks.BEDROCK.getDefaultState();
@@ -491,6 +492,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             || biome == BiomeEarlyCretaceousAustroAntarcticLakesRimInner.biome) {
             i = ANTARCIC_LAKES_SEA_LEVEL;
         }
+        if (biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome
+                || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome) {
+            i = YIXIAN_LAKES_SEA_LEVEL;
+        }
         IBlockState iblockstate = biome.topBlock;
         IBlockState iblockstate1 = biome.fillerBlock;
         int j = -1;
@@ -510,6 +515,14 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
             else if ((biome == BiomeEarlyCretaceousAustroAntarcticLakes.biome || biome == BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome)
                     && iblockstate5.getMaterial() == Material.AIR && j1 <= ANTARCIC_LAKES_SEA_LEVEL && j1 >= ANTARCIC_LAKES_SEA_LEVEL - 6) {
+                chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
+            }
+            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome)
+                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
+                chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
+            }
+            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome)
+                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
             else {

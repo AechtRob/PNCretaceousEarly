@@ -13,6 +13,8 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
     public static int ASIA_DROOPING_ID =  Biome.getIdForBiome(ASIA_DROOPING);
     public static Biome ASIA_CENTRAL = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_barren_hills"));
     public static int ASIA_CENTRAL_ID =  Biome.getIdForBiome(ASIA_CENTRAL);
+    public static Biome ASIA_YIXIAN_HIGHLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_highland"));
+    public static int ASIA_YIXIAN_HIGHLAND_ID =  Biome.getIdForBiome(ASIA_YIXIAN_HIGHLAND);
 
     public static Biome ASIA_SHRUBLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland"));
     public static int ASIA_SHRUBLAND_ID =  Biome.getIdForBiome(ASIA_SHRUBLAND);
@@ -25,6 +27,11 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
     public static Biome ASIA_REFUGIUM = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_refugium"));
     public static int ASIA_REFUGIUM_ID =  Biome.getIdForBiome(ASIA_REFUGIUM);
 
+    public static Biome ASIA_YIXIAN_LAKES_A = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_lakes_a"));
+    public static int ASIA_YIXIAN_LAKES_A_ID =  Biome.getIdForBiome(ASIA_YIXIAN_LAKES_A);
+    public static Biome ASIA_YIXIAN_LAKES_B = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_lakes_b"));
+    public static int ASIA_YIXIAN_LAKES_B_ID =  Biome.getIdForBiome(ASIA_YIXIAN_LAKES_B);
+
     public GenLayerAsiaInlandReplaceBog(long seed, GenLayer genLayer)
     {
         super(seed);
@@ -33,7 +40,8 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
 
     private final int AsiaInlandBiomes[] = new int[] {
             ASIA_DROOPING_ID,
-            ASIA_CENTRAL_ID
+            ASIA_CENTRAL_ID,
+            ASIA_YIXIAN_HIGHLAND_ID
     };
 
     private final int AsiaInlandBiomes2[] = new int[] {
@@ -42,6 +50,11 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
             ASIA_SHRUBLAND_ID,
             ASIA_BANDED_ID,
             ASIA_REFUGIUM_ID
+    };
+
+    private final int AsiaInlandBiomes3[] = new int[] {
+            ASIA_YIXIAN_LAKES_A_ID,
+            ASIA_YIXIAN_LAKES_B_ID
     };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
@@ -75,6 +88,9 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
                         int b = AsiaInlandBiomes[nextInt(AsiaInlandBiomes.length)];
                         if (b == ASIA_CENTRAL_ID) {
                             aint1[j + i * areaWidth] = AsiaInlandBiomes2[nextInt(AsiaInlandBiomes2.length)];
+                        }
+                        else if (b == ASIA_YIXIAN_HIGHLAND_ID) {
+                            aint1[j + i * areaWidth] = AsiaInlandBiomes3[nextInt(AsiaInlandBiomes3.length)];
                         }
                         else {
                             aint1[j + i * areaWidth] = b;
