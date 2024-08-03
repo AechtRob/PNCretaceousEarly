@@ -32,7 +32,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianMountains extends ElementsLepidod
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.HILLS);
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.FOREST);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.COLD);
+		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SNOWY);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
@@ -58,28 +58,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianMountains extends ElementsLepidod
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
-		protected static final WorldGenAnomozamites ANOMOZAMITES_GENERATOR = new WorldGenAnomozamites();
-		protected static final WorldGenAnomozamitesShoot ANOMOZAMITES_SHOOT_GENERATOR = new WorldGenAnomozamitesShoot();
-		protected static final WorldGenCycadeoidea CYCADEOIDEA_GENERATOR = new WorldGenCycadeoidea();
-		protected static final WorldGenPterophyllum PTEROPHYLLUM_GENERATOR = new WorldGenPterophyllum();
-		protected static final WorldGenPtilophyllum PTILOPHYLLUM_GENERATOR = new WorldGenPtilophyllum();
-		protected static final WorldGenPtilophyllumShoot PTILOPHYLLUM_SHOOT_GENERATOR = new WorldGenPtilophyllumShoot();
-		protected static final WorldGenSahnioxylon SAHNIOXYLON_GENERATOR = new WorldGenSahnioxylon();
-		protected static final WorldGenWilliamsonia WILLIAMSONIA_GENERATOR = new WorldGenWilliamsonia();
-		protected static final WorldGenZamites ZAMITES_GENERATOR = new WorldGenZamites();
-		protected static final WorldGenZamitesShoot ZAMITES_SHOOT_GENERATOR = new WorldGenZamitesShoot();
-
-		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
-		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
-
-		protected static final WorldGenFern FERN_GENERATOR = new WorldGenFern();
-		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
-		protected static final WorldGenIsoetes IOSETES_GENERATOR = new WorldGenIsoetes();
-
-		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR_SAND = new WorldGenPrehistoricGroundCoverSandy();
-		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
-		protected static final WorldGenEarlyCretaceousMuddyOasisNearWater WATERSIDE_GENERATOR = new WorldGenEarlyCretaceousMuddyOasisNearWater();
-		protected static final WorldGenAncientMoss ANCIENT_MOSS_GENERATOR = new WorldGenAncientMoss();
+		protected static final WorldGenSnow SNOW_GENERATOR = new WorldGenSnow();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -90,6 +69,19 @@ public class BiomeEarlyCretaceousLandAsiaYixianMountains extends ElementsLepidod
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
 
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					int i = rand.nextInt(192);
+
+					for (int j = 0; j < i; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						SNOW_GENERATOR.generate(worldIn, rand, blockpos, 160);
+					}
+				}
+			}
 
 			super.decorate(worldIn, rand, pos);
 		}

@@ -1544,6 +1544,24 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         }
 
                         //Yixian
+                        //Mountains:
+                        if (biome == BiomeEarlyCretaceousLandAsiaYixianMountains.biome
+                        ) {
+                            //If it's over 180 blocks then start to fill in more as snow
+                            //up to 200 where it almost fully snow
+                            int minHeight = 180;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 200 - j1);
+                                double stoneFactor = (double) j2 / (200D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                            }
+                        }
+
                         //Hills/Rim
                         if (biome == BiomeEarlyCretaceousLandAsiaYixianHighland.biome
                                 || biome == BiomeEarlyCretaceousLandAsiaYixianMountains.biome
@@ -1585,6 +1603,19 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             if (rand.nextInt(7) == 0) {
                                 if (j1 <= 165 - rand.nextInt(4) && j1 >= 120 - rand.nextInt(4)) {
                                     iblockstate = Blocks.GRAVEL.getDefaultState();
+                                }
+                            }
+                            //If it's over 180 blocks then start to fill in more as snow
+                            //up to 200 where it almost fully snow
+                            minHeight = 180;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 200 - j1);
+                                double stoneFactor = (double) j2 / (200D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.SNOW.getStateFromMeta(0);
                                 }
                             }
                         }
@@ -1634,6 +1665,19 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                 }
                                 if (Math.random() >= stoneFactor) {
                                     iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                }
+                            }
+                            //If it's over 180 blocks then start to fill in more as snow
+                            //up to 200 where it almost fully snow
+                            minHeight = 180;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 200 - j1);
+                                double stoneFactor = (double) j2 / (200D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.SNOW.getStateFromMeta(0);
                                 }
                             }
                         }
