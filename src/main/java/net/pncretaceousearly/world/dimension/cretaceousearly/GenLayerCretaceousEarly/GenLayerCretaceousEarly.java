@@ -91,6 +91,8 @@ public class GenLayerCretaceousEarly {
 //        biomes = new GenLayerJurassicIslandLargeInterior(143L, biomes);
 //        biomes = new GenLayerDesertTransitionDesertSide(144L, biomes);
 
+        biomes = new GenLayerCretaceousEarlyYixianFoothills(44, biomes);
+
         biomes = new GenLayerZoom(1004L, biomes);
 
         biomes = new GenLayerAsiaDroopingIslands(498, biomes);

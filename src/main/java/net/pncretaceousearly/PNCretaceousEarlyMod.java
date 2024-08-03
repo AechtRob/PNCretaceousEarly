@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.function.Supplier;
 
-@Mod(modid = PNCretaceousEarlyMod.MODID, name = PNCretaceousEarlyMod.NAME, version = PNCretaceousEarlyMod.VERSION, dependencies = "required-after:lepidodendron@[60.0,)")
+@Mod(modid = PNCretaceousEarlyMod.MODID, name = PNCretaceousEarlyMod.NAME, version = PNCretaceousEarlyMod.VERSION, dependencies = "required-after:lepidodendron@[61.0,)")
 public class PNCretaceousEarlyMod {
     public static final String MODID = "pncretaceousearly";
     public static final String NAME = "Prehistoric Nature Early Cretaceous Dimension";

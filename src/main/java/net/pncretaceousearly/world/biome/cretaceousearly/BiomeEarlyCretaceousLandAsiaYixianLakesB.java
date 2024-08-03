@@ -12,6 +12,8 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -37,7 +39,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesB extends ElementsLepidodend
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Lakelands B").setBaseHeight(4.9F).setHeightVariation(0.29F).setTemperature(0.2F));
+			super(new BiomeProperties("E. Cretaceous Lakelands B").setBaseHeight(4.45F).setHeightVariation(0.15F).setTemperature(0.8F));
 			setRegistryName("lepidodendron:cretaceous_early_yixian_lakes_b");
 			topBlock = Blocks.DIRT.getStateFromMeta(2);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(2);
@@ -84,6 +86,32 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesB extends ElementsLepidodend
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
 			return NULL_TREE;
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getFoliageColorAtPos(BlockPos pos)
+		{
+			return -11494072;
+		}
+
+		@Override
+		@SideOnly(Side.CLIENT)
+		public int getGrassColorAtPos(BlockPos pos)
+		{
+			return -11494072;
+		}
+
+		@Override
+		public int getModdedBiomeGrassColor(int original)
+		{
+			return -11494072;
+		}
+
+		@Override
+		public int getModdedBiomeFoliageColor(int original)
+		{
+			return -11494072;
 		}
 
 		@Override
