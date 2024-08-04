@@ -68,7 +68,6 @@ public class BiomeEarlyCretaceousCreekAsiaRefugium extends ElementsLepidodendron
 		protected static final WorldGenElatocladusTree ELATOCLADUS_TREE = new WorldGenElatocladusTree(false);
 		protected static final WorldGenSilverTreefernTree SILVERTREEFERN_TREE = new WorldGenSilverTreefernTree(false);
 		protected static final WorldGenDicksonia DICKSONIA_TREE = new WorldGenDicksonia(false);
-		protected static final WorldGenLiriodendronTree LIRIODENDRON_TREE = new WorldGenLiriodendronTree(false);
 
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
@@ -107,7 +106,7 @@ public class BiomeEarlyCretaceousCreekAsiaRefugium extends ElementsLepidodendron
 				case 8:
 					return DICKSONIA_TREE;
 				case 9:
-					return LIRIODENDRON_TREE;
+					return PINE_TREE;
 				case 10:
 					return ELATOCLADUS_TREE;
 				case 11: case 12: case 13: case 14: case 15: case 16: case 17: case 18: case 19:
@@ -161,6 +160,15 @@ public class BiomeEarlyCretaceousCreekAsiaRefugium extends ElementsLepidodendron
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					PLANT_GENERATOR.generate(BlockSapindopsis.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 65, false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 28; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					PLANT_GENERATOR.generate(BlockRogersia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 65, false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

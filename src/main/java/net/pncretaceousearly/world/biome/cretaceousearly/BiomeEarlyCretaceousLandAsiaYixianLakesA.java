@@ -4,6 +4,7 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.init.Blocks;
@@ -84,6 +85,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 		protected static final WorldGenPrehistoricGroundCover GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCover();
 		protected static final WorldGenWaterHorsetail WATER_HORSETAIL_GENERATOR = new WorldGenWaterHorsetail();
 		protected static final WorldGenFern FERN_GENERATOR = new WorldGenFern();
+		protected static final WorldGenEarlyAngiospermNearWater WATERSIDE_GENERATOR = new WorldGenEarlyAngiospermNearWater();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -121,7 +123,6 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 			else {
 				return CEPHA_TREE;
 			}
-
 		}
 
 		@Override
@@ -153,6 +154,14 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 56; ++i)
+				{
+					int j = pos.getX() + rand.nextInt(16) + 8;
+					int k = pos.getZ() + rand.nextInt(16) + 8;
+					WATERSIDE_GENERATOR.generate(worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k), worldIn).up());
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 3; ++i)
@@ -351,6 +360,15 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					GROUNDCOVER_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 2; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					ANCIENT_MOSS_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 				}
 
 			super.decorate(worldIn, rand, pos);

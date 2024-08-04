@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianHighland extends ElementsLepidode
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Smokey Highlands").setBaseHeight(6.05F).setHeightVariation(0.1F).setTemperature(-0.2F));
+			super(new BiomeProperties("E. Cretaceous Smokey Highlands").setBaseHeight(6.05F).setHeightVariation(0.1F).setTemperature(0.8F));
 			setRegistryName("lepidodendron:cretaceous_early_yixian_highland");
 			topBlock = Blocks.STONE.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();

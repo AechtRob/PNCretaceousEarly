@@ -1681,6 +1681,68 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                 }
                             }
                         }
+                        //Lakes B
+                        if (biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                            if (rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                            if (rand.nextInt(6) == 0) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            if (j1 >= 141 && j1 <= 160 && rand.nextInt(8) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (j1 >= 142 && j1 <= 160 && rand.nextInt(2) == 0) {
+                                iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                            }
+                            if (j1 >= 142 && j1 <= 160 && rand.nextInt(4) == 0) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                            if (j1 >= 142 && j1 <= 160 && rand.nextInt(16) == 0) {
+                                iblockstate = BlockVolcanicAsh.block.getDefaultState();
+                            }
+                            //If it's over 143 blocks then start to fill in more as stone
+                            //up to 178 where it almost fully stone - sometimes cobble
+                            int minHeight = 143;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 178 - j1);
+                                double stoneFactor = (double) j2 / (178D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.STONE.getStateFromMeta(0);
+                                    if (rand.nextInt(2) == 0) {
+                                        iblockstate = Blocks.GRAVEL.getDefaultState();
+                                    }
+                                    if (rand.nextInt(4) == 0) {
+                                        iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                    }
+                                    if (rand.nextInt(8) == 0) {
+                                        iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                                    }
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.STONE.getStateFromMeta(0);
+                                }
+                            }
+                            //If it's over 180 blocks then start to fill in more as snow
+                            //up to 200 where it almost fully snow
+                            minHeight = 180;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 200 - j1);
+                                double stoneFactor = (double) j2 / (200D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.SNOW.getStateFromMeta(0);
+                                }
+                            }
+                        }
 
                         if (biome == BiomeEarlyCretaceousLandAsiaBarrenHills.biome
                         ) {
@@ -1803,6 +1865,94 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             iblockstate1 = getBandedSandType(world, j1, random);
                         }
                         chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1); //filler
+
+                        if (j1 > 100 && (biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome
+                                || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome)) {
+
+                            IBlockState yixianLayer1;
+                            IBlockState yixianLayer2;
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1, l, yixianLayer1);
+
+                            yixianLayer2 = iblockstate1;
+                            if (rand.nextInt(5) == 0) {
+                                yixianLayer2 = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 1, l, yixianLayer2);
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 2, l, yixianLayer1);
+
+                            yixianLayer2 = iblockstate1;
+                            if (rand.nextInt(5) == 0) {
+                                yixianLayer2 = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 3, l, yixianLayer2);
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 4, l, yixianLayer1);
+
+                            yixianLayer2 = iblockstate1;
+                            if (rand.nextInt(5) == 0) {
+                                yixianLayer2 = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 5, l, yixianLayer2);
+
+                        }
+
+                        if (j1 > 230 - rand.nextInt(8) && biome == BiomeEarlyCretaceousLandAsiaYixianMountains.biome) {
+
+                            IBlockState yixianLayer1;
+                            IBlockState yixianLayer2;
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockVolcanicAshLight.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1, l, yixianLayer1);
+
+                            yixianLayer2 = Blocks.SNOW.getDefaultState();
+                            if (rand.nextInt(4) == 0) {
+                                yixianLayer2 = Blocks.SNOW.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 1, l, yixianLayer2);
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockVolcanicAshLight.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 2, l, yixianLayer1);
+
+                            yixianLayer2 = Blocks.SNOW.getDefaultState();
+                            if (rand.nextInt(4) == 0) {
+                                yixianLayer2 = Blocks.PACKED_ICE.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 3, l, yixianLayer2);
+
+                            yixianLayer1 = BlockVolcanicAsh.block.getDefaultState();
+                            if (rand.nextInt(3) == 0) {
+                                yixianLayer1 = BlockVolcanicAshLight.block.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 4, l, yixianLayer1);
+
+                            yixianLayer2 = Blocks.SNOW.getDefaultState();
+                            if (rand.nextInt(4) == 0) {
+                                yixianLayer2 = Blocks.PACKED_ICE.getDefaultState();
+                            }
+                            chunkPrimerIn.setBlockState(i1, j1 - 5, l, yixianLayer2);
+
+                        }
+
                         if (j == 0 && (iblockstate1.getBlock() == Blocks.SAND.getStateFromMeta(0).getBlock() || iblockstate1.getBlock() == BlockSandWavy.block) && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
                             iblockstate1 = Blocks.SANDSTONE.getDefaultState();
