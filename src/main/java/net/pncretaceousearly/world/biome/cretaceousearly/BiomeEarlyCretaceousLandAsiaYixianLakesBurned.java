@@ -227,6 +227,14 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 3; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					PLANT_GENERATOR.generate(BlockFieldHorsetail.block.getDefaultState(), worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up(), 140, 160, false);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 4; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
