@@ -93,6 +93,8 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerCretaceousEarlyYixianFoothills(44, biomes);
 
+        biomes = new GenLayerYixianDead(549L, biomes);
+
         biomes = new GenLayerZoom(1004L, biomes);
 
         biomes = new GenLayerAsiaDroopingIslands(498, biomes);

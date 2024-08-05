@@ -19,6 +19,9 @@ public class GenLayerCretaceousEarlyYixianRim2 extends GenLayer
     public static Biome ASIA_YIXIAN_LAKES_B = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_lakes_b"));
     public static int ASIA_YIXIAN_LAKES_B_ID =  Biome.getIdForBiome(ASIA_YIXIAN_LAKES_B);
 
+    public static Biome YIXIAN_DEAD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_lakes_dead"));
+    public static int YIXIAN_DEAD_ID =  Biome.getIdForBiome(YIXIAN_DEAD);
+
     public GenLayerCretaceousEarlyYixianRim2(long seed, GenLayer genLayer)
     {
         super(seed);
@@ -26,28 +29,6 @@ public class GenLayerCretaceousEarlyYixianRim2 extends GenLayer
     }
 
     private final int[] VariantBiomes = new int[] {
-            ASIA_YIXIAN_HIGHLAND_ID,
-            ASIA_YIXIAN_HIGHLAND_ID,
-            ASIA_YIXIAN_MOUNTAINS_ID
-    };
-
-    private final int[] VariantBiomes2 = new int[] {
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_HIGHLAND_ID,
-            ASIA_YIXIAN_HIGHLAND_ID,
-            ASIA_YIXIAN_MOUNTAINS_ID
-    };
-
-    private final int[] VariantBiomes3 = new int[] {
-            ASIA_YIXIAN_LAKES_B_ID,
-            ASIA_YIXIAN_LAKES_B_ID,
-            ASIA_YIXIAN_LAKES_B_ID,
-            ASIA_YIXIAN_LAKES_B_ID,
-            ASIA_YIXIAN_LAKES_B_ID,
             ASIA_YIXIAN_HIGHLAND_ID,
             ASIA_YIXIAN_HIGHLAND_ID,
             ASIA_YIXIAN_MOUNTAINS_ID
@@ -65,7 +46,7 @@ public class GenLayerCretaceousEarlyYixianRim2 extends GenLayer
                 this.initChunkSeed((long)(j + areaX), (long)(i + areaY));
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == ASIA_YIXIAN_LAKES_A_ID || k == ASIA_YIXIAN_LAKES_B_ID)
+                if (k == ASIA_YIXIAN_LAKES_A_ID || k == ASIA_YIXIAN_LAKES_B_ID || k == YIXIAN_DEAD_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -99,7 +80,8 @@ public class GenLayerCretaceousEarlyYixianRim2 extends GenLayer
         return i == ASIA_YIXIAN_MOUNTAINS_ID
                 || i == ASIA_YIXIAN_HIGHLAND_ID
                 || i == ASIA_YIXIAN_LAKES_A_ID
-                || i == ASIA_YIXIAN_LAKES_B_ID;
+                || i == ASIA_YIXIAN_LAKES_B_ID
+                || i == YIXIAN_DEAD_ID;
     }
 
 
