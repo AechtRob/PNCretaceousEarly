@@ -219,7 +219,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 2; ++i)
+				for (int i = 0; i < 3; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -227,7 +227,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 2; ++i)
+				for (int i = 0; i < 4; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -236,7 +236,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
-				for (int i = 0; i < 2; ++i)
+				for (int i = 0; i < 4; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -247,7 +247,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
-				for (int i = 0; i < 2; ++i)
+				for (int i = 0; i < 4; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -310,7 +310,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 64; ++i)
+				for (int i = 0; i < 92; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -334,8 +334,6 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					ANCIENT_MOSS_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 				}
-
-
 
 			super.decorate(worldIn, rand, pos);
 		}
