@@ -192,7 +192,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoSapling.block, BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 85);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoSapling.block, BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoLeaves.block.getDefaultState().withProperty(BlockGinkgoLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 72);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -201,7 +201,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoitesSapling.block, BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 85);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockGinkgoitesSapling.block, BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), BlockGinkgoitesLeaves.block.getDefaultState().withProperty(BlockGinkgoitesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockGinkgoitesLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 72);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -255,7 +255,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockLophosoria.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
+					PLANT_GENERATOR.generate(BlockLophosoria.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,72,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -264,7 +264,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockMarattia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 255, false, true, false);
+					PLANT_GENERATOR.generate(BlockMarattia.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0, 72, false, true, false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -273,7 +273,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockClathropteris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
+					PLANT_GENERATOR.generate(BlockClathropteris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,72,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -282,7 +282,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockPseudoctenis.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
+					PLANT_GENERATOR.generate(BlockPseudoctenis.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,72,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -291,7 +291,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockDicksoniaLeavesPlaceable.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
+					PLANT_GENERATOR.generate(BlockDicksoniaLeavesPlaceable.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,72,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
@@ -300,7 +300,7 @@ public class BiomeEarlyCretaceousCreekSAmericaWide extends ElementsLepidodendron
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					PLANT_GENERATOR.generate(BlockClubmoss.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,255,false);
+					PLANT_GENERATOR.generate(BlockClubmoss.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 0,72,false);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

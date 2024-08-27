@@ -120,8 +120,14 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public Biome S_AMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
     public int S_AMERICA_FLATS_ID = Biome.getIdForBiome(S_AMERICA_FLATS);
 
-    public Biome AFRO_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_land_africa_savanna"));
+    public Biome AFRO_SAVANNA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_savanna"));
     public int AFRO_SAVANNA_ID = Biome.getIdForBiome(AFRO_SAVANNA);
+    public Biome AFRO_SAVANNA_HOLE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_savanna_hole"));
+    public int AFRO_SAVANNA_HOLE_ID = Biome.getIdForBiome(AFRO_SAVANNA_HOLE);
+    public Biome AFRO_SAVANNA_HOLE_CENTRE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_savanna_hole_centre"));
+    public int AFRO_SAVANNA_HOLE_CENTRE_ID = Biome.getIdForBiome(AFRO_SAVANNA_HOLE_CENTRE);
+
+
     public Biome AFRO_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_swamp"));
     public int AFRO_SWAMP_ID = Biome.getIdForBiome(AFRO_SWAMP);
     public Biome AFRO_SWAMP_OPEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_swamp_open"));
@@ -232,7 +238,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (aint[i] == S_AMERICA_FLATS_ID) {
                         aint2[i] = S_AMERICA_FLATS_CREEK_ID;
                     }
-                    else if (aint[i] == AFRO_SAVANNA_ID) {
+                    else if (aint[i] == AFRO_SAVANNA_ID || aint[i] == AFRO_SAVANNA_HOLE_ID ||aint[i] == AFRO_SAVANNA_HOLE_CENTRE_ID) {
                         aint2[i] = AFRO_SAVANNA_CREEK_ID;
                     }
                     else if (aint[i] == AFRO_SWAMP_ID || aint[i] == AFRO_SWAMP_OPEN_ID) {

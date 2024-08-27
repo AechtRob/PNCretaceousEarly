@@ -21,6 +21,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
 import net.pncretaceousearly.world.biome.cretaceousearly.*;
+import static java.lang.Math.toIntExact;
 import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerCretaceousEarlyYixianFoothills;
 
 import java.util.List;
@@ -65,16 +66,27 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         //Get the banding code for this seed:
         long seedVal = worldIn.getSeed();
-        String seedStr = String.valueOf(Math.abs(seedVal));
+        int seedInt = 0;
+        try {
+            seedInt = Math.abs(toIntExact(seedVal));
+        }
+        catch (ArithmeticException e) {
+            seedInt = Math.abs((int) (2147483647L - (Math.abs(seedVal) % 2147483647L)));
+        }
+
         boolean allFound = false;
         String b5 = "";
         while (!allFound) {
             //Convert to Base 5 as we have five possible layers:
-            b5 = Functions.convertNumberToNewBaseCustom(seedStr, 10, 5);
+            b5 = Functions.convertFromDecimalToBaseX(seedInt, 5);
             allFound = b5.contains("0") && b5.contains("1") && b5.contains("2") && b5.contains("3") && b5.contains("4");
             if (!allFound) {
-                seedVal = seedVal + 1;
-                seedStr = String.valueOf(Math.abs(seedVal));
+                try {
+                    seedInt = seedInt + 1;
+                }
+                catch (ArithmeticException e) {
+                    seedInt = 0;
+                }
             }
         }
         //And next remove any adjacent same numbers:
