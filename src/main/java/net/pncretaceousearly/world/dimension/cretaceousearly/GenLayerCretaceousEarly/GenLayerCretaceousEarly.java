@@ -13,13 +13,13 @@ public class GenLayerCretaceousEarly {
         GenLayer biomes = new GenLayerCretaceousEarlyBiomesSea(1L);
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
 
-        biomes = new GenLayerCretaceousEarlyBiomes(1542L, biomes);
-
-        biomes = new GenLayerFuzzyZoom(2001L, biomes);
+//        biomes = new GenLayerCretaceousEarlyBiomes(1542L, biomes);
+//        biomes = new GenLayerFuzzyZoom(2001L, biomes);
 
         biomes = new GenLayerCretaceousEarlyBiomes(1543L, biomes);
-
         biomes = new GenLayerZoom(1032L, biomes);
+
+        //biomes = new GenLayerCretaceousEarlyBiomes(5543L, biomes);
 
         biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia(2541L, biomes);
 
@@ -31,7 +31,8 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerAfricaSavanna(6756L, biomes);
-        biomes = new GenLayerAddShallowSea(4132L, biomes);
+        //biomes = new GenLayerAddShallowSea(4132L, biomes);
+        biomes = new GenLayerAddShallowSea2(1201L, biomes);
         biomes = new GenLayerAddInlandSeas2(3049L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica1(2544L, biomes);
         biomes = new GenLayerCretaceousDiversifyAfricaSAmerica2(562L, biomes);
@@ -40,7 +41,8 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerZoom(1001L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica3(2545L, biomes);
-        biomes = new GenLayerAddShallowSea2(1201L, biomes);
+        //biomes = new GenLayerAddShallowSea(4132L, biomes);
+        //biomes = new GenLayerAddShallowSea2(1201L, biomes);
         biomes = new GenLayerAddInlandSeas2(3046L, biomes);
         biomes = new GenLayerAsiaInlandReplaceScrub(679L, biomes);
 

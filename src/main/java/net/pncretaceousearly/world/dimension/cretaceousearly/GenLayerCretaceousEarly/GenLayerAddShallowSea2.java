@@ -24,15 +24,35 @@ public class GenLayerAddShallowSea2 extends GenLayer
 
     public static Biome N_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica"));
     public static int N_AMERICA_1_ID =  Biome.getIdForBiome(N_AMERICA_1);
-    public static Biome N_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_foothills"));
+    public static Biome N_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_mountains"));
     public static int N_AMERICA_2_ID =  Biome.getIdForBiome(N_AMERICA_2);
-    public static Biome N_AMERICA_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
+    public static Biome N_AMERICA_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_foothills"));
     public static int N_AMERICA_3_ID =  Biome.getIdForBiome(N_AMERICA_3);
-    public static Biome N_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_mountains"));
+    public static Biome N_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland"));
     public static int N_AMERICA_4_ID =  Biome.getIdForBiome(N_AMERICA_4);
+    public static Biome N_AMERICA_5 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland_copse"));
+    public static int N_AMERICA_5_ID =  Biome.getIdForBiome(N_AMERICA_5);
+    public static Biome N_AMERICA_6 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
+    public static int N_AMERICA_6_ID =  Biome.getIdForBiome(N_AMERICA_6);
 
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
+    public static Biome S_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
+    public static int S_AMERICA_2_ID =  Biome.getIdForBiome(S_AMERICA_2);
+    public static Biome S_AMERICA_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid_spikes"));
+    public static int S_AMERICA_3_ID =  Biome.getIdForBiome(S_AMERICA_3);
+    public static Biome S_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_low"));
+    public static int S_AMERICA_4_ID =  Biome.getIdForBiome(S_AMERICA_4);
+    public static Biome S_AMERICA_5 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_spikes"));
+    public static int S_AMERICA_5_ID =  Biome.getIdForBiome(S_AMERICA_5);
+    public static Biome S_AMERICA_6 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public static int S_AMERICA_6_ID =  Biome.getIdForBiome(S_AMERICA_6);
+    public static Biome S_AMERICA_7 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
+    public static int S_AMERICA_7_ID =  Biome.getIdForBiome(S_AMERICA_7);
+    public static Biome S_AMERICA_8 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
+    public static int S_AMERICA_8_ID =  Biome.getIdForBiome(S_AMERICA_8);
+    public static Biome S_AMERICA_9 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
+    public static int S_AMERICA_9_ID =  Biome.getIdForBiome(S_AMERICA_9);
 
     public GenLayerAddShallowSea2(long seed, GenLayer genLayer)
     {
@@ -152,11 +172,21 @@ public class GenLayerAddShallowSea2 extends GenLayer
         return i == N_AMERICA_1_ID
                 || i == N_AMERICA_2_ID
                 || i == N_AMERICA_3_ID
-                || i == N_AMERICA_4_ID;
+                || i == N_AMERICA_4_ID
+                || i == N_AMERICA_5_ID
+                || i == N_AMERICA_6_ID;
     }
 
     public static boolean isSAmerica(int i) {
-        return i == S_AMERICA_1_ID;
+        return i == S_AMERICA_1_ID
+                || i == S_AMERICA_2_ID
+                || i == S_AMERICA_3_ID
+                || i == S_AMERICA_4_ID
+                || i == S_AMERICA_5_ID
+                || i == S_AMERICA_6_ID
+                || i == S_AMERICA_7_ID
+                || i == S_AMERICA_8_ID
+                || i == S_AMERICA_9_ID;
     }
 
     public static boolean isAus(int i) {

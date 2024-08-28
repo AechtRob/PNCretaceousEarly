@@ -56,12 +56,16 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
 
     public static Biome N_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica"));
     public static int N_AMERICA_1_ID =  Biome.getIdForBiome(N_AMERICA_1);
-    public static Biome N_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_foothills"));
+    public static Biome N_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_mountains"));
     public static int N_AMERICA_2_ID =  Biome.getIdForBiome(N_AMERICA_2);
-    public static Biome N_AMERICA_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
+    public static Biome N_AMERICA_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_foothills"));
     public static int N_AMERICA_3_ID =  Biome.getIdForBiome(N_AMERICA_3);
-    public static Biome N_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_mountains"));
+    public static Biome N_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland"));
     public static int N_AMERICA_4_ID =  Biome.getIdForBiome(N_AMERICA_4);
+    public static Biome N_AMERICA_5 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland_copse"));
+    public static int N_AMERICA_5_ID =  Biome.getIdForBiome(N_AMERICA_5);
+    public static Biome N_AMERICA_6 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
+    public static int N_AMERICA_6_ID =  Biome.getIdForBiome(N_AMERICA_6);
 
     public GenLayerCretaceousEarlyEuropeIslandify(long seed, GenLayer genLayer)
     {
@@ -185,7 +189,9 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
         return i == N_AMERICA_1_ID
                 || i == N_AMERICA_2_ID
                 || i == N_AMERICA_3_ID
-                || i == N_AMERICA_4_ID;
+                || i == N_AMERICA_4_ID
+                || i == N_AMERICA_5_ID
+                || i == N_AMERICA_6_ID;
     }
 
 }

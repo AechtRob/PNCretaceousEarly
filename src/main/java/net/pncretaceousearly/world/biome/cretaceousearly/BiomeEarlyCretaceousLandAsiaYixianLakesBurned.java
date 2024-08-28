@@ -8,6 +8,7 @@ import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -47,7 +48,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 			setRegistryName("lepidodendron:cretaceous_early_yixian_lakes_dead");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
-			decorator.treesPerChunk = 5;
+			decorator.treesPerChunk = 12;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
 			decorator.mushroomsPerChunk = 0;
@@ -92,26 +93,26 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 		@SideOnly(Side.CLIENT)
 		public int getFoliageColorAtPos(BlockPos pos)
 		{
-			return -11494072;
+			return -9585876;
 		}
 
 		@Override
 		@SideOnly(Side.CLIENT)
 		public int getGrassColorAtPos(BlockPos pos)
 		{
-			return -11494072;
+			return -9585876;
 		}
 
 		@Override
 		public int getModdedBiomeGrassColor(int original)
 		{
-			return -11494072;
+			return -9585876;
 		}
 
 		@Override
 		public int getModdedBiomeFoliageColor(int original)
 		{
-			return -11494072;
+			return -9585876;
 		}
 
 		@Override
@@ -318,12 +319,20 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 92; ++i)
+				for (int i = 0; i < 9; ++i)
 				{
-					int j = rand.nextInt(16) + 8;
-					int k = rand.nextInt(16) + 8;
-					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
-					FERN_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), 140, 180);
+					int j = pos.getX() + rand.nextInt(16) + 8;
+					int k = pos.getZ() + rand.nextInt(16) + 8;
+					FERN_GENERATOR.generate(worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k), worldIn).up(), 130, 180);
+				}
+
+			DOUBLE_PLANT_GENERATOR.setPlantType(BlockDoublePlant.EnumPlantType.FERN);
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 3; ++i)
+				{
+					int j = pos.getX() + rand.nextInt(16) + 8;
+					int k = pos.getZ() + rand.nextInt(16) + 8;
+					DOUBLE_PLANT_GENERATOR.generate(worldIn, rand, ChunkGenSpawner.getTopSolidBlock(new BlockPos(j, 0, k), worldIn).up());
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
