@@ -92,6 +92,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public Biome AUS_COAST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int AUS_COAST_ID = Biome.getIdForBiome(AUS_COAST);
 
+    public Biome DIVIDER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_divider"));
+    public int DIVIDER_ID = Biome.getIdForBiome(DIVIDER);
+
     public static Biome N_AMERICA_4 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_mountains"));
     public static int N_AMERICA_4_ID =  Biome.getIdForBiome(N_AMERICA_4);
 
@@ -267,7 +270,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     }
                     else if (isAus(aint[i])) {
                         if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
-                            || aint[i] == AUS_PADDOCK_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID) {
+                            || aint[i] == AUS_PADDOCK_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID
+                            || aint[i] == DIVIDER_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID;
                         }
                         else if (aint[i] == AUS_BEACH_ID

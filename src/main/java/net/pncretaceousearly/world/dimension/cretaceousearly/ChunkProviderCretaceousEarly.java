@@ -252,6 +252,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandDunes.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
                 && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousCreekAsiaShrubland.biome
+                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeEarlyCretaceousLandAustraliaAntarcticaColdDivider.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicDesertRimDesertSide.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhite.biome
 //                && world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) != BiomeJurassicSandyIslandWhiteEdge.biome
@@ -1556,6 +1557,24 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                     if (rand.nextInt(12) == 0) {
                                         iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
                                     }
+                                }
+                            }
+                        }
+
+                        //Australian Divider ridge:
+                        if (biome == BiomeEarlyCretaceousLandAustraliaAntarcticaColdDivider.biome
+                        ) {
+                            //If it's over 63 blocks then start to fill in more as Gravel
+                            //up to 78 where it almost fully Gravel
+                            int minHeight = 63;
+                            if (j1 >= minHeight) {
+                                int j2 = Math.max(0, 85 - j1);
+                                double stoneFactor = (double) j2 / (85D - (double) minHeight);
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate = Blocks.GRAVEL.getStateFromMeta(0);
+                                }
+                                if (Math.random() >= stoneFactor) {
+                                    iblockstate1 = Blocks.GRAVEL.getStateFromMeta(0);
                                 }
                             }
                         }

@@ -48,12 +48,6 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
         this.parent = genLayer;
     }
 
-    private final int InlandSeaBeachBiomes[] = new int[] {
-            CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID,
-            CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID,
-            CRETACEOUS_BEACH_AUSTRALIA_ID
-    };
-
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
         int[] aint = this.parent.getInts(areaX - 1, areaY - 1, areaWidth + 2, areaHeight + 2);
@@ -86,7 +80,7 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
                                 || isInlandOcean(k2)
                                 || isInlandOcean(j3)
                                 || isInlandOcean(i4)  ) {
-                                aint1[j + i * areaWidth] = InlandSeaBeachBiomes[nextInt(InlandSeaBeachBiomes.length)];
+                                aint1[j + i * areaWidth] = CRETACEOUS_BEACH_AUSTRALIA_LUSH_ID;
                             }
                             else if (isEurope(k)) {
                                 aint1[j + i * areaWidth] = CRETACEOUS_BEACH_EUROPE_ID;

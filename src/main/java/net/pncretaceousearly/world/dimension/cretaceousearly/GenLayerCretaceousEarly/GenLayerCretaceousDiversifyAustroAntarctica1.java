@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
+public class GenLayerCretaceousDiversifyAustroAntarctica1 extends GenLayer
 {
 
     public Biome EARLY_CRETACEOUS_AUSTRO_FOREST= Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica"));
@@ -17,7 +17,7 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_COASTAL);
 
 
-    public GenLayerCretaceousDiversifyAustroAntarctica2(long seed, GenLayer genLayer)
+    public GenLayerCretaceousDiversifyAustroAntarctica1(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
@@ -44,27 +44,9 @@ public class GenLayerCretaceousDiversifyAustroAntarctica2 extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID)
+                if (k == EARLY_CRETACEOUS_AUSTRO_FOREST_ID)
                 {
-                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
-                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
-                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
-                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                            (
-                                    (!isCoastal(l1))
-                                            && (!isCoastal(k2))
-                                            && (!isCoastal(j3))
-                                            && (!isCoastal(i4))
-                            )
-                    );
-                    if (flag)
-                    {
-                        aint1[j + i * areaWidth] = EARLY_CRETACEOUS_AUSTRO_FOREST_ID;
-                    }
-                    else {
-                        aint1[j + i * areaWidth] = k;
-                    }
+                    aint1[j + i * areaWidth] = AusBiomes[nextInt(AusBiomes.length)];
                 }
                 else {
                     aint1[j + i * areaWidth] = k;

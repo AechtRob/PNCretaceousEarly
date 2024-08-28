@@ -19,6 +19,10 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
 
     public Biome CRETACEOUS_AUS_COASTAL = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int CRETACEOUS_AUS_COASTAL_ID = Biome.getIdForBiome(CRETACEOUS_AUS_COASTAL);
+    public Biome CRETACEOUS_AUS_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
+    public int CRETACEOUS_AUS_BEACH_ID = Biome.getIdForBiome(CRETACEOUS_AUS_BEACH);
+    public Biome CRETACEOUS_AUS_BEACH_LUSH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"));
+    public int CRETACEOUS_AUS_BEACH_LUSH_ID = Biome.getIdForBiome(CRETACEOUS_AUS_BEACH_LUSH);
 
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_SAMERICA_WIDE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
@@ -92,7 +96,9 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
                         aint2[i] = CRETACEOUS_EARLY_CREEK_SAMERICA_CENTRE_ID;
                     }
                 }
-                else if (aint[i] == CRETACEOUS_AUS_COASTAL_ID) {
+                else if (aint[i] == CRETACEOUS_AUS_COASTAL_ID
+                        || aint[i] == CRETACEOUS_AUS_BEACH_ID
+                        || aint[i] == CRETACEOUS_AUS_BEACH_LUSH_ID) {
                     aint2[i] = CRETACEOUS_AUS_HEADLANDS_ID;
                 }
                 else {
