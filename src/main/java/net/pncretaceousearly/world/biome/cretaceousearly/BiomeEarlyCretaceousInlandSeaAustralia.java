@@ -6,11 +6,14 @@ import net.lepidodendron.block.BlockBalticAmberBlock;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
+import net.lepidodendron.world.gen.WorldGenRockPiles;
+import net.lepidodendron.world.gen.WorldGenRockPilesBolide;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -37,7 +40,7 @@ public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendro
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Inland Sea").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.00F).setTemperature(0.8F).setWaterColor(-14257600));
+			super(new BiomeProperties("E. Cretaceous Inland Sea").setRainfall(0.5F).setBaseHeight(-1.30F).setHeightVariation(0.078F).setTemperature(0.8F).setWaterColor(-14257600));
 			setRegistryName("lepidodendron:cretaceous_early_inland_sea_australia");
 
 			topBlock = Blocks.SAND.getDefaultState();
@@ -60,6 +63,8 @@ public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendro
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 
+		protected static final WorldGenRockPilesBolide ROCK_PILES_GENERATOR = new WorldGenRockPilesBolide();
+
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -70,7 +75,18 @@ public class BiomeEarlyCretaceousInlandSeaAustralia extends ElementsLepidodendro
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
-
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
+			{
+				int i = rand.nextInt(2);
+				if (rand.nextInt(3) == 0) {
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(12) + 10;
+						int l = rand.nextInt(12) + 10;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
+					}
+				}
+			}
 
 			super.decorate(worldIn, rand, pos);
 		}

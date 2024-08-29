@@ -32,12 +32,16 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public Biome CRETACEOUS_EARLY_CREEK_AUS_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_creek"));
     public int CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_FOREST);
+    public Biome CRETACEOUS_EARLY_CREEK_AUS_PADDOCK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_australia_antarctica_paddock"));
+    public int CRETACEOUS_EARLY_CREEK_AUS_PADDOCK_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_PADDOCK);
     public Biome CRETACEOUS_EARLY_CREEK_AUS_JUNGLE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_austro_antarctic_rainforest"));
     public int CRETACEOUS_EARLY_CREEK_AUS_JUNGLE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_JUNGLE);
     public Biome CRETACEOUS_EARLY_CREEK_AUS_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_australia_antarctica_inland_sea"));
     public int CRETACEOUS_EARLY_CREEK_AUS_BEACH_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_BEACH);
     public Biome AUS_BEACH_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_austro_antarctic_coastal"));
     public int AUS_BEACH_CREEK_ID = Biome.getIdForBiome(AUS_BEACH_CREEK);
+    public Biome AUS_CLIFF_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_austro_antarctic_coastal_cliffs"));
+    public int AUS_CLIFF_CREEK_ID = Biome.getIdForBiome(AUS_CLIFF_CREEK);
 
     public Biome TICOA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_patagonia"));
     public int TICOA_CREEK_ID = Biome.getIdForBiome(TICOA_CREEK);
@@ -97,6 +101,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN);
     public Biome AUS_COAST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int AUS_COAST_ID = Biome.getIdForBiome(AUS_COAST);
+    public Biome AUS_CLIFFS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs"));
+    public int AUS_CLIFFS_ID = Biome.getIdForBiome(AUS_CLIFFS);
 
     public Biome DIVIDER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_divider"));
     public int DIVIDER_ID = Biome.getIdForBiome(DIVIDER);
@@ -306,10 +312,12 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         aint2[i] = PHRYGANA_CREEK_ID;
                     }
                     else if (isAus(aint[i])) {
-                        if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID
-                            || aint[i] == AUS_PADDOCK_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID
-                            || aint[i] == DIVIDER_ID || aint[i] == LAKE_EDGE_ID) {
+                        if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID;
+                        }
+                        else if (aint[i] == AUS_PADDOCK_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN_ID
+                                || aint[i] == DIVIDER_ID || aint[i] == LAKE_EDGE_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_PADDOCK_ID;
                         }
                         else if (aint[i] == AUS_BEACH_ID
                             || aint[i] == AUS_LUSH_BEACH_ID) {
@@ -317,6 +325,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         }
                         else if (aint[i] == AUS_JUNGLE_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_JUNGLE_ID;
+                        }
+                        else if (aint[i] == AUS_CLIFFS_ID) {
+                            aint2[i] = AUS_CLIFF_CREEK_ID;
                         }
                         else if (aint[i] == AUS_COAST_ID) {
                             aint2[i] = AUS_BEACH_CREEK_ID;
