@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousCreekAustroAntarcticCoastal extends ElementsLep
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coastal Sandbars Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(1.4F));
+			super(new BiomeProperties("E. Cretaceous Coastal Sandbars Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.4F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_austro_antarctic_coastal");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = BlockCoarseSandyDirt.block.getDefaultState();
@@ -52,7 +52,8 @@ public class BiomeEarlyCretaceousCreekAustroAntarcticCoastal extends ElementsLep
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
 			decorator.sandPatchesPerChunk = 0;
-			decorator.gravelPatchesPerChunk = 10;
+			decorator.gravelPatchesPerChunk = 0;
+			decorator.clayPerChunk = 0;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();

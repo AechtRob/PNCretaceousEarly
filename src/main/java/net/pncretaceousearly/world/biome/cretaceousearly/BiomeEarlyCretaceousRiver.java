@@ -50,7 +50,8 @@ public class BiomeEarlyCretaceousRiver extends ElementsLepidodendronMod.ModEleme
 			decorator.cactiPerChunk = 0;
 			decorator.clayPerChunk = 1;
 			decorator.sandPatchesPerChunk = 10;
-			decorator.gravelPatchesPerChunk = 10;
+			decorator.gravelPatchesPerChunk = 0;
+			decorator.clayPerChunk = 0;
 			this.spawnableMonsterList.clear();
 			this.spawnableCreatureList.clear();
 			this.spawnableWaterCreatureList.clear();

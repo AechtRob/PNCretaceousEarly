@@ -21,10 +21,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_namerica_shrubland_copse")
+public class BiomeEarlyCretaceousCreekNAmericaShrublandCopse extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_namerica_shrubland_copse")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousLandNAmericaShrublandCopse(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekNAmericaShrublandCopse(ElementsLepidodendronMod instance) {
 		super(instance, 1589);
 	}
 
@@ -43,8 +43,8 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Sapindopsis Shrubland Copse").setBaseHeight(0.3F).setHeightVariation(0.015F).setTemperature(1.5F));
-			setRegistryName("lepidodendron:cretaceous_early_namerica_shrubland_copse");
+			super(new BiomeProperties("E. Cretaceous Sapindopsis Shrubland Copse Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.5F));
+			setRegistryName("lepidodendron:cretaceous_early_creek_namerica_shrubland_copse");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
 			decorator.treesPerChunk = 7;

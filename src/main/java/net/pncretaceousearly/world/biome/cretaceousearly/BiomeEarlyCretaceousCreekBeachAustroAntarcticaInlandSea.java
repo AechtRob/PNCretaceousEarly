@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousCreekBeachAustroAntarcticaInlandSea extends Ele
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Inland Beach Creek").setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(0.8F));
+			super(new BiomeProperties("E. Cretaceous Inland Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.8F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_beach_australia_antarctica_inland_sea");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();

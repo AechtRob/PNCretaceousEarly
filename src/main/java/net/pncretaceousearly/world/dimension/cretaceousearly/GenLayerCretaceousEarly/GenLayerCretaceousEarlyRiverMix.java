@@ -16,13 +16,19 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_europe"));
     public int CRETACEOUS_EARLY_CREEK_EUROPE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE);
+    public Biome CRETACEOUS_FLOODPLAIN_CREEK_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_europe_field"));
+    public int CRETACEOUS_FLOODPLAIN_CREEK_EUROPE_ID = Biome.getIdForBiome(CRETACEOUS_FLOODPLAIN_CREEK_EUROPE);
     public Biome CRETACEOUS_EARLY_CREEK_MACQUIS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_europe_maquis"));
     public int CRETACEOUS_EARLY_CREEK_MACQUIS_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_MACQUIS);
+    public Biome CRETACEOUS_EARLY_CREEK_EUROPE_WOOD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_europe_field_copse"));
+    public int CRETACEOUS_EARLY_CREEK_EUROPE_WOOD_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE_WOOD);
 
     public Biome CRETACEOUS_EARLY_CREEK_NAMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_north_america_braided"));
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA);
     public Biome CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_namerica_shrubland"));
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB);
+    public Biome CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_namerica_shrubland_copse"));
+    public int CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE);
 
     public Biome CRETACEOUS_EARLY_CREEK_AUS_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_creek"));
     public int CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_FOREST);
@@ -129,12 +135,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static Biome S_AMERICA_9 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
     public static int S_AMERICA_9_ID =  Biome.getIdForBiome(S_AMERICA_9);
 
-    public static Biome N_AMERICA_SHRUBS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland"));
-    public static int N_AMERICA_SHRUBS_ID =  Biome.getIdForBiome(N_AMERICA_SHRUBS);
-    public static Biome N_AMERICA_COPSE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_shrubland_copse"));
-    public static int N_AMERICA_COPSE_ID =  Biome.getIdForBiome(N_AMERICA_COPSE);
-
-     public Biome TICOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
+    public Biome TICOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
     public int TICOA_ID = Biome.getIdForBiome(TICOA);
     public Biome S_AMERICA_ARID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
     public int S_AMERICA_ARID_ID = Biome.getIdForBiome(S_AMERICA_ARID);
@@ -162,9 +163,12 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int EURO_LAKE_EDGE_ID =  Biome.getIdForBiome(EURO_LAKE_EDGE);
     public static Biome EURO_LAKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes"));
     public static int EURO_LAKES_ID =  Biome.getIdForBiome(EURO_LAKES);
-
     public static Biome EURO_MACQUIS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_maquis"));
     public static int EURO_MACQUIS_ID =  Biome.getIdForBiome(EURO_MACQUIS);
+    public static Biome EURO_FLOODPLAIN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field"));
+    public static int EURO_FLOODPLAIN_ID =  Biome.getIdForBiome(EURO_FLOODPLAIN);
+    public static Biome EURO_WOODLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field_copse"));
+    public static int EURO_WOODLAND_ID =  Biome.getIdForBiome(EURO_WOODLAND);
 
     public static Biome RIFT1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
     public static int RIFT1_ID =  Biome.getIdForBiome(RIFT1);
@@ -241,14 +245,25 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                 }
                 else {
                     //Add the rivers we want:
-                    if (aint[i] == EURO_MACQUIS_ID) {
-                        aint2[i] = CRETACEOUS_EARLY_CREEK_MACQUIS_ID;
-                    }
-                    else if (isShrubland(aint[i])) {
+                    if (aint[i] == N_AMERICA_4_ID) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB_ID;
                     }
+                    else if (aint[i] == N_AMERICA_5_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE_ID;
+                    }
                     else if (isEurope(aint[i])) {
-                        aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
+                        if (aint[i] == EURO_FLOODPLAIN_ID) {
+                            aint2[i] = CRETACEOUS_FLOODPLAIN_CREEK_EUROPE_ID;
+                        }
+                        else if (aint[i] == EURO_MACQUIS_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_MACQUIS_ID;
+                        }
+                        else if (aint[i] == EURO_WOODLAND_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_WOOD_ID;
+                        }
+                        else {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
+                        }
                     }
                     else if (aint[i] == TICOA_ID) {
                         aint2[i] = TICOA_CREEK_ID;
@@ -323,10 +338,6 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
         }
 
         return aint2;
-    }
-
-    public static boolean isShrubland(int i) {
-        return i == N_AMERICA_SHRUBS_ID || i == N_AMERICA_COPSE_ID;
     }
 
     public static boolean isEurope(int i) {
