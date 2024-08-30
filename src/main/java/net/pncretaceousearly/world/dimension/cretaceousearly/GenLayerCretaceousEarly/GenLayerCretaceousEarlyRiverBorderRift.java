@@ -32,9 +32,6 @@ public class GenLayerCretaceousEarlyRiverBorderRift extends GenLayer
     public Biome SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public int SAMERICA_DESERT_ID =  Biome.getIdForBiome(SAMERICA_DESERT);
 
-    public Biome ARID_CREEK_FROM_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_desert"));
-    public int ARID_CREEK_FROM_AFRICA_ID = Biome.getIdForBiome(ARID_CREEK_FROM_AFRICA);
-
     public GenLayerCretaceousEarlyRiverBorderRift(long seed, GenLayer genLayer)
     {
         super(seed);

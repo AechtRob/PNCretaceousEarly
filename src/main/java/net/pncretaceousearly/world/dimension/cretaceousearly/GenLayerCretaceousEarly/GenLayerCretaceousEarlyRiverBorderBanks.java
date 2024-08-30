@@ -9,13 +9,29 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerCretaceousEarlyRiverBorderBanks extends GenLayer
 {
-
     public Biome RIVER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
     public int RIVER_ID = Biome.getIdForBiome(RIVER);
-
     public Biome RIVER_BANKS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
     public int RIVER_BANKS_ID = Biome.getIdForBiome(RIVER_BANKS);
 
+    public Biome SAMERICA_ARID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
+    public int SAMERICA_ARID_ID =  Biome.getIdForBiome(SAMERICA_ARID);
+    public Biome SAMERICA_ARID_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid_spikes"));
+    public int SAMERICA_ARID_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_ARID_SPIKES);
+    public Biome SAMERICA_DESERT_LOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_low"));
+    public int SAMERICA_DESERT_LOW_ID =  Biome.getIdForBiome(SAMERICA_DESERT_LOW);
+    public Biome SAMERICA_DESERT_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_spikes"));
+    public int SAMERICA_DESERT_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SPIKES);
+    public Biome SAMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public int SAMERICA_FLATS_ID =  Biome.getIdForBiome(SAMERICA_FLATS);
+    public Biome SAMERICA_PATAGONIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
+    public int SAMERICA_PATAGONIA_ID =  Biome.getIdForBiome(SAMERICA_PATAGONIA);
+    public Biome SAMERICA_DESERT_SAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
+    public int SAMERICA_DESERT_SAND_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SAND);
+    public Biome SAMERICA_DESERT_SAND_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
+    public int SAMERICA_DESERT_SAND_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SAND_SPIKES);
+    public Biome SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
+    public int SAMERICA_DESERT_ID =  Biome.getIdForBiome(SAMERICA_DESERT);
 
     public GenLayerCretaceousEarlyRiverBorderBanks(long seed, GenLayer genLayer)
     {
@@ -35,17 +51,17 @@ public class GenLayerCretaceousEarlyRiverBorderBanks extends GenLayer
                 this.initChunkSeed((long)(j + areaX), (long)(i + areaY));
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == RIVER_ID)
+                if (isSouthAmerican(k))
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
                     int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
 
-                    if ((isAfrican(l1) )
-                        || (isAfrican(k2))
-                        || (isAfrican(j3))
-                        || (isAfrican(i4))
+                    if ((l1 == RIVER_ID )
+                        || (k2 == RIVER_ID)
+                        || (j3 == RIVER_ID)
+                        || (i4 == RIVER_ID)
                     )
                     {
                         aint1[j + i * areaWidth] = RIVER_BANKS_ID;
@@ -69,7 +85,22 @@ public class GenLayerCretaceousEarlyRiverBorderBanks extends GenLayer
         Biome biome = Biome.getBiome(biomeID);
         if (biome instanceof BiomeCretaceousEarly) {
             BiomeCretaceousEarly biomeC = (BiomeCretaceousEarly) biome;
-            return biomeID != RIVER_BANKS_ID && biomeID != RIVER_ID && biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America;
+            return (!isSouthAmerican(biomeID)) && biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America;
+        }
+        return false;
+    }
+
+    private boolean isSouthAmerican(int biomeID) {
+        if (biomeID == SAMERICA_ARID_ID
+                || biomeID == SAMERICA_PATAGONIA_ID
+                || biomeID == SAMERICA_ARID_SPIKES_ID
+                || biomeID == SAMERICA_DESERT_LOW_ID
+                || biomeID == SAMERICA_DESERT_SAND_ID
+                || biomeID == SAMERICA_DESERT_SPIKES_ID
+                || biomeID == SAMERICA_DESERT_SAND_SPIKES_ID
+                || biomeID == SAMERICA_FLATS_ID
+                || biomeID == SAMERICA_DESERT_ID) {
+            return true;
         }
         return false;
     }

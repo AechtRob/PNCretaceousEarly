@@ -1,24 +1,35 @@
 package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly;
 
-import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerRiverriftSAmericaRiver extends GenLayer
+public class GenLayerCretaceousEarlyRiverBorderRiftMagma extends GenLayer
 {
 
-    public static int VANILLA_RIVER_ID = Biome.getIdForBiome(Biomes.RIVER);
 
-    public Biome CRETACEOUS_EARLY_CREEK_SAMERICA_RIFT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_rift"));
-    public int CRETACEOUS_EARLY_CREEK_SAMERICA_RIFT_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_SAMERICA_RIFT);
+    public Biome RIVER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
+    public int RIVER_ID = Biome.getIdForBiome(RIVER);
 
-    public GenLayerRiverriftSAmericaRiver(long seed, GenLayer genLayer)
+    public Biome MAGMA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_rift"));
+    public int MAGMA_ID = Biome.getIdForBiome(MAGMA);
+
+    public GenLayerCretaceousEarlyRiverBorderRiftMagma(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
+
+    private final int RiftBiomes[] = new int[] {
+            RIVER_ID,
+            RIVER_ID,
+            RIVER_ID,
+            RIVER_ID,
+            RIVER_ID,
+            RIVER_ID,
+            MAGMA_ID
+    };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
@@ -32,7 +43,7 @@ public class GenLayerRiverriftSAmericaRiver extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == VANILLA_RIVER_ID)
+                if (k == RIVER_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -40,15 +51,15 @@ public class GenLayerRiverriftSAmericaRiver extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (isBordered(l1))
-                        && (isBordered(k2))
-                        && (isBordered(j3))
-                        && (isBordered(i4))
+                        (l1 == RIVER_ID)
+                        && (k2 == RIVER_ID)
+                        && (j3 == RIVER_ID)
+                        && (i4 == RIVER_ID)
                         )
                     );
                     if (flag)
                     {
-                        aint1[j + i * areaWidth] = CRETACEOUS_EARLY_CREEK_SAMERICA_RIFT_ID;
+                        aint1[j + i * areaWidth] = RiftBiomes[nextInt(RiftBiomes.length)];
                     }
                     else {
                         aint1[j + i * areaWidth] = k;
@@ -61,10 +72,6 @@ public class GenLayerRiverriftSAmericaRiver extends GenLayer
         }
 
         return aint1;
-    }
-
-    public boolean isBordered(int i) {
-        return i == VANILLA_RIVER_ID || i == CRETACEOUS_EARLY_CREEK_SAMERICA_RIFT_ID;
     }
     
 }

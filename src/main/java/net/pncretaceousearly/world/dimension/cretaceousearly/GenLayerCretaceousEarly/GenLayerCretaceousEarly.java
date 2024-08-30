@@ -39,7 +39,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAsiaInlandReplaceScrub(679L, biomes);
         biomes = new GenLayerCretaceousDiversifyEuroAmerica(2641L, biomes);
         biomes = new GenLayerEuropeCopse(223L, biomes);
-        biomes = new GenLayerCretaceousEarlyRiverBorderRift(98L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorderRift(97L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim(151L, biomes);
         biomes = new GenLayerZoom(109L, biomes);
 
@@ -47,6 +47,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerCretaceousEarlyYixianRim(9151L, biomes);
         biomes = new GenLayerOceanCrags(29L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRift(99L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerSmooth(700L, biomes);
         biomes = new GenLayerSmooth(701L, biomes);
 
@@ -59,7 +60,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAsiaDroopingIslands(498, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica5(2549L, biomes);
         biomes = new GenLayerCretaceousPhryganaLakes(7223L, biomes);
-        //biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorderBanks(99L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
         biomes = new GenLayerNorthAmericaMountains0(1551L, biomes);
         biomes = new GenLayerSmooth(703L, biomes);
@@ -71,7 +72,7 @@ public class GenLayerCretaceousEarly {
 
         biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);
         biomes = new GenLayerCretaceousEarlySeperateAsiaHillsBiomes(21L, biomes);
-
+        biomes = new GenLayerCretaceousEarlyRiverBorderBanks(99L, biomes);
         biomes = new GenLayerAsiaShrublands1(6971L, biomes);
         biomes = new GenLayerCretaceousEarlyBeach(1050L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes0(742L, biomes);
@@ -83,6 +84,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerSAmericanDesertLows(244L, biomes);
         biomes = new GenLayerAfricaPinnacles(1875L, biomes);
         biomes = new GenLayerAfricaSavannaHoles2(8772L, biomes);
+        biomes = new GenLayerCretaceousEarlyRiverBorderRiftMagma(221L, biomes);
         biomes = new GenLayerFuzzyZoom(6001L, biomes);
 
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
@@ -176,27 +178,6 @@ public class GenLayerCretaceousEarly {
         genlayer3widevalley6 = new GenLayerZoom(1680L, genlayer3widevalley6);
         genlayer3widevalley6 = new GenLayerSmooth(1681L, genlayer3widevalley6);
         GenLayer genlayer3widevalleyfinal = new GenLayerCretaceousEarlyRiverMixAfricaSpecial(1200L, genlayer2widevalleyfinal, genlayer3widevalley6);
-
-//        //Additional special, very wide waterways in SAmerica:
-//        GenLayer genlayerwidecreek = new GenLayerRiverInit(120L, biomes);
-//        genlayerwidecreek = new GenLayerRiverInit(130L, genlayerwidecreek);
-//        GenLayer genlayerwidecreek2 = GenLayerZoom.magnify(1200L, genlayerwidecreek, 2);
-//        GenLayer genlayerwidecreek3 = GenLayerZoom.magnify(1200L, genlayerwidecreek2, 1);
-//        GenLayer genlayerwidecreek4 = GenLayerZoom.magnify(1000L, genlayerwidecreek3, 2);
-//        GenLayer genlayerwidecreek5 = new GenLayerRiver(12L, genlayerwidecreek4);
-//        GenLayer genlayerwidecreek6 = new GenLayerSmooth(1200L, genlayerwidecreek5);
-//        genlayerwidecreek6 = new GenLayerZoom(1676L, genlayerwidecreek6);
-//        //Adds riverbanks to the edges of the river:
-//        genlayerwidecreek6 = new GenLayerRiverbanksSAmericaRiver(120L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerZoom(1677L, genlayerwidecreek6);
-//        //Digs out a deeper rift in parts of the river:
-//        genlayerwidecreek6 = new GenLayerRiverriftSAmericaRiver(121L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerZoom(1678L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerZoom(1679L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerRiverriftSAmericaRiver(122L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerZoom(1680L, genlayerwidecreek6);
-//        genlayerwidecreek6 = new GenLayerSmooth(1681L, genlayerwidecreek6);
-//        GenLayer genlayerwidecreekfinal = new GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial(1200L, genlayer3widevalleyfinal, genlayerwidecreek6);
 
         GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayer3widevalleyfinal);
 
