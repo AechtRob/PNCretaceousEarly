@@ -48,7 +48,6 @@ public class BiomeEarlyCretaceousRiver extends ElementsLepidodendronMod.ModEleme
 			decorator.bigMushroomsPerChunk = 0;
 			decorator.reedsPerChunk = 0;
 			decorator.cactiPerChunk = 0;
-			decorator.clayPerChunk = 1;
 			decorator.sandPatchesPerChunk = 10;
 			decorator.gravelPatchesPerChunk = 0;
 			decorator.clayPerChunk = 0;

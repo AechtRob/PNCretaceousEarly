@@ -16,6 +16,9 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
     public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
 
+    public Biome FLOODED_RIFT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
+    public int FLOODED_RIFT_ID =  Biome.getIdForBiome(FLOODED_RIFT);
+
     public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
     public int CRETACEOUS_OCEAN_SHORE_TETHYS_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS);
     public Biome CRETACEOUS_OCEAN_SHORE_ATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_atlantic"));
@@ -129,7 +132,7 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     }
 
     private boolean hasNoBeach(int biomeID) {
-        return false;
+        return biomeID == FLOODED_RIFT_ID;
     }
 
     public static boolean isEurope(int i) {

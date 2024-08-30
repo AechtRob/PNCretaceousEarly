@@ -15,20 +15,22 @@ public class GenLayerCretaceousEarlyRiverBorderRift extends GenLayer
 
     public Biome SAMERICA_ARID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
     public int SAMERICA_ARID_ID =  Biome.getIdForBiome(SAMERICA_ARID);
-    public Biome SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
-    public int SAMERICA_DESERT_ID =  Biome.getIdForBiome(SAMERICA_DESERT);
     public Biome SAMERICA_ARID_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid_spikes"));
     public int SAMERICA_ARID_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_ARID_SPIKES);
-    public Biome SAMERICA_DESERT_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_spikes"));
-    public int SAMERICA_DESERT_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SPIKES);
     public Biome SAMERICA_DESERT_LOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_low"));
     public int SAMERICA_DESERT_LOW_ID =  Biome.getIdForBiome(SAMERICA_DESERT_LOW);
+    public Biome SAMERICA_DESERT_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_desert_spikes"));
+    public int SAMERICA_DESERT_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SPIKES);
+    public Biome SAMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public int SAMERICA_FLATS_ID =  Biome.getIdForBiome(SAMERICA_FLATS);
     public Biome SAMERICA_PATAGONIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
     public int SAMERICA_PATAGONIA_ID =  Biome.getIdForBiome(SAMERICA_PATAGONIA);
     public Biome SAMERICA_DESERT_SAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
     public int SAMERICA_DESERT_SAND_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SAND);
-    public Biome SAMERICA_FLATS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
-    public int SAMERICA_FLATS_ID =  Biome.getIdForBiome(SAMERICA_FLATS);
+    public Biome SAMERICA_DESERT_SAND_SPIKES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
+    public int SAMERICA_DESERT_SAND_SPIKES_ID =  Biome.getIdForBiome(SAMERICA_DESERT_SAND_SPIKES);
+    public Biome SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
+    public int SAMERICA_DESERT_ID =  Biome.getIdForBiome(SAMERICA_DESERT);
 
     public Biome ARID_CREEK_FROM_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_desert"));
     public int ARID_CREEK_FROM_AFRICA_ID = Biome.getIdForBiome(ARID_CREEK_FROM_AFRICA);
@@ -51,7 +53,7 @@ public class GenLayerCretaceousEarlyRiverBorderRift extends GenLayer
                 this.initChunkSeed((long)(j + areaX), (long)(i + areaY));
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isAfrican(k) || k == ARID_CREEK_FROM_AFRICA_ID)
+                if (isAfrican(k))
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -97,6 +99,7 @@ public class GenLayerCretaceousEarlyRiverBorderRift extends GenLayer
                 || biomeID == SAMERICA_DESERT_LOW_ID
                 || biomeID == SAMERICA_DESERT_SAND_ID
                 || biomeID == SAMERICA_DESERT_SPIKES_ID
+                || biomeID == SAMERICA_DESERT_SAND_SPIKES_ID
                 || biomeID == SAMERICA_FLATS_ID
                 || biomeID == SAMERICA_DESERT_ID) {
             return true;

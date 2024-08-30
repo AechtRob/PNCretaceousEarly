@@ -178,7 +178,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
 
     public static Biome RIFT1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
     public static int RIFT1_ID =  Biome.getIdForBiome(RIFT1);
-    public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
+    public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_rift"));
     public static int RIFT2_ID =  Biome.getIdForBiome(RIFT2);
 
     public static Biome SPRINGS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_springs"));

@@ -5,7 +5,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerCretaceousEarlyRiverBorderPodocarpLakeEdge extends GenLayer
+public class GenLayerCretaceousEarlyPodocarpLakeEdge extends GenLayer
 {
 
     public Biome EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge"));
@@ -13,10 +13,7 @@ public class GenLayerCretaceousEarlyRiverBorderPodocarpLakeEdge extends GenLayer
     public Biome LAKE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_lakes"));
     public int LAKE_ID = Biome.getIdForBiome(LAKE);
 
-    public Biome FOREST_SNOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_winter"));
-    public int FOREST_SNOW_ID = Biome.getIdForBiome(FOREST_SNOW);
-
-    public GenLayerCretaceousEarlyRiverBorderPodocarpLakeEdge(long seed, GenLayer genLayer)
+    public GenLayerCretaceousEarlyPodocarpLakeEdge(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;

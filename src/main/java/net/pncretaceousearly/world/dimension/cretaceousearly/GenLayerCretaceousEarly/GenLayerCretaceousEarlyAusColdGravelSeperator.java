@@ -1,13 +1,11 @@
 package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly;
 
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
+public class GenLayerCretaceousEarlyAusColdGravelSeperator extends GenLayer
 {
 
     public Biome DIVIDER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_divider"));
@@ -17,7 +15,7 @@ public class GenLayerCretaceousEarlyRiverBorder extends GenLayer
     public Biome FOREST_SNOW = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_winter"));
     public int FOREST_SNOW_ID = Biome.getIdForBiome(FOREST_SNOW);
 
-    public GenLayerCretaceousEarlyRiverBorder(long seed, GenLayer genLayer)
+    public GenLayerCretaceousEarlyAusColdGravelSeperator(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
