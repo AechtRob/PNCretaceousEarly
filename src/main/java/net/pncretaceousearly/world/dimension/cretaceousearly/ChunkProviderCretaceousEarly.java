@@ -266,6 +266,21 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 (new WorldGenPrehistoricLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
             }
 
+
+
+        if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAsiaYixianMountains.biome) {
+            for (int n = 0; n < 8; n++) {
+                if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
+                        net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
+                    int i1 = this.random.nextInt(16) + 8;
+                    int j1 = this.random.nextInt(256);
+                    int k1 = this.random.nextInt(16) + 8;
+                    if (!world.getBiome(blockpos.add(i1, j1, k1)).getRegistryName().toString().equalsIgnoreCase("lepidodendron:cretaceous_early_barren_hills"))
+                        (new WorldGenPrehistoricLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+                }
+            }
+        }
+
         if (world.getBiome(new BlockPos(i, world.getSeaLevel(), j)) == BiomeEarlyCretaceousLandAsiaRefugium.biome
         )
             if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,

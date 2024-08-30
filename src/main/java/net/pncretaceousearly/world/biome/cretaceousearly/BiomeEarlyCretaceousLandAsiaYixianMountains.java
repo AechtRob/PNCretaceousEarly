@@ -37,7 +37,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianMountains extends ElementsLepidod
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Storied Peaks").setBaseHeight(9.95F).setHeightVariation(0.8F).setTemperature(0.8F));
+			super(new BiomeProperties("E. Cretaceous Storied Peaks").setBaseHeight(9.95F).setHeightVariation(0.8F).setTemperature(0.345F));
 			setRegistryName("lepidodendron:cretaceous_early_yixian_mountains");
 			topBlock = Blocks.STONE.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();
