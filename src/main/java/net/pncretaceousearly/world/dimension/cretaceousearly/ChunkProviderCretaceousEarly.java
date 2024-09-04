@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -578,7 +579,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         else if (j1 <= i - 7 - k) {
                             iblockstate = biome.topBlock;
                             //iblockstate1 = biome.fillerBlock;
-                            iblockstate1 = getIBlockstateForWater(biome, j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                         }
                         if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR)) {
                             if (biome.getTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F) {
@@ -1978,7 +1979,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         j = k;
                         if ((j1 == i - 1 && i != SEALEVEL)) {
-                            iblockstate1 = getIBlockstateForWater(biome, j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                         else if (j1 >= i - 1) {
@@ -1988,7 +1989,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             iblockstate = AIR;
                             iblockstate1 = STONE;
 
-                            iblockstate1 = getIBlockstateForWater(biome, j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                     } else if (j > 0) {
@@ -2114,21 +2115,25 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
     }
 
-    public static IBlockState getIBlockstateForWater(Biome biome, int posY, IBlockState iblockstate, Random rand) {
+    public static IBlockState getIBlockstateForWater(String biomeResID, int posY, IBlockState iblockstate, Random rand) {
+
+        Biome biome = Biome.REGISTRY.getObject(new ResourceLocation(biomeResID));
 
         //Asia:
         //====
-        if (biome == BiomeEarlyCretaceousLandAsia.biome
-            || biome == BiomeEarlyCretaceousCreekBoggy.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsia.biome).toString())
+            || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekBoggy.biome).toString())
+        ) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(10) < 3) {
                 iblockstate = BlockPeat.block.getDefaultState();
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome
-                || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome
-                || biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaYixianLakesA.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaYixianLakesB.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome).toString())
+        ) {
             iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
             if (posY >= 135 + (rand.nextInt(3) - 1)) {
                 if (rand.nextInt(3) == 0) {
@@ -2175,8 +2180,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaRefugium.biome
-                || biome == BiomeEarlyCretaceousCreekAsiaRefugium.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaRefugium.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaRefugium.biome).toString())
+        ) {
             iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
             if (rand.nextInt(6) == 0) {
                 iblockstate = Blocks.SAND.getDefaultState();
@@ -2186,9 +2192,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaShrublandOasis.biome
-                || biome == BiomeEarlyCretaceousCreekAsiaShrubland.biome
-                || biome == BiomeEarlyCretaceousLandAsiaShrubland.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaShrublandOasis.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaShrubland.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaShrubland.biome).toString())
+        ) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(4) == 0) {
                 iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
@@ -2204,7 +2211,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaShrublandSprings.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaShrublandSprings.biome).toString())
+        ) {
             iblockstate = BlockVolcanicAshDark.block.getDefaultState();
             if (rand.nextInt(3) == 0) {
                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
@@ -2214,10 +2222,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaDrooping.biome
-                || biome == BiomeEarlyCretaceousLandAsiaDroopingMound.biome
-                || biome == BiomeEarlyCretaceousCreekAsiaDrooping.biome
-                || biome == BiomeEarlyCretaceousLandAsiaYixianSkirt.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaDrooping.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaDroopingMound.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaDrooping.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaYixianSkirt.biome).toString())
+        ) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(8) == 0) {
                 iblockstate = BlockPeat.block.getDefaultState();
@@ -2235,8 +2244,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAsiaBandedDesert.biome
-                || biome == BiomeEarlyCretaceousCreekAsiaBandedDesert.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaBandedDesert.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaBandedDesert.biome).toString())
+        ) {
             iblockstate = Blocks.SAND.getStateFromMeta(1);
             if (rand.nextInt(10) < 3) {
                 iblockstate = BlockClayRed.block.getDefaultState();
@@ -2252,10 +2262,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 }
             }
         }
-        
-        if (biome == BiomeEarlyCretaceousCreekSAmericaWideCentre.biome
-                || biome == BiomeEarlyCretaceousCreekSAmericaWide.biome
-                || biome == BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome) {
+
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSAmericaWideCentre.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSAmericaWide.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSAmericaWideCentreRift.biome).toString())
+        ) {
             if (rand.nextInt(2) == 0) {
                 iblockstate = BlockSandBlackWavy.block.getDefaultState();
             }
@@ -2288,9 +2299,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome
-                || biome == BiomeEarlyCretaceousLandAsiaPhryganaLake.biome
-                || biome == BiomeEarlyCretaceousCreekAsiaPhrygana.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaPhrygana.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaPhryganaLake.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaPhrygana.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 80) {
                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2332,8 +2344,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         //Europe and America:
         //==================
-        if (biome == BiomeEarlyCretaceousLandEuropeField .biome
-                || biome == BiomeEarlyCretaceousCreekEuropeField.biome) {
+
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeField.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeField.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 97) {
@@ -2403,8 +2417,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandEuropeMaquis .biome
-                || biome == BiomeEarlyCretaceousCreekEuropeMaquis.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeMaquis.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeMaquis.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 75) {
                 iblockstate = Blocks.SAND.getDefaultState();
@@ -2423,10 +2438,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandEurope .biome
-                || biome == BiomeEarlyCretaceousCreekEuropeanTethys.biome
-                || biome == BiomeEarlyCretaceousLandEuropeSwampLakes.biome
-                || biome == BiomeEarlyCretaceousLandEuropeSwampLakesEdge.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEurope.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeanTethys.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeSwampLakes.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeSwampLakesEdge.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 70) {
                 iblockstate = BlockPeat.block.getDefaultState();
@@ -2445,8 +2461,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandEuropeFieldCopse.biome
-                || biome == BiomeEarlyCretaceousCreekEuropeFieldCopse.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeFieldCopse.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeFieldCopse.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeSwampLakes.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 93) {
@@ -2534,8 +2552,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandNAmericaMountains .biome
-                || biome == BiomeEarlyCretaceousLandNAmericaMountainsFoothills.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaMountains.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaMountainsFoothills.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 50) {
                 iblockstate = Blocks.GRAVEL.getDefaultState();
@@ -2548,9 +2567,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandNAmerica.biome
-                || biome == BiomeEarlyCretaceousCreekNAmericaBraided.biome
-                || biome == BiomeEarlyCretaceousLandNAmericaTransition.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmerica.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekNAmericaBraided.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaTransition.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 70) {
@@ -2599,8 +2619,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandNAmericaShrubland.biome
-                || biome == BiomeEarlyCretaceousCreekNAmericaShrubland.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaShrubland.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekNAmericaShrubland.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 75) {
                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2619,8 +2640,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandNAmericaShrublandCopse .biome
-                || biome == BiomeEarlyCretaceousCreekNAmericaShrublandCopse.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaShrublandCopse.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekNAmericaShrublandCopse.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 65) {
                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2637,8 +2659,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
 
         //Austro-Antarctic:
-        if (biome == BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome
-                || biome == BiomeEarlyCretaceousCreekAustroAntarcticCoastalCliffs.biome) {
+
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAustroAntarcticCoastalCliffs.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 20) {
                 iblockstate = Blocks.STONE.getDefaultState();
@@ -2654,8 +2678,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousAustroAntarcticCoastal.biome
-                || biome == BiomeEarlyCretaceousCreekAustroAntarcticCoastal.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticCoastal.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAustroAntarcticCoastal.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 94) {
                 iblockstate = Blocks.SAND.getDefaultState();
@@ -2680,10 +2705,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAustroAntarcticPaddock.biome
-                || biome == BiomeEarlyCretaceousLandAustroAntarcticPaddockWinter.biome
-                || biome == BiomeEarlyCretaceousCreekAustroAntarcticPaddock.biome
-                || biome == BiomeEarlyCretaceousLandAustraliaAntarcticaColdDivider.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustroAntarcticPaddock.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustroAntarcticPaddockWinter.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAustroAntarcticPaddock.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustraliaAntarcticaColdDivider.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 50) {
                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2708,11 +2734,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAustraliaAntarctica.biome
-                || biome == BiomeEarlyCretaceousLandAustraliaAntarcticaWinter.biome
-                || biome == BiomeEarlyCretaceousLandAustraliaAntarcticaPodocarpLake.biome
-                || biome == BiomeEarlyCretaceousLandAustraliaAntarcticaPodocarpLakeEdge.biome
-                || biome == BiomeEarlyCretaceousCreekAustraliaAntarctica.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustraliaAntarctica.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustraliaAntarcticaWinter.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustraliaAntarcticaPodocarpLake.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAustraliaAntarcticaPodocarpLakeEdge.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAustraliaAntarctica.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 35) {
                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2737,8 +2764,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousAustroAntarcticRainforest.biome
-                || biome == BiomeEarlyCretaceousCreekAustroAntarcticRainforest.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticRainforest.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAustroAntarcticRainforest.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 70) {
@@ -2808,10 +2836,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousAustroAntarcticLakes.biome
-                || biome == BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome
-                || biome == BiomeEarlyCretaceousAustroAntarcticLakesRimInner.biome
-                || biome == BiomeEarlyCretaceousAustroAntarcticLakesRimOuter.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticLakes.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticLakesPeaks.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticLakesRimInner.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticLakesRimOuter.biome).toString())
+        ) {
             int i = rand.nextInt(300) + 1;
             if (i >= 100) {
                 iblockstate = BlockSandWavy.block.getDefaultState();
@@ -2842,9 +2871,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousBeachAustroAntarcticaInlandSea.biome
-                || biome == BiomeEarlyCretaceousInlandSeaAustralia.biome
-                || biome == BiomeEarlyCretaceousCreekBeachAustroAntarcticaInlandSea.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAustroAntarcticaInlandSea.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousInlandSeaAustralia.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekBeachAustroAntarcticaInlandSea.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 95) {
@@ -2916,8 +2946,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         //Africa-SAmerica:
         //===============
-        if (biome == BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome
-                || biome == BiomeEarlyCretaceousLandAfricaBrownstonePinnacles.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaBrownstonePinnacles.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 35) {
                 iblockstate = BlockBrownstone.block.getDefaultState();
@@ -2933,7 +2964,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAfricaBrownstoneValley.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaBrownstoneValley.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 95) {
                 iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
@@ -2955,8 +2987,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAfricaSavanna.biome
-                || biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavanna.biome).toString())
+            || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 60) {
                 iblockstate = Blocks.SAND.getStateFromMeta(1);
@@ -2975,14 +3008,15 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAfricaSavannaWateringHoleCentre.biome
-                || biome == BiomeEarlyCretaceousCreekAfricaSavanna.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavannaWateringHoleCentre.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAfricaSavanna.biome).toString())
+        ) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
-
         }
 
-        if (biome == BiomeEarlyCretaceousCreekAfricaSwamp.biome
-                || biome == BiomeEarlyCretaceousLandAfricaSwampOpen.biome) { //Africa swamp general
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAfricaSwamp.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSwampOpen.biome).toString())
+        ) { //Africa swamp general
             int i = rand.nextInt(100) + 1;
             if (i >= 55) {
                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
@@ -3001,7 +3035,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandAfricaSwampFlat.biome) { //Africa swamp woodland
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSwampFlat.biome).toString())
+         ) { //Africa swamp woodland
             int i = rand.nextInt(100) + 1;
             if (i >= 60) {
                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
@@ -3017,9 +3052,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandSouthAmericanArid.biome
-                || biome == BiomeEarlyCretaceousCreekSouthAmericanArid.biome
-                || biome == BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanArid.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanArid.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanAridSpikes.biome).toString())
+        ) {
             int i = rand.nextInt(112) + 1;
             if (i >= 100) {
                 iblockstate = BlockPebblestone.block.getDefaultState();
@@ -3044,7 +3080,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousCreekSAmericaWide.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSAmericaWide.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 75) {
                 iblockstate = BlockPeat.block.getDefaultState();
@@ -3066,9 +3103,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome
-                || biome == BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome
-                || biome == BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanSandyDesert.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanSandyDesert.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 90) {
@@ -3106,8 +3144,9 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandSouthAmericanPatagonia.biome
-            || biome == BiomeEarlyCretaceousCreekSouthAmericanPatagonia.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanPatagonia.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanPatagonia.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 95) {
                 iblockstate = BlockPeat.block.getDefaultState();
@@ -3132,10 +3171,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandSouthAmericanDesertLow.biome
-                || biome == BiomeEarlyCretaceousLandSouthAmericanDesertSpikes.biome
-                || biome == BiomeEarlyCretaceousLandSAmerica.biome
-                || biome == BiomeEarlyCretaceousCreekSouthAmericanDesert.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanDesertLow.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanDesertSpikes.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSAmerica.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanDesert.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (posY >= 60 + rand.nextInt(3) - 1) {
                 if (i >= 35) {
@@ -3182,9 +3222,10 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
-        if (biome == BiomeEarlyCretaceousLandSouthAmericanFlats.biome
-                || biome == BiomeEarlyCretaceousCreekSouthAmericanFlatsStream.biome
-                || biome == BiomeEarlyCretaceousCreekSouthAmericanFlats.biome) {
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandSouthAmericanFlats.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanFlatsStream.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekSouthAmericanFlats.biome).toString())
+        ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 25) {
                 iblockstate = BlockCarboniferousMud.block.getDefaultState();
