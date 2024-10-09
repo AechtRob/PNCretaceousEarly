@@ -49,7 +49,7 @@ public class GenLayerOceanCrags extends GenLayer
                     int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
-                        !(
+                        (
                             isSea(l1)
                             && isSea(k2)
                             && isSea(j3)

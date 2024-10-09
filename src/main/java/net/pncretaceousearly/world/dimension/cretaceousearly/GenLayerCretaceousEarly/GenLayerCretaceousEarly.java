@@ -23,6 +23,8 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAddInlandSeas(3048L, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica0(2542L, biomes);
         biomes = new GenLayerCretaceousDiversifyAfricaSAmerica(7572L, biomes);
+        //Smaller, island-like biomes?:
+        biomes = new GenLayerSmallerIslandBiomes(3725L, biomes);
         biomes = new GenLayerZoom(1001L, biomes);
 
         biomes = new GenLayerAfricaSavanna(6756L, biomes);
