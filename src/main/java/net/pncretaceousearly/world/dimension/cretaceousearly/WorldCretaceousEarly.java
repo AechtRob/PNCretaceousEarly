@@ -831,7 +831,7 @@ public class WorldCretaceousEarly extends ElementsLepidodendronMod.ModElement {
 					d5 = (double)(random.nextFloat() * 2.0F * (float)j);
 				}
 
-				Minecraft.getMinecraft().effectRenderer.addEffect(ParticlePNPortal.PortalParticleFactory.createParticle(world, d0, d1, d2, d3, d4, d5, 0.3203F, 0.5781F, 0.7656F));
+				Minecraft.getMinecraft().effectRenderer.addEffect(ParticlePNPortal.PortalParticleFactory.createParticle(world, d0, d1, d2, d3, d4, d5, 0.4706F, 0.7148F, 0.4063F));
 			}
 		}
 
