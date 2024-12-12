@@ -121,6 +121,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int N_AMERICA_5_ID =  Biome.getIdForBiome(N_AMERICA_5);
     public static Biome N_AMERICA_6 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_transition"));
     public static int N_AMERICA_6_ID =  Biome.getIdForBiome(N_AMERICA_6);
+    public static Biome N_AMERICA_7 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_forest"));
+    public static int N_AMERICA_7_ID =  Biome.getIdForBiome(N_AMERICA_7);
 
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
@@ -375,7 +377,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                 || i == N_AMERICA_3_ID
                 || i == N_AMERICA_4_ID
                 || i == N_AMERICA_5_ID
-                || i == N_AMERICA_6_ID;
+                || i == N_AMERICA_6_ID
+                || i == N_AMERICA_7_ID;
     }
 
     public static boolean isSAmerica(int i) {

@@ -818,6 +818,24 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             }
                         }
 
+                        if (biome == BiomeEarlyCretaceousLandNAmericaForest.biome) {
+                            if (rand.nextInt(3) == 0) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            if (rand.nextInt(12) == 0) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            if (rand.nextInt(18) == 0) {
+                                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(26) == 0) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                        }
+
                         if (biome == BiomeEarlyCretaceousLandNAmericaShrubland.biome) {
                             if (rand.nextInt(4) == 0) {
                                 iblockstate = Blocks.DIRT.getStateFromMeta(1);
@@ -2344,6 +2362,20 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         //Europe and America:
         //==================
+
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaForest.biome).toString()))
+        {
+            iblockstate = BlockCarboniferousMud.block.getDefaultState();
+            if (rand.nextInt(60) == 0) {
+                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+            }
+            if (rand.nextInt(30) == 0) {
+                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+            }
+            if (rand.nextInt(30) == 0) {
+                iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+            }
+        }
 
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeField.biome).toString())
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeField.biome).toString())
