@@ -23,6 +23,8 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
     public int CRETACEOUS_AUS_BEACH_ID = Biome.getIdForBiome(CRETACEOUS_AUS_BEACH);
     public Biome CRETACEOUS_AUS_BEACH_LUSH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"));
     public int CRETACEOUS_AUS_BEACH_LUSH_ID = Biome.getIdForBiome(CRETACEOUS_AUS_BEACH_LUSH);
+    public Biome CRETACEOUS_AUS_BEACH_MUDDY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_muddy"));
+    public int CRETACEOUS_AUS_BEACH_MUDDY_ID = Biome.getIdForBiome(CRETACEOUS_AUS_BEACH_MUDDY);
 
     //Creeks to use:
     public Biome CRETACEOUS_EARLY_CREEK_SAMERICA_WIDE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide"));
@@ -52,6 +54,10 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
     public int SAVANNA_CREEK_ID = Biome.getIdForBiome(SAVANNA_CREEK);
     public Biome BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_africa"));
     public int BEACH_ID = Biome.getIdForBiome(BEACH);
+    public Biome CRETACEOUS_BEACH_AFRICA_ROCKY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_rocky"));
+    public int CRETACEOUS_BEACH_AFRICA_ROCKY_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA_ROCKY);
+    public Biome CRETACEOUS_BEACH_AFRICA_RED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_red"));
+    public int CRETACEOUS_BEACH_AFRICA_RED_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA_RED);
 
 
     public Biome RIFT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_rift"));
@@ -88,7 +94,9 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
                         || aint[i] == FLATS_CREEK_ID || aint[i] == FLATS_STREAM_ID
                         || aint[i] == PATAGONIA_CREEK_ID || aint[i] == SANDY_CREEK_ID
                         || aint[i] == SWAMP_CREEK_ID || aint[i] == SAVANNA_CREEK_ID
-                        || aint[i] == BEACH_ID) {
+                        || aint[i] == BEACH_ID
+                        || aint[i] == CRETACEOUS_BEACH_AFRICA_RED_ID
+                        || aint[i] == CRETACEOUS_BEACH_AFRICA_ROCKY_ID) {
                     if (aint1[i] == RIFT_ID) {
                         aint2[i] = RIFT_ID;
                     }
@@ -98,6 +106,7 @@ public class GenLayerCretaceousEarlyRiverMixSAmericaAndAusHeadlandsSpecial exten
                 }
                 else if (aint[i] == CRETACEOUS_AUS_COASTAL_ID
                         || aint[i] == CRETACEOUS_AUS_BEACH_ID
+                        || aint[i] == CRETACEOUS_AUS_BEACH_MUDDY_ID
                         || aint[i] == CRETACEOUS_AUS_BEACH_LUSH_ID) {
                     aint2[i] = CRETACEOUS_AUS_HEADLANDS_ID;
                 }

@@ -32,8 +32,21 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
 
     public Biome EARLY_CRETACEOUS_BEACH_AFRICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_africa"));
     public int EARLY_CRETACEOUS_BEACH_AFRICA_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_AFRICA);
-    public Biome EARLY_CRETACEOUS_BEACH_EUROPE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe"));
-    public int EARLY_CRETACEOUS_BEACH_EUROPE_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_EUROPE);
+    public Biome CRETACEOUS_BEACH_AFRICA_ROCKY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_rocky"));
+    public int CRETACEOUS_BEACH_AFRICA_ROCKY_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA_ROCKY);
+    public Biome CRETACEOUS_BEACH_AFRICA_RED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_red"));
+    public int CRETACEOUS_BEACH_AFRICA_RED_ID =  Biome.getIdForBiome(CRETACEOUS_BEACH_AFRICA_RED);
+
+    public Biome EARLY_CRETACEOUS_BEACH_EUROPE_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_ferny"));
+    public int EARLY_CRETACEOUS_BEACH_EUROPE_1_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_EUROPE_1);
+    public Biome EARLY_CRETACEOUS_BEACH_EUROPE_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_dry"));
+    public int EARLY_CRETACEOUS_BEACH_EUROPE_2_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_EUROPE_2);
+    public Biome EARLY_CRETACEOUS_BEACH_EUROPE_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_swamp"));
+    public int EARLY_CRETACEOUS_BEACH_EUROPE_3_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_EUROPE_3);
+    public Biome EARLY_CRETACEOUS_BEACH_NA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_namerica_cove"));
+    public int EARLY_CRETACEOUS_BEACH_NA_1_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_NA_1);
+
+
     public Biome EARLY_CRETACEOUS_BEACH_ASIA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia"));
     public int EARLY_CRETACEOUS_BEACH_ASIA_ID =  Biome.getIdForBiome(EARLY_CRETACEOUS_BEACH_ASIA);
     public Biome EARLY_CRETACEOUS_BEACH_AUS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
@@ -68,6 +81,8 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
     public static int N_AMERICA_6_ID =  Biome.getIdForBiome(N_AMERICA_6);
     public static Biome N_AMERICA_7 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_forest"));
     public static int N_AMERICA_7_ID =  Biome.getIdForBiome(N_AMERICA_7);
+    public static Biome N_AMERICA_8 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_lagoons"));
+    public static int N_AMERICA_8_ID =  Biome.getIdForBiome(N_AMERICA_8);
 
     public GenLayerCretaceousEarlyEuropeIslandify(long seed, GenLayer genLayer)
     {
@@ -157,7 +172,12 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
                 || biomeID == OCEAN_SHORE_PACIFIC_ID
                 || biomeID == OCEAN_SHORE_SOUTHERN_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_AFRICA_ID
-                || biomeID == EARLY_CRETACEOUS_BEACH_EUROPE_ID
+                || biomeID == CRETACEOUS_BEACH_AFRICA_ROCKY_ID
+                || biomeID == CRETACEOUS_BEACH_AFRICA_RED_ID
+                || biomeID == EARLY_CRETACEOUS_BEACH_EUROPE_1_ID
+                || biomeID == EARLY_CRETACEOUS_BEACH_EUROPE_2_ID
+                || biomeID == EARLY_CRETACEOUS_BEACH_EUROPE_3_ID
+                || biomeID == EARLY_CRETACEOUS_BEACH_NA_1_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_ASIA_ID
                 || biomeID == CRETACEOUS_BEACH_ASIA_CRAGGY_ID
                 || biomeID == EARLY_CRETACEOUS_BEACH_AUS_ID;
@@ -194,7 +214,8 @@ public class GenLayerCretaceousEarlyEuropeIslandify extends GenLayer
                 || i == N_AMERICA_4_ID
                 || i == N_AMERICA_5_ID
                 || i == N_AMERICA_6_ID
-                || i == N_AMERICA_7_ID;
+                || i == N_AMERICA_7_ID
+                || i == N_AMERICA_8_ID;
     }
 
 }

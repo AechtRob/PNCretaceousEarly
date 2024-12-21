@@ -93,6 +93,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int AUS_JUNGLE_ID =  Biome.getIdForBiome(AUS_JUNGLE);
     public static Biome AUS_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica"));
     public static int AUS_BEACH_ID =  Biome.getIdForBiome(AUS_BEACH);
+    public static Biome AUS_BEACH_MUDDY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_muddy"));
+    public static int AUS_BEACH_MUDDY_ID =  Biome.getIdForBiome(AUS_BEACH_MUDDY);
     public static Biome AUS_LUSH_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_australia_antarctica_inland_sea"));
     public static int AUS_LUSH_BEACH_ID =  Biome.getIdForBiome(AUS_LUSH_BEACH);
     public Biome EARLY_CRETACEOUS_AUSTRO_PADDOCK_FROZEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_paddock_winter"));
@@ -123,6 +125,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int N_AMERICA_6_ID =  Biome.getIdForBiome(N_AMERICA_6);
     public static Biome N_AMERICA_7 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_forest"));
     public static int N_AMERICA_7_ID =  Biome.getIdForBiome(N_AMERICA_7);
+    public static Biome N_AMERICA_8 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_lagoons"));
+    public static int N_AMERICA_8_ID =  Biome.getIdForBiome(N_AMERICA_8);
 
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
@@ -247,6 +251,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         || aint[i] == RIFT1_ID
                         || aint[i] == RIFT2_ID
                         || aint[i] == DARK_SPRINGS_ID
+                        || aint[i] == N_AMERICA_8_ID
                 )
                 {
                     aint2[i] = aint[i];
@@ -322,7 +327,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_PADDOCK_ID;
                         }
                         else if (aint[i] == AUS_BEACH_ID
-                            || aint[i] == AUS_LUSH_BEACH_ID) {
+                                || aint[i] == AUS_LUSH_BEACH_ID
+                                || aint[i] == AUS_BEACH_MUDDY_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_BEACH_ID;
                         }
                         else if (aint[i] == AUS_JUNGLE_ID) {

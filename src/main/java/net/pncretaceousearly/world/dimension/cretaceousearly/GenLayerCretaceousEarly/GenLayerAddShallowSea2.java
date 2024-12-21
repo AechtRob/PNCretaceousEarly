@@ -37,6 +37,9 @@ public class GenLayerAddShallowSea2 extends GenLayer
     public static Biome N_AMERICA_7 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_forest"));
     public static int N_AMERICA_7_ID =  Biome.getIdForBiome(N_AMERICA_7);
 
+    public static Biome LAGOONS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_lagoons"));
+    public static int LAGOONS_ID =  Biome.getIdForBiome(LAGOONS);
+
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
     public static Biome S_AMERICA_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
@@ -117,7 +120,12 @@ public class GenLayerAddShallowSea2 extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     if (isEurope(l1) || isEurope(k2) || isEurope(j3) || isEurope(i4))
                     {
-                        aint1[j + i * areaWidth] = EuropeSeas[nextInt(EuropeSeas.length)];
+                        if (isEuropeLagoons(l1) || isEuropeLagoons(k2) || isEuropeLagoons(j3) || isEuropeLagoons(i4)) {
+                            aint1[j + i * areaWidth] = OCEAN_SHORE_ATLANTIC_ID;
+                        }
+                        else {
+                            aint1[j + i * areaWidth] = OCEAN_SHORE_TETHYS_ID;
+                        }
                     }
                     else if (isAsia(l1) || isAsia(k2) || isAsia(j3) || isAsia(i4))
                     {
@@ -159,6 +167,10 @@ public class GenLayerAddShallowSea2 extends GenLayer
             return (!isNAmerica(i)) && biomeC.getBiomeType() == EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
         }
         return false;
+    }
+
+    public static boolean isEuropeLagoons(int i) {
+        return i == LAGOONS_ID;
     }
 
     public static boolean isAfrica(int i) {

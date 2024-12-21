@@ -5,6 +5,7 @@ import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
+import net.lepidodendron.world.gen.WorldGenBlackSandyDirt;
 import net.lepidodendron.world.gen.WorldGenPangaeanDryLakes;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
@@ -199,16 +200,16 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         this.random.setSeed((long) x * k + (long) z * l ^ this.world.getSeed());
         net.minecraftforge.event.ForgeEventFactory.onChunkPopulate(true, this, this.world, this.random, x, z, false);
 
-//        if (biome == BiomeJurassicMudflatsEstuary.biome) //Many extra lakes in the estuary
-//            if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
-//                    net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
-//                for (int lake = 0; lake < 12; ++lake) {
-//                    int i1 = this.random.nextInt(16) + 8;
-//                    int j1 = this.random.nextInt(256);
-//                    int k1 = this.random.nextInt(16) + 8;
-//                    (new WorldGenPrehistoricLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
-//                }
-//            }
+        if (biome == BiomeEarlyCretaceousLandNAmericaLagoons.biome) //Many extra lakes in the lagoons
+            if (net.minecraftforge.event.terraingen.TerrainGen.populate(this, this.world, this.random, x, z, false,
+                    net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE)) {
+                for (int lake = 0; lake < 16; ++lake) {
+                    int i1 = this.random.nextInt(16) + 8;
+                    int j1 = this.random.nextInt(256);
+                    int k1 = this.random.nextInt(16) + 8;
+                    (new WorldGenPrehistoricLakes(FLUID.getBlock())).generate(this.world, this.random, blockpos.add(i1, j1, k1));
+                }
+            }
 
 
 //        if (biome == BiomeJurassicMire.biome || biome == BiomeJurassicMireHelper.biome) //Many extra lakes in the estuary
@@ -474,6 +475,20 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     if (biome == BiomeEarlyCretaceousLandAfricaSwampFlat.biome) {
                         //Flatten these out somewhat:
                         d4 = (d4 + 5D) / 6D;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
+                    if (biome == BiomeEarlyCretaceousLandNAmericaLagoons.biome) {
+                        //Flatten these out somewhat:
+                        d4 = 1.0F;
+                        d2 = d4;
+                        d3 = d4;
+                    }
+
+                    if (biome == BiomeEarlyCretaceousBeachAsiaMarsh.biome) {
+                        //Flatten these out somewhat:
+                        d4 = 0.96F;
                         d2 = d4;
                         d3 = d4;
                     }
@@ -1926,6 +1941,228 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                                         iblockstate1 = Blocks.COBBLESTONE.getDefaultState();
                                     }
                                 }
+                            }
+                        }
+
+                        //Beaches:
+                        if (biome == BiomeEarlyCretaceousBeachEuropeFerny.biome) {
+                            if (rand.nextInt(100) < 3) {
+                                iblockstate = Blocks.CLAY.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 5) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(1);
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachEuropeDry.biome) {
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockSandWavy.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 5) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachEuropeSwamp.biome) {
+                            if (rand.nextInt(100) < 35) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 17) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 2) {
+                                iblockstate = Blocks.DIRT.getStateFromMeta(2);
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockLeafLitter.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachNAmericaCove.biome) {
+                            if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 29) {
+                                iblockstate = BlockPebblestone.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 2) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousLandNAmericaLagoons.biome) {
+                            if (rand.nextInt(100) < 8) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 2) {
+                                iblockstate = BlockLavaRock.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 8) {
+                                iblockstate = BlockLavaCobble.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 8) {
+                                iblockstate = BlockScorchedEarth.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousOceanCrags.biome) {
+                            if (j1 > 78 + rand.nextInt(8)) {
+                                if (rand.nextInt(100) < 2) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 7) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 3) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                                } else if (rand.nextInt(100) < 2) {
+                                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 3) {
+                                    iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                }
+                            }
+                            if (j1 > 86 + rand.nextInt(8)) {
+                                if (rand.nextInt(100) < 2) {
+                                    iblockstate = BlockPrehistoricGroundMossy.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 7) {
+                                    iblockstate = BlockPrehistoricGroundBasic.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 3) {
+                                    iblockstate = BlockPrehistoricGroundFern.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                                } else if (rand.nextInt(100) < 2) {
+                                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                                } else if (rand.nextInt(100) < 3) {
+                                    iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                                } else if (rand.nextInt(100) < 5) {
+                                    iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                                }
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAsiaMarsh.biome) {
+                            if (rand.nextInt(100) < 25) {
+                                iblockstate = BlockPeat.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 20) {
+                                iblockstate = BlockPrehistoricGroundLush.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAsia.biome) {
+                            if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 30) {
+                                iblockstate = BlockVolcanicAsh.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 10) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockGravelWavy.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockVolcanicAshLight.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockVolcanicAshDark.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 2) {
+                                iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                            }
+                            else if (rand.nextInt(100) < 1) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAustroAntarctica.biome) {
+                            if (rand.nextInt(100) < 20) {
+                                iblockstate = BlockSandWavy.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAustroAntarcticaMuddy.biome) {
+                            if (rand.nextInt(100) < 5) {
+                                iblockstate = Blocks.CLAY.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 35) {
+                                iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 20) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 8) {
+                                iblockstate = BlockCarboniferousMud.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAfroAmericaRocky.biome) {
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 5) {
+                                iblockstate = Blocks.STONE.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 5) {
+                                iblockstate = Blocks.COBBLESTONE.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 30) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockSandBlack.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockLavaCobble.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAfroAmericaRed.biome) {
+                            if (rand.nextInt(100) < 20) {
+                                iblockstate = BlockSandRedWavy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockSandPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockSandPangaeanWavy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 10) {
+                                iblockstate = BlockCoarseSandyDirtPangaean.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 5) {
+                                iblockstate = Blocks.HARDENED_CLAY.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 5) {
+                                iblockstate = BlockBrownstone.block.getDefaultState();
+                            }
+                        }
+                        if (biome == BiomeEarlyCretaceousBeachAfroAmerica.biome) {
+                            if (rand.nextInt(100) < 15) {
+                                iblockstate = BlockSandWavy.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 2) {
+                                iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                            }
+                            if (rand.nextInt(100) < 1) {
+                                iblockstate = Blocks.GRAVEL.getDefaultState();
                             }
                         }
 

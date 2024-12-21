@@ -12,6 +12,8 @@ public class GenLayerAddNAmericaForest extends GenLayer
     public static int N_AMERICA_LAND_ID =  Biome.getIdForBiome(N_AMERICA_LAND);
     public static Biome N_AMERICA_LAND_2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_forest"));
     public static int N_AMERICA_LAND_2_ID =  Biome.getIdForBiome(N_AMERICA_LAND_2);
+    public static Biome N_AMERICA_LAND_3 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_lagoons"));
+    public static int N_AMERICA_LAND_3_ID =  Biome.getIdForBiome(N_AMERICA_LAND_3);
 
     public GenLayerAddNAmericaForest(long seed, GenLayer genLayer)
     {
@@ -31,7 +33,7 @@ public class GenLayerAddNAmericaForest extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (k == N_AMERICA_LAND_ID)
+                if (k == N_AMERICA_LAND_ID || k == N_AMERICA_LAND_3_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -39,10 +41,10 @@ public class GenLayerAddNAmericaForest extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (l1 == N_AMERICA_LAND_ID)
-                        && (k2 == N_AMERICA_LAND_ID)
-                        && (j3 == N_AMERICA_LAND_ID)
-                        && (i4 == N_AMERICA_LAND_ID)
+                        (l1 == N_AMERICA_LAND_ID || l1 == N_AMERICA_LAND_3_ID)
+                        && (k2 == N_AMERICA_LAND_ID || k2 == N_AMERICA_LAND_3_ID)
+                        && (j3 == N_AMERICA_LAND_ID || j3 == N_AMERICA_LAND_3_ID)
+                        && (i4 == N_AMERICA_LAND_ID || i4 == N_AMERICA_LAND_3_ID)
                         )
                     );
                     if (flag)

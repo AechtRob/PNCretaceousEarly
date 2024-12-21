@@ -2,6 +2,8 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
+import net.lepidodendron.block.BlockSandGrey;
+import net.lepidodendron.block.BlockSandstoneGrey;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
@@ -36,10 +38,10 @@ public class BiomeEarlyCretaceousBeachAsia extends ElementsLepidodendronMod.ModE
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Asian Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous Asian Ashy Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_beach_asia");
-			topBlock = Blocks.SAND.getDefaultState();
-			fillerBlock = Blocks.SAND.getDefaultState();
+			topBlock = BlockSandGrey.block.getDefaultState();
+			fillerBlock = BlockSandstoneGrey.block.getDefaultState();
 			decorator.treesPerChunk = 1;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
