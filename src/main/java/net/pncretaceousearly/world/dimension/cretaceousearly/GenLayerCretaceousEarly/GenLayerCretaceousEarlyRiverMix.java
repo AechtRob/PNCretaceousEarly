@@ -22,6 +22,12 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_EARLY_CREEK_MACQUIS_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_MACQUIS);
     public Biome CRETACEOUS_EARLY_CREEK_EUROPE_WOOD = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_europe_field_copse"));
     public int CRETACEOUS_EARLY_CREEK_EUROPE_WOOD_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_EUROPE_WOOD);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_DRY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_europe_dry"));
+    public int CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_DRY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_DRY);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_FERNY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_europe_ferny"));
+    public int CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_FERNY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_FERNY);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_europe_swamp"));
+    public int CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_SWAMP_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_EUROPE_SWAMP);
 
     public Biome CRETACEOUS_EARLY_CREEK_NAMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_north_america_braided"));
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA);
@@ -29,6 +35,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA_SHRUB);
     public Biome CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_namerica_shrubland_copse"));
     public int CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_NAMERICA_COPSE);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_NAMERICA_COVE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_namerica_cove"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_NAMERICA_COVE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_NAMERICA_COVE);
 
     public Biome CRETACEOUS_EARLY_CREEK_AUS_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_creek"));
     public int CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_AUS_FOREST);
@@ -42,6 +50,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int AUS_BEACH_CREEK_ID = Biome.getIdForBiome(AUS_BEACH_CREEK);
     public Biome AUS_CLIFF_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_austro_antarctic_coastal_cliffs"));
     public int AUS_CLIFF_CREEK_ID = Biome.getIdForBiome(AUS_CLIFF_CREEK);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_AUS_DUNE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_australia_antarctica"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_AUS_DUNE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_AUS_DUNE);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_AUS_MUDDY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_australia_antarctica_muddy"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_AUS_MUDDY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_AUS_MUDDY);
 
     public Biome TICOA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_south_america_patagonia"));
     public int TICOA_CREEK_ID = Biome.getIdForBiome(TICOA_CREEK);
@@ -51,11 +63,15 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int S_AMERICA_DESERT_CREEK_ID = Biome.getIdForBiome(S_AMERICA_DESERT_CREEK);
     public Biome S_AMERICA_FLATS_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_samerica_flats"));
     public int S_AMERICA_FLATS_CREEK_ID = Biome.getIdForBiome(S_AMERICA_FLATS_CREEK);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_SAMERICA_SAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_africa"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_SAMERICA_SAND_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_SAMERICA_SAND);
 
     public Biome AFRO_SAVANNA_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_savanna"));
     public int AFRO_SAVANNA_CREEK_ID = Biome.getIdForBiome(AFRO_SAVANNA_CREEK);
     public Biome AFRO_SWAMP_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_africa_swamp"));
     public int AFRO_SWAMP_CREEK_ID = Biome.getIdForBiome(AFRO_SWAMP_CREEK);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_AFRICA_RED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_afroamerica_red"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_AFRICA_RED_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_AFRICA_RED);
 
     public Biome TETORI_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_boggy_glades"));
     public int TETORI_CREEK_ID = Biome.getIdForBiome(TETORI_CREEK);
@@ -70,6 +86,12 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int REFUGIUM_CREEK_ID = Biome.getIdForBiome(REFUGIUM_CREEK);
     public Biome SHRUBLAND_CREEK = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_shrubland"));
     public int SHRUBLAND_CREEK_ID = Biome.getIdForBiome(SHRUBLAND_CREEK);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_ASIA_ASHY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_asia"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_ASIA_ASHY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_ASIA_ASHY);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_ASIA_CRAGGY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_asia_craggy"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_ASIA_CRAGGY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_ASIA_CRAGGY);
+    public Biome CRETACEOUS_EARLY_CREEK_BEACH_ASIA_MARSH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_creek_beach_asia_marsh"));
+    public int CRETACEOUS_EARLY_CREEK_BEACH_ASIA_MARSH_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_CREEK_BEACH_ASIA_MARSH);
 
     //Biomes to exclude for rivers:
     public Biome CRETACEOUS_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
@@ -84,6 +106,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_OCEAN_SHORE_PACIFIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_PACIFIC);
     public Biome CRETACEOUS_INLAND_SEA_SOUTH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_inland_sea_australia"));
     public int CRETACEOUS_INLAND_SEA_SOUTH_ID =  Biome.getIdForBiome(CRETACEOUS_INLAND_SEA_SOUTH);
+    public Biome CRETACEOUS_RIFT_BEACH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_rocky"));
+    public int CRETACEOUS_RIFT_BEACH_ID =  Biome.getIdForBiome(CRETACEOUS_RIFT_BEACH);
 
     public static Biome AUS_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica"));
     public static int AUS_FOREST_ID =  Biome.getIdForBiome(AUS_FOREST);
@@ -105,7 +129,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int AUS_COAST_ID = Biome.getIdForBiome(AUS_COAST);
     public Biome AUS_CLIFFS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs"));
     public int AUS_CLIFFS_ID = Biome.getIdForBiome(AUS_CLIFFS);
-
+    
     public Biome DIVIDER = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_divider"));
     public int DIVIDER_ID = Biome.getIdForBiome(DIVIDER);
     public Biome LAKE_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_australia_antarctica_lakes_edge"));
@@ -127,6 +151,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int N_AMERICA_7_ID =  Biome.getIdForBiome(N_AMERICA_7);
     public static Biome N_AMERICA_8 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_namerica_lagoons"));
     public static int N_AMERICA_8_ID =  Biome.getIdForBiome(N_AMERICA_8);
+    public static Biome CRETACEOUS_EARLY_BEACH_NAMERICA_COVE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_namerica_cove"));
+    public static int CRETACEOUS_EARLY_BEACH_NAMERICA_COVE_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_NAMERICA_COVE);
 
     public static Biome S_AMERICA_1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
     public static int S_AMERICA_1_ID =  Biome.getIdForBiome(S_AMERICA_1);
@@ -146,6 +172,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int S_AMERICA_8_ID =  Biome.getIdForBiome(S_AMERICA_8);
     public static Biome S_AMERICA_9 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes"));
     public static int S_AMERICA_9_ID =  Biome.getIdForBiome(S_AMERICA_9);
+    public static Biome CRETACEOUS_EARLY_BEACH_SAMERICA_SAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_africa"));
+    public static int CRETACEOUS_EARLY_BEACH_SAMERICA_SAND_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_SAMERICA_SAND);
 
     public Biome TICOA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
     public int TICOA_ID = Biome.getIdForBiome(TICOA);
@@ -164,12 +192,13 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int AFRO_SAVANNA_HOLE_ID = Biome.getIdForBiome(AFRO_SAVANNA_HOLE);
     public Biome AFRO_SAVANNA_HOLE_CENTRE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_savanna_hole_centre"));
     public int AFRO_SAVANNA_HOLE_CENTRE_ID = Biome.getIdForBiome(AFRO_SAVANNA_HOLE_CENTRE);
-
-
+    
     public Biome AFRO_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_swamp"));
     public int AFRO_SWAMP_ID = Biome.getIdForBiome(AFRO_SWAMP);
     public Biome AFRO_SWAMP_OPEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_swamp_open"));
     public int AFRO_SWAMP_OPEN_ID = Biome.getIdForBiome(AFRO_SWAMP_OPEN);
+    public Biome CRETACEOUS_EARLY_BEACH_AFRICA_RED = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_afroamerica_red"));
+    public int CRETACEOUS_EARLY_BEACH_AFRICA_RED_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_AFRICA_RED);
 
     public static Biome EURO_LAKE_EDGE = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_swamp_lakes_edge"));
     public static int EURO_LAKE_EDGE_ID =  Biome.getIdForBiome(EURO_LAKE_EDGE);
@@ -181,7 +210,14 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int EURO_FLOODPLAIN_ID =  Biome.getIdForBiome(EURO_FLOODPLAIN);
     public static Biome EURO_WOODLAND = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_europe_field_copse"));
     public static int EURO_WOODLAND_ID =  Biome.getIdForBiome(EURO_WOODLAND);
+    public Biome CRETACEOUS_EARLY_BEACH_EUROPE_DRY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_dry"));
+    public int CRETACEOUS_EARLY_EUROPE_BEACH_DRY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_EUROPE_DRY);
+    public Biome CRETACEOUS_EARLY_BEACH_EUROPE_FERNY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_ferny"));
+    public int CRETACEOUS_EARLY_EUROPE_BEACH_FERNY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_EUROPE_FERNY);
+    public Biome CRETACEOUS_EARLY_BEACH_EUROPE_SWAMP = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_europe_swamp"));
+    public int CRETACEOUS_EARLY_EUROPE_BEACH_SWAMP_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_EUROPE_SWAMP);
 
+    
     public static Biome RIFT1 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_centre"));
     public static int RIFT1_ID =  Biome.getIdForBiome(RIFT1);
     public static Biome RIFT2 = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_creek_wide_rift"));
@@ -213,6 +249,13 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public static int DUNES_ID =  Biome.getIdForBiome(DUNES);
     public static Biome OASIS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_oasis"));
     public static int OASIS_ID =  Biome.getIdForBiome(OASIS);
+
+    public Biome CRETACEOUS_EARLY_BEACH_ASIA_ASHY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia"));
+    public int CRETACEOUS_EARLY_BEACH_ASIA_ASHY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_ASIA_ASHY);
+    public Biome CRETACEOUS_EARLY_BEACH_ASIA_CRAGGY = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia_craggy"));
+    public int CRETACEOUS_EARLY_BEACH_ASIA_CRAGGY_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_ASIA_CRAGGY);
+    public Biome CRETACEOUS_EARLY_BEACH_ASIA_MARSH = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_beach_asia_marsh"));
+    public int CRETACEOUS_EARLY_BEACH_ASIA_MARSH_ID = Biome.getIdForBiome(CRETACEOUS_EARLY_BEACH_ASIA_MARSH);
 
     public GenLayerCretaceousEarlyRiverMix(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
     {
@@ -252,6 +295,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         || aint[i] == RIFT2_ID
                         || aint[i] == DARK_SPRINGS_ID
                         || aint[i] == N_AMERICA_8_ID
+                        || aint[i] == CRETACEOUS_RIFT_BEACH_ID
                 )
                 {
                     aint2[i] = aint[i];
@@ -273,6 +317,15 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         }
                         else if (aint[i] == EURO_WOODLAND_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_WOOD_ID;
+                        }
+                        else if (aint[i] == CRETACEOUS_EARLY_EUROPE_BEACH_DRY_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_DRY_ID;
+                        }
+                        else if (aint[i] == CRETACEOUS_EARLY_EUROPE_BEACH_FERNY_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_FERNY_ID;
+                        }
+                        else if (aint[i] == CRETACEOUS_EARLY_EUROPE_BEACH_SWAMP_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_BEACH_SWAMP_ID;
                         }
                         else {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_EUROPE_ID;
@@ -297,6 +350,15 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (aint[i] == AFRO_SWAMP_ID || aint[i] == AFRO_SWAMP_OPEN_ID) {
                         aint2[i] = AFRO_SWAMP_CREEK_ID;
                     }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_AFRICA_RED_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_AFRICA_RED_ID;
+                    }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_SAMERICA_SAND_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_SAMERICA_SAND_ID;
+                    }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_NAMERICA_COVE_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_NAMERICA_COVE_ID;
+                    }
                     else if (isNAmerica(aint[i])) {
                         aint2[i] = CRETACEOUS_EARLY_CREEK_NAMERICA_ID;
                     }
@@ -318,6 +380,15 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                     else if (aint[i] == PHRYGANA_ID|| aint[i] == PHRYGANA_LAKE_ID) {
                         aint2[i] = PHRYGANA_CREEK_ID;
                     }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_ASIA_ASHY_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_ASIA_ASHY_ID;
+                    }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_ASIA_CRAGGY_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_ASIA_CRAGGY_ID;
+                    }
+                    else if (aint[i] == CRETACEOUS_EARLY_BEACH_ASIA_MARSH_ID) {
+                        aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_ASIA_MARSH_ID;
+                    }
                     else if (isAus(aint[i])) {
                         if (aint[i] == AUS_FOREST_ID || aint[i] == EARLY_CRETACEOUS_AUSTRO_FOREST_FROZEN_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_FOREST_ID;
@@ -326,9 +397,7 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                                 || aint[i] == DIVIDER_ID || aint[i] == LAKE_EDGE_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_PADDOCK_ID;
                         }
-                        else if (aint[i] == AUS_BEACH_ID
-                                || aint[i] == AUS_LUSH_BEACH_ID
-                                || aint[i] == AUS_BEACH_MUDDY_ID) {
+                        else if (aint[i] == AUS_LUSH_BEACH_ID) {
                             aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_BEACH_ID;
                         }
                         else if (aint[i] == AUS_JUNGLE_ID) {
@@ -336,6 +405,15 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                         }
                         else if (aint[i] == AUS_CLIFFS_ID) {
                             aint2[i] = AUS_CLIFF_CREEK_ID;
+                        }
+                        else if (aint[i] == AUS_JUNGLE_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_AUS_JUNGLE_ID;
+                        }
+                        else if (aint[i] == AUS_BEACH_MUDDY_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_AUS_MUDDY_ID;
+                        }
+                        else if (aint[i] == AUS_BEACH_ID) {
+                            aint2[i] = CRETACEOUS_EARLY_CREEK_BEACH_AUS_DUNE_ID;
                         }
                         else if (aint[i] == AUS_COAST_ID) {
                             aint2[i] = AUS_BEACH_CREEK_ID;
@@ -384,7 +462,9 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                 || i == N_AMERICA_4_ID
                 || i == N_AMERICA_5_ID
                 || i == N_AMERICA_6_ID
-                || i == N_AMERICA_7_ID;
+                || i == N_AMERICA_7_ID
+                || i == N_AMERICA_8_ID
+                || i == CRETACEOUS_EARLY_BEACH_NAMERICA_COVE_ID;
     }
 
     public static boolean isSAmerica(int i) {
@@ -396,7 +476,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                 || i == S_AMERICA_6_ID
                 || i == S_AMERICA_7_ID
                 || i == S_AMERICA_8_ID
-                || i == S_AMERICA_9_ID;
+                || i == S_AMERICA_9_ID
+                || i == CRETACEOUS_EARLY_BEACH_SAMERICA_SAND_ID;
     }
 
     public static boolean isAus(int i) {

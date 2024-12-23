@@ -2,7 +2,10 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockBaiera;
+import net.lepidodendron.block.BlockBrachyphyllumLeaves;
+import net.lepidodendron.block.BlockBrachyphyllumLog;
+import net.lepidodendron.block.BlockBrachyphyllumSapling;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
@@ -20,10 +23,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeachAfroAmericaRed extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_afroamerica_red")
+public class BiomeEarlyCretaceousCreekBeachAfroAmericaRed extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_beach_afroamerica_red")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeachAfroAmericaRed(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekBeachAfroAmericaRed(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -40,8 +43,8 @@ public class BiomeEarlyCretaceousBeachAfroAmericaRed extends ElementsLepidodendr
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Afro-American Red Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:cretaceous_early_beach_afroamerica_red");
+			super(new BiomeProperties("E. Cretaceous Afro-American Red Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.9F).setRainfall(0.4F));
+			setRegistryName("lepidodendron:cretaceous_early_creek_beach_afroamerica_red");
 			topBlock = Blocks.SAND.getStateFromMeta(1);
 			fillerBlock = Blocks.SAND.getStateFromMeta(1);
 			decorator.treesPerChunk = -999;
@@ -108,7 +111,7 @@ public class BiomeEarlyCretaceousBeachAfroAmericaRed extends ElementsLepidodendr
 					PLANT_GENERATOR.generate(BlockBaiera.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 60, 80, false, false, true);
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
@@ -117,7 +120,7 @@ public class BiomeEarlyCretaceousBeachAfroAmericaRed extends ElementsLepidodendr
 					GROUNDCOVER_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
-			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 16; ++i)
 				{
 					int j = rand.nextInt(16) + 8;

@@ -2,14 +2,15 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockCarboniferousMud;
+import net.lepidodendron.block.BlockCladophlebis;
+import net.lepidodendron.block.BlockClaytosmunda;
+import net.lepidodendron.block.BlockGrassyHorsetail;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.gen.*;
-import net.minecraft.block.BlockBush;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
+import net.lepidodendron.world.gen.WorldGenNullTree;
+import net.lepidodendron.world.gen.WorldGenPrehistoricGroundCoverLush;
+import net.lepidodendron.world.gen.WorldGenSinglePlantOptionalWater;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
@@ -20,10 +21,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousBeachAsiaMarsh extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_beach_asia_marsh")
+public class BiomeEarlyCretaceousCreekBeachAsiaMarsh extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_creek_beach_asia_marsh")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousBeachAsiaMarsh(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousCreekBeachAsiaMarsh(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -40,8 +41,8 @@ public class BiomeEarlyCretaceousBeachAsiaMarsh extends ElementsLepidodendronMod
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Asian Salt Marsh").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
-			setRegistryName("lepidodendron:cretaceous_early_beach_asia_marsh");
+			super(new BiomeProperties("E. Cretaceous Asian Salt Marsh Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.9F).setRainfall(0.4F));
+			setRegistryName("lepidodendron:cretaceous_early_creek_beach_asia_marsh");
 			topBlock = BlockCarboniferousMud.block.getDefaultState();
 			fillerBlock = BlockCarboniferousMud.block.getDefaultState();
 			decorator.treesPerChunk = -999;

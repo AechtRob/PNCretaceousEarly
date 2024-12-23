@@ -120,7 +120,7 @@ public class BiomeEarlyCretaceousBeachAfroAmericaRocky extends ElementsLepidoden
 
 		@Override
 		public EnumBiomeTypeCretaceousEarly getBiomeType() {
-			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Euro_America;
+			return EnumBiomeTypeCretaceousEarly.Early_Cretaceous_Afro_America;
 		}
 
 	}
