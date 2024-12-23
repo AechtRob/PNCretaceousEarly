@@ -5,11 +5,14 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
+import net.lepidodendron.world.gen.WorldGenRockPiles;
+import net.lepidodendron.world.gen.WorldGenRockPilesCretaceousEarlyDeepOcean;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -36,10 +39,10 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Deep Ocean").setBaseHeight(-1.85F).setHeightVariation(0.21F));
+			super(new BiomeProperties("E. Cretaceous Deep Ocean").setBaseHeight(-1.995F).setHeightVariation(0.21F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean");
-			topBlock = Blocks.SAND.getDefaultState();
-			fillerBlock = Blocks.SAND.getDefaultState();
+			topBlock = Blocks.GRAVEL.getDefaultState();
+			fillerBlock = Blocks.GRAVEL.getDefaultState();
 			decorator.treesPerChunk = -999;
 			decorator.flowersPerChunk = 0;
 			decorator.grassPerChunk = 0;
@@ -57,6 +60,7 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 		}
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
+		protected static final WorldGenRockPilesCretaceousEarlyDeepOcean ROCK_PILES_GENERATOR = new WorldGenRockPilesCretaceousEarlyDeepOcean();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -67,6 +71,19 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 	    public void decorate(World worldIn, Random rand, BlockPos pos)
 	    {
 
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
+			{
+				int i = rand.nextInt(5);
+				for (int j = 0; j < i; ++j)
+				{
+					int k = rand.nextInt(12) + 10;
+					int l = rand.nextInt(12) + 10;
+					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+					if (rand.nextInt(5) != 0) {
+						ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
+					}
+				}
+			}
 
 	        super.decorate(worldIn, rand, pos);
 	    }
