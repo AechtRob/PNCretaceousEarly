@@ -2344,11 +2344,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         }
 
-                        if (j == 0 && (iblockstate1.getBlock() == Blocks.SAND.getStateFromMeta(0).getBlock() || iblockstate1.getBlock() == BlockSandWavy.block) && k > 1) {
+                        if (j == 0 && (iblockstate1 == Blocks.SAND.getStateFromMeta(0) || iblockstate1.getBlock() == BlockSandWavy.block) && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
                             iblockstate1 = Blocks.SANDSTONE.getDefaultState();
                         }
-                        else if (j == 0 && (iblockstate1.getBlock() == Blocks.SAND.getStateFromMeta(1).getBlock() || iblockstate1.getBlock() == BlockSandRedWavy.block) && k > 1) {
+                        else if (j == 0 && (iblockstate1 == Blocks.SAND.getStateFromMeta(1) || iblockstate1.getBlock() == BlockSandRedWavy.block) && k > 1) {
                             j = rand.nextInt(4) + Math.max(0, j1 - 63);
                             iblockstate1 = Blocks.RED_SANDSTONE.getDefaultState();
                         }
@@ -3257,7 +3257,8 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
 
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavanna.biome).toString())
-            || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaSavannaWateringHole.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAfroAmericaRed.biome).toString())
         ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 60) {
