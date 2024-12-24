@@ -36,7 +36,6 @@ public class BiomeEarlyCretaceousCreekBeachAsiaCraggy extends ElementsLepidodend
 	@Override
 	public void init(FMLInitializationEvent event) {
 		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.BEACH);
-		BiomeDictionary.addTypes(biome, BiomeDictionary.Type.SANDY);
 	}
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
