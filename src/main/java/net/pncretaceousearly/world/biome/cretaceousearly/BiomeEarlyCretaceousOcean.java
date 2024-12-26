@@ -73,15 +73,11 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
-				int i = rand.nextInt(5);
-				for (int j = 0; j < i; ++j)
-				{
-					int k = rand.nextInt(12) + 10;
-					int l = rand.nextInt(12) + 10;
-					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-					if (rand.nextInt(5) != 0) {
-						ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
-					}
+				int k = rand.nextInt(12) + 10;
+				int l = rand.nextInt(12) + 10;
+				BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+				if (rand.nextInt(5) == 0) {
+					ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
 				}
 			}
 
