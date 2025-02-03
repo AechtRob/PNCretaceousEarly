@@ -14,6 +14,14 @@ public class GenLayerAsiaShrublands1 extends GenLayer
     public static Biome DUNES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_dunes"));
     public static int DUNES_ID =  Biome.getIdForBiome(DUNES);
 
+
+    public static Biome AUS_COAST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
+    public static int AUS_COAST_ID =  Biome.getIdForBiome(AUS_COAST);
+
+    public static Biome AUS_DUNES = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal_dunes"));
+    public static int AUS_DUNES_ID =  Biome.getIdForBiome(AUS_DUNES);
+
+
     public static Biome OASIS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_shrubland_oasis"));
     public static int OASIS_ID =  Biome.getIdForBiome(OASIS);
 
@@ -28,6 +36,14 @@ public class GenLayerAsiaShrublands1 extends GenLayer
             SHRUBLAND_ID,
             DUNES_ID,
             OASIS_ID
+    };
+
+    private final int AusBiomes[] = new int[] {
+            AUS_COAST_ID,
+            AUS_COAST_ID,
+            AUS_COAST_ID,
+            AUS_DUNES_ID,
+            AUS_DUNES_ID
     };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
@@ -59,6 +75,28 @@ public class GenLayerAsiaShrublands1 extends GenLayer
                     if (flag)
                     {
                         aint1[j + i * areaWidth] = ShrublandBiomes[nextInt(ShrublandBiomes.length)];
+                    }
+                    else {
+                        aint1[j + i * areaWidth] = k;
+                    }
+                }
+                else if (k == AUS_COAST_ID)
+                {
+                    int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
+                    int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
+                    int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
+                    int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
+                    boolean flag = (
+                            (
+                                    (l1 == AUS_COAST_ID)
+                                            && (k2 == AUS_COAST_ID)
+                                            && (j3 == AUS_COAST_ID)
+                                            && (i4 == AUS_COAST_ID)
+                            )
+                    );
+                    if (flag)
+                    {
+                        aint1[j + i * areaWidth] = AusBiomes[nextInt(AusBiomes.length)];
                     }
                     else {
                         aint1[j + i * areaWidth] = k;

@@ -36,6 +36,7 @@ public class GenLayerAsiaInlandReplaceScrub extends GenLayer
 
     private final int AsiaInlandBiomes[] = new int[] {
             ASIA_DROOPING_ID,
+            ASIA_CENTRAL_ID,
             ASIA_CENTRAL_ID
     };
 
@@ -44,7 +45,8 @@ public class GenLayerAsiaInlandReplaceScrub extends GenLayer
             ASIA_BANDED_ID,
             ASIA_SHRUBLAND_ID,
             ASIA_BANDED_ID,
-            ASIA_REFUGIUM_ID
+            ASIA_REFUGIUM_ID,
+            ASIA_CENTRAL_ID
     };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)

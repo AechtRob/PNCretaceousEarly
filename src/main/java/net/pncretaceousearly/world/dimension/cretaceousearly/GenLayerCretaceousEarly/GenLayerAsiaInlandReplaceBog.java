@@ -45,6 +45,7 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
             ASIA_CENTRAL_ID,
             ASIA_DROOPING_ID,
             ASIA_CENTRAL_ID,
+            ASIA_YIXIAN_HIGHLAND_ID,
             ASIA_YIXIAN_HIGHLAND_ID
     };
 

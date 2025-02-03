@@ -76,7 +76,7 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 				int k = rand.nextInt(12) + 10;
 				int l = rand.nextInt(12) + 10;
 				BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-				if (rand.nextInt(5) == 0) {
+				if (rand.nextInt(9) == 0) {
 					ROCK_PILES_GENERATOR.generate(worldIn, rand, blockpos);
 				}
 			}
