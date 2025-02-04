@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousLandAfricaSavanna extends ElementsLepidodendron
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Ruddy Savanna").setRainfall(0.0F).setBaseHeight(0.62F).setHeightVariation(0.02F).setTemperature(1.8F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana Africa Ruddy Savanna").setRainfall(0.0F).setBaseHeight(0.62F).setHeightVariation(0.02F).setTemperature(1.8F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa_savanna");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

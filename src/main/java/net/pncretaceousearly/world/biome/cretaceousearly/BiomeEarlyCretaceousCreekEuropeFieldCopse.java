@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousCreekEuropeFieldCopse extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Woodland Creeek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.7F));
+			super(new BiomeProperties("E. Cretaceous Europe Woodland Creeek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.7F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_europe_field_copse");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

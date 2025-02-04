@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanDesert extends ElementsLepido
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Xeric Floodplain Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setWaterColor(-10724281));
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Xeric Floodplain Creek").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setWaterColor(-10724281));
 			setRegistryName("lepidodendron:cretaceous_early_creek_south_america_desert");
 			topBlock = BlockBrownstone.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);

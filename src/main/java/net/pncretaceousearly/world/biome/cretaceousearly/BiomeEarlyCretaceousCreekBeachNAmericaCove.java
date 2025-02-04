@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousCreekBeachNAmericaCove extends ElementsLepidode
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous North American Sedimentary Cove Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.9F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous N. America Sedimentary Cove Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.9F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_beach_namerica_cove");
 			topBlock = Blocks.GRAVEL.getDefaultState();
 			fillerBlock = Blocks.GRAVEL.getDefaultState();

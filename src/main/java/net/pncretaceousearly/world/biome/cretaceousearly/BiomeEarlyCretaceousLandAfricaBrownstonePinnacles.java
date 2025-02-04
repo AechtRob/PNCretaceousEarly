@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstonePinnacles extends ElementsL
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Brownstone Mountains").setSnowEnabled().setBaseHeight(9.58F).setHeightVariation(0.445F).setTemperature(-0.25F));
+			super(new BiomeProperties("E. Cretaceous West Gondwana Africa Brownstone Mountains").setSnowEnabled().setBaseHeight(9.58F).setHeightVariation(0.445F).setTemperature(-0.25F));
 			setRegistryName("lepidodendron:cretaceous_early_africa_pinnacles");
 			topBlock = Blocks.SNOW.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();

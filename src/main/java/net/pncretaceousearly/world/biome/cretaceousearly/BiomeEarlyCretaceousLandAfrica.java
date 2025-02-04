@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousLandAfrica extends ElementsLepidodendronMod.Mod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Brownstone Mountains").setRainfall(0.0F).setBaseHeight(2.78F).setHeightVariation(0.39F).setTemperature(1.2F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana Africa Brownstone Mountains").setRainfall(0.0F).setBaseHeight(2.78F).setHeightVariation(0.39F).setTemperature(1.2F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_africa");
 			topBlock = BlockBrownstone.block.getDefaultState();
 			fillerBlock = BlockBrownstone.block.getDefaultState();

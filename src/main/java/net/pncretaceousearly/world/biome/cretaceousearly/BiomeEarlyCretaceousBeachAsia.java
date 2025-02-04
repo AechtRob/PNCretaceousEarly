@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousBeachAsia extends ElementsLepidodendronMod.ModE
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Asian Ashy Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous Asia Ashy Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_beach_asia");
 			topBlock = BlockSandGrey.block.getDefaultState();
 			fillerBlock = BlockSandstoneGrey.block.getDefaultState();

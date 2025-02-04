@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousAustroAntarcticLakes extends ElementsLepidodend
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Sub-Alpine Lakes").setBaseHeight(1.45F).setHeightVariation(0.12125F).setTemperature(0.6F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Sub-Alpine Lakes").setBaseHeight(1.45F).setHeightVariation(0.12125F).setTemperature(0.6F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_austro_antarctic_subalpine_lakes");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

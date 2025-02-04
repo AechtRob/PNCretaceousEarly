@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousCreekBeachAustroAntarctica extends ElementsLepi
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Austro-Antarctic Dune Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.8F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Dune Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.8F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_beach_australia_antarctica");
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();

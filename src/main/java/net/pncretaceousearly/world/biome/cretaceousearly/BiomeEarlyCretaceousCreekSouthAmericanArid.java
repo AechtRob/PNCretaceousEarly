@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanArid extends ElementsLepidode
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Arid Lands Creek").setRainfall(0.0F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(1.8F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Arid Lands Creek").setRainfall(0.0F).setBaseHeight(-0.50F).setHeightVariation(0.01F).setTemperature(1.8F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_creek_samerica_arid");
 			topBlock = BlockCoarseSandyDirt.block.getDefaultState();
 			fillerBlock = BlockBrownstone.block.getDefaultState();

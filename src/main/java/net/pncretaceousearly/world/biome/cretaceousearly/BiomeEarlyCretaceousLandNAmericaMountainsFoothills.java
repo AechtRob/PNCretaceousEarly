@@ -46,7 +46,7 @@ public class BiomeEarlyCretaceousLandNAmericaMountainsFoothills extends Elements
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Snowy Mountain Foothills").setBaseHeight(2.025F).setHeightVariation(0.3425F).setTemperature(0.2F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous N. America Foothills").setBaseHeight(2.025F).setHeightVariation(0.3425F).setTemperature(0.2F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica_foothills");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
@@ -67,8 +67,8 @@ public class BiomeEarlyCretaceousLandNAmericaMountainsFoothills extends Elements
 		}
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
-		protected static final WorldGenTaiga2 SPRUCE_TREE2 = new WorldGenTaiga2(false);
-		protected static final WorldGenTaiga1 SPRUCE_TREE1 = new WorldGenTaiga1();
+		protected static final WorldGenTaiga2PN SPRUCE_TREE2 = new WorldGenTaiga2PN(false);
+		protected static final WorldGenTaiga1PN SPRUCE_TREE1 = new WorldGenTaiga1PN();
 
 		protected static final WorldGenSinglePlantOptionalWater PLANT_GENERATOR = new WorldGenSinglePlantOptionalWater();
 		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
@@ -110,7 +110,6 @@ public class BiomeEarlyCretaceousLandNAmericaMountainsFoothills extends Elements
 				case 2:
 					return SPRUCE_TREE1;
 			}
-
 		}
 
 		@Override

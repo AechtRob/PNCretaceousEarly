@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousBeachAfroAmericaRocky extends ElementsLepidoden
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Afro-American Black Rocky Coast").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous West Gondwana Flooded Rift").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.9F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_beach_afroamerica_rocky");
 			topBlock = BlockLavaRock.block.getDefaultState();
 			fillerBlock = BlockLavaRock.block.getDefaultState();

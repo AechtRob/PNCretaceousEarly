@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanPatagonia extends ElementsLep
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Wet Forest Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.7F));
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Wet Forest Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.7F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_south_america_patagonia");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
@@ -85,6 +85,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanPatagonia extends ElementsLep
 		protected static final WorldGenEquisetites EQUISETITES_GENERATOR = new WorldGenEquisetites();
 		protected static final WorldGenPrehistoricGroundCoverLush GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverLush();
 		protected static final WorldGenFern FERN_GENERATOR = new WorldGenFern();
+		protected static final WorldGenPotamogeton POTAMOGETON_GENERATOR = new WorldGenPotamogeton();
 
 		@Override
 		@SideOnly(Side.CLIENT)
@@ -329,6 +330,15 @@ public class BiomeEarlyCretaceousCreekSouthAmericanPatagonia extends ElementsLep
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					FERN_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 64; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					POTAMOGETON_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

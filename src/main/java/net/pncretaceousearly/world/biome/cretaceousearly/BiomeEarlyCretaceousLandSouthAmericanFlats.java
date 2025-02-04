@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanFlats extends ElementsLepidode
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coastal Flats").setRainfall(0.0F).setBaseHeight(0.0F).setHeightVariation(0.0F).setTemperature(1.2F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Coastal Flats").setRainfall(0.0F).setBaseHeight(0.0F).setHeightVariation(0.0F).setTemperature(1.2F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_samerica_flats");
 			topBlock = BlockCoarseSiltyDirt.block.getDefaultState();
 			fillerBlock = BlockCoarseSiltyDirt.block.getDefaultState();

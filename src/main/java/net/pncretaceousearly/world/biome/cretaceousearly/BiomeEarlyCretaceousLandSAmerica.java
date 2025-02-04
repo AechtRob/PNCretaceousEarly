@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousLandSAmerica extends ElementsLepidodendronMod.M
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Xeric Floodplain").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled().setWaterColor(-10724281));
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Xeric Floodplain").setRainfall(0.0F).setBaseHeight(0.18F).setHeightVariation(0.17F).setTemperature(2.2F).setRainDisabled().setWaterColor(-10724281));
 			setRegistryName("lepidodendron:cretaceous_early_samerica");
 			topBlock = BlockBrownstone.block.getDefaultState();
 			fillerBlock = Blocks.STONE.getStateFromMeta(1);

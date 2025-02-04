@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousAustroAntarcticCoastalCliffs extends ElementsLe
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coastal Cliffs").setBaseHeight(2.65F).setHeightVariation(0.025F).setTemperature(1.4F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Coastal Cliffs").setBaseHeight(2.65F).setHeightVariation(0.025F).setTemperature(1.4F));
 			setRegistryName("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs");
 			topBlock = Blocks.STONE.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();

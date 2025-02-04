@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Brownstone Valley").setBaseHeight(1.12F).setHeightVariation(0.025F).setTemperature(1.9F));
+			super(new BiomeProperties("E. Cretaceous West Gondwana Africa Brownstone Valley").setBaseHeight(1.12F).setHeightVariation(0.025F).setTemperature(1.9F));
 			setRegistryName("lepidodendron:cretaceous_early_africa_valley");
 			topBlock = BlockPrehistoricGroundFern.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

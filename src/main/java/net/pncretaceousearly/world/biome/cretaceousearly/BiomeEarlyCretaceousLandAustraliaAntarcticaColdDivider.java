@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandAustraliaAntarcticaColdDivider extends Elem
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Gravelly Ridge").setBaseHeight(1.0F).setHeightVariation(0.23F).setTemperature(0.9F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Gravelly Ridge").setBaseHeight(1.0F).setHeightVariation(0.23F).setTemperature(0.9F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_divider");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.STONE.getDefaultState();

@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousCreekSouthAmericanFlatsStream extends ElementsL
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Coastal Flats Stream").setRainfall(0.0F).setBaseHeight(-0.250F).setHeightVariation(0.00F).setTemperature(1.2F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Coastal Flats").setRainfall(0.0F).setBaseHeight(-0.250F).setHeightVariation(0.00F).setTemperature(1.2F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_creek_samerica_flats_stream");
 			topBlock = BlockCarboniferousMud.block.getDefaultState();
 			fillerBlock = BlockCoarseSiltyDirt.block.getDefaultState();

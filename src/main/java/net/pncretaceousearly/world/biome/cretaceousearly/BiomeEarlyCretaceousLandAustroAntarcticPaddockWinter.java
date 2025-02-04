@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddockWinter extends Elemen
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Winter Paddock").setBaseHeight(0.425F).setHeightVariation(0.0F).setTemperature(-1.0F).setSnowEnabled());
+			super(new BiomeProperties("E. Cretaceous East Gondwana Winter Paddock").setBaseHeight(0.425F).setHeightVariation(0.0F).setTemperature(-1.0F).setSnowEnabled());
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_paddock_winter");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

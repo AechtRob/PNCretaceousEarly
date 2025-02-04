@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanAridSpikes extends ElementsLep
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Arid Lands").setRainfall(0.0F).setBaseHeight(2.15F).setHeightVariation(0.025F).setTemperature(1.8F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Arid Lands").setRainfall(0.0F).setBaseHeight(2.15F).setHeightVariation(0.025F).setTemperature(1.8F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_samerica_arid_spikes");
 			topBlock = BlockBrownstone.block.getDefaultState();
 			fillerBlock = BlockBrownstone.block.getDefaultState();

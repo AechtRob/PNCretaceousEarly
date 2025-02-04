@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianSkirt extends ElementsLepidodendr
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Jagged Foothills").setBaseHeight(1.835F).setHeightVariation(1.025F).setRainfall(1.5F).setTemperature(1.6F));
+			super(new BiomeProperties("E. Cretaceous Asia Jagged Foothills").setBaseHeight(1.835F).setHeightVariation(1.025F).setRainfall(1.5F).setTemperature(1.6F));
 			setRegistryName("lepidodendron:cretaceous_early_asia_yixian_foothills");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = BlockBrownstone.block.getDefaultState();

@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousLandAustraliaAntarcticaWinter extends ElementsL
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Winter Podocarp Forest").setBaseHeight(0.95F).setHeightVariation(0.1125F).setTemperature(-0.9F).setSnowEnabled());
+			super(new BiomeProperties("E. Cretaceous East Gondwana Winter Podocarp Forest").setBaseHeight(0.95F).setHeightVariation(0.1125F).setTemperature(-0.9F).setSnowEnabled());
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_winter");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

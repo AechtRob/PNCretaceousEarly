@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Coniferous Lakelands").setBaseHeight(4.9F).setHeightVariation(0.29F).setTemperature(0.8F));
+			super(new BiomeProperties("E. Cretaceous Asia Coniferous Lakelands").setBaseHeight(4.9F).setHeightVariation(0.29F).setTemperature(0.8F));
 			setRegistryName("lepidodendron:cretaceous_early_yixian_lakes_a");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

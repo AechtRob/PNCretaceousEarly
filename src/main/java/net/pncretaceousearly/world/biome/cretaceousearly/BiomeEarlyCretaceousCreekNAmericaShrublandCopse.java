@@ -43,7 +43,7 @@ public class BiomeEarlyCretaceousCreekNAmericaShrublandCopse extends ElementsLep
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Sapindopsis Shrubland Copse Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.5F));
+			super(new BiomeProperties("E. Cretaceous N. America Shrubland Copse Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(1.5F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_namerica_shrubland_copse");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

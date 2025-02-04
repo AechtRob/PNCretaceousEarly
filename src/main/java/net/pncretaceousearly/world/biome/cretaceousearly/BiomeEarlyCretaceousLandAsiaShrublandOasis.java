@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaShrublandOasis extends ElementsLepidode
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Muddy Oasis").setBaseHeight(-0.22F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
+			super(new BiomeProperties("E. Cretaceous Asia Muddy Oasis").setBaseHeight(-0.22F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
 			setRegistryName("lepidodendron:cretaceous_early_shrubland_oasis");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

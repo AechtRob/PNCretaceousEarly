@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandNAmericaForest extends ElementsLepidodendro
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Muddy Meadow").setBaseHeight(0.095F).setHeightVariation(0.0125F).setTemperature(2.1F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous N. America Muddy Meadow").setBaseHeight(0.095F).setHeightVariation(0.0125F).setTemperature(2.1F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica_forest");
 			topBlock = BlockPrehistoricGroundMossy.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

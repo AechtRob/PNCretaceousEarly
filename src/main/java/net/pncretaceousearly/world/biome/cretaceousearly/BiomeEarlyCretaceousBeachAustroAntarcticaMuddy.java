@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousBeachAustroAntarcticaMuddy extends ElementsLepi
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Austro-Antarctic Muddy Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Muddy Beach").setBaseHeight(0.0F).setHeightVariation(0.013F).setTemperature(0.8F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_beach_australia_antarctica_muddy");
 			topBlock = BlockClayBrown.block.getDefaultState();
 			fillerBlock = BlockClayBrown.block.getDefaultState();

@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandAsiaRefugium extends ElementsLepidodendronM
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Relict Hinterlands").setBaseHeight(-0.09F).setHeightVariation(0.0F).setTemperature(1.65F).setWaterColor(16767282));
+			super(new BiomeProperties("E. Cretaceous Asia Relict Hinterlands").setBaseHeight(-0.09F).setHeightVariation(0.0F).setTemperature(1.65F).setWaterColor(16767282));
 			setRegistryName("lepidodendron:cretaceous_early_refugium");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

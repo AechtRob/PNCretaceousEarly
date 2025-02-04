@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandAsiaShrublandSprings extends ElementsLepido
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Dark Springs").setBaseHeight(-0.62F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
+			super(new BiomeProperties("E. Cretaceous Asia Dark Springs").setBaseHeight(-0.62F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
 			setRegistryName("lepidodendron:cretaceous_early_shrubland_springs");
 			topBlock = BlockToxicMud.block.getDefaultState();
 			fillerBlock = BlockToxicMud.block.getDefaultState();

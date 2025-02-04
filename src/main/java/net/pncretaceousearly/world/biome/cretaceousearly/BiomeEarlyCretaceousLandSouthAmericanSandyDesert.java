@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanSandyDesert extends ElementsLe
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Sandy Desert").setRainfall(0.0F).setBaseHeight(0.15F).setHeightVariation(0.15F).setTemperature(2.0F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Sandy Desert").setRainfall(0.0F).setBaseHeight(0.15F).setHeightVariation(0.15F).setTemperature(2.0F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_samerica_sandy_desert");
 			topBlock = BlockSandWavy.block.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();

@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticPaddock extends ElementsLepi
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Paddock").setBaseHeight(0.025F).setHeightVariation(0.0F).setTemperature(1.0F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Paddock").setBaseHeight(0.025F).setHeightVariation(0.0F).setTemperature(1.0F));
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_paddock");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousCreekBeachAfroAmerica extends ElementsLepidoden
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Afro-American Dry Sandy Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.8F).setRainfall(0.4F));
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Dry Sandy Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(0.8F).setRainfall(0.4F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_beach_africa");
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();

@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaShrubland extends ElementsLepidodendron
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Bennettites Shrubland").setBaseHeight(0.05F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
+			super(new BiomeProperties("E. Cretaceous Asia Shrubland").setBaseHeight(0.05F).setHeightVariation(0.0F).setTemperature(1.0F).setWaterColor(-10776517));
 			setRegistryName("lepidodendron:cretaceous_early_shrubland");
 			topBlock = BlockPrehistoricGroundBasic.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

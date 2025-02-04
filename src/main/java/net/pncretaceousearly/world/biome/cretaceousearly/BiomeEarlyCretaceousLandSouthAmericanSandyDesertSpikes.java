@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes extends Elem
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Sandy Desert Eyries").setRainfall(0.0F).setBaseHeight(4.0F).setHeightVariation(0.4F).setTemperature(2.0F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous West Gondwana S. America Sandy Desert Eyries").setRainfall(0.0F).setBaseHeight(4.0F).setHeightVariation(0.4F).setTemperature(2.0F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_samerica_sandy_desert_spikes");
 			topBlock = Blocks.SANDSTONE.getDefaultState();
 			fillerBlock = Blocks.SANDSTONE.getDefaultState();

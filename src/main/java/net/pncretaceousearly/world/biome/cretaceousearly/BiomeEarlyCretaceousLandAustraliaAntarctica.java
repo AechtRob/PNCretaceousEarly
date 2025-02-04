@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAustraliaAntarctica extends ElementsLepidod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Podocarp Forest").setBaseHeight(0.35F).setHeightVariation(0.0125F).setTemperature(0.9F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Podocarp Forest").setBaseHeight(0.35F).setHeightVariation(0.0125F).setTemperature(0.9F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

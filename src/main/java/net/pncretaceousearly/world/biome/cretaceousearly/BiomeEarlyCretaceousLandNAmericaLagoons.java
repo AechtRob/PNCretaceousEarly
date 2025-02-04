@@ -44,7 +44,7 @@ public class BiomeEarlyCretaceousLandNAmericaLagoons extends ElementsLepidodendr
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Volcanic Lagoons").setBaseHeight(-0.075F).setHeightVariation(0.00F).setTemperature(1.2F).setRainfall(0.9F));
+			super(new BiomeProperties("E. Cretaceous N. America Volcanic Lagoons").setBaseHeight(-0.075F).setHeightVariation(0.00F).setTemperature(1.2F).setRainfall(0.9F));
 			setRegistryName("lepidodendron:cretaceous_early_namerica_lagoons");
 			topBlock = BlockSandBlack.block.getDefaultState();
 			fillerBlock = BlockLavaRock.block.getDefaultState();

@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaBarrenHills extends ElementsLepidodendr
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Dusty Hills").setBaseHeight(0.75F).setHeightVariation(0.29F).setTemperature(0.8F));
+			super(new BiomeProperties("E. Cretaceous Asia Dusty Hills").setBaseHeight(0.75F).setHeightVariation(0.29F).setTemperature(0.8F));
 			setRegistryName("lepidodendron:cretaceous_early_barren_hills");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = BlockSandstoneBlack.block.getDefaultState();

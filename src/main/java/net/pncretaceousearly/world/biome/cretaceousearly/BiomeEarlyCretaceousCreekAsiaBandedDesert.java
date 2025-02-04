@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousCreekAsiaBandedDesert extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Banded Desert Creek").setBaseHeight(-0.7F).setHeightVariation(0.0F).setTemperature(2.0F).setWaterColor(-5184253).setWaterColor(-11686290));
+			super(new BiomeProperties("E. Cretaceous Asia Banded Desert Creek").setBaseHeight(-0.7F).setHeightVariation(0.0F).setTemperature(2.0F).setWaterColor(-5184253).setWaterColor(-11686290));
 			setRegistryName("lepidodendron:cretaceous_early_creek_banded_desert");
 			topBlock = Blocks.SAND.getStateFromMeta(1);
 			fillerBlock = Blocks.RED_SANDSTONE.getDefaultState();

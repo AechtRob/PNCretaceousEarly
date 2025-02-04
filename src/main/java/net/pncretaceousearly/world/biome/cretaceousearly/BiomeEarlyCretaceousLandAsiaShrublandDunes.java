@@ -41,7 +41,7 @@ public class BiomeEarlyCretaceousLandAsiaShrublandDunes extends ElementsLepidode
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Aeolian Dunes").setBaseHeight(0.25F).setHeightVariation(0.15F).setTemperature(1.0F).setWaterColor(-10776517));
+			super(new BiomeProperties("E. Cretaceous Asia Aeolian Dunes").setBaseHeight(0.25F).setHeightVariation(0.15F).setTemperature(1.0F).setWaterColor(-10776517));
 			setRegistryName("lepidodendron:cretaceous_early_shrubland_dunes");
 			topBlock = BlockSandPangaeanWavy.block.getDefaultState();
 			fillerBlock = BlockSandPangaean.block.getDefaultState();

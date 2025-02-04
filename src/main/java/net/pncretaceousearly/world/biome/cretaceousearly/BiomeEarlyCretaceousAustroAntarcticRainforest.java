@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousAustroAntarcticRainforest extends ElementsLepid
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Rainforest").setBaseHeight(-0.14F).setHeightVariation(0.0225F).setTemperature(1.7F));
+			super(new BiomeProperties("E. Cretaceous East Gondwana Rainforest").setBaseHeight(-0.14F).setHeightVariation(0.0225F).setTemperature(1.7F));
 			setRegistryName("lepidodendron:cretaceous_early_austro_antarctic_rainforest");
 			topBlock = BlockPrehistoricGroundLush.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);

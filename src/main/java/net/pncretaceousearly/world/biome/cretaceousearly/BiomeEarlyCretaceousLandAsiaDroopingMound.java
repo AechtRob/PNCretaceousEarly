@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAsiaDroopingMound extends ElementsLepidoden
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Drooping Marsh Knolls").setBaseHeight(0.535F).setHeightVariation(0.025F).setRainfall(1.5F).setTemperature(1.6F).setWaterColor(-11292521));
+			super(new BiomeProperties("E. Cretaceous Asia Drooping Marsh Knolls").setBaseHeight(0.535F).setHeightVariation(0.025F).setRainfall(1.5F).setTemperature(1.6F).setWaterColor(-11292521));
 			setRegistryName("lepidodendron:cretaceous_early_asia_drooping_swamp_mound");
 			topBlock = Blocks.DIRT.getStateFromMeta(1);
 			fillerBlock = BlockBrownstone.block.getDefaultState();

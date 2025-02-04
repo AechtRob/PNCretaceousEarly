@@ -40,7 +40,7 @@ public class BiomeEarlyCretaceousCreekBeachAsiaCraggy extends ElementsLepidodend
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Asian Craggy Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(2.0F).setRainfall(0.5F));
+			super(new BiomeProperties("E. Cretaceous Asia Craggy Beach Creek").setBaseHeight(-0.525F).setHeightVariation(0.01F).setTemperature(2.0F).setRainfall(0.5F));
 			setRegistryName("lepidodendron:cretaceous_early_creek_beach_asia_craggy");
 			topBlock = Blocks.STONE.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();
