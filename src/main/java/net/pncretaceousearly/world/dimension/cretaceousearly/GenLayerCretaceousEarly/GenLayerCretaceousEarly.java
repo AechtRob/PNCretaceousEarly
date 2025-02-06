@@ -211,15 +211,28 @@ public class GenLayerCretaceousEarly {
         GenLayer genlayercliffsB11 = new GenLayerZoom(5076L, genlayercliffsB10);
         GenLayer genlayercliffsBfinal = new GenLayerCretaceousEarlyRiverMixAusHeadlandsSpecial(300L, genlayercliffsfinal, genlayercliffsB11);
 
-        
-        GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayercliffsBfinal);
+        GenLayer genlayercliffsC = new GenLayerRiverInit(400L, biomes);
+        GenLayer genlayercliffsC2 = GenLayerZoom.magnify(4000L, genlayercliffsC, 1);
+        GenLayer genlayercliffsC3 = GenLayerZoom.magnify(4000L, genlayercliffsC2, 2);
+        GenLayer genlayercliffsC4 = GenLayerZoom.magnify(4000L, genlayercliffsC3, 2);
+        GenLayer genlayercliffsC5 = GenLayerZoom.magnify(4000, genlayercliffsC4, 2);
+        GenLayer genlayercliffsC6 = GenLayerZoom.magnify(4000L, genlayercliffsC5, 2);
+        GenLayer genlayercliffsC7 = new GenLayerRiver(4L, genlayercliffsC6);
+        GenLayer genlayercliffsC8 = new GenLayerSmooth(4000L, genlayercliffsC7);
+        GenLayer genlayercliffsC9 = new GenLayerZoom(4076L, genlayercliffsC8);
+        GenLayer genlayercliffsC10 = new GenLayerZoom(5076L, genlayercliffsC9);
+        GenLayer genlayercliffsC11 = new GenLayerZoom(6076L, genlayercliffsC10);
+        GenLayer genlayercliffsCfinal = new GenLayerCretaceousEarlyRiverMixAusHeadlandsSpecial(400L, genlayercliffsBfinal, genlayercliffsC11);
 
-        genlayercliffsBfinal.initWorldGenSeed(seed);
+
+        GenLayer genlayerwidevoronoizoom = new GenLayerVoronoiZoom(10L, genlayercliffsCfinal);
+
+        genlayercliffsCfinal.initWorldGenSeed(seed);
         genlayerwidevoronoizoom.initWorldGenSeed(seed);
         biomes.initWorldGenSeed(seed);
 
         genlayerwidevoronoizoom.initWorldGenSeed(seed);
-        return (new GenLayer[] { genlayercliffsBfinal, genlayerwidevoronoizoom, genlayercliffsBfinal });
+        return (new GenLayer[] { genlayercliffsCfinal, genlayerwidevoronoizoom, genlayercliffsCfinal });
     }
 
 }
