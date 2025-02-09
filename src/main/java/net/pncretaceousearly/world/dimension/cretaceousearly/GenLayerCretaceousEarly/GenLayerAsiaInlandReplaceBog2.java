@@ -6,7 +6,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class GenLayerAsiaInlandReplaceBog extends GenLayer
+public class GenLayerAsiaInlandReplaceBog2 extends GenLayer
 {
 
     public static Biome ASIA_DROOPING = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_drooping_swamp"));
@@ -23,8 +23,6 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
 
     public static Biome BOG = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia"));
     public static int BOG_ID =  Biome.getIdForBiome(BOG);
-    public static Biome SCRUB = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana"));
-    public static int SCRUB_ID =  Biome.getIdForBiome(SCRUB);
 
     public static Biome ASIA_REFUGIUM = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_refugium"));
     public static int ASIA_REFUGIUM_ID =  Biome.getIdForBiome(ASIA_REFUGIUM);
@@ -34,35 +32,31 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
     public static Biome ASIA_YIXIAN_LAKES_B = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_yixian_lakes_b"));
     public static int ASIA_YIXIAN_LAKES_B_ID =  Biome.getIdForBiome(ASIA_YIXIAN_LAKES_B);
 
-    public GenLayerAsiaInlandReplaceBog(long seed, GenLayer genLayer)
+    public GenLayerAsiaInlandReplaceBog2(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
 
     private final int AsiaInlandBiomes[] = new int[] {
-            ASIA_DROOPING_ID,
-            ASIA_CENTRAL_ID,
-            ASIA_YIXIAN_HIGHLAND_ID
+//            ASIA_DROOPING_ID,
+//            ASIA_CENTRAL_ID,
+            BOG_ID//,
+//            ASIA_YIXIAN_HIGHLAND_ID
     };
 
-    private final int AsiaInlandBiomes2[] = new int[] {
-            ASIA_SHRUBLAND_ID,
-            ASIA_BANDED_ID,
-            ASIA_SHRUBLAND_ID,
-            ASIA_BANDED_ID,
-            ASIA_REFUGIUM_ID
-    };
-
-    private final int AsiaInlandBiomes3[] = new int[] {
-            ASIA_YIXIAN_LAKES_A_ID,
-            ASIA_YIXIAN_LAKES_B_ID
-    };
-
-    private final int AsiaMaritimeBiomes[] = new int[] {
-            BOG_ID,
-            SCRUB_ID
-    };
+//    private final int AsiaInlandBiomes2[] = new int[] {
+//            ASIA_SHRUBLAND_ID,
+//            ASIA_BANDED_ID,
+//            ASIA_SHRUBLAND_ID,
+//            ASIA_BANDED_ID,
+//            ASIA_REFUGIUM_ID
+//    };
+//
+//    private final int AsiaInlandBiomes3[] = new int[] {
+//            ASIA_YIXIAN_LAKES_A_ID,
+//            ASIA_YIXIAN_LAKES_B_ID
+//    };
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
@@ -76,36 +70,34 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (toReplace(k))
+                if (isCoastal(k))
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
                     int j3 = aint[j + 1 - 1 + (i + 1) * (areaWidth + 2)];
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
-                    boolean flag = (
-                        !(
-                                isCoastal(l1)
-                                || isCoastal(k2)
-                                || isCoastal(j3)
-                                || isCoastal(i4)
+                    boolean flag = ((
+                            toReplace(l1)
+                                || toReplace(k2)
+                                || toReplace(j3)
+                                || toReplace(i4)
                         )
                     );
-                    //flag = true;
                     if (flag)
                     {
-                        int b = AsiaInlandBiomes[nextInt(AsiaInlandBiomes.length)];
-                        if (b == ASIA_CENTRAL_ID) {
-                            aint1[j + i * areaWidth] = AsiaInlandBiomes2[nextInt(AsiaInlandBiomes2.length)];
-                        }
-                        else if (b == ASIA_YIXIAN_HIGHLAND_ID) {
-                            aint1[j + i * areaWidth] = AsiaInlandBiomes3[nextInt(AsiaInlandBiomes3.length)];
-                        }
-                        else {
-                            aint1[j + i * areaWidth] = b;
-                        }
+//                        int b = AsiaInlandBiomes[nextInt(AsiaInlandBiomes.length)];
+//                        if (b == ASIA_CENTRAL_ID) {
+//                            aint1[j + i * areaWidth] = AsiaInlandBiomes2[nextInt(AsiaInlandBiomes2.length)];
+//                        }
+//                        else if (b == ASIA_YIXIAN_HIGHLAND_ID) {
+//                            aint1[j + i * areaWidth] = AsiaInlandBiomes3[nextInt(AsiaInlandBiomes3.length)];
+//                        }
+//                        else {
+                            aint1[j + i * areaWidth] = BOG_ID;
+//                        }
                     }
                     else {
-                        aint1[j + i * areaWidth] = AsiaMaritimeBiomes[nextInt(AsiaMaritimeBiomes.length)];
+                        aint1[j + i * areaWidth] = k;
                     }
                 }
                 else {
@@ -118,7 +110,12 @@ public class GenLayerAsiaInlandReplaceBog extends GenLayer
     }
 
     public static boolean toReplace(int i) {
-        return i == BOG_ID || i == SCRUB_ID;
+
+        return i == ASIA_DROOPING_ID
+                || i == ASIA_CENTRAL_ID
+                || i == ASIA_SHRUBLAND_ID
+                || i == ASIA_BANDED_ID
+                || i == ASIA_REFUGIUM_ID;
     }
 
     public static boolean isCoastal(int i) {

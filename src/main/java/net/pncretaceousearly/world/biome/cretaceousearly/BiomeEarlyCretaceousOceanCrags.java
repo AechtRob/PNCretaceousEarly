@@ -39,7 +39,7 @@ public class BiomeEarlyCretaceousOceanCrags extends ElementsLepidodendronMod.Mod
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous Ocean Crags").setBaseHeight(1.58F).setHeightVariation(0.445F).setTemperature(-0.25F));
+			super(new BiomeProperties("E. Cretaceous Ocean Crags").setBaseHeight(1.58F).setHeightVariation(0.445F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_crags");
 			topBlock = Blocks.STONE.getDefaultState();
 			fillerBlock = Blocks.STONE.getDefaultState();

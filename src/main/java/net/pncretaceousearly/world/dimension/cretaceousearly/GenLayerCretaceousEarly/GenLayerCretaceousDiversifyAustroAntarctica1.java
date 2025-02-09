@@ -24,11 +24,10 @@ public class GenLayerCretaceousDiversifyAustroAntarctica1 extends GenLayer
     }
 
     private final int AusBiomes[] = new int[] {
-            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
-            EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            //EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            //EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            //EARLY_CRETACEOUS_AUSTRO_FOREST_ID,
+            EARLY_CRETACEOUS_AUSTRO_LAKES_ID,
             EARLY_CRETACEOUS_AUSTRO_LAKES_ID
     };
 

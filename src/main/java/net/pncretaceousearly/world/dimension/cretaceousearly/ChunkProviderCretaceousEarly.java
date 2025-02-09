@@ -563,7 +563,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     && iblockstate5.getMaterial() == Material.AIR && j1 <= ANTARCIC_LAKES_SEA_LEVEL && j1 >= ANTARCIC_LAKES_SEA_LEVEL - 6) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
-            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome)
+            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome)
                     && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
@@ -571,7 +571,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
-            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome)
+            else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome)
                     && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
@@ -3517,6 +3517,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
 
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOcean.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanTransition.biome).toString())
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanCrags.biome).toString())
         ) {
             int i = rand.nextInt(100) + 1;

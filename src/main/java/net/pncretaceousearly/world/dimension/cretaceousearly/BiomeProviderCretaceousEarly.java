@@ -2,7 +2,6 @@ package net.pncretaceousearly.world.dimension.cretaceousearly;
 
 import com.google.common.collect.Lists;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.biome.devonian.BiomeDevonian;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ReportedException;
@@ -16,7 +15,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousOcean;
-import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerCretaceousEarly;
+import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerRevCretaceousEarly;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -117,7 +116,7 @@ public class BiomeProviderCretaceousEarly extends BiomeProvider {
 
     public BiomeProviderCretaceousEarly(long seed, WorldType worldType, String options) {
         this();
-        GenLayer[] agenlayer = GenLayerCretaceousEarly.initializeAllBiomeGenerators(seed, worldType, options);
+        GenLayer[] agenlayer = GenLayerRevCretaceousEarly.initializeAllBiomeGenerators(seed, worldType, options);
         agenlayer = getModdedBiomeGenerators(worldType, seed, agenlayer);
         this.genBiomes = agenlayer[0];
         this.biomeIndexLayer = agenlayer[1];

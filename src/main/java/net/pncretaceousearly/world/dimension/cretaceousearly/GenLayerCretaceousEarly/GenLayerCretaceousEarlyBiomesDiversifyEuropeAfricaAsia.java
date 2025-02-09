@@ -29,16 +29,16 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia extends GenL
     public Biome CRETACEOUS_EARLY_ASIA_PHRYGANA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_asia_phyrgana"));
     public int CRETACEOUS_EARLY_ASIA_PHRYGANA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_ASIA_PHRYGANA);
 
-    private final int EuropeBiomes[] = new int[] {
-            CRETACEOUS_EARLY_NAMERICA_ID,
-            CRETACEOUS_EARLY_EUROPE_ID,
-            EARLY_CRETACEOUS_EUROPE_FIELD_ID
-    };
-
-    private final int AfricaBiomes[] = new int[] {
-            CRETACEOUS_EARLY_SAMERICA_ID,
-            CRETACEOUS_EARLY_AFRICA_ID
-    };
+//    private final int EuropeBiomes[] = new int[] {//moved
+//            CRETACEOUS_EARLY_NAMERICA_ID,
+//            CRETACEOUS_EARLY_EUROPE_ID,
+//            EARLY_CRETACEOUS_EUROPE_FIELD_ID
+//    };
+//
+//    private final int AfricaBiomes[] = new int[] { //moved
+//            CRETACEOUS_EARLY_SAMERICA_ID,
+//            CRETACEOUS_EARLY_AFRICA_ID
+//    };
 
     private final int AsiaBiomes[] = new int[] {
             CRETACEOUS_EARLY_ASIA_BOG_ID,
@@ -64,13 +64,14 @@ public class GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia extends GenL
                 int i = xOut + zOut * width;
                 int center = input[i];
                 initChunkSeed(xOut + x, zOut + z);
-                if (Biome.getBiome(center) == BiomeEarlyCretaceousLandEurope.biome) {
-                    output[i] = EuropeBiomes[nextInt(EuropeBiomes.length)];
-                }
-                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandSAmerica.biome) {
-                    output[i] = AfricaBiomes[nextInt(AfricaBiomes.length)];
-                }
-                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAsia.biome) {
+//                if (Biome.getBiome(center) == BiomeEarlyCretaceousLandEurope.biome) {
+//                    output[i] = EuropeBiomes[nextInt(EuropeBiomes.length)];
+//                }
+//                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandSAmerica.biome) {
+//                    output[i] = AfricaBiomes[nextInt(AfricaBiomes.length)];
+//                }
+                //else
+                if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAsia.biome) {
                     output[i] = AsiaBiomes[nextInt(AsiaBiomes.length)];
                 }
                 else output[i] = center;

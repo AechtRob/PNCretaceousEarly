@@ -3,57 +3,45 @@ package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceous
 import net.minecraft.world.WorldType;
 import net.minecraft.world.gen.layer.*;
 
-public class GenLayerCretaceousEarly {
+public class GenLayerRevCretaceousEarly {
 
     private static boolean shouldDraw = false;
     protected GenLayer parent;
 
     public static GenLayer[] initializeAllBiomeGenerators(long seed, WorldType worldType, String options) {
 
-        GenLayer biomes = new GenLayerCretaceousEarlyBiomesSea(1L);
+        //Place down shallow seas:
+        GenLayer biomes = new GenLayerRevSeedContinents(1L);
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
+        biomes = new GenLayerFuzzyZoom(2001L, biomes);
 
-        biomes = new GenLayerCretaceousEarlyBiomes(1543L, biomes);
-        biomes = new GenLayerZoom(1032L, biomes);
-
+        biomes = new GenLayerRevSplitAfroAmerica(1975L, biomes);
+        biomes = new GenLayerRevSeperateContinents(378L, biomes);
         //biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia(2541L, biomes);
-        //biomes = new GenLayerZoom(1000L, biomes);
-
-        biomes = new GenLayerSeperateContinents(378L, biomes);
-        biomes = new GenLayerAddInlandSeas(3048L, biomes);
-        biomes = new GenLayerCretaceousDiversifyAustroAntarctica0(2542L, biomes);
-        biomes = new GenLayerCretaceousDiversifyAfricaSAmerica(7572L, biomes); //edited
-        biomes = new GenLayerCretaceousDiversifyNAmerica(7531L, biomes); //edited
-        biomes = new GenLayerCretaceousEarlyBiomesDiversifyEuropeAfricaAsia(2541L, biomes);
-
-        //Smaller, island-like biomes?:
-        //biomes = new GenLayerSmallerIslandBiomes(3725L, biomes);
+        biomes = new GenLayerDeepOcean(2665L, biomes);
         biomes = new GenLayerZoom(1001L, biomes);
 
-        biomes = new GenLayerAfricaSavanna(6756L, biomes);
-        biomes = new GenLayerAddShallowSea2(1201L, biomes);
-        biomes = new GenLayerAddInlandSeas2(3049L, biomes);
-        biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
+        biomes = new GenLayerRevAddInlandSeas(3048L, biomes);
+        biomes = new GenLayerCretaceousDiversifyNAmerica(7531L, biomes); //edited
         biomes = new GenLayerCretaceousDiversifyAfricaSAmerica2(562L, biomes);
         biomes = new GenLayerAsiaInlandReplaceBog(579L, biomes);
-        biomes = new GenLayerAddNAmericaForest(2671L, biomes);
+        //biomes = new GenLayerDeepOcean(2665L, biomes);
         biomes = new GenLayerZoom(1004L, biomes);
+        biomes = new GenLayerSmooth(301L, biomes);
 
-        biomes = new GenLayerCretaceousDiversifyAustroAntarctica2(2544L, biomes);
-        //biomes = new GenLayerAsiaInlandReplaceBog2(879L, biomes);
-        //biomes = new GenLayerCretaceousDiversifyAustroAntarctica3(2545L, biomes);
-        biomes = new GenLayerAddShallowSea2(1265L, biomes);
         biomes = new GenLayerAddInlandSeas2(3046L, biomes);
+        biomes = new GenLayerAfricaSavanna(6756L, biomes);
         biomes = new GenLayerAsiaInlandReplaceScrub(679L, biomes);
         biomes = new GenLayerCretaceousDiversifyEuroAmerica(2641L, biomes);
         biomes = new GenLayerEuropeCopse(223L, biomes);
+        biomes = new GenLayerRevDiversifyAus(63L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRift(97L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim(151L, biomes);
         biomes = new GenLayerZoom(109L, biomes);
 
+        biomes = new GenLayerAddNAmericaForest(2671L, biomes);
+        biomes = new GenLayerEuropeCopse(223L, biomes);
         biomes = new GenLayerAsiaInlandReplaceBog2(879L, biomes);
-
-        biomes = new GenLayerCretaceousDiversifyAustroAntarctica3(2548L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim(9151L, biomes);
         biomes = new GenLayerOceanCrags(29L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRift(99L, biomes);
@@ -62,7 +50,6 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerSmooth(701L, biomes);
 
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica4(2548L, biomes);
-
         biomes = new GenLayerNAmericanCopse(433L, biomes);
         biomes = new GenLayerAfricaPeaks(9875L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianFoothills(44, biomes);
@@ -97,6 +84,7 @@ public class GenLayerCretaceousEarly {
         biomes = new GenLayerAfricaPinnacles(1875L, biomes);
         biomes = new GenLayerAfricaSavannaHoles2(8772L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRiftMagma(221L, biomes);
+        biomes = new GenLayerDeepOceanTransition(235L, biomes);
         biomes = new GenLayerFuzzyZoom(6001L, biomes);
 
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);

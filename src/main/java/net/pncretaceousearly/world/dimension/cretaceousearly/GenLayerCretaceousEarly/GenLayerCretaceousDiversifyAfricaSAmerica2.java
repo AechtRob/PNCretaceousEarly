@@ -17,10 +17,30 @@ public class GenLayerCretaceousDiversifyAfricaSAmerica2 extends GenLayer {
     public Biome CRETACEOUS_EARLY_AFRICA_SWAMP_OPEN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_africa_swamp_open"));
     public int CRETACEOUS_EARLY_AFRICA_SWAMP_OPEN_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AFRICA_SWAMP_OPEN);
 
+    public Biome CRETACEOUS_EARLY_SAMERICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica"));
+    public int CRETACEOUS_EARLY_SAMERICA_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA);
+    public Biome CRETACEOUS_EARLY_SAMERICA_FOREST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_south_america_patagonia"));
+    public int CRETACEOUS_EARLY_SAMERICA_FOREST_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_FOREST);
+    public Biome CRETACEOUS_EARLY_SAMERICA_ARID = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_arid"));
+    public int CRETACEOUS_EARLY_SAMERICA_ARID_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_ARID);
+    public Biome CRETACEOUS_EARLY_SAMERICA_DESERT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_sandy_desert"));
+    public int CRETACEOUS_EARLY_SAMERICA_DESERT_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_DESERT);
+    public Biome CRETACEOUS_EARLY_SAMERICA_FLAT = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_samerica_flats"));
+    public int CRETACEOUS_EARLY_SAMERICA_FLAT_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_SAMERICA_FLAT);
+
+
     private final int[] AfricaBiomes = new int[] {
             CRETACEOUS_EARLY_AFRICA_SWAMP_ID,
             CRETACEOUS_EARLY_AFRICA_SWAMP_ID,
             CRETACEOUS_EARLY_AFRICA_SWAMP_OPEN_ID
+    };
+
+    private final int[] SAmericaBiomes = new int[] {
+            CRETACEOUS_EARLY_SAMERICA_ID,
+            CRETACEOUS_EARLY_SAMERICA_FOREST_ID,
+            CRETACEOUS_EARLY_SAMERICA_ARID_ID,
+            CRETACEOUS_EARLY_SAMERICA_DESERT_ID,
+            CRETACEOUS_EARLY_SAMERICA_FLAT_ID
     };
 
     public GenLayerCretaceousDiversifyAfricaSAmerica2(long seed, GenLayer genlayer) {
@@ -44,6 +64,9 @@ public class GenLayerCretaceousDiversifyAfricaSAmerica2 extends GenLayer {
                 initChunkSeed(xOut + x, zOut + z);
                 if (Biome.getBiome(center) == BiomeEarlyCretaceousLandAfricaSwampFlat.biome) {
                     output[i] = AfricaBiomes[nextInt(AfricaBiomes.length)];
+                }
+                else if (Biome.getBiome(center) == BiomeEarlyCretaceousLandSAmerica.biome) {
+                    output[i] = SAmericaBiomes[nextInt(SAmericaBiomes.length)];
                 }
                 else output[i] = center;
             }
