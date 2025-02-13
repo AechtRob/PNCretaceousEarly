@@ -5,9 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAfrica;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaDrooping;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandSAmerica;
 
 public class GenLayerAsiaDroopingIslands extends GenLayer {
 

@@ -5,7 +5,6 @@ import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenNullTree;
-import net.lepidodendron.world.gen.WorldGenRockPiles;
 import net.lepidodendron.world.gen.WorldGenRockPilesCretaceousEarlyDeepOcean;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;

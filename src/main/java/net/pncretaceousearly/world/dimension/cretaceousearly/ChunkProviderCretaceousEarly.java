@@ -5,7 +5,6 @@ import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
-import net.lepidodendron.world.gen.WorldGenBlackSandyDirt;
 import net.lepidodendron.world.gen.WorldGenPangaeanDryLakes;
 import net.lepidodendron.world.gen.WorldGenPrehistoricLakes;
 import net.minecraft.block.BlockFalling;
@@ -23,11 +22,11 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.gen.*;
 import net.pncretaceousearly.world.biome.cretaceousearly.*;
-import static java.lang.Math.toIntExact;
-import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerCretaceousEarlyYixianFoothills;
 
 import java.util.List;
 import java.util.Random;
+
+import static java.lang.Math.toIntExact;
 
 public class ChunkProviderCretaceousEarly implements IChunkGenerator {
     public static final IBlockState STONE = Blocks.STONE.getStateFromMeta(0);

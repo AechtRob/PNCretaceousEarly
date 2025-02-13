@@ -7,7 +7,6 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaYixianLakesA;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaYixianLakesB;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmericaShrubland;
 
 public class GenLayerYixianDead extends GenLayer {
 

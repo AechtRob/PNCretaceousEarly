@@ -6,7 +6,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAsiaPhrygana;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousOcean;
 
 public class GenLayerCretaceousPhryganaLakes extends GenLayer {
 

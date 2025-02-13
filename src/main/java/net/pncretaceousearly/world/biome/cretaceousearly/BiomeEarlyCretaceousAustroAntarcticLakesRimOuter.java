@@ -2,7 +2,9 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockPodocarpLeaves;
+import net.lepidodendron.block.BlockPodocarpLog;
+import net.lepidodendron.block.BlockPodocarpSapling;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.WorldGenLeafblock;

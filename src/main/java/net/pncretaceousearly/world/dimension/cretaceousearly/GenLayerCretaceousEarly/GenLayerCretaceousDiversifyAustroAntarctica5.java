@@ -4,7 +4,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.minecraftforge.common.BiomeDictionary;
 
 public class GenLayerCretaceousDiversifyAustroAntarctica5 extends GenLayer
 {

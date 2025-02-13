@@ -2,14 +2,12 @@
 package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
-import net.lepidodendron.block.*;
+import net.lepidodendron.block.BlockClathropteris;
+import net.lepidodendron.block.BlockClayBrown;
+import net.lepidodendron.block.BlockSphenopterisFern;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
-import net.minecraft.block.BlockBush;
-import net.minecraft.init.Blocks;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenAbstractTree;

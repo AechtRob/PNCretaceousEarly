@@ -1,7 +1,5 @@
 package net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly;
 
-import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
-import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.minecraft.init.Biomes;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;

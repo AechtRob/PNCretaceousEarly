@@ -5,8 +5,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAfrica;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmericaShrubland;
 
 public class GenLayerNAmericanCopse extends GenLayer {

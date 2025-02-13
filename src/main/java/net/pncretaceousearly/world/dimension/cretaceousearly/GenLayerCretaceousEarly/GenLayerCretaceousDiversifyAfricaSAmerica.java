@@ -6,8 +6,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandAfrica;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandEurope;
-import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandNAmerica;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousLandSAmerica;
 
 public class GenLayerCretaceousDiversifyAfricaSAmerica extends GenLayer {

@@ -5,8 +5,6 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-import javax.crypto.SealedObject;
-
 public class GenLayerOceanCrags extends GenLayer
 {
 
