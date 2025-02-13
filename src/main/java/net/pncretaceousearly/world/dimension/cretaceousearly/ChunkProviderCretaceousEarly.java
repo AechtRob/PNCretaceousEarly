@@ -3554,6 +3554,96 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreSouthern.biome).toString())
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 3) {
+                if (i <= 20) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 20 && i <= 60) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 60 && i <= 65) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 65 && i <= 85) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 95) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 5) {
+                if (i <= 7) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 7 && i <= 25) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 25 && i <= 42) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 42 && i <= 75) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 75 && i <= 90) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 7) {
+                if (i <= 22) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 22 && i <= 71) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 71 && i <= 72) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 72 && i <= 75) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 75 && i <= 84) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else if (i > 84 && i <= 87) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 87 && i <= 89) {
+                    iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                } else if (i > 89 && i <= 92) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 9) {
+                if (i <= 8) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 8 && i <= 30) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 30 && i <= 40) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else if (i > 40 && i <= 50) {
+                    iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                } else if (i > 50 && i <= 62) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 62 && i <= 85) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 90) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                }
+            }
+            else {
+                if (i <= 9) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 9 && i <= 28) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 28 && i <= 52) {
+                    iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                } else if (i > 52 && i <= 81) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 81 && i <= 95) {
+                    iblockstate = BlockCoarseSandyDirtGrey.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                }
+            }
+        }
+
 
         return iblockstate;
     }

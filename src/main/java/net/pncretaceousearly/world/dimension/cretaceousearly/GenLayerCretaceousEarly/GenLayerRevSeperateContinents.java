@@ -27,7 +27,8 @@ public class GenLayerRevSeperateContinents extends GenLayer
 
     private final int AustraliaSeas[] = new int[] {
             OCEAN_SHORE_TETHYS_ID,
-            OCEAN_SHORE_PACIFIC_ID
+            OCEAN_SHORE_SOUTHERN_ID,
+            OCEAN_SHORE_SOUTHERN_ID
     };
 
     public GenLayerRevSeperateContinents(long seed, GenLayer genLayer)
