@@ -36,7 +36,7 @@ public class BiomeEarlyCretaceousOceanShoreAtlanticDeep extends ElementsLepidode
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Deep Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-1.85F).setHeightVariation(0.5F));
+			super(new BiomeProperties("E. Cretaceous Deep Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-1.95F).setHeightVariation(0.0F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_atlantic_deep");
 
 			topBlock = Blocks.SAND.getDefaultState();

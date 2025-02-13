@@ -44,7 +44,6 @@ public class GenLayerRevCretaceousEarly {
         biomes = new GenLayerAsiaInlandReplaceBog2(879L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim(9151L, biomes);
         biomes = new GenLayerOceanCrags(29L, biomes);
-        biomes = new GenLayerDeepAtlantic(888L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRift(99L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerSmooth(700L, biomes);
@@ -113,13 +112,23 @@ public class GenLayerRevCretaceousEarly {
         GenLayer genlayercreek7 = new GenLayerSmooth(1000L, genlayercreek6);
         GenLayer genlayercreekfinal = new GenLayerCretaceousEarlyRiverMix(100L, biomes, genlayercreek7);
 
+        //Build and superimpose Atlantic Ravines:
+        GenLayer genlayerravine = new GenLayerRiverInit(170L, biomes);
+        GenLayer genlayerravine2 = GenLayerZoom.magnify(1070L, genlayerravine, 2);
+        GenLayer genlayerravine3 = GenLayerZoom.magnify(1070L, genlayerravine2, 2);
+        GenLayer genlayerravine4 = GenLayerZoom.magnify(1070L, genlayerravine3, 2);
+        GenLayer genlayerravine5 = GenLayerZoom.magnify(1070L, genlayerravine4, 1);
+        GenLayer genlayerravine6 = new GenLayerRiver(7L, genlayerravine5);
+        GenLayer genlayerravine7 = new GenLayerSmooth(1070L, genlayerravine6);
+        GenLayer genlayerravinefinal = new GenLayerCretaceousEarlyAtlanticRavine(107L, genlayercreekfinal, genlayerravine7);
+
         //Additional waterways in Europe:
         GenLayer genlayerdeepcreek = new GenLayerRiverInit(110L, biomes);
         GenLayer genlayerdeepcreek2 = GenLayerZoom.magnify(1100L, genlayerdeepcreek, 2);
         GenLayer genlayerdeepcreek3 = GenLayerZoom.magnify(1100L, genlayerdeepcreek2, 1);
         GenLayer genlayerdeepcreek4 = new GenLayerRiver(11L, genlayerdeepcreek3);
         GenLayer genlayerdeepcreek5 = new GenLayerSmooth(1100L, genlayerdeepcreek4);
-        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayercreekfinal, genlayerdeepcreek5);
+        GenLayer genlayerdeepcreekfinal = new GenLayerCretaceousEarlyRiverMixEuropeSpecial(1100L, genlayerravinefinal, genlayerdeepcreek5);
         
         //Additional waterways in America:
         GenLayer genlayercratocreek = new GenLayerRiverInit(115L, biomes);

@@ -3644,6 +3644,125 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreAtlantic.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreAtlanticDeep.biome).toString())
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 4) {
+                if (i <= 7) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 7 && i <= 10) {
+                    iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                } else if (i > 10 && i <= 30) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 30 && i <= 55) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 55 && i <= 90) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoral.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 7) {
+                if (i <= 15) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 15 && i <= 20) {
+                    iblockstate = Blocks.MOSSY_COBBLESTONE.getDefaultState();
+                } else if (i > 20 && i <= 45) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 45 && i <= 50) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 50 && i <= 70) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 70 && i <= 80) {
+                    iblockstate = BlockSandWavy.block.getDefaultState(); //replace with Rudist Reef
+                } else if (i > 80 && i <= 92) {
+                    iblockstate = BlockCoral.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSpongeReef.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 9) {
+                if (i <= 6) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 6 && i <= 13) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 13 && i <= 58) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 58 && i <= 68) {
+                    iblockstate = BlockCoralBleached.block.getDefaultState();
+                } else if (i > 68 && i <= 73) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 73 && i <= 83) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 83 && i <= 88) {
+                    iblockstate = BlockSandWavy.block.getDefaultState(); //replace with Rudist Reef
+                } else if (i > 88 && i <= 95) {
+                    iblockstate = BlockCoral.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSpongeReef.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 11) {
+                if (i <= 5) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 5 && i <= 30) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 30 && i <= 55) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 55 && i <= 80) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 80 && i <= 95) {
+                    iblockstate = BlockCoralBleached.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 14) {
+                if (i <= 5) {
+                    iblockstate = BlockLavaRock.block.getDefaultState();
+                } else if (i > 5 && i <= 10) {
+                    iblockstate = BlockLavaCobble.block.getDefaultState();
+                } else if (i > 10 && i <= 20) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 20 && i <= 60) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 17) {
+                if (i <= 20) {
+                    iblockstate = BlockLavaRock.block.getDefaultState();
+                } else if (i > 20 && i <= 35) {
+                    iblockstate = BlockLavaCobble.block.getDefaultState();
+                } else if (i > 35 && i <= 40) {
+                    iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+                } else if (i > 40 && i <= 85) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 85 && i <= 95) {
+                    iblockstate = BlockToxicMud.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.OBSIDIAN.getDefaultState();
+                }
+            }
+            else {
+                if (i <= 35) {
+                    iblockstate = BlockLavaRock.block.getDefaultState();
+                } else if (i > 35 && i <= 60) {
+                    iblockstate = BlockLavaCobble.block.getDefaultState();
+                } else if (i > 60 && i <= 65) {
+                    iblockstate = BlockLavaCobbleMolten.block.getDefaultState();
+                } else if (i > 65 && i <= 67) {
+                    iblockstate = Blocks.MAGMA.getDefaultState();
+                } else if (i > 67 && i <= 92) {
+                    iblockstate = BlockToxicMud.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.OBSIDIAN.getDefaultState();
+                }
+            }
+        }
+
 
         return iblockstate;
     }
