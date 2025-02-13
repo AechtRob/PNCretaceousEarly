@@ -44,6 +44,7 @@ public class GenLayerRevCretaceousEarly {
         biomes = new GenLayerAsiaInlandReplaceBog2(879L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim(9151L, biomes);
         biomes = new GenLayerOceanCrags(29L, biomes);
+        biomes = new GenLayerDeepAtlantic(888L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRift(99L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderBanks(98L, biomes);
         biomes = new GenLayerSmooth(700L, biomes);

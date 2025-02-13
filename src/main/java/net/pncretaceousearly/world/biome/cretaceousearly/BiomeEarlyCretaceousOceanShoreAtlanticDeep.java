@@ -16,10 +16,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import java.util.Random;
 
 @ElementsLepidodendronMod.ModElement.Tag
-public class BiomeEarlyCretaceousOceanShoreAtlantic extends ElementsLepidodendronMod.ModElement {
-	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_atlantic")
+public class BiomeEarlyCretaceousOceanShoreAtlanticDeep extends ElementsLepidodendronMod.ModElement {
+	@GameRegistry.ObjectHolder("lepidodendron:cretaceous_early_ocean_shore_atlantic_deep")
 	public static final BiomeGenCustom biome = null;
-	public BiomeEarlyCretaceousOceanShoreAtlantic(ElementsLepidodendronMod instance) {
+	public BiomeEarlyCretaceousOceanShoreAtlanticDeep(ElementsLepidodendronMod instance) {
 		super(instance, 1591);
 	}
 
@@ -36,8 +36,8 @@ public class BiomeEarlyCretaceousOceanShoreAtlantic extends ElementsLepidodendro
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Shallow Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
-			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_atlantic");
+			super(new BiomeProperties("E. Cretaceous Deep Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-2.50F).setHeightVariation(0.5F));
+			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_atlantic_deep");
 
 			topBlock = Blocks.SAND.getDefaultState();
 			fillerBlock = Blocks.SAND.getDefaultState();
