@@ -87,7 +87,7 @@ public class BiomeEarlyCretaceousOceanCrags extends ElementsLepidodendronMod.Mod
 				{
 					//int i = rand.nextInt(32);
 
-					for (int j = 0; j < 24; ++j)
+					for (int j = 0; j < 14; ++j)
 					{
 						int k = rand.nextInt(16) + 8;
 						int l = rand.nextInt(16) + 8;
