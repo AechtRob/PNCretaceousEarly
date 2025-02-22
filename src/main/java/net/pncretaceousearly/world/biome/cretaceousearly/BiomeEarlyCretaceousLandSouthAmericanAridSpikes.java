@@ -3,8 +3,11 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
+import net.lepidodendron.entity.EntityPrehistoricFloraTapejara;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.Functions;
+import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
 import net.minecraft.block.BlockBush;
@@ -71,6 +74,9 @@ public class BiomeEarlyCretaceousLandSouthAmericanAridSpikes extends ElementsLep
 		protected static final WorldGenCycadeoidea CYCADEOIDEA_GENERATOR = new WorldGenCycadeoidea();
 		protected static final WorldGenPterophyllum PTEROPHYLLUM_GENERATOR = new WorldGenPterophyllum();
 
+		protected static final WorldGenGuano GUANO_GENERATOR = new WorldGenGuano();
+		protected static final WorldGenNestExtra NEST_GENERATOR = new WorldGenNestExtra();
+
 		protected static final WorldGenPrehistoricGroundCoverSandy GROUNDCOVER_GENERATOR = new WorldGenPrehistoricGroundCoverSandy();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
@@ -96,7 +102,54 @@ public class BiomeEarlyCretaceousLandSouthAmericanAridSpikes extends ElementsLep
 //					int k = rand.nextInt(16) + 8;
 //					ROCK_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 //				}
-//
+
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					//int i = rand.nextInt(32);
+
+					for (int j = 0; j < 24; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						GUANO_GENERATOR.generate(worldIn, rand, blockpos, 94);
+					}
+				}
+			}
+
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					int i = rand.nextInt(36) + 24;
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+						NEST_GENERATOR.generate(worldIn, rand, blockpos, 94, new EntityPrehistoricFloraTapejara(worldIn));
+					}
+
+//					i = rand.nextInt(36) + 24;
+//					for (int j = 0; j < i; ++j)
+//					{
+//						int k = rand.nextInt(16) + 8;
+//						int l = rand.nextInt(16) + 8;
+//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+//						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+//						NEST_GENERATOR.generate(worldIn, rand, blockpos, 94, new EntityPrehistoricFloraThalassodromeus(worldIn));
+//					}
+
+//					i = rand.nextInt(36) + 24;
+//					for (int j = 0; j < i; ++j)
+//					{
+//						int k = rand.nextInt(16) + 8;
+//						int l = rand.nextInt(16) + 8;
+//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+//						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+//						NEST_GENERATOR.generate(worldIn, rand, blockpos, 94, new EntityPrehistoricFloraKariridraco(worldIn));
+//					}
+				}
+			}
+
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 64; ++i)
 				{
