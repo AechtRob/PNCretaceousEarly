@@ -49,10 +49,10 @@ public class GenLayerDeepOceanTransition extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                            isShallowSea(l1)
-                            || isShallowSea(k2)
-                            || isShallowSea(j3)
-                            || isShallowSea(i4)
+                            isNotDeepSea(l1)
+                            || isNotDeepSea(k2)
+                            || isNotDeepSea(j3)
+                            || isNotDeepSea(i4)
                         )
                     );
                     if (flag)
@@ -72,11 +72,8 @@ public class GenLayerDeepOceanTransition extends GenLayer
         return aint1;
     }
 
-    public static boolean isShallowSea(int i) {
-        return i == OCEAN_SHORE_TETHYS_ID
-                || i == OCEAN_SHORE_SOUTHERN_ID
-                || i == OCEAN_SHORE_ATLANTIC_ID
-                || i == OCEAN_SHORE_PACIFIC_ID;
+    public static boolean isNotDeepSea(int i) {
+        return i != OCEAN_ID && i != OCEAN_TRANSITION_ID;
     }
     
 }
