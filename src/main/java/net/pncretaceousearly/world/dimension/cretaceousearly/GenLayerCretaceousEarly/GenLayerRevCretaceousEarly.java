@@ -89,6 +89,7 @@ public class GenLayerRevCretaceousEarly {
 
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim2(2331L, biomes);
+        biomes = new GenLayerCretaceousDiversifyOceanCrags(643L, biomes);
         biomes = new GenLayerSmooth(706L, biomes);
 
         biomes = new GenLayerSandyDesertPeaks(23L, biomes);

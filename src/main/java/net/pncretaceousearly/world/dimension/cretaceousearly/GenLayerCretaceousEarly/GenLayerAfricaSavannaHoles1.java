@@ -30,6 +30,7 @@ public class GenLayerAfricaSavannaHoles1 extends GenLayer
             AFRO_SAVANNA_ID,
             AFRO_SAVANNA_ID,
             AFRO_SAVANNA_ID,
+            AFRO_HOLE_ID,
             AFRO_HOLE_ID
     };
 

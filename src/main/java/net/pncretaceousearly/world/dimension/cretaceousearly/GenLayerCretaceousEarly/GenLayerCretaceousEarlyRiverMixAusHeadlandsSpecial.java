@@ -24,6 +24,8 @@ public class GenLayerCretaceousEarlyRiverMixAusHeadlandsSpecial extends GenLayer
 
     public Biome CRETACEOUS_AUS_HEADLANDS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs"));
     public int CRETACEOUS_AUS_HEADLANDS_ID = Biome.getIdForBiome(CRETACEOUS_AUS_HEADLANDS);
+    public Biome CRETACEOUS_AUS_HEADLANDS_NOROOST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal_cliffs_noroost"));
+    public int CRETACEOUS_AUS_HEADLANDS_NOROOST_ID = Biome.getIdForBiome(CRETACEOUS_AUS_HEADLANDS_NOROOST);
 
 
     public GenLayerCretaceousEarlyRiverMixAusHeadlandsSpecial(long p_i2129_1_, GenLayer p_i2129_3_, GenLayer p_i2129_4_)
@@ -56,7 +58,12 @@ public class GenLayerCretaceousEarlyRiverMixAusHeadlandsSpecial extends GenLayer
                         || aint[i] == CRETACEOUS_AUS_BEACH_MUDDY_ID
                         || aint[i] == CRETACEOUS_AUS_BEACH_LUSH_ID
                         || aint[i] == CRETACEOUS_AUS_COASTAL_DUNES_ID) {
-                    aint2[i] = CRETACEOUS_AUS_HEADLANDS_ID;
+                    if (nextInt(5) == 0) {
+                        aint2[i] = CRETACEOUS_AUS_HEADLANDS_ID;
+                    }
+                    else {
+                        aint2[i] = CRETACEOUS_AUS_HEADLANDS_NOROOST_ID;
+                    }
                 }
                 else {
                     aint2[i] = aint[i];

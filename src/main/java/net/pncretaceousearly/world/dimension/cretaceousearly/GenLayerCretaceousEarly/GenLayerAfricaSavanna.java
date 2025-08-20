@@ -23,6 +23,7 @@ public class GenLayerAfricaSavanna extends GenLayer
 
     private final int AfroBiomes[] = new int[] {
             AFRO_MOUNTAINS_ID,
+            AFRO_SAVANNA_ID,
             AFRO_SAVANNA_ID
     };
 
@@ -46,10 +47,10 @@ public class GenLayerAfricaSavanna extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                        (l1 == AFRO_MOUNTAINS_ID)
-                        && (k2 == AFRO_MOUNTAINS_ID)
-                        && (j3 == AFRO_MOUNTAINS_ID)
-                        && (i4 == AFRO_MOUNTAINS_ID)
+                        (l1 == AFRO_MOUNTAINS_ID || l1 == AFRO_SAVANNA_ID)
+                        && (k2 == AFRO_MOUNTAINS_ID || k2 == AFRO_SAVANNA_ID)
+                        && (j3 == AFRO_MOUNTAINS_ID || j3 == AFRO_SAVANNA_ID)
+                        && (i4 == AFRO_MOUNTAINS_ID || i4 == AFRO_SAVANNA_ID)
                         )
                     );
                     if (flag)
