@@ -26,11 +26,12 @@ public class GenLayerRevCretaceousEarly {
         biomes = new GenLayerCretaceousDiversifyAfricaSAmerica2(562L, biomes);
         biomes = new GenLayerAsiaInlandReplaceBog(579L, biomes);
         //biomes = new GenLayerDeepOcean(2665L, biomes);
+        biomes = new GenLayerAfricaSavanna(6756L, biomes); //MOVED HERE
         biomes = new GenLayerZoom(1004L, biomes);
         biomes = new GenLayerSmooth(301L, biomes);
 
         biomes = new GenLayerAddInlandSeas2(3046L, biomes);
-        biomes = new GenLayerAfricaSavanna(6756L, biomes);
+        //biomes = new GenLayerAfricaSavanna(6756L, biomes); //MOVED FROM HERE
         biomes = new GenLayerAsiaInlandReplaceScrub(679L, biomes);
         biomes = new GenLayerCretaceousDiversifyEuroAmerica(2641L, biomes);
         biomes = new GenLayerEuropeCopse(223L, biomes);

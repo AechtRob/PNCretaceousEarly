@@ -3691,7 +3691,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 } else if (i > 80 && i <= 92) {
                     iblockstate = BlockCoral.block.getDefaultState();
                 } else {
-                    iblockstate = BlockSpongeReef.block.getDefaultState();
+                    if (rand.nextInt(10) == 0) {
+                        iblockstate = BlockSpongeReef.block.getDefaultState();
+                    }
+                    else {
+                        iblockstate = Blocks.SPONGE.getStateFromMeta(1);
+                    }
                 }
             }
             else if (posY >= SEALEVEL - 9) {
@@ -3712,7 +3717,12 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 } else if (i > 88 && i <= 95) {
                     iblockstate = BlockCoral.block.getDefaultState();
                 } else {
-                    iblockstate = BlockSpongeReef.block.getDefaultState();
+                    if (rand.nextInt(10) == 0) {
+                        iblockstate = BlockSpongeReef.block.getDefaultState();
+                    }
+                    else {
+                        iblockstate = Blocks.SPONGE.getStateFromMeta(1);
+                    }
                 }
             }
             else if (posY >= SEALEVEL - 11) {
