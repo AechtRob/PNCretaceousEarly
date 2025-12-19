@@ -5,30 +5,22 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
-public class GenLayerOceanCrags extends GenLayer
+public class GenLayerAustroAntarcticContinent extends GenLayer
 {
 
-    public static Biome OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean"));
-    public static int OCEAN_ID =  Biome.getIdForBiome(OCEAN);
+    public Biome CRETACEOUS_DEEP_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
+    public int CRETACEOUS_DEEP_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_DEEP_OCEAN);
 
-    public static Biome CRAGS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_crags"));
-    public static int CRAGS_ID =  Biome.getIdForBiome(CRAGS);
+    public Biome CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
+    public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
 
 
-    public GenLayerOceanCrags(long seed, GenLayer genLayer)
+
+    public GenLayerAustroAntarcticContinent(long seed, GenLayer genLayer)
     {
         super(seed);
         this.parent = genLayer;
     }
-
-    private final int SeaBiomes[] = new int[] {
-            OCEAN_ID,
-            OCEAN_ID,
-            OCEAN_ID,
-            OCEAN_ID,
-            CRAGS_ID
-    };
-
 
     public int[] getInts(int areaX, int areaY, int areaWidth, int areaHeight)
     {
@@ -42,7 +34,7 @@ public class GenLayerOceanCrags extends GenLayer
                 this.initChunkSeed(j + areaX, i + areaY);
                 int k = aint[j + 1 + (i + 1) * (areaWidth + 2)];
 
-                if (isSea(k))
+                if (k == CRETACEOUS_DEEP_OCEAN_ID)
                 {
                     int l1 = aint[j + 1 + (i + 1 - 1) * (areaWidth + 2)];
                     int k2 = aint[j + 1 + 1 + (i + 1) * (areaWidth + 2)];
@@ -50,15 +42,15 @@ public class GenLayerOceanCrags extends GenLayer
                     int i4 = aint[j + 1 + (i + 1 + 1) * (areaWidth + 2)];
                     boolean flag = (
                         (
-                            isSea(l1)
-                            && isSea(k2)
-                            && isSea(j3)
-                            && isSea(i4)
+                        (l1 == CRETACEOUS_DEEP_OCEAN_ID)
+                        && (k2 == CRETACEOUS_DEEP_OCEAN_ID)
+                        && (j3 == CRETACEOUS_DEEP_OCEAN_ID)
+                        && (i4 == CRETACEOUS_DEEP_OCEAN_ID)
                         )
                     );
                     if (flag)
                     {
-                        aint1[j + i * areaWidth] = SeaBiomes[nextInt(SeaBiomes.length)];
+                        aint1[j + i * areaWidth] = CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID;
                     }
                     else {
                         aint1[j + i * areaWidth] = k;
@@ -71,10 +63,6 @@ public class GenLayerOceanCrags extends GenLayer
         }
 
         return aint1;
-    }
-
-    public static boolean isSea(int i) {
-        return i == OCEAN_ID;
     }
     
 }

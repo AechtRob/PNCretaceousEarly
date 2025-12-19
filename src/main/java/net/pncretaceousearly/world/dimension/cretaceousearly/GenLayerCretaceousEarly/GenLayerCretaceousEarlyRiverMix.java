@@ -98,6 +98,10 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
     public int CRETACEOUS_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN);
     public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
     public int CRETACEOUS_OCEAN_SHORE_TETHYS_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS);
+    public Biome CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_coral"));
+    public int CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL);
+    public Biome CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_rudist"));
+    public int CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST);
     public Biome CRETACEOUS_OCEAN_SHORE_ATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_atlantic"));
     public int CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_ATLANTIC);
     public Biome CRETACEOUS_OCEAN_SHORE_SOUTHERN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
@@ -285,6 +289,8 @@ public class GenLayerCretaceousEarlyRiverMix extends GenLayer
                 //Exclude rivers here:
                 if (aint[i] == CRETACEOUS_OCEAN_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_ID
+                        || aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL_ID
+                        || aint[i] == CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID
                         || aint[i] == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID

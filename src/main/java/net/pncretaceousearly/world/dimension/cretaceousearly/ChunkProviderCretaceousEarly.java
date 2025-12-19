@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -563,15 +564,15 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
             else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesA.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome)
-                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
+                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 10) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
             else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome)
-                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
+                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 10) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
             else if ((biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesB.biome || biome == BiomeEarlyCretaceousLandAsiaYixianLakesBurned.biome)
-                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 6) {
+                    && iblockstate5.getMaterial() == Material.AIR && j1 <= YIXIAN_LAKES_SEA_LEVEL && j1 >= YIXIAN_LAKES_SEA_LEVEL - 10) {
                 chunkPrimerIn.setBlockState(i1, j1, l, FLUID);
             }
             else {
@@ -2491,6 +2492,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaDrooping.biome).toString())
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaDrooping.biome).toString())
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAsiaMarsh.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekBeachAsiaMarsh.biome).toString())
         ) {
             iblockstate = BlockCarboniferousMud.block.getDefaultState();
             if (rand.nextInt(8) == 0) {
@@ -3781,6 +3783,321 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     iblockstate = BlockToxicMud.block.getDefaultState();
                 } else {
                     iblockstate = Blocks.OBSIDIAN.getDefaultState();
+                }
+            }
+        }
+
+
+        //Coral Reef:
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreTethysCoral.biome).toString())
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 3) {
+                if (i <= 35) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 35 && i <= 90) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 5) {
+                if (i <= 32) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 32 && i <= 85) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 90) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoarseSandyDirtWhite.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 7) {
+                if (i <= 30) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 30 && i <= 80) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 80 && i <= 85) {
+                    iblockstate = BlockCoarseSandyDirtWhite.block.getDefaultState();
+                } else if (i > 85 && i <= 90) {
+                    iblockstate = BlockSandWhite.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandWhiteWavy.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 8) {
+                if (i <= 20) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 20 && i <= 50) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 50 && i <= 70) {
+                    iblockstate = BlockSandWhite.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandWhiteWavy.block.getDefaultState();
+                }
+            }
+            else {
+                if (i <= 7) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 7 && i <= 15) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 15 && i <= 50) {
+                    iblockstate = BlockSandWhite.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandWhiteWavy.block.getDefaultState();
+                }
+            }
+            if (rand.nextInt(48) == 0) {
+                iblockstate = BlockSpongeReef.block.getDefaultState().withProperty(BlockSpongeReef.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
+            }
+        }
+
+        //Rudist Reef:
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreTethysRudist.biome).toString())
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 2) {
+                if (i <= 35) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 35 && i <= 90) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 4) {
+                if (i <= 20) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 20 && i <= 50) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 50 && i <= 60) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else if (i > 60 && i <= 70) {
+                    iblockstate = BlockCoarseSandyDirtWhite.block.getDefaultState();
+                } else if (i > 70 && i <= 80) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 6) {
+                if (i <= 3) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 3 && i <= 10) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 10 && i <= 25) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 25 && i <= 35) {
+                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                } else if (i > 35 && i <= 55) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 55 && i <= 90) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 9) {
+                if (i <= 5) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 5 && i <= 15) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 15 && i <= 30) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 30 && i <= 45) {
+                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                } else if (i > 45 && i <= 55) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 55 && i <= 70) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                } else {
+                    iblockstate =  BlockSandBlackWavy.block.getDefaultState();
+                }
+            }
+            else if (posY >= SEALEVEL - 12) {
+                if (i <= 7) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 7 && i <= 30) {
+                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                } else if (i > 30 && i <= 35) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 35 && i <= 60) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                } else {
+                    iblockstate =  BlockSandBlackWavy.block.getDefaultState();
+                }
+            }
+            else {
+                if (i <= 1) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 1 && i <= 5) {
+                    iblockstate = BlockCoarseSandyDirtBlack.block.getDefaultState();
+                } else if (i > 5 && i <= 40) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                } else {
+                    iblockstate =  BlockSandBlackWavy.block.getDefaultState();
+                }
+            }
+            if (rand.nextInt(28) == 0) {
+                iblockstate = BlockShelly.block.getDefaultState().withProperty(BlockShelly.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
+            }
+        }
+
+        //Tethys Ocean:
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShoreTethys.biome).toString())
+
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAsia.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAsiaCraggy.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekBeachAsiaCraggy.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekAsiaPhrygana.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAsiaPhrygana.biome).toString())
+
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 9) {
+                if (i <= 30) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 30 && i <= 85) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 86) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 86 && i <= 89) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 89 && i <= 94) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else if (i > 94 && i <= 95) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else if (i > 95 && i <= 96) {
+                    iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+                } else if (i > 96 && i <= 98) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 98 && i <= 99) {
+                    iblockstate = BlockCoarseSandyDirtWhite.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandWhiteWavy.block.getDefaultState();
+                }
+            } else {
+                if (i <= 15) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 15 && i <= 50) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 50 && i <= 62) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 62 && i <= 69) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 69 && i <= 84) {
+                    iblockstate = BlockCoarseSandyDirt.block.getDefaultState();
+                } else if (i > 84 && i <= 93) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else {
+                    iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+                }
+            }
+        }
+
+        //Pacific Ocean:
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousOceanShorePacific.biome).toString())
+        ) {
+            int i = rand.nextInt(100) + 1;
+            if (posY >= SEALEVEL - 2) {
+                if (i <= 30) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 30 && i <= 85) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 93) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 93 && i <= 95) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                }
+            } else if (posY >= SEALEVEL - 3) {
+                if (i <= 10) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 10 && i <= 40) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 40 && i <= 55) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 55 && i <= 60) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 60 && i <= 70) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 70 && i <= 80) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                }
+            } else if (posY >= SEALEVEL - 4) {
+                if (i <= 1) {
+                    iblockstate = Blocks.SAND.getDefaultState();
+                } else if (i > 1 && i <= 5) {
+                    iblockstate = BlockSandWavy.block.getDefaultState();
+                } else if (i > 5 && i <= 20) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 20 && i <= 25) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 25 && i <= 35) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 35 && i <= 50) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 50 && i <= 85) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 85 && i <= 89) {
+                    iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                } else if (i > 89 && i <= 96) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else {
+                    iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+                }
+            } else if (posY >= SEALEVEL - 6) {
+                if (i <= 5) {
+                    iblockstate = Blocks.CLAY.getDefaultState();
+                } else if (i > 5 && i <= 10) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 10 && i <= 20) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 20 && i <= 30) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 30 && i <= 60) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 60 && i <= 69) {
+                    iblockstate = BlockCoarseSiltyDirt.block.getDefaultState();
+                } else if (i > 69 && i <= 77) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else if (i > 77 && i <= 80) {
+                    iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+                } else {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                }
+            } else if (posY >= SEALEVEL - 9) {
+                if (i <= 7) {
+                    iblockstate = Blocks.GRAVEL.getDefaultState();
+                } else if (i > 7 && i <= 15) {
+                    iblockstate = BlockGravelWavy.block.getDefaultState();
+                } else if (i > 15 && i <= 22) {
+                    iblockstate = BlockSandGrey.block.getDefaultState();
+                } else if (i > 22 && i <= 42) {
+                    iblockstate = BlockSandGreyWavy.block.getDefaultState();
+                } else if (i > 42 && i <= 49) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else if (i > 49 && i <= 52) {
+                    iblockstate = BlockPebblestoneMossy.block.getDefaultState();
+                } else if (i > 52 && i <= 77) {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
+                } else if (i > 77 && i <= 85) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                } else {
+                    iblockstate = BlockSandBlackWavy.block.getDefaultState();
+                }
+            } else {
+                if (i <= 25) {
+                    iblockstate = BlockSandBlack.block.getDefaultState();
+                } else if (i > 25 && i <= 70) {
+                    iblockstate = BlockSandBlackWavy.block.getDefaultState();
+                } else if (i > 70 && i <= 85) {
+                    iblockstate = BlockPebblestone.block.getDefaultState();
+                } else {
+                    iblockstate = BlockClayBrown.block.getDefaultState();
                 }
             }
         }

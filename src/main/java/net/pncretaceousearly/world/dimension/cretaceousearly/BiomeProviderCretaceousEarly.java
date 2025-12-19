@@ -16,6 +16,7 @@ import net.minecraft.world.gen.layer.IntCache;
 import net.minecraft.world.storage.WorldInfo;
 import net.pncretaceousearly.world.biome.cretaceousearly.BiomeEarlyCretaceousOcean;
 import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerRevCretaceousEarly;
+import net.pncretaceousearly.world.dimension.cretaceousearly.GenLayerCretaceousEarly.GenLayerRevCretaceousEarly2;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -116,7 +117,7 @@ public class BiomeProviderCretaceousEarly extends BiomeProvider {
 
     public BiomeProviderCretaceousEarly(long seed, WorldType worldType, String options) {
         this();
-        GenLayer[] agenlayer = GenLayerRevCretaceousEarly.initializeAllBiomeGenerators(seed, worldType, options);
+        GenLayer[] agenlayer = GenLayerRevCretaceousEarly2.initializeAllBiomeGenerators(seed, worldType, options);
         agenlayer = getModdedBiomeGenerators(worldType, seed, agenlayer);
         this.genBiomes = agenlayer[0];
         this.biomeIndexLayer = agenlayer[1];

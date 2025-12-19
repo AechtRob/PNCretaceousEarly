@@ -25,6 +25,10 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
 
     public Biome CRETACEOUS_OCEAN_SHORE_TETHYS = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys"));
     public int CRETACEOUS_OCEAN_SHORE_TETHYS_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS);
+    public Biome CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_coral"));
+    public int CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL);
+    public Biome CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_tethys_rudist"));
+    public int CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST);
     public Biome CRETACEOUS_OCEAN_SHORE_ATLANTIC = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_atlantic"));
     public int CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID =  Biome.getIdForBiome(CRETACEOUS_OCEAN_SHORE_ATLANTIC);
     public Biome CRETACEOUS_OCEAN_SHORE_SOUTHERN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
@@ -238,7 +242,11 @@ public class GenLayerCretaceousEarlyBeach extends GenLayer
     private boolean isOcean(int biomeID) {
         return biomeID == CRETACEOUS_OCEAN_ID || biomeID == CRETACEOUS_INLAND_SEA_SOUTH_ID
                 || biomeID == CRETACEOUS_OCEAN_SHORE_PACIFIC_ID || biomeID == CRETACEOUS_OCEAN_SHORE_ATLANTIC_ID
-                || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_ID || biomeID == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID;
+                || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_ID
+                || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_CORAL_ID
+                || biomeID == CRETACEOUS_OCEAN_SHORE_TETHYS_RUDIST_ID
+
+                || biomeID == CRETACEOUS_OCEAN_SHORE_SOUTHERN_ID;
     }
 
     private boolean isInlandOcean(int biomeID) {
