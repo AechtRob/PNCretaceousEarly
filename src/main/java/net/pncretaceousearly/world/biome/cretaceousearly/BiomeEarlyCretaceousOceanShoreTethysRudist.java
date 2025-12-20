@@ -101,7 +101,7 @@ public class BiomeEarlyCretaceousOceanShoreTethysRudist extends ElementsLepidode
 			}
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK)) {
-				for (int i = 0; i <= 12; i++) {
+				for (int i = 0; i <= 11; i++) {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;
 					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
