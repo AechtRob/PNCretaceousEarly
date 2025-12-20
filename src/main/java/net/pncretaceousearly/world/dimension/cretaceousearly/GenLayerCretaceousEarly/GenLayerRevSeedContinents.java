@@ -16,15 +16,12 @@ public class GenLayerRevSeedContinents extends GenLayer {
     public Biome CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_austro_antarctic_coastal"));
     public int CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID =  Biome.getIdForBiome(CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA);
 
-    public Biome CRETACEOUS_DEEP_OCEAN = Biome.REGISTRY.getObject(new ResourceLocation("lepidodendron:cretaceous_early_ocean_shore_southern"));
-    public int CRETACEOUS_DEEP_OCEAN_ID =  Biome.getIdForBiome(CRETACEOUS_DEEP_OCEAN);
 
     private final int[] SeedBiomes = new int[] {
             CRETACEOUS_EARLY_ASIA_ID,
             CRETACEOUS_EARLY_EUROPE_ID,
             CRETACEOUS_EARLY_SAMERICA_ID,
-            //CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID
-            CRETACEOUS_DEEP_OCEAN_ID
+            CRETACEOUS_EARLY_AUSTRALIA_ANTARCTICA_COASTAL_ID
     };
 
     public GenLayerRevSeedContinents(long seed) {

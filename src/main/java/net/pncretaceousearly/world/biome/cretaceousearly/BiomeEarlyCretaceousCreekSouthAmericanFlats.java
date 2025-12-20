@@ -492,6 +492,24 @@ public class BiomeEarlyCretaceousCreekSouthAmericanFlats extends ElementsLepidod
 					STATIC_GENERATOR.generate(BlockStalkedAlgae.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 1, 15, 0, 255);
 				}
 
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int ii = 0; ii < 20; ++ii)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getSeaLevel() + 25);
+					STATIC_SIDEWAYS_GENERATOR.generate(BlockUnderwaterDebris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 1, 255, 0, 255);
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int ii = 0; ii < 20; ++ii)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getSeaLevel() + 25);
+					STATIC_SIDEWAYS_GENERATOR.generate(BlockUnderwaterDebris.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 1, 255, 0, 255);
+				}
+
 			super.decorate(worldIn, rand, pos);
 		}
 

@@ -369,7 +369,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				if (rand.nextInt(3) == 0)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -378,7 +378,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 2; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -396,7 +396,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 3; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -405,7 +405,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 12; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -414,7 +414,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -423,7 +423,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 12; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -432,7 +432,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -441,7 +441,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -450,7 +450,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 26; ++ii)
+				for (int ii = 0; ii < 10; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -459,7 +459,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 26; ++ii)
+				for (int ii = 0; ii < 10; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -468,12 +468,24 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 16; ++i)
+				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
 					STATIC_GENERATOR.generate(BlockBivalveGreen.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 1, 255, 0, 255);
+				}
+
+
+
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int ii = 0; ii < 64; ++ii)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = ChunkGenSpawner.getTopSolidBlock(pos.add(j, 0, k), worldIn).getY() + 1;
+					STATIC_GENERATOR.generate(BlockWaterBottomGunk.block.getDefaultState(), worldIn, rand, pos.add(j, l, k), 1, 15, 0, 255);
 				}
 
 

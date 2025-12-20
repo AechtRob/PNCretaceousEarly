@@ -14,7 +14,7 @@ public class GenLayerRevCretaceousEarly2 {
         GenLayer biomes = new GenLayerRevSeedContinents(1L);
         biomes = new GenLayerFuzzyZoom(2000L, biomes);
 
-        biomes = new GenLayerAustroAntarcticContinent(654L, biomes);
+        //biomes = new GenLayerAustroAntarcticContinent(654L, biomes);
 
         biomes = new GenLayerFuzzyZoom(2001L, biomes);
 

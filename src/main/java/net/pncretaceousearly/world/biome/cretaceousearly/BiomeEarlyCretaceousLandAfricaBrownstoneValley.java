@@ -175,7 +175,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				if (rand.nextInt(3) == 0)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -184,7 +184,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 2; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -202,7 +202,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 3; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -211,7 +211,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 12; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -220,7 +220,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 1; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -229,7 +229,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 12; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -238,7 +238,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -247,7 +247,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 22; ++ii)
+				for (int ii = 0; ii < 2; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -256,7 +256,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 26; ++ii)
+				for (int ii = 0; ii < 10; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -265,7 +265,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 26; ++ii)
+				for (int ii = 0; ii < 10; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
@@ -274,7 +274,7 @@ public class BiomeEarlyCretaceousLandAfricaBrownstoneValley extends ElementsLepi
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 16; ++i)
+				for (int i = 0; i < 6; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
