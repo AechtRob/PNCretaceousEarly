@@ -480,7 +480,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesBurned extends ElementsLepid
 
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int ii = 0; ii < 64; ++ii)
+				for (int ii = 0; ii < 9; ++ii)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
