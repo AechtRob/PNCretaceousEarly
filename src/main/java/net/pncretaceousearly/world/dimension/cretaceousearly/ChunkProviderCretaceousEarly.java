@@ -594,7 +594,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         else if (j1 <= i - 7 - k) {
                             iblockstate = biome.topBlock;
                             //iblockstate1 = biome.fillerBlock;
-                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                         }
                         if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR)) {
                             if (biome.getTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F) {
@@ -2244,7 +2244,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         j = k;
                         if ((j1 == i - 1 && i != SEALEVEL)) {
-                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                         else if (j1 >= i - 1) {
@@ -2254,7 +2254,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             iblockstate = AIR;
                             iblockstate1 = STONE;
 
-                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                     } else if (j > 0) {
@@ -2380,7 +2380,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
     }
 
-    public static IBlockState getIBlockstateForWater(ChunkPrimer chunkPrimerIn, String biomeResID, int posX, int posY, int posZ, IBlockState iblockstate, Random rand) {
+    public static IBlockState getIBlockstateForWater(String biomeResID, int posY, IBlockState iblockstate, Random rand) {
 
         Biome biome = Biome.REGISTRY.getObject(new ResourceLocation(biomeResID));
 
