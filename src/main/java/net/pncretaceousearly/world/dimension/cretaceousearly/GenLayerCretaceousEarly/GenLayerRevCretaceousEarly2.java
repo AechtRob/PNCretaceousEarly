@@ -105,6 +105,7 @@ public class GenLayerRevCretaceousEarly2 {
         biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes1(642L, biomes);
         biomes = new GenLayerCretaceousEarlyAusColdGravelSeperator(218L, biomes);
+        biomes = new GenLayerFixAusLakesEdge(102L, biomes);
         biomes = new GenLayerSmooth(719L, biomes); //ADDED THIS
         biomes = new GenLayerZoom(6006L, biomes);
 

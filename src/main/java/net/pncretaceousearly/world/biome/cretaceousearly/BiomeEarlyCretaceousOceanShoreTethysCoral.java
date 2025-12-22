@@ -75,6 +75,7 @@ public class BiomeEarlyCretaceousOceanShoreTethysCoral extends ElementsLepidoden
 		protected static final WorldGenCretaceousReefCoral CRET_REEF_GENERATOR = new WorldGenCretaceousReefCoral();
 		protected static final WorldGenRockPilesLavaMossy ROCK_PILES_CRET_GENERATOR = new WorldGenRockPilesLavaMossy();
 
+		protected static final WorldGenSpongeReefFloor SPONGE_GROUND_GENERATOR = new WorldGenSpongeReefFloor();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
@@ -85,6 +86,14 @@ public class BiomeEarlyCretaceousOceanShoreTethysCoral extends ElementsLepidoden
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 6; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					SPONGE_GROUND_GENERATOR.generate(worldIn, rand, new BlockPos(pos.getX() + j, 0, pos.getZ() + k));
+				}
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
@@ -98,7 +107,7 @@ public class BiomeEarlyCretaceousOceanShoreTethysCoral extends ElementsLepidoden
 			}
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ROCK)) {
-				for (int i = 0; i <= 9; i++) {
+				for (int i = 0; i <= 5; i++) {
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(16) + 8;
 					BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));

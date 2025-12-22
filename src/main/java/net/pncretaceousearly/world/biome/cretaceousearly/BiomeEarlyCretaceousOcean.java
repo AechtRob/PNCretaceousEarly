@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Deep Ocean").setBaseHeight(-1.995F).setHeightVariation(0.21F));
+			super(new BiomeProperties("E. Cretaceous Deep Ocean").setBaseHeight(-1.99F).setHeightVariation(0.11F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean");
 			topBlock = Blocks.GRAVEL.getDefaultState();
 			fillerBlock = Blocks.GRAVEL.getDefaultState();
@@ -67,11 +67,11 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 		protected static final WorldGenSingleStaticInWaterRotational STATIC_ROTATIONAL_GENERATOR = new WorldGenSingleStaticInWaterRotational();
 		protected static final WorldGenSingleStaticInWaterSideways STATIC_SIDEWAYS_GENERATOR = new WorldGenSingleStaticInWaterSideways();
 		protected static final WorldGenSingleStaticInWaterColumn STATIC_COLUMN_GENERATOR = new WorldGenSingleStaticInWaterColumn();
-		protected static final WorldGenSingleAnemoneSea ANEMONE_GENERATOR = new WorldGenSingleAnemoneSea();
+//		protected static final WorldGenSingleAnemoneSea ANEMONE_GENERATOR = new WorldGenSingleAnemoneSea();
 		protected static final WorldGenSingleSponge SPONGE_GENERATOR = new WorldGenSingleSponge();
 		protected static final WorldGenSingleSpongeSideways SPONGE_SIDEWAYS_GENERATOR = new WorldGenSingleSpongeSideways();
-		protected static final WorldGenSingleCoral CORAL_GENERATOR = new WorldGenSingleCoral();
-		protected static final WorldGenSingleCoralSideways CORAL_SIDEWAYS_GENERATOR = new WorldGenSingleCoralSideways();
+//		protected static final WorldGenSingleCoral CORAL_GENERATOR = new WorldGenSingleCoral();
+//		protected static final WorldGenSingleCoralSideways CORAL_SIDEWAYS_GENERATOR = new WorldGenSingleCoralSideways();
 
 		protected static final WorldGenRockPilesLavaMossy ROCK_PILES_CRET_GENERATOR = new WorldGenRockPilesLavaMossy();
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
@@ -148,21 +148,21 @@ public class BiomeEarlyCretaceousOcean extends ElementsLepidodendronMod.ModEleme
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				for (int i = 0; i < 3; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getSeaLevel() + 25);
-					SPONGE_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					SPONGE_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), 1, 255, 1, 0, BlockWhiteSponge.block);
 				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
-				for (int i = 0; i < 6; ++i)
+				for (int i = 0; i < 3; ++i)
 				{
 					int j = rand.nextInt(16) + 8;
 					int k = rand.nextInt(16) + 8;
 					int l = rand.nextInt(worldIn.getSeaLevel() + 25);
-					SPONGE_SIDEWAYS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k));
+					SPONGE_SIDEWAYS_GENERATOR.generate(worldIn, rand, pos.add(j, l, k), 1, 255, 1, 0, BlockWhiteSponge.block);
 				}
 
 //			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))

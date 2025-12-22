@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousOceanShoreAtlantic extends ElementsLepidodendro
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Shallow Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-0.50F).setHeightVariation(0.01F));
+			super(new BiomeProperties("E. Cretaceous Shallow Atlantic Ocean").setRainfall(0.5F).setBaseHeight(-1.00F).setHeightVariation(0.21F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_atlantic");
 
 			topBlock = Blocks.SAND.getDefaultState();
@@ -79,12 +79,41 @@ public class BiomeEarlyCretaceousOceanShoreAtlantic extends ElementsLepidodendro
 		protected static final WorldGenSingleCoralSideways CORAL_SIDEWAYS_GENERATOR = new WorldGenSingleCoralSideways();
 
 		protected static final WorldGenRockPilesLavaMossy ROCK_PILES_CRET_GENERATOR = new WorldGenRockPilesLavaMossy();
+		protected static final WorldGenMixedReefFloor CORAL_GROUND_GENERATOR = new WorldGenMixedReefFloor();
+		protected static final WorldGenSpongeReefFloor SPONGE_GROUND_GENERATOR = new WorldGenSpongeReefFloor();
+		protected static final WorldGenDeadReefFloor DEAD_GROUND_GENERATOR = new WorldGenDeadReefFloor();
 
 
 
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					CORAL_GROUND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					SPONGE_GROUND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 8; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					DEAD_GROUND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
+
+
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 2; ++i)

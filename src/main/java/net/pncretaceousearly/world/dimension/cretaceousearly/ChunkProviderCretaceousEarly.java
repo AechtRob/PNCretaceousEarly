@@ -594,7 +594,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                         else if (j1 <= i - 7 - k) {
                             iblockstate = biome.topBlock;
                             //iblockstate1 = biome.fillerBlock;
-                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
                         }
                         if (j1 < i && (iblockstate == null || iblockstate.getMaterial() == Material.AIR)) {
                             if (biome.getTemperature(blockpos$mutableblockpos.setPos(x, j1, z)) < 0.15F) {
@@ -2244,7 +2244,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
                         j = k;
                         if ((j1 == i - 1 && i != SEALEVEL)) {
-                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                         else if (j1 >= i - 1) {
@@ -2254,7 +2254,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                             iblockstate = AIR;
                             iblockstate1 = STONE;
 
-                            iblockstate1 = getIBlockstateForWater(biome.getRegistryName().toString(), j1, iblockstate1, rand);
+                            iblockstate1 = getIBlockstateForWater(chunkPrimerIn, biome.getRegistryName().toString(), i1, j1, l, iblockstate1, rand);
                             chunkPrimerIn.setBlockState(i1, j1, l, iblockstate1);
                         }
                     } else if (j > 0) {
@@ -2380,7 +2380,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
         }
     }
 
-    public static IBlockState getIBlockstateForWater(String biomeResID, int posY, IBlockState iblockstate, Random rand) {
+    public static IBlockState getIBlockstateForWater(ChunkPrimer chunkPrimerIn, String biomeResID, int posX, int posY, int posZ, IBlockState iblockstate, Random rand) {
 
         Biome biome = Biome.REGISTRY.getObject(new ResourceLocation(biomeResID));
 
@@ -3673,8 +3673,6 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     iblockstate = Blocks.SAND.getDefaultState();
                 } else if (i > 55 && i <= 90) {
                     iblockstate = BlockSandWavy.block.getDefaultState();
-                } else {
-                    iblockstate = BlockCoral.block.getDefaultState();
                 }
             }
             else if (posY >= SEALEVEL - 7) {
@@ -3689,16 +3687,11 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 } else if (i > 50 && i <= 70) {
                     iblockstate = BlockSandWavy.block.getDefaultState();
                 } else if (i > 70 && i <= 80) {
-                    iblockstate = BlockSandWavy.block.getDefaultState(); //replace with Rudist Reef
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 } else if (i > 80 && i <= 92) {
-                    iblockstate = BlockCoral.block.getDefaultState();
+                    iblockstate = Blocks.SPONGE.getStateFromMeta(1);
                 } else {
-                    if (rand.nextInt(10) == 0) {
-                        iblockstate = BlockSpongeReef.block.getDefaultState();
-                    }
-                    else {
-                        iblockstate = Blocks.SPONGE.getStateFromMeta(1);
-                    }
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 }
             }
             else if (posY >= SEALEVEL - 9) {
@@ -3709,22 +3702,17 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 } else if (i > 13 && i <= 58) {
                     iblockstate = Blocks.CLAY.getDefaultState();
                 } else if (i > 58 && i <= 68) {
-                    iblockstate = BlockCoralBleached.block.getDefaultState();
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 } else if (i > 68 && i <= 73) {
                     iblockstate = Blocks.SAND.getDefaultState();
                 } else if (i > 73 && i <= 83) {
                     iblockstate = BlockSandWavy.block.getDefaultState();
                 } else if (i > 83 && i <= 88) {
-                    iblockstate = BlockSandWavy.block.getDefaultState(); //replace with Rudist Reef
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 } else if (i > 88 && i <= 95) {
-                    iblockstate = BlockCoral.block.getDefaultState();
+                    iblockstate = Blocks.SPONGE.getStateFromMeta(1);
                 } else {
-                    if (rand.nextInt(10) == 0) {
-                        iblockstate = BlockSpongeReef.block.getDefaultState();
-                    }
-                    else {
-                        iblockstate = Blocks.SPONGE.getStateFromMeta(1);
-                    }
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 }
             }
             else if (posY >= SEALEVEL - 11) {
@@ -3737,7 +3725,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                 } else if (i > 55 && i <= 80) {
                     iblockstate = Blocks.CLAY.getDefaultState();
                 } else if (i > 80 && i <= 95) {
-                    iblockstate = BlockCoralBleached.block.getDefaultState();
+                    iblockstate = BlockSandWavy.block.getDefaultState();
                 } else {
                     iblockstate = BlockSandWavy.block.getDefaultState();
                 }
@@ -3847,9 +3835,6 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     iblockstate = BlockSandWhiteWavy.block.getDefaultState();
                 }
             }
-            if (rand.nextInt(48) == 0) {
-                iblockstate = BlockSpongeReef.block.getDefaultState().withProperty(BlockSpongeReef.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
-            }
         }
 
         //Rudist Reef:
@@ -3938,9 +3923,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
                     iblockstate =  BlockSandBlackWavy.block.getDefaultState();
                 }
             }
-            if (rand.nextInt(28) == 0) {
-                iblockstate = BlockShelly.block.getDefaultState().withProperty(BlockShelly.FACING, EnumFacing.byHorizontalIndex(rand.nextInt(4)));
-            }
+
         }
 
         //Tethys Ocean:

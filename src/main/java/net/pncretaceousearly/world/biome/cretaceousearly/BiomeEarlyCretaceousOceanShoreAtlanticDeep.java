@@ -74,6 +74,7 @@ public class BiomeEarlyCretaceousOceanShoreAtlanticDeep extends ElementsLepidode
 
 		protected static final WorldGenRockPilesLavaMossy ROCK_PILES_CRET_GENERATOR = new WorldGenRockPilesLavaMossy();
 
+		protected static final WorldGenSpongeReefFloor SPONGE_GROUND_GENERATOR = new WorldGenSpongeReefFloor();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -84,6 +85,14 @@ public class BiomeEarlyCretaceousOceanShoreAtlanticDeep extends ElementsLepidode
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 4; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					SPONGE_GROUND_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 2; ++i)
