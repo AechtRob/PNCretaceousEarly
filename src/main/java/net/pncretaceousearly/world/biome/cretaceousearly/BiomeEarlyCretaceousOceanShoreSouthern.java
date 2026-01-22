@@ -38,7 +38,7 @@ public class BiomeEarlyCretaceousOceanShoreSouthern extends ElementsLepidodendro
 
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
-			super(new BiomeProperties("E. Cretaceous Southern Ocean").setRainfall(0.5F).setBaseHeight(-1.00F).setHeightVariation(0.21F));
+			super(new BiomeProperties("E. Cretaceous Southern Ocean").setRainfall(0.5F).setBaseHeight(-1.00F).setHeightVariation(0.21F).setTemperature(0.21F));
 			setRegistryName("lepidodendron:cretaceous_early_ocean_shore_southern");
 
 			topBlock = Blocks.SAND.getDefaultState();
@@ -76,6 +76,8 @@ public class BiomeEarlyCretaceousOceanShoreSouthern extends ElementsLepidodendro
 		protected static final WorldGenSingleCoralSideways CORAL_SIDEWAYS_GENERATOR = new WorldGenSingleCoralSideways();
 
 
+		protected static final WorldGenIceOnSea ICE_GENERATOR = new WorldGenIceOnSea();
+		protected static final WorldGenSnow SNOW_GENERATOR = new WorldGenSnow();
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 	    {
@@ -86,6 +88,28 @@ public class BiomeEarlyCretaceousOceanShoreSouthern extends ElementsLepidodendro
 		@Override
 		public void decorate(World worldIn, Random rand, BlockPos pos)
 		{
+
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					int i = rand.nextInt(24);
+
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						SNOW_GENERATOR.generate(worldIn, rand, blockpos, 0);
+					}
+
+					i = rand.nextInt(3);
+
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						ICE_GENERATOR.generate(worldIn, rand, blockpos,0);
+					}
+				}
+			}
 
 			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.ROCK))
 			{
