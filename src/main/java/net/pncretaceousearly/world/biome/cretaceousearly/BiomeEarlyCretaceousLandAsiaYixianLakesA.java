@@ -63,7 +63,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenTwiggyCypressTree CYPRESS_TREE = new WorldGenTwiggyCypressTree(false);
-		protected static final WorldGenGoldenLarchTree LARCH_TREE = new WorldGenGoldenLarchTree(false);
+		protected static final WorldGenGoldenLarchTreeAutumn GOLDEN_LARCH_TREE = new WorldGenGoldenLarchTreeAutumn(false);
 		protected static final WorldGenPagiophyllumTree PAGIO_TREE = new WorldGenPagiophyllumTree(false);
 		protected static final WorldGenScrubbyPineTree PINE_TREE = new WorldGenScrubbyPineTree(false);
 		protected static final WorldGenBlackTreefernTree TREEFERN_TREE = new WorldGenBlackTreefernTree(false);
@@ -125,7 +125,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianLakesA extends ElementsLepidodend
 				if (rand.nextInt(2) == 0) {
 					return TREEFERN_TREE;
 				}
-				return LARCH_TREE;
+				return GOLDEN_LARCH_TREE;
 			}
 			else if (i <= 80) {
 				if (rand.nextInt(6) == 0) {

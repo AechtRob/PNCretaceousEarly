@@ -65,7 +65,6 @@ public class BiomeEarlyCretaceousLandEuropeSwampLakes extends ElementsLepidodend
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenDicksonia DICKSONIA_TREE = new WorldGenDicksonia(false);
 		protected static final WorldGenCypressTreeWater CYPRESS_TREE = new WorldGenCypressTreeWater(false);
-		protected static final WorldGenDawnRedwoodTreeWater DAWN_REDWOOD_TREE = new WorldGenDawnRedwoodTreeWater(false);
 		protected static final WorldGenPodozamitesTreeWaterDeep PODOZAMITES_TREE = new WorldGenPodozamitesTreeWaterDeep(false);
 		protected static final WorldGenTaxodiumTreeWater TAXODIUM_TREE = new WorldGenTaxodiumTreeWater(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA_TREE = new WorldGenSphenobaieraTree(false);

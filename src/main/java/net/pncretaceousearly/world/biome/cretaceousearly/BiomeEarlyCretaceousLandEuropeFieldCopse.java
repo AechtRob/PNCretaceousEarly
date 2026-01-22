@@ -66,6 +66,7 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenBrachyphyllumTree BRACHYPHYLLUM_TREE = new WorldGenBrachyphyllumTree(false);
 		protected static final WorldGenBushyAraucariaTree BUSHY_ARAUCARIA_TREE = new WorldGenBushyAraucariaTree(false);
+		//protected static final WorldGenDawnRedwoodTree DAWN_REDWOOD_TREE = new WorldGenDawnRedwoodTree(false);
 		protected static final WorldGenCephalotaxusTree CEPHALOTAXUS_TREE = new WorldGenCephalotaxusTree(false);
 
 
@@ -108,6 +109,9 @@ public class BiomeEarlyCretaceousLandEuropeFieldCopse extends ElementsLepidodend
 			if (rand.nextInt(3) == 0) {
 				return BRACHYPHYLLUM_TREE;
 			}
+//			if (rand.nextInt(4) == 0) {
+//				return DAWN_REDWOOD_TREE;
+//			}
 			return BUSHY_ARAUCARIA_TREE;
 		}
 

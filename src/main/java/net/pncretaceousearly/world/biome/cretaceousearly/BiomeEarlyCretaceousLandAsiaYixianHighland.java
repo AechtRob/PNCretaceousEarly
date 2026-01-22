@@ -62,7 +62,7 @@ public class BiomeEarlyCretaceousLandAsiaYixianHighland extends ElementsLepidode
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenCephalotaxusTree CEPHALOTAXUS_TREE = new WorldGenCephalotaxusTree(false);
-		protected static final WorldGenGoldenLarchTree GOLDEN_LARCH_TREE = new WorldGenGoldenLarchTree(false);
+		protected static final WorldGenGoldenLarchTreeAutumn GOLDEN_LARCH_TREE = new WorldGenGoldenLarchTreeAutumn(false);
 		protected static final WorldGenScrubbyPineTree PINE_TREE = new WorldGenScrubbyPineTree(false);
 		protected static final WorldGenSphenobaieraTree SPHENOBAIERA_TREE = new WorldGenSphenobaieraTree(false);
 		protected static final WorldGenBristleconeTree BRISTLECONE_TREE = new WorldGenBristleconeTree(false);
