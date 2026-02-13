@@ -2943,6 +2943,15 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandNAmericaLagoons.biome).toString())) {
+            int i = rand.nextInt(100) + 1;
+            if (i >= 10) {
+                iblockstate = BlockSandBlack.block.getDefaultState();
+            } else {
+                iblockstate = BlockLavaCobbleMossy.block.getDefaultState();
+            }
+        }
+
         //Austro-Antarctic:
 
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousAustroAntarcticCoastalCliffs.biome).toString())
