@@ -15,6 +15,8 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.terraingen.DecorateBiomeEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
@@ -59,6 +61,7 @@ public class BiomeEarlyCretaceousLandAsiaShrublandOasis extends ElementsLepidode
 			this.spawnableWaterCreatureList.clear();
 			this.spawnableCaveCreatureList.clear();
 		}
+
 
 		protected static final WorldGenNullTree NULL_TREE = new WorldGenNullTree(false);
 		protected static final WorldGenBurnishedTreefernTree TREEFERN_TREE = new WorldGenBurnishedTreefernTree(false);
