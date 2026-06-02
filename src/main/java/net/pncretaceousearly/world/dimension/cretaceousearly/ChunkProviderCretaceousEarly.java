@@ -3241,6 +3241,21 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
             }
         }
 
+        if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachAustroAntarctica.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekBeachAustroAntarctica.biome).toString())
+        ) {
+            int i = rand.nextInt(10);
+            if (i >= 5) {
+                iblockstate = Blocks.SAND.getDefaultState();
+            }
+            else if (i >= 1) {
+                iblockstate = BlockSandWavy.block.getDefaultState();
+            }
+            else {
+                iblockstate = Blocks.GRAVEL.getDefaultState();
+            }
+        }
+
         //Africa-SAmerica:
         //===============
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandAfricaBrownstonePeaks.biome).toString())
