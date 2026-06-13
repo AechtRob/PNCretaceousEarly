@@ -4,6 +4,7 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
 import net.lepidodendron.entity.EntityPrehistoricFloraAnhanguera;
+import net.lepidodendron.entity.EntityPrehistoricFloraUktenadactylus;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
@@ -132,14 +133,14 @@ public class BiomeEarlyCretaceousOceanCrags extends ElementsLepidodendronMod.Mod
 					}
 					i = rand.nextInt(36) + 24;
 
-//					for (int j = 0; j < i; ++j)
-//					{
-//						int k = rand.nextInt(16) + 8;
-//						int l = rand.nextInt(16) + 8;
-//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-//						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
-//						NEST_GENERATOR.generate(worldIn, rand, blockpos, 85, new EntityPrehistoricFloraUktenadactylus(worldIn));
-//					}
+					for (int j = 0; j < i; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+						NEST_GENERATOR.generate(worldIn, rand, blockpos, 85, new EntityPrehistoricFloraUktenadactylus(worldIn));
+					}
 				}
 			}
 

@@ -7,6 +7,7 @@ import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
 import net.lepidodendron.world.biome.cretaceous.BiomeCretaceousEarly;
 import net.lepidodendron.world.gen.*;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -70,6 +71,7 @@ public class BiomeEarlyCretaceousCreekNAmericaShrubland extends ElementsLepidode
 		protected static final WorldGenBurnishedTreefernTree FERN_TREE = new WorldGenBurnishedTreefernTree(false);
 		protected static final WorldGenTempskyaTree TEMPSKYA_TREE = new WorldGenTempskyaTree(false);
 
+		protected static final WorldGenLeafblock LEAFBLOCK_GENERATOR = new WorldGenLeafblock();
 
 		protected static final WorldGenReef REEF_GENERATOR = new WorldGenReef();
 		protected static final WorldGenSingleStaticInWaterUpwards STATIC_GENERATOR = new WorldGenSingleStaticInWaterUpwards();
@@ -150,7 +152,14 @@ public class BiomeEarlyCretaceousCreekNAmericaShrubland extends ElementsLepidode
 		{
 
 
-
+			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
+				for (int i = 0; i < 1; ++i)
+				{
+					int j = rand.nextInt(16) + 8;
+					int k = rand.nextInt(16) + 8;
+					int l = rand.nextInt(worldIn.getHeight(pos.add(j, 0, k)).getY() + 32);
+					LEAFBLOCK_GENERATOR.generate((BlockBush) BlockTrochodendroidesSapling.block, BlockTrochodendroidesLeaves.block.getDefaultState().withProperty(BlockTrochodendroidesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockTrochodendroidesLeaves.BlockCustom.CHECK_DECAY, false), BlockTrochodendroidesLeaves.block.getDefaultState().withProperty(BlockTrochodendroidesLeaves.BlockCustom.DECAYABLE, false).withProperty(BlockTrochodendroidesLeaves.BlockCustom.CHECK_DECAY, false), worldIn, rand, pos.add(j, l, k), 0, 85);
+				}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 12; ++i)

@@ -3,7 +3,9 @@ package net.pncretaceousearly.world.biome.cretaceousearly;
 
 import net.lepidodendron.ElementsLepidodendronMod;
 import net.lepidodendron.block.*;
+import net.lepidodendron.entity.EntityPrehistoricFloraCaiuajara;
 import net.lepidodendron.entity.EntityPrehistoricFloraRhamphorhynchus;
+import net.lepidodendron.entity.EntityPrehistoricFloraTorukjara;
 import net.lepidodendron.util.EnumBiomeTypeCretaceousEarly;
 import net.lepidodendron.util.Functions;
 import net.lepidodendron.world.biome.ChunkGenSpawner;
@@ -122,42 +124,42 @@ public class BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes extends Elem
 					ROCK_GENERATOR.generate(worldIn, rand, worldIn.getTopSolidOrLiquidBlock(new BlockPos(pos.getX() + j, 0, pos.getZ() + k)).up());
 				}
 
-//			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
-//				{
-//					//int i = rand.nextInt(32);
-//
-//					for (int j = 0; j < 24; ++j)
-//					{
-//						int k = rand.nextInt(16) + 8;
-//						int l = rand.nextInt(16) + 8;
-//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-//						GUANO_GENERATOR.generate(worldIn, rand, blockpos, 102);
-//					}
-//				}
-//			}
-//
-//			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
-//				{
-//					int i = rand.nextInt(36) + 24;
-//					for (int j = 0; j < i; ++j) {
-//						int k = rand.nextInt(16) + 8;
-//						int l = rand.nextInt(16) + 8;
-//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-//						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
-//						NEST_GENERATOR.generate(worldIn, rand, blockpos, 102, new EntityPrehistoricFloraCaiuajara(worldIn));
-//					}
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					//int i = rand.nextInt(32);
 
-//					i = rand.nextInt(36) + 24;
-//
-//					for (int j = 0; j < i; ++j)
-//					{
-//						int k = rand.nextInt(16) + 8;
-//						int l = rand.nextInt(16) + 8;
-//						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
-//						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
-//						NEST_GENERATOR.generate(worldIn, rand, blockpos, 102, new EntityPrehistoricFloraTorukajara(worldIn));
-//					}
-//					i = rand.nextInt(36) + 24;
+					for (int j = 0; j < 24; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						GUANO_GENERATOR.generate(worldIn, rand, blockpos, 102);
+					}
+				}
+			}
+
+			if (net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.ICE)) {
+				{
+					int i = rand.nextInt(36) + 24;
+					for (int j = 0; j < i; ++j) {
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+						NEST_GENERATOR.generate(worldIn, rand, blockpos, 102, new EntityPrehistoricFloraCaiuajara(worldIn));
+					}
+
+					i = rand.nextInt(36) + 24;
+
+					for (int j = 0; j < i; ++j)
+					{
+						int k = rand.nextInt(16) + 8;
+						int l = rand.nextInt(16) + 8;
+						BlockPos blockpos = worldIn.getHeight(pos.add(k, 0, l));
+						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
+						NEST_GENERATOR.generate(worldIn, rand, blockpos, 102, new EntityPrehistoricFloraTorukjara(worldIn));
+					}
+					i = rand.nextInt(36) + 24;
 //
 //					for (int j = 0; j < i; ++j)
 //					{
@@ -167,8 +169,8 @@ public class BiomeEarlyCretaceousLandSouthAmericanSandyDesertSpikes extends Elem
 //						blockpos = ChunkGenSpawner.getTopSolidBlock(blockpos, worldIn).up();
 //						NEST_GENERATOR.generate(worldIn, rand, blockpos, 102, new EntityPrehistoricFloraKeresdrakon(worldIn));
 //					}
-//				}
-//			}
+				}
+			}
 
 			if(net.minecraftforge.event.terraingen.TerrainGen.decorate(worldIn, rand, new net.minecraft.util.math.ChunkPos(pos), net.minecraftforge.event.terraingen.DecorateBiomeEvent.Decorate.EventType.GRASS))
 				for (int i = 0; i < 64; ++i)

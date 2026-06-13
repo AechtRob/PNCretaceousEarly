@@ -72,6 +72,7 @@ public class GenLayerRevCretaceousEarly2 {
         biomes = new GenLayerEuropeanSwampLakes(241L, biomes);
         biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
         biomes = new GenLayerAfricaSavannaHoles1(8772L, biomes);
+        biomes = new GenLayerAustroAntarcticCrater(1812L, biomes);
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 
         biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);
@@ -81,6 +82,7 @@ public class GenLayerRevCretaceousEarly2 {
         biomes = new GenLayerCretaceousEarlyBeach(1050L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes0(742L, biomes);
         biomes = new GenLayerEuropeanSwampLakes(242L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1012L, biomes);
         biomes = new GenLayerSmooth(705L, biomes);
 
         biomes = new GenLayerAustroAntarcticHighLakes1(242L, biomes);
@@ -90,22 +92,27 @@ public class GenLayerRevCretaceousEarly2 {
         biomes = new GenLayerAfricaSavannaHoles2(8772L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderRiftMagma(221L, biomes);
         biomes = new GenLayerDeepOceanTransition(235L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1112L, biomes);
         biomes = new GenLayerFuzzyZoom(6001L, biomes);
 
         biomes = new GenLayerSAmericanDesertSpikes(240L, biomes);
         biomes = new GenLayerCretaceousEarlyYixianRim2(2331L, biomes);
         biomes = new GenLayerCretaceousDiversifyOceanCrags(643L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1212L, biomes);
+        biomes = new GenLayerCretaceousEarlyPodocarpLakeEdge(10L, biomes);
         biomes = new GenLayerSmooth(706L, biomes);
 
         biomes = new GenLayerSandyDesertPeaks(23L, biomes);
         biomes = new GenLayerAsiaShrublands2(979L, biomes);
         biomes = new GenLayerCretaceousEarlyPodocarpLakeEdge(9L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1312L, biomes);
         biomes = new GenLayerFuzzyZoom(6002L, biomes);
 
         biomes = new GenLayerNorthAmericaMountains2(3551L, biomes);
         biomes = new GenLayerAustroAntarcticHighLakes1(642L, biomes);
         biomes = new GenLayerCretaceousEarlyAusColdGravelSeperator(218L, biomes);
-        biomes = new GenLayerFixAusLakesEdge(102L, biomes);
+        biomes = new GenLayerCretaceousEarlyPodocarpLakeEdge(10L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1212L, biomes);
         biomes = new GenLayerSmooth(719L, biomes); //ADDED THIS
         biomes = new GenLayerZoom(6006L, biomes);
 

@@ -70,6 +70,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 		protected static final WorldGenThujaTree THUJA_TREE = new WorldGenThujaTree(false);
 		protected static final WorldGenBurnishedTreefernTree FERN_TREE = new WorldGenBurnishedTreefernTree(false);
 		protected static final WorldGenTempskyaTree TEMPSKYA_TREE = new WorldGenTempskyaTree(false);
+		protected static final WorldGenTrochodendroidesTree TROCHODENDROIDES_TREE = new WorldGenTrochodendroidesTree(false);
 
 
 		protected static final WorldGenReef REEF_GENERATOR = new WorldGenReef();
@@ -130,7 +131,7 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 
 		public WorldGenAbstractTree getRandomTreeFeature(Random rand)
 		{
-			int i = rand.nextInt(7);
+			int i = rand.nextInt(8);
 			switch (i) {
 				case 0: default:
 					return PINE_TREE;
@@ -144,6 +145,8 @@ public class BiomeEarlyCretaceousLandNAmericaShrublandCopse extends ElementsLepi
 					return FERN_TREE;
 				case 6:
 					return TEMPSKYA_TREE;
+				case 7:
+					return TROCHODENDROIDES_TREE;
 			}
 		}
 
