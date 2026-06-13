@@ -42,7 +42,7 @@ public class BiomeEarlyCretaceousLandAustroAntarcticCraterRim extends ElementsLe
 	static class BiomeGenCustom extends BiomeCretaceousEarly {
 		public BiomeGenCustom() {
 			//was height 0.001
-			super(new BiomeProperties("E. Cretaceous East Gondwana Overgrown Hole").setRainfall(0.0F).setBaseHeight(0.5F).setHeightVariation(0.0F).setTemperature(2.0F).setRainDisabled());
+			super(new BiomeProperties("E. Cretaceous East Gondwana Scrub").setRainfall(0.0F).setBaseHeight(0.5F).setHeightVariation(0.0F).setTemperature(2.0F).setRainDisabled());
 			setRegistryName("lepidodendron:cretaceous_early_australia_antarctica_crater_rim");
 			topBlock = BlockSandyDirtGrey.block.getDefaultState();
 			fillerBlock = Blocks.DIRT.getStateFromMeta(1);
