@@ -63,6 +63,7 @@ public class GenLayerRevCretaceousEarly2 {
 
         biomes = new GenLayerAsiaDroopingIslands(498, biomes);
         biomes = new GenLayerCretaceousDiversifyAustroAntarctica5(2549L, biomes);
+        biomes = new GenLayerAustroAntarcticCrater(1812L, biomes);
         biomes = new GenLayerCretaceousPhryganaLakes(7223L, biomes);
         biomes = new GenLayerCretaceousEarlyRiverBorderBanks(99L, biomes);
         biomes = new GenLayerAddInlandSeaBorder(8563L, biomes);
@@ -72,7 +73,7 @@ public class GenLayerRevCretaceousEarly2 {
         biomes = new GenLayerEuropeanSwampLakes(241L, biomes);
         biomes = new GenLayerCretaceousEarlyEuropeIslandify(325L, biomes);
         biomes = new GenLayerAfricaSavannaHoles1(8772L, biomes);
-        biomes = new GenLayerAustroAntarcticCrater(1812L, biomes);
+        biomes = new GenLayerAustroAntarcticCraterTransition(1002L, biomes);
         biomes = new GenLayerFuzzyZoom(1000L, biomes);
 
         biomes = new GenLayerNorthAmericaMountains1(2551L, biomes);

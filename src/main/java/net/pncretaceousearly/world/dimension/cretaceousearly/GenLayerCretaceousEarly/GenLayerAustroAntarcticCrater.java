@@ -119,10 +119,14 @@ public class GenLayerAustroAntarcticCrater extends GenLayer
             CRATERABLE_1_ID,
             CRATERABLE_1_ID,
             CRATERABLE_1_ID,
+            CRATERABLE_1_ID,
+            CRATERABLE_1_ID,
             CRATER_ID
     };
 
     private final int Crater2[] = new int[] {
+            CRATERABLE_2_ID,
+            CRATERABLE_2_ID,
             CRATERABLE_2_ID,
             CRATERABLE_2_ID,
             CRATERABLE_2_ID,
@@ -165,6 +169,8 @@ public class GenLayerAustroAntarcticCrater extends GenLayer
             CRATERABLE_5_ID,
             CRATERABLE_5_ID,
             CRATERABLE_5_ID,
+            CRATERABLE_5_ID,
+            CRATERABLE_5_ID,
             CRATER_ID
     };
 
@@ -177,10 +183,14 @@ public class GenLayerAustroAntarcticCrater extends GenLayer
             CRATERABLE_6_ID,
             CRATERABLE_6_ID,
             CRATERABLE_6_ID,
+            CRATERABLE_6_ID,
+            CRATERABLE_6_ID,
             CRATER_ID
     };
 
     private final int Crater7[] = new int[] {
+            CRATERABLE_7_ID,
+            CRATERABLE_7_ID,
             CRATERABLE_7_ID,
             CRATERABLE_7_ID,
             CRATERABLE_7_ID,

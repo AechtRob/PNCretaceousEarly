@@ -47,7 +47,7 @@ public class GenLayerAustroAntarcticCraterTransition extends GenLayer
 
                     if (isCraterOrEdge(l1) || isCraterOrEdge(k2) || isCraterOrEdge(j3) || isCraterOrEdge(i4))
                     {
-                        aint1[j + i * areaWidth] = PODOCARP_LAKE_EDGE_ID;
+                        aint1[j + i * areaWidth] = CRATER_TRANSITION_ID;
                     }
                     else
                     {
