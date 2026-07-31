@@ -2763,6 +2763,7 @@ public class ChunkProviderCretaceousEarly implements IChunkGenerator {
 
         if (biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousLandEuropeMaquis.biome).toString())
                 || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousCreekEuropeMaquis.biome).toString())
+                || biomeResID.equalsIgnoreCase(Biome.REGISTRY.getNameForObject(BiomeEarlyCretaceousBeachEuropeDry.biome).toString())
         ) {
             int i = rand.nextInt(100) + 1;
             if (i >= 75) {
